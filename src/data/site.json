@@ -1,6 +1,6 @@
 {
-  "name": "Winet Group",
-  "description": "The Winet Group website. Explore our research, publications, people, and group updates.",
+  "name": "WiNet Lab",
+  "description": "Wireless Intelligence for Networked and Embodied Things (WiNet) Lab at Zhejiang University. Intelligent wireless systems that connect, sense, and interact with the physical world.",
   "navigation": [
     { "label": "Home", "path": "" },
     { "label": "Research", "path": "research" },

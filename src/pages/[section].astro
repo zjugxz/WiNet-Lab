@@ -15,7 +15,7 @@ const { title } = Astro.props;
 
 <SiteLayout title={title} current={Astro.params.section!}>
   <div class="container placeholder-page">
-    <p class="eyebrow">Winet Group / Website preview</p>
+    <p class="eyebrow">{site.name} / Website preview</p>
     <h1>{title}</h1>
     <p>This page is in preparation.</p>
     <p class="placeholder-detail">

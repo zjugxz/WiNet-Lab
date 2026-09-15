@@ -10,7 +10,28 @@ test('homepage content, links, local assets and accessibility', async ({
   page.on('request', (request) => requests.push(request.url()));
   await page.goto('/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await expect(page).toHaveTitle('Home | Winet Group');
+  await expect(page).toHaveTitle('Home | WiNet Lab');
+  await expect(
+    page.getByRole('heading', { name: 'About WiNet Lab', exact: true }),
+  ).toBeVisible();
+  await expect(page.locator('.about-copy > p')).toHaveCount(3);
+  await expect(page.locator('.about-copy')).toContainText(
+    'Wireless Intelligence for Networked and Embodied Things (WiNet) Lab at Zhejiang University',
+  );
+  const visual = page.getByRole('img', {
+    name: /WiNet Lab research word cloud/,
+  });
+  await expect(visual).toBeVisible();
+  await expect
+    .poll(() =>
+      visual.evaluate(
+        (img: HTMLImageElement) =>
+          img.complete &&
+          img.naturalWidth === 2154 &&
+          img.naturalHeight === 1614,
+      ),
+    )
+    .toBe(true);
   await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
   await expect(
     page.getByRole('heading', { name: 'News', exact: true }),
@@ -39,6 +60,7 @@ test('homepage content, links, local assets and accessibility', async ({
   expect(errors).toEqual([]);
   const text = await page.locator('body').innerText();
   expect(text).not.toMatch(/[\u3400-\u9fff]/);
+  expect(text).not.toMatch(/winet\s+group/i);
   await page.keyboard.press('Tab');
   await expect(
     page.getByRole('link', { name: 'Skip to content' }),

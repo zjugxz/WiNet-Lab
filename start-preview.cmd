@@ -8,7 +8,7 @@ if not exist "node_modules\astro\bin\astro.mjs" (
   pause
   exit /b 1
 )
-echo Winet Group local preview: http://127.0.0.1:4321/
+echo WiNet Lab local preview: http://127.0.0.1:4321/
 echo Keep this window open. Press Ctrl+C to stop the preview.
 "%WINET_NODE%" node_modules\astro\bin\astro.mjs dev --host 127.0.0.1 --port 4321
 pause

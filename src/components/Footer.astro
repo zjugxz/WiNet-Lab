@@ -1,17 +1,12 @@
 ---
 import site from '../data/site.json';
-import Mark from './Mark.astro';
+import Brand from './Brand.astro';
 import { sitePath } from '../lib/paths';
 ---
 
 <footer class="site-footer">
   <div class="container footer-top">
-    <a class="brand" href={sitePath()}>
-      <Mark />
-      <span>
-        Winet <strong>Group</strong>
-      </span>
-    </a>
+    <Brand />
     <p>Research. People. Possibilities.</p>
     <a class="text-link" href={sitePath('contact')}>
       Get in touch <span aria-hidden="true">↗</span>

@@ -1,9 +1,8 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import NetworkArt from '../components/NetworkArt.astro';
 import home from '../data/home.json';
-import { sitePath } from '../lib/paths';
+import { assetPath, sitePath } from '../lib/paths';
 ---
 
 <SiteLayout title="Home" current="">
@@ -23,28 +22,30 @@ import { sitePath } from '../lib/paths';
         <a class="button" href={sitePath('research')}>
           Explore our research <span aria-hidden="true">↗</span>
         </a>
-        <p class="preview-note">
-          Homepage prototype · Introductory copy for review
-        </p>
       </div>
       <figure class="hero-visual">
-        <NetworkArt />
-        <figcaption>
-          <span>01 / Connected ideas</span>
-          <span>Illustrative visual</span>
-        </figcaption>
+        <img
+          src={assetPath(home.heroImage.src)}
+          alt={home.heroImage.alt}
+          width={home.heroImage.width}
+          height={home.heroImage.height}
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
       </figure>
     </section>
     <section class="about section" aria-labelledby="about-title">
       <div>
-        <p class="eyebrow">About the group</p>
+        <p class="eyebrow">Zhejiang University</p>
         <h2 id="about-title">{home.about.title}</h2>
       </div>
       <div class="about-copy">
-        <p>{home.about.text}</p>
-        <p class="content-note">{home.about.note}</p>
+        {home.about.paragraphs.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
         <a class="text-link" href={sitePath('people')}>
-          Meet the group <span aria-hidden="true">↗</span>
+          Meet the lab <span aria-hidden="true">↗</span>
         </a>
       </div>
     </section>

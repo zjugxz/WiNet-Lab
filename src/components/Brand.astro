@@ -1,0 +1,17 @@
+---
+import site from '../data/site.json';
+import { sitePath } from '../lib/paths';
+import Mark from './Mark.astro';
+interface Props {
+  tagline?: boolean;
+}
+const { tagline = false } = Astro.props;
+---
+
+<a class="brand" href={sitePath()} aria-label={`${site.name} home`}>
+  <Mark />
+  <span>
+    {site.name}
+    {tagline && <small>Ideas in connection.</small>}
+  </span>
+</a>

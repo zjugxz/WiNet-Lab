@@ -1,4 +1,4 @@
-# Winet Group 项目协作规则
+# WiNet Lab 项目协作规则
 
 ## 接手顺序
 

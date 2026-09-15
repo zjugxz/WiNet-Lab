@@ -37,6 +37,18 @@ try {
     'rgb(255, 255, 255)',
     'Styles must load under the repository base path',
   );
+  const heroImage = page.getByRole('img', {
+    name: /WiNet Lab research word cloud/,
+  });
+  assert.equal(
+    await heroImage.getAttribute('src'),
+    '/winet-group/images/winet-lab-wordcloud.png',
+  );
+  assert(
+    await heroImage.evaluate(
+      (img) => img.complete && img.naturalWidth === 2154,
+    ),
+  );
   for (const name of [
     'Research',
     'Publications',
@@ -49,7 +61,7 @@ try {
       .getByRole('link', { name, exact: true })
       .click();
     assert(page.url().startsWith('http://127.0.0.1:4323/winet-group/'));
-    assert.equal(await page.title(), `${name} | Winet Group`);
+    assert.equal(await page.title(), `${name} | WiNet Lab`);
   }
   await page.setViewportSize({ width: 390, height: 844 });
   await page.getByRole('button', { name: 'Menu' }).click();
@@ -61,7 +73,7 @@ try {
   );
   assert.deepEqual(failed, []);
   console.log(
-    'Repository base path verified: five pages, links, CSS, and mobile menu; no failed requests.',
+    'Repository base path verified: five pages, links, CSS, hero image, and mobile menu; no failed requests.',
   );
 } finally {
   await browser.close();

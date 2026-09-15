@@ -1,6 +1,6 @@
-# Winet Group website
+# WiNet Lab website
 
-An English-language academic group website, with a static Astro frontend and shared page components. The current milestone is the Home prototype. Research, Publications, People, and Contact are explicitly marked placeholders.
+An English-language academic lab website, with a static Astro frontend and shared page components. Home now includes the supplied WiNet Lab introduction and word-cloud image. Research, Publications, People, and Contact are explicitly marked placeholders.
 
 ## Local preview on this computer
 

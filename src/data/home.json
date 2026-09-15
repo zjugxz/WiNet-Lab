@@ -1,11 +1,20 @@
 {
-  "eyebrow": "Welcome to Winet Group",
+  "eyebrow": "Welcome to WiNet Lab",
   "headline": "A place for ideas.\nA space for discovery.",
-  "introduction": "Discover the research, people, and ideas behind Winet Group.",
+  "introduction": "We seek to build intelligent wireless systems that connect, sense, and interact with the physical world.",
+  "heroImage": {
+    "src": "images/winet-lab-wordcloud.png",
+    "alt": "WiNet Lab research word cloud featuring wireless intelligence, embodied AI, wireless networks, battery-free IoT, robotics, and backscatter.",
+    "width": 2154,
+    "height": 1614
+  },
   "about": {
-    "title": "Curiosity brings us together.",
-    "text": "This space will introduce Winet Group: our research interests, the questions we explore, and the people who make our work possible.",
-    "note": "Group introduction awaiting approved content."
+    "title": "About WiNet Lab",
+    "paragraphs": [
+      "Welcome to the Wireless Intelligence for Networked and Embodied Things (WiNet) Lab at Zhejiang University. We seek to build intelligent wireless systems that connect, sense, and interact with the physical world.",
+      "Our research is driven by a central question: How can wireless devices become smarter, more energy-efficient, and more deeply integrated with the physical world? To address this question, we combine wireless communication, sensing, artificial intelligence, and hardware–software co-design. Our research spans programmable wireless hardware, battery-free and ultra-low-power connectivity, multimodal sensing, and embodied intelligence—from novel devices and signal processing to learning algorithms and real-world systems.",
+      "Our long-term goal is to create intelligent IoT systems that operate with minimal energy, understand people and their surroundings, and work reliably in healthcare, robotics, smart environments, and industrial applications."
+    ]
   },
   "news": {
     "caption": "Updates from the group",

@@ -1,7 +1,7 @@
 ---
 import site from '../data/site.json';
 import { sitePath } from '../lib/paths';
-import Mark from './Mark.astro';
+import Brand from './Brand.astro';
 interface Props {
   current: string;
 }
@@ -10,13 +10,7 @@ const { current } = Astro.props;
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href={sitePath()} aria-label={`${site.name} home`}>
-      <Mark />
-      <span>
-        Winet <strong>Group</strong>
-        <small>Ideas in connection.</small>
-      </span>
-    </a>
+    <Brand tagline />
     <button
       class="menu-toggle"
       aria-expanded="false"
