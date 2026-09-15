@@ -1,0 +1,11 @@
+{
+  "name": "Winet Group",
+  "description": "The Winet Group website. Explore our research, publications, people, and group updates.",
+  "navigation": [
+    { "label": "Home", "path": "" },
+    { "label": "Research", "path": "research" },
+    { "label": "Publications", "path": "publications" },
+    { "label": "People", "path": "people" },
+    { "label": "Contact", "path": "contact" }
+  ]
+}

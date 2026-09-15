@@ -1,0 +1,29 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import site from '../data/site.json';
+import { sitePath } from '../lib/paths';
+export function getStaticPaths() {
+  return site.navigation
+    .filter((item) => item.path)
+    .map((item) => ({
+      params: { section: item.path },
+      props: { title: item.label },
+    }));
+}
+const { title } = Astro.props;
+---
+
+<SiteLayout title={title} current={Astro.params.section!}>
+  <div class="container placeholder-page">
+    <p class="eyebrow">Winet Group / Website preview</p>
+    <h1>{title}</h1>
+    <p>This page is in preparation.</p>
+    <p class="placeholder-detail">
+      The homepage is ready for design review. Content for this section will be
+      added in a later stage.
+    </p>
+    <a class="button" href={sitePath()}>
+      Back to Home <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</SiteLayout>

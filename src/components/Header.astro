@@ -1,0 +1,64 @@
+---
+import site from '../data/site.json';
+import { sitePath } from '../lib/paths';
+import Mark from './Mark.astro';
+interface Props {
+  current: string;
+}
+const { current } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={sitePath()} aria-label={`${site.name} home`}>
+      <Mark />
+      <span>
+        Winet <strong>Group</strong>
+        <small>Ideas in connection.</small>
+      </span>
+    </a>
+    <button
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+    >
+      Menu <span aria-hidden="true">＋</span>
+    </button>
+    <nav id="main-navigation" aria-label="Main navigation">
+      {site.navigation.map((item) => (
+        <a
+          href={sitePath(item.path)}
+          aria-current={current === item.path ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = document.querySelector<HTMLElement>('#main-navigation');
+  const closeMenu = () => {
+    button?.setAttribute('aria-expanded', 'false');
+    nav?.classList.remove('is-open');
+  };
+  button?.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(open));
+    nav?.classList.toggle('is-open', open);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (
+      event.key === 'Escape' &&
+      button?.getAttribute('aria-expanded') === 'true'
+    ) {
+      closeMenu();
+      button.focus();
+    }
+  });
+  nav?.addEventListener('click', (event) => {
+    if ((event.target as Element).closest('a')) closeMenu();
+  });
+  window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+</script>

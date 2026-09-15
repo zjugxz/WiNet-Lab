@@ -1,0 +1,27 @@
+{
+  "eyebrow": "Welcome to Winet Group",
+  "headline": "A place for ideas.\nA space for discovery.",
+  "introduction": "Discover the research, people, and ideas behind Winet Group.",
+  "about": {
+    "title": "Curiosity brings us together.",
+    "text": "This space will introduce Winet Group: our research interests, the questions we explore, and the people who make our work possible.",
+    "note": "Group introduction awaiting approved content."
+  },
+  "news": {
+    "caption": "Updates from the group",
+    "title": "The next chapter starts here.",
+    "description": "Group news, publication announcements, and milestones will appear here.",
+    "status": "Updates coming soon"
+  },
+  "events": {
+    "caption": "Conversations, learning, and shared moments",
+    "eyebrow": "Around the group",
+    "title": "Good ideas begin\nwith a conversation.",
+    "description": "Seminars, talks, and group activities will be shared in this space.",
+    "status": "No events published yet"
+  },
+  "collaborators": {
+    "title": "Making connections, sharing perspectives.",
+    "description": "Collaborating institutions will be listed here once confirmed."
+  }
+}
