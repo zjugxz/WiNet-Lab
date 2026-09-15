@@ -2,6 +2,8 @@
 
 Updated 2026-09-15. The website is English-only; the online content editor is required but not implemented.
 
+The user explicitly declined the proposed local content-management tool. The current priority is integrating real material into the initial five-page website; the final online editor follows. Do not build a local editor as an intermediate deliverable. Keep content separate from presentation so the final editor can use the same data. The project currently contains placeholder text only; the user's stated collection of material has not yet been supplied or located in the workspace.
+
 ## Editing at this milestone
 
 src/data/home.json contains hero copy, group introduction, and the News empty-state text. The headline accepts a newline for intentional line breaks. Events and Collaborators were removed at the user's request; do not restore those fields or sections without a new request. src/data/site.json contains site name, description, and navigation. Astro escapes these plain-text fields.
