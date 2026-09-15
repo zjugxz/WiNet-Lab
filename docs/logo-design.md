@@ -1,6 +1,6 @@
 # WiNet Lab 图像生成 logo 设计简报
 
-日期：2026-09-15。状态：提示词已准备，尚未生成图片。
+日期：2026-09-15。状态：用户已授权 API；已尝试一次生成，因 HTTP 401 / invalid_api_key 失败，尚未生成图片。
 
 用户对上一版代码绘制的 W 形节点图标不满意，明确要求调用 gpt-image，围绕实验室研究方向重新绘制。上一版 logo 未获验收；此前居中页脚和移除标语/联系跳转的需求继续有效。
 
@@ -10,9 +10,9 @@
 
 拟定方向：以“无线感知场与智能物理核心的交互”为统一图形主题，形成独立且可辨识的图标，搭配准确的 WiNet Lab 字标。采用协调的多色设计，保留小尺寸辨识度。研究方向用于提炼设计语言，不逐项堆叠机器人、电池、芯片、天线等图标。新图用于页眉与居中页脚，原 Home 词云图不替换。
 
-## 待执行提示词
+## 使用的提示词
 
-以下是准备使用的英文提示词，尚未提交给任何生成模型：
+以下提示词保存于 [实际调用输入](../output/imagegen/winet-lab-logo-v1.prompt.txt)，已用于本次生成请求；服务端在认证阶段拒绝，未返回图片：
 
 ```text
 Use case: logo-brand
@@ -31,7 +31,11 @@ Constraints: Only this name, no additional slogans or university seals. Original
 
 本会话可调用工具清单中没有内置 image_gen，也没有可进一步发现该工具的搜索入口。已完整阅读本机 imagegen/SKILL.md 及 prompting.md、sample-prompts.md。该技能要求在内置工具不可用时说明 CLI/API 备选方式，且仅在用户明确选择该备选后执行；备选需要本机 OPENAI_API_KEY，不能要求用户在聊天中粘贴密钥。
 
-当前未切换到 API，未调用生成服务，未生成新图片，也未改动网站代码。下一步等待用户明确选择 API 备选；若选择，先阅读技能的 CLI/API 专用说明、核验本机配置，再使用其提供的脚本生成。不得将当前的“gpt-image 工具”请求记为已确认 API 路径。
+用户已明确回复“已配置，请生成一张 logo”，API 备选已授权。已完整阅读技能的 cli.md、image-api.md、codex-network.md，使用原配 scripts/image_gen.py，未修改技能脚本或创建自定义 API runner。先完成 dry-run，再执行一次 generate，参数为 gpt-image-2、1536x1024、quality=high、output_format=png、n=1、no-augment。输出目标为 output/imagegen/winet-lab-logo-v1.png，但认证失败，该图片文件不存在。
+
+官方接口返回 HTTP 401、code=invalid_api_key。已安全核对当前进程 key 与 Windows 用户环境变量一致，未发现空白或引号；没有自定义 OPENAI_BASE_URL。仅记录检测布尔结果和错误代码，不保存完整异常中的密钥片段。没有重复发送生成请求、没有改动网站代码。[官方错误说明](https://developers.openai.com/api/docs/guides/error-codes) 将该错误归为密钥不正确；不能据此断言具体是撤销、复制错误或第三方 key，也不能判断用户账户余额。
+
+下一步需要用户说明 key 来源平台（不含密钥），或在本机更新有效的官方 key。若使用第三方服务，先读取其提供的接口说明确认 base URL、模型权限和生成能力。修复认证后继续已授权的单张生成任务，无需重复询问是否同意 API。
 
 生成成功后的本任务验收：检查研究主题表达、字样准确、白底、小尺寸清晰度；将候选图片保存在项目内，记录实际使用的提示词和生成模式，再验证页面布局。用户确认设计后才进入下一子任务。整个项目验收前不上传 GitHub。
 

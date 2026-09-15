@@ -4,6 +4,10 @@
 
 ## 最新状态：用户要求使用 gpt-image 重新设计 logo
 
+最新执行结果：用户已明确回复“已配置，请生成一张 logo”，已授权 API 生成一张图片。使用 imagegen 原配脚本执行一次 generate（gpt-image-2、1536x1024、high、PNG、n=1），官方接口返回 HTTP 401 / invalid_api_key，没有生成图片。dry-run 参数验证通过；当前进程与 Windows 用户环境变量中的 key 一致，没有空白或引号，未输出完整密钥。未配置自定义 OPENAI_BASE_URL。Python、OpenAI SDK 与 Pillow 可用。
+
+实际提示词已保存到 [winet-lab-logo-v1.prompt.txt](../output/imagegen/winet-lab-logo-v1.prompt.txt)。认证失败后未重复发送生成请求。下一步确认 key 来源：若是官方 key，由用户在本机更新有效 key；若来自其他服务商，需提供其平台名称/接口文档，以核验地址和图片模型能力。不得要求用户发送密钥，不得从 key 外观推断来源。API 生成授权已具备，修复认证后继续本次一张 logo 任务，无需再次要求批准 API 方式。网站代码和用户未提交修改保持原样；没有图片可供验收。文档与提示词纳入本地 Git 提交 `docs: record logo generation authentication failure`，未上传 GitHub。下方“等待确认 API”的内容为此前历史。
+
 最新补充：用户询问仅有 API key 时如何调用，已核对官方文档并提供 Windows 环境变量及图片接口调用说明，详见 [API 指导记录](logo-design.md#api-调用指导补充)。本轮仅说明调用方式，未代为运行付费请求、未读取密钥、未生成图片。文档纳入本地 Git 提交 `docs: explain image API authentication and invocation`。
 
 用户对下方记录的 W 形节点 logo 不满意，要求根据实验室研究方向调用 gpt-image 生成。该版设计未通过用户验收。当前已整理 [生成设计简报和提示词](logo-design.md)，尚未产生新图片或改动网站代码。
