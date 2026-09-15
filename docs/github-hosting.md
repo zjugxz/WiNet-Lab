@@ -27,15 +27,27 @@ Decap CMS 可作为候选，其 GitHub backend 支持 GitHub 登录，编辑者�
 ## 保留的交付约束
 
 - 先本地实现和验证，每个子任务等待用户确认；整体验收后才上传 GitHub 并正式发布。
-- 目前仅评估可行性，不创建远程仓库，不登录账号或设置权限。
+- 用户随后请求指导新建仓库：本轮提供由用户操作的空远程仓库创建步骤，不代表已创建成功，也不授权 agent 登录、上传代码或启用 Pages。
 - 国内外访问体验需实际测试，不能因网站可部署就声称已经满足该要求。
 - 域名购买和学校域名持有者确认已取消，不再阻塞网站设计。
 
 ## 下一步所需信息
 
-老师的 GitHub 用户名或个人主页链接；随后核对是否已有 Pages 网站、仓库可见性要求和内容维护者。不要根据所提供邮箱的前缀推断用户名。
+用户完成创建后提供仓库链接或创建结果截图，以确认实际 Owner、仓库名称、可见性和是否为空。此链接也可提供老师的实际用户名；不再单独要求其重复提供邮箱。不要根据所提供邮箱的前缀推断用户名。
+
+## 新建空仓库指导（用户操作，尚未验证完成）
+
+1. 在老师的 GitHub 账号下打开 https://github.com/new 。Owner 应为老师实际账号用户名，不是邮箱；如果只能选择其他账号，则需要由老师在其账号下创建。
+2. Repository name 建议填写 `winet-group`；这是建议名称，尚未验证最终创建结果。Description 可填写 `Website for the Winet Group research lab.`。
+3. 若采用 GitHub Free 的 Pages 路线，建议选择 Public；空仓库的名称和描述会公开，未来上传的代码也会公开。用户尚未反馈其实际选择，不得记录为已经同意公开全部本地资料。若要求源码私有，应另行确认账号方案和托管资格。
+4. 保持空仓库：不使用模板，Add README 关闭，Add .gitignore 为 No .gitignore，License 为 No license；若出现让 Copilot 初始化项目的输入项，也留空。本地已有 Git 历史，避免远程独立生成初始提交。
+5. 点击 Create repository；创建完成后停在空仓库 Quick setup 页面。不要照页面执行 push 或上传代码，也不启用 Pages；整体验收后再开展这些操作。
+6. 用户提供实际仓库链接或截图后，只读核对 Owner、名称、可见性及空仓库状态，并等待用户对该子任务的确认再继续。
+
+空仓库创建与代码上传、网站发布是不同动作。本次只指导第一项，后两项依旧受整体验收约束。
 
 ## 来源
 
 - GitHub Pages 说明及默认地址：https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
 - Decap CMS GitHub backend：https://decapcms.org/docs/github-backend/
+- GitHub 网页新建仓库及已有本地仓库的初始化注意事项：https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
