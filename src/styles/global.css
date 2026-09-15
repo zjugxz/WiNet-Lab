@@ -107,7 +107,8 @@
     border-top: 1px solid var(--line);
   }
   .footer-top {
-    padding-block: 36px;
+    justify-content: center;
+    padding-block: 42px;
   }
   .footer-bottom {
     padding-block: 20px;
@@ -133,25 +134,34 @@
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     line-height: 1.2;
     flex-shrink: 0;
   }
   .brand svg {
-    width: 40px;
-    height: 40px;
-    color: var(--green);
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
   }
-  .brand span {
-    font-size: 24px;
-    letter-spacing: -0.8px;
+  .brand-name {
+    display: block;
+    font-size: 29px;
+    font-weight: 750;
+    letter-spacing: -1.2px;
+    white-space: nowrap;
+    color: #36518b;
+    background: linear-gradient(110deg, #5054a6 12%, #36518b 48%, #147b6e 85%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .brand small {
     display: block;
-    font-size: 10px;
-    letter-spacing: 1.3px;
-    margin-top: 6px;
-    color: var(--muted);
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.55px;
+    margin-top: 4px;
+    color: #53657a;
   }
   nav {
     display: flex;
@@ -313,14 +323,12 @@
   .news-item p {
     font-size: 15px;
   }
-  .footer-top p {
-    font-family: var(--serif);
-    font-size: 20px;
-    font-style: italic;
-    color: #586a54;
+  .footer-top .brand svg {
+    width: 64px;
+    height: 64px;
   }
-  .footer-top .brand span {
-    font-size: 21px;
+  .footer-top .brand-name {
+    font-size: 36px;
   }
   .placeholder-page {
     padding-block: 95px 120px;
@@ -354,9 +362,6 @@
     .about {
       gap: 38px;
     }
-    .footer-top p {
-      font-size: 17px;
-    }
   }
   @media (max-width: 760px) {
     .container {
@@ -367,15 +372,16 @@
       flex-wrap: wrap;
       gap: 0;
     }
-    .brand span {
-      font-size: 22px;
+    .brand-name {
+      font-size: 24px;
     }
     .brand svg {
-      width: 34px;
-      height: 34px;
+      width: 44px;
+      height: 44px;
     }
     .brand small {
-      font-size: 9px;
+      font-size: 7px;
+      letter-spacing: 1.05px;
     }
     .menu-toggle {
       display: inline-flex;
@@ -457,14 +463,7 @@
       padding: 18px 0;
     }
     .footer-top {
-      flex-wrap: wrap;
-      padding-block: 28px;
-      gap: 22px;
-    }
-    .footer-top p {
-      order: 3;
-      flex-basis: 100%;
-      font-size: 19px;
+      padding-block: 32px;
     }
     .footer-bottom {
       flex-wrap: wrap;
@@ -490,6 +489,12 @@
     }
     * {
       transition: none !important;
+    }
+  }
+  @media (forced-colors: active) {
+    .brand-name {
+      background: none;
+      -webkit-text-fill-color: currentColor;
     }
   }
   @media print {

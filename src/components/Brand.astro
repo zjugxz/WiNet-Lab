@@ -10,8 +10,8 @@ const { tagline = false } = Astro.props;
 
 <a class="brand" href={sitePath()} aria-label={`${site.name} home`}>
   <Mark />
-  <span>
-    {site.name}
-    {tagline && <small>Ideas in connection.</small>}
+  <span class="brand-type">
+    <span class="brand-name">{site.name}</span>
+    {tagline && <small>Wireless Intelligence</small>}
   </span>
 </a>

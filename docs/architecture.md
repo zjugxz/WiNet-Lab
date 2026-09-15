@@ -6,6 +6,7 @@ Status: Home layout and first supplied content batch implemented, pending user a
 
 - `src/layouts/SiteLayout.astro`: document language, metadata, shared header/footer, global stylesheet, and skip link.
 - `src/components/`: shared Brand, navigation, footer, section heading, NewsList, EmphasisText, and small decorative brand mark. Header owns its mobile-menu script. Brand reads the name from site.json for both header and footer. Pages do not import other pages.
+- `src/components/Mark.astro`: single inline SVG source for the colored W/network/signal icon, with no external assets or duplicate gradient IDs. `Brand.astro` pairs it with the canonical name and an optional header descriptor. Wordmark colors and sizes live in the shared stylesheet; footer centers the same component with a larger size. The SVG is decorative and the home link has an accessible name. Forced-colors mode uses readable system-colored text.
 - `src/pages/index.astro`: Home composition only.
 - `src/pages/[section].astro`: generates four explicitly unfinished route shells from navigation data. Replace with independent pages as their tasks are approved.
 - `src/data/site.json`: identity, description, navigation. `src/data/home.json`: hero copy, image metadata, the three supplied introduction paragraphs, and seven supplied News records. Fixed interface labels remain in components.
@@ -22,7 +23,7 @@ NewsList receives structured records with unique id, YYYY-MM date, and nonempty 
 
 The MARS Lab reference informed the five-page navigation. Following user review, Home now contains the visual introduction, group introduction, News, and footer; Events and Collaborators were removed from markup, content data, and styles. The reference is guidance, not a requirement to reproduce every section. Its page text and stylesheet structure were read; the live reference screenshot failed with ERR_CONNECTION_RESET. Pixel-level equivalence has not been verified or claimed.
 
-This site uses a pure-white (#ffffff) page background, forest green accents, system sans-serif body text, and Georgia headings. The footer, News panel, and image container also use white. The supplied word cloud replaces the original network illustration; its original colors and proportions are preserved. The old NetworkArt component and caption were removed. The small navigation/footer mark remains a draft code graphic. No reference-site people, publications, partner logos, or photos were copied.
+This site uses a pure-white (#ffffff) page background, forest green accents, system sans-serif body text, and Georgia headings. The footer, News panel, and image container also use white. The supplied word cloud replaces the original network illustration; its original colors and proportions are preserved. The old NetworkArt component and caption were removed. The latest shared logo combines indigo, teal, and an orange node with a colored wordmark; it is implemented but awaiting design acceptance. The footer slogan and contact CTA were removed at the user's request. No reference-site people, publications, partner logos, or photos were copied.
 
 ## Runtime
 

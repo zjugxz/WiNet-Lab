@@ -19,6 +19,11 @@ try {
       path: fileURLToPath(new URL(`${name}.png`, directory)),
       fullPage: true,
     });
+    if (name === 'home-desktop') {
+      await page.locator('.site-footer').screenshot({
+        path: fileURLToPath(new URL('footer-logo.png', directory)),
+      });
+    }
     await page.close();
   }
   if (process.argv.includes('--reference')) {

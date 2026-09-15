@@ -33,6 +33,17 @@ test('homepage content, links, local assets and accessibility', async ({
     )
     .toBe(true);
   await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
+  const footer = page.getByRole('contentinfo');
+  await expect(
+    footer.getByText('Research. People. Possibilities.'),
+  ).toHaveCount(0);
+  await expect(footer.getByRole('link', { name: /Get in touch/i })).toHaveCount(
+    0,
+  );
+  await expect(footer.locator('.footer-top').getByRole('link')).toHaveCount(1);
+  await expect(
+    footer.getByRole('link', { name: 'WiNet Lab home' }),
+  ).toBeVisible();
   await expect(
     page.getByRole('heading', { name: 'News', exact: true }),
   ).toBeVisible();
@@ -123,6 +134,11 @@ for (const width of [320, 390, 768, 1440]) {
   }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
+    const footerBrand = await page.locator('.footer-top .brand').boundingBox();
+    expect(footerBrand).not.toBeNull();
+    expect(
+      Math.abs(footerBrand!.x + footerBrand!.width / 2 - width / 2),
+    ).toBeLessThan(1);
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= window.innerWidth,

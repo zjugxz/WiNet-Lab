@@ -14,6 +14,8 @@ The three About paragraphs, lab's full name, Zhejiang University affiliation, wo
 
 ## 修改加粗和新闻内容
 
+当前工作区中用户已从 src/pages/index.astro 移除顶部简介的渲染段落，因此 introduction 字段虽保留，但不再显示在首页主标题下方。下方关于 introduction 的加粗能力只适用于重新启用该段落的情况。
+
 打开 [home.json](../src/data/home.json)：
 
 - 介绍正文：about.paragraphs 下的三段字符串。
@@ -38,7 +40,12 @@ The three About paragraphs, lab's full name, Zhejiang University affiliation, wo
 
 若使用 npm run dev 启动的开发预览，则内容保存后自动更新。上述操作只影响本地预览，不上传 GitHub。
 
+## Logo and footer maintenance
+
+The latest logo proposal is implemented and awaiting user acceptance. Edit the icon geometry and its indigo (#5054a6), teal (#168577), and orange (#df8150) colors in [Mark.astro](../src/components/Mark.astro). [Brand.astro](../src/components/Brand.astro) combines this SVG with the name from site.json; its optional header descriptor is Wireless Intelligence. The .brand-name rules in [global.css](../src/styles/global.css) control the gradient wordmark and typography. Both header and footer use the same components; do not create separate copies of the logo. The footer upper row contains only the centered brand. Footer layout lives in [Footer.astro](../src/components/Footer.astro) and .footer-top styles. These are design settings, not routine News/content edits. No online logo editor has been implemented.
+
 ## Online tool proposal — separate approval required
+
 
 Intended workflow: an authorized editor signs in, fills out forms, previews a draft, and chooses Publish. A repository commit then triggers a static rebuild and updates the site. Ordinary record editing would not require page-code changes.
 
