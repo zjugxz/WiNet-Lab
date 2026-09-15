@@ -1,0 +1,48 @@
+---
+import EmphasisText from './EmphasisText.astro';
+interface NewsItem {
+  id: string;
+  date: string;
+  text: string;
+}
+interface Props {
+  items: NewsItem[];
+}
+const { items } = Astro.props;
+const ids = new Set<string>();
+for (const item of items) {
+  if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(item.date)) {
+    throw new Error(`News item "${item.id}": date must be YYYY-MM.`);
+  }
+  if (!item.id.trim() || ids.has(item.id) || !item.text.trim()) {
+    throw new Error(
+      `News item "${item.id}": provide a unique ID and nonempty text.`,
+    );
+  }
+  ids.add(item.id);
+}
+// Stable sorting retains the supplied order for records within the same month.
+const sortedItems = [...items].sort((a, b) => b.date.localeCompare(a.date));
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+{sortedItems.length > 0 ? (
+  <ul class="news-list" aria-label="Lab news">
+    {sortedItems.map((item) => (
+      <li class="news-item" id={`news-${item.id}`}>
+        <time datetime={item.date}>
+          {dateFormatter.format(new Date(`${item.date}-01T00:00:00Z`))}
+        </time>
+        <p>
+          <EmphasisText text={item.text} />
+        </p>
+      </li>
+    ))}
+  </ul>
+) : (
+  <p class="news-empty">No news published yet.</p>
+)}

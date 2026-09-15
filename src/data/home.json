@@ -11,15 +11,49 @@
   "about": {
     "title": "About WiNet Lab",
     "paragraphs": [
-      "Welcome to the Wireless Intelligence for Networked and Embodied Things (WiNet) Lab at Zhejiang University. We seek to build intelligent wireless systems that connect, sense, and interact with the physical world.",
-      "Our research is driven by a central question: How can wireless devices become smarter, more energy-efficient, and more deeply integrated with the physical world? To address this question, we combine wireless communication, sensing, artificial intelligence, and hardware–software co-design. Our research spans programmable wireless hardware, battery-free and ultra-low-power connectivity, multimodal sensing, and embodied intelligence—from novel devices and signal processing to learning algorithms and real-world systems.",
-      "Our long-term goal is to create intelligent IoT systems that operate with minimal energy, understand people and their surroundings, and work reliably in healthcare, robotics, smart environments, and industrial applications."
+      "Welcome to the **Wireless Intelligence for Networked and Embodied Things (WiNet) Lab** at **Zhejiang University**. We seek to build intelligent wireless systems that connect, sense, and interact with the physical world.",
+      "Our research is driven by a central question: **How can wireless devices become smarter, more energy-efficient, and more deeply integrated with the physical world?** To address this question, we combine wireless communication, sensing, artificial intelligence, and hardware–software co-design. Our research spans **programmable wireless hardware**, **battery-free and ultra-low-power connectivity**, **multimodal sensing**, and **embodied intelligence**—from novel devices and signal processing to learning algorithms and real-world systems.",
+      "Our long-term goal is to create **intelligent IoT systems** that operate with minimal energy, understand people and their surroundings, and work reliably in healthcare, robotics, smart environments, and industrial applications."
     ]
   },
   "news": {
-    "caption": "Updates from the group",
-    "title": "The next chapter starts here.",
-    "description": "Group news, publication announcements, and milestones will appear here.",
-    "status": "Updates coming soon"
+    "caption": "Updates from the lab",
+    "items": [
+      {
+        "id": "bcgscatter-2026",
+        "date": "2026-09",
+        "text": "Our work “**BCGscatter**” on low-power bio-interface was accepted by **Nature Portfolio Flexible Electronics**!"
+      },
+      {
+        "id": "nsfc-young-scientists-2026",
+        "date": "2026-08",
+        "text": "I won the **Excellent Young Scientists Fund of NSFC**! (Category B)"
+      },
+      {
+        "id": "magsticker-2026",
+        "date": "2026-08",
+        "text": "Our work “**Magsticker**” on physical computing across magnetic and RF domains was accepted by **Cell Device**! (**Cover Paper**)"
+      },
+      {
+        "id": "sub-thz-metasurface-2026",
+        "date": "2026-07",
+        "text": "Our work on programmable sub-THz metasurface was accepted by **Cell Reports Physical Science**!"
+      },
+      {
+        "id": "robot-mmwave-2026",
+        "date": "2026-06",
+        "text": "Our work on Robot-Assisted mmWave Sensing was accepted by **IEEE TMC**!"
+      },
+      {
+        "id": "nonlinear-lora-2026",
+        "date": "2026-04",
+        "text": "Our work on nonlinear-modulated LoRa networks was accepted by **IEEE TC**!"
+      },
+      {
+        "id": "softnb-2026",
+        "date": "2026-04",
+        "text": "Our work “**SoftNB**” on long-range wireless network was accepted by **IEEE TON**!"
+      }
+    ]
   }
 }

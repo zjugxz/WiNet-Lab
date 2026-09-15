@@ -2,15 +2,41 @@
 
 Updated 2026-09-15. The website is English-only; the online content editor is required but not implemented.
 
-The user explicitly declined the proposed local content-management tool. The current priority is integrating real material into the initial five-page website; the final online editor follows. Do not build a local editor as an intermediate deliverable. Keep content separate from presentation so the final editor can use the same data. The user has now supplied the Home introduction and word cloud; other page records are still pending.
+The user explicitly declined the proposed local content-management tool. The current priority is integrating real material into the initial five-page website; the final online editor follows. Do not build a local editor as an intermediate deliverable. Keep content separate from presentation so the final editor can use the same data. The user has now supplied the Home introduction, word cloud, and seven News records; other page records are still pending.
 
 ## Editing at this milestone
 
-src/data/home.json contains hero copy, heroImage metadata, about.paragraphs (three user-supplied paragraphs rendered individually), and News empty-state text. The headline accepts a newline for intentional line breaks. heroImage.src is relative to public/; width/height record original image dimensions and alt describes it in English. The current source is public/images/winet-lab-wordcloud.png. Events and Collaborators were removed at the user's request; do not restore those fields or sections without a new request. src/data/site.json contains the canonical name WiNet Lab, description, and navigation. Astro escapes these plain-text fields.
+src/data/home.json contains hero copy, heroImage metadata, about.paragraphs (three user-supplied paragraphs rendered individually), and news.items. Each news record contains a unique id, date in YYYY-MM format, and text. Records display in descending month order, retaining input order within the same month. The headline accepts a newline for intentional line breaks. heroImage.src is relative to public/; width/height record original image dimensions and alt describes it in English. The current source is public/images/winet-lab-wordcloud.png. Events and Collaborators were removed at the user's request; do not restore those fields or sections without a new request. src/data/site.json contains the canonical name WiNet Lab, description, and navigation.
 
-After a developer edits data, the development preview updates automatically. Production output must be regenerated with npm run build. JSON files are not yet a user-facing form tool, and News is not yet a record list. Arbitrary arrays will not render at this milestone.
+After a developer edits data, the development preview updates automatically. Production output must be regenerated with npm run build. News now renders the structured records described above; the four inner pages remain placeholders. JSON files are not a user-facing form tool and do not replace the planned online editor.
 
-The three About paragraphs, lab's full name, Zhejiang University affiliation, and word-cloud image were supplied by the user and are now integrated. Remaining hero slogans and the small brand mark are design drafts. Detailed research projects, publications, member details/photos, final logo, and news are still needed. The teacher's GitHub-related email is not approved public contact information.
+The three About paragraphs, lab's full name, Zhejiang University affiliation, word-cloud image, and seven News records were supplied by the user and are now integrated. The News wording retains the supplied journal titles and first-person award statement; the Chinese award note was rendered as Category B to keep the site English-only. Remaining hero slogans and the small brand mark are design drafts. Detailed research projects, publications, member details/photos, and final logo are still needed. The teacher's GitHub-related email is not approved public contact information.
+
+## 修改加粗和新闻内容
+
+打开 [home.json](../src/data/home.json)：
+
+- 介绍正文：about.paragraphs 下的三段字符串。
+- 新闻正文：news.items 中每条记录的 text。
+- 顶部简介：introduction。
+
+在需要加粗的文字两侧分别加两个星号。例如：
+
+```json
+"text": "Our work “**BCGscatter**” on low-power bio-interface was accepted by **Nature Portfolio Flexible Electronics**!"
+```
+
+页面显示时星号会转成加粗；删去两侧星号即可取消加粗。仅上述正文位置支持此写法，标题、日期、图片说明等其他字段目前按普通文字处理。标记应成对、放在同一段内；无需填写 HTML 标签。保留 JSON 的双引号与逗号，字符串中如果使用英文直双引号，需要写为 `\"`。
+
+粗体显示由 [global.css](../src/styles/global.css) 中的 strong 规则统一控制，目前为 font-weight: 700。日常选哪些文字加粗只改内容文件。
+
+当前 localhost:4321 是生产预览，保存 JSON 后需重新构建再刷新。在项目根目录的 PowerShell 中可使用现有本地 Node：
+
+```powershell
+& '.\.tools\node-v24.21.0-win-x64\node.exe' '.\node_modules\astro\bin\astro.mjs' build
+```
+
+若使用 npm run dev 启动的开发预览，则内容保存后自动更新。上述操作只影响本地预览，不上传 GitHub。
 
 ## Online tool proposal — separate approval required
 

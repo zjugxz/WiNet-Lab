@@ -4,9 +4,15 @@
 
 ## 当前优先任务 F02：真实资料整合与网站初版
 
+当前批次：用户提供7条2026年4月至9月的News，要求填充首页并说明如何加粗。已完成News结构化列表与介绍/新闻共用的 **加粗** 标记支持，等待用户验收。本轮未进入其他页面或后台。
+
+本批验证：类型检查、构建和6项浏览器测试全部通过；检查7条内容与日期顺序、strong实际字重700、页面不泄漏星号标记、无旧空状态，以及320/390/768/1440 px的布局与导航。桌面/手机截图已更新并目视检查。News文字根据用户提供内容整理，没有独立核验其学术事实。中文奖项括注以Category B呈现；保留“I won”及提供的英文名称。
+
+编辑说明：src/data/home.json中的about.paragraphs、introduction及news.items[].text支持成对 ** 标记；详情见content-maintenance.md。代码、数据、文档与截图纳入本地Git提交 feat: add lab news and editable text emphasis；哈希以git log为准。未上传GitHub。
+
 用户已明确不制作本地内容管理工具，先将现有资料整合到五页网站初版，随后直接实现最终在线后台。此消息调整开发优先级，不自动代表 F01 视觉或整个项目已验收。
 
-状态：首批 Home 资料整合已完成，等待用户验收。用户已提供三段正式英文介绍、用于 Home 的词云图，并要求统一名称为 WiNet Lab。介绍原文及段落保存于 src/data/home.json 的 about.paragraphs；完整名称及 Zhejiang University 归属均来自用户原文。其他四页和真实 News 仍待资料，不自动从老师个人主页搬入内容。
+首批记录：用户提供的三段正式英文介绍、Home词云图及WiNet Lab名称已整合。介绍文字及段落保存于src/data/home.json的about.paragraphs，当前添加了加粗标记，显示的原文内容保持不变；完整名称及Zhejiang University归属均来自用户原文。其他四页仍待资料，不自动从老师个人主页搬入内容。
 
 资料明确后，先核对并整合首批内容，交付可查看页面及验证结果，按既有逐项确认要求继续。网站继续全英文、纯白背景，Home 不包含 Events/Collaborators；不上传 GitHub。最终后台选型与认证尚未确定。
 

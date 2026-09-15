@@ -46,6 +46,9 @@
     font-weight: 400;
     line-height: 1.12;
   }
+  strong {
+    font-weight: 700;
+  }
   a,
   button {
     -webkit-tap-highlight-color: transparent;
@@ -283,39 +286,32 @@
     color: var(--muted);
   }
   .news-empty {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 28px 30px;
-    background: var(--paper);
-    border: 1px solid var(--line);
-  }
-  .empty-symbol {
-    color: var(--green);
-    font-family: var(--serif);
-    font-size: 38px;
-  }
-  .news-empty h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 8px;
-  }
-  .news-empty p {
-    font-size: 13px;
     color: var(--muted);
   }
-  .pill {
-    display: inline-block;
-    flex-shrink: 0;
-    font-size: 10px;
-    letter-spacing: 0.1px;
-    border: 1px solid #bdc9b5;
-    border-radius: 30px;
-    padding: 6px 12px;
-    color: #51624d;
+  .news-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
-  .news-empty .pill {
-    margin-left: auto;
+  .news-item {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .news-item:first-child {
+    padding-top: 0;
+  }
+  .news-item time {
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .news-item p {
+    font-size: 15px;
   }
   .footer-top p {
     font-family: var(--serif);
@@ -354,12 +350,6 @@
     }
     .hero h1 {
       font-size: 38px;
-    }
-    .news-empty {
-      flex-wrap: wrap;
-    }
-    .news-empty .pill {
-      margin-left: 58px;
     }
     .about {
       gap: 38px;
@@ -461,19 +451,10 @@
       text-align: right;
       font-size: 10px;
     }
-    .news-empty {
-      padding: 22px;
-      gap: 14px;
-    }
-    .news-empty > div {
-      flex: 1;
-      min-width: 200px;
-    }
-    .news-empty .pill {
-      margin-left: 0;
-    }
-    .empty-symbol {
-      display: none;
+    .news-item {
+      grid-template-columns: 1fr;
+      gap: 6px;
+      padding: 18px 0;
     }
     .footer-top {
       flex-wrap: wrap;

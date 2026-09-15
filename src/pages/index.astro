@@ -1,6 +1,8 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import EmphasisText from '../components/EmphasisText.astro';
+import NewsList from '../components/NewsList.astro';
 import home from '../data/home.json';
 import { assetPath, sitePath } from '../lib/paths';
 ---
@@ -18,7 +20,9 @@ import { assetPath, sitePath } from '../lib/paths';
             <span class:list={{ 'accent-text': index === 1 }}>{line}</span>
           ))}
         </h1>
-        <p class="hero-description">{home.introduction}</p>
+        <p class="hero-description">
+          <EmphasisText text={home.introduction} />
+        </p>
         <a class="button" href={sitePath('research')}>
           Explore our research <span aria-hidden="true">↗</span>
         </a>
@@ -42,7 +46,9 @@ import { assetPath, sitePath } from '../lib/paths';
       </div>
       <div class="about-copy">
         {home.about.paragraphs.map((paragraph) => (
-          <p>{paragraph}</p>
+          <p>
+            <EmphasisText text={paragraph} />
+          </p>
         ))}
         <a class="text-link" href={sitePath('people')}>
           Meet the lab <span aria-hidden="true">↗</span>
@@ -53,16 +59,7 @@ import { assetPath, sitePath } from '../lib/paths';
       <SectionHeading number="01" title="News" id="news-title">
         <span class="section-caption">{home.news.caption}</span>
       </SectionHeading>
-      <div class="news-empty">
-        <span class="empty-symbol" aria-hidden="true">
-          ↗
-        </span>
-        <div>
-          <h3>{home.news.title}</h3>
-          <p>{home.news.description}</p>
-        </div>
-        <span class="pill">{home.news.status}</span>
-      </div>
+      <NewsList items={home.news.items} />
     </section>
   </div>
 </SiteLayout>

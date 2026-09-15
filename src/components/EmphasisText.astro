@@ -1,0 +1,16 @@
+---
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+// Support paired **bold** markers only; Astro escapes all other text as usual.
+const parts = text.split(/(\*\*[^*\n]+\*\*)/g);
+---
+
+{parts.map((part) =>
+  part.startsWith('**') && part.endsWith('**') && part.length > 4 ? (
+    <strong>{part.slice(2, -2)}</strong>
+  ) : (
+    part
+  ),
+)}

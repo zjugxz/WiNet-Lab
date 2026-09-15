@@ -5,16 +5,18 @@ Status: Home layout and first supplied content batch implemented, pending user a
 ## Boundaries
 
 - `src/layouts/SiteLayout.astro`: document language, metadata, shared header/footer, global stylesheet, and skip link.
-- `src/components/`: shared Brand, navigation, footer, section heading, and small decorative brand mark. Header owns its mobile-menu script. Brand reads the name from site.json for both header and footer. Pages do not import other pages.
+- `src/components/`: shared Brand, navigation, footer, section heading, NewsList, EmphasisText, and small decorative brand mark. Header owns its mobile-menu script. Brand reads the name from site.json for both header and footer. Pages do not import other pages.
 - `src/pages/index.astro`: Home composition only.
 - `src/pages/[section].astro`: generates four explicitly unfinished route shells from navigation data. Replace with independent pages as their tasks are approved.
-- `src/data/site.json`: identity, description, navigation. `src/data/home.json`: hero copy, image metadata, the three supplied introduction paragraphs, and News empty-state text. Fixed interface labels remain in components.
+- `src/data/site.json`: identity, description, navigation. `src/data/home.json`: hero copy, image metadata, the three supplied introduction paragraphs, and seven supplied News records. Fixed interface labels remain in components.
 - `src/lib/paths.ts`: shared base-path handling for internal page links and static image URLs. File URLs do not receive page-style trailing slashes.
 - `public/images/winet-lab-wordcloud.png`: the user-supplied original Home image, 2154×1614; preserved without cropping or redrawing.
 - `src/styles/global.css`: design tokens, layout, components, responsive rules. No external fonts or image services.
 - `tests/` and `scripts/`: production-browser verification, screenshot capture, and a separate repository-base-path check.
 
 Astro generates five static HTML pages. Only mobile navigation needs client JavaScript. No application server, database, remote CMS, or deployment workflow is configured.
+
+NewsList receives structured records with unique id, YYYY-MM date, and nonempty text; validates those fields at build time; and sorts a copy by descending month while preserving input order within a month. It renders semantic list items and time elements, with a small empty state only when the list is empty. EmphasisText is shared by the hero description, introduction paragraphs, and News text. It supports paired **bold** markers only and renders semantic strong elements; other content remains escaped text. It does not render arbitrary HTML or provide a complete Markdown engine.
 
 ## Visual decisions
 

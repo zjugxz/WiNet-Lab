@@ -1,6 +1,6 @@
 # WiNet Lab website
 
-An English-language academic lab website, with a static Astro frontend and shared page components. Home now includes the supplied WiNet Lab introduction and word-cloud image. Research, Publications, People, and Contact are explicitly marked placeholders.
+An English-language academic lab website, with a static Astro frontend and shared page components. Home includes the supplied WiNet Lab introduction, word-cloud image, and seven News records. Introductory and News body text supports paired **bold** markers in the content data. Research, Publications, People, and Contact are explicitly marked placeholders.
 
 ## Local preview on this computer
 

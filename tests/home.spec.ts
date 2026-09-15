@@ -36,6 +36,30 @@ test('homepage content, links, local assets and accessibility', async ({
   await expect(
     page.getByRole('heading', { name: 'News', exact: true }),
   ).toBeVisible();
+  const news = page.getByRole('list', { name: 'Lab news' });
+  await expect(news.getByRole('listitem')).toHaveCount(7);
+  await expect(news.locator('time')).toHaveText([
+    'Sep 2026',
+    'Aug 2026',
+    'Aug 2026',
+    'Jul 2026',
+    'Jun 2026',
+    'Apr 2026',
+    'Apr 2026',
+  ]);
+  await expect(
+    news.locator('strong').filter({ hasText: /^BCGscatter$/ }),
+  ).toHaveCSS('font-weight', '700');
+  await expect(page.locator('.about-copy strong').first()).toHaveCSS(
+    'font-weight',
+    '700',
+  );
+  await expect(news).toContainText('Excellent Young Scientists Fund of NSFC');
+  await expect(news).toContainText('Cover Paper');
+  await expect(news).toContainText('SoftNB');
+  await expect(
+    page.getByText('Updates coming soon', { exact: true }),
+  ).toHaveCount(0);
   for (const title of ['Events', 'Collaborators']) {
     await expect(
       page.getByRole('heading', { name: title, exact: true }),
@@ -61,6 +85,7 @@ test('homepage content, links, local assets and accessibility', async ({
   const text = await page.locator('body').innerText();
   expect(text).not.toMatch(/[\u3400-\u9fff]/);
   expect(text).not.toMatch(/winet\s+group/i);
+  expect(text).not.toContain('**');
   await page.keyboard.press('Tab');
   await expect(
     page.getByRole('link', { name: 'Skip to content' }),
