@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WiNet Lab — Logo concepts</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #fff;
+        color: #202923;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      main {
+        max-width: 1140px;
+        padding: 42px 40px 32px;
+        margin: auto;
+      }
+      .eyebrow {
+        margin: 0 0 12px;
+        font-size: 11px;
+        color: #207b66;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: -0.7px;
+      }
+      .intro {
+        margin: 12px 0 34px;
+        color: #607067;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .options {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 1px solid #dde5df;
+        border-bottom: 1px solid #dde5df;
+      }
+      article {
+        padding: 24px 24px 28px;
+      }
+      article + article {
+        border-left: 1px solid #dde5df;
+      }
+      h2 {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        color: #607067;
+      }
+      .symbol {
+        display: block;
+        width: 108px;
+        height: 108px;
+        margin: 32px auto;
+      }
+      .description {
+        text-align: center;
+        font-size: 14px;
+        margin: 0;
+        line-height: 1.7;
+      }
+      .detail {
+        text-align: center;
+        color: #607067;
+        font-size: 12px;
+        margin: 4px 0 24px;
+        line-height: 1.6;
+      }
+      .lockup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 23px 0 0;
+        border-top: 1px solid #eef1ed;
+      }
+      .lockup img {
+        width: 48px;
+        height: 48px;
+      }
+      .wordmark {
+        display: grid;
+        gap: 3px;
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 0.92;
+        letter-spacing: -0.8px;
+      }
+      .note {
+        margin: 22px 0 0;
+        font-size: 11px;
+        color: #607067;
+        line-height: 1.6;
+      }
+      @media (max-width: 680px) {
+        main {
+          padding: 28px 20px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        .options {
+          grid-template-columns: 1fr;
+        }
+        article + article {
+          border-left: 0;
+          border-top: 1px solid #dde5df;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">WiNet Lab · Identity exploration</p>
+      <h1>Three ideas, one research identity.</h1>
+      <p class="intro">
+        Echoes, sensing fields and connected things. Simple symbols with a
+        shared wordmark.
+      </p>
+      <div class="options"></div>
+      <p class="note">
+        Concepts for review · Each lockup below uses a 48 px symbol · White
+        background · Two colors
+      </p>
+    </main>
+    <script>
+      const concepts = [
+        {
+          id: 'A',
+          name: 'Echo',
+          asset: 'echo.svg',
+          line: 'A device between two echoes.',
+          detail: 'Backscatter · Low-power wireless',
+        },
+        {
+          id: 'B',
+          name: 'Sensing',
+          asset: 'sensing.svg',
+          line: 'An eye on the physical world.',
+          detail: 'Wireless sensing · Physical interaction',
+        },
+        {
+          id: 'C',
+          name: 'Connection',
+          asset: 'connection.svg',
+          line: 'Two things, one shared connection.',
+          detail: 'Networked things · Hardware and intelligence',
+        },
+      ];
+      const container = document.querySelector('.options');
+      for (const concept of concepts) {
+        const card = document.createElement('article');
+        card.innerHTML = `
+          <h2>${concept.id} / ${concept.name}</h2>
+          <img class="symbol" src="${concept.asset}" alt="${concept.name} symbol" />
+          <p class="description">${concept.line}</p>
+          <p class="detail">${concept.detail}</p>
+          <div class="lockup" aria-label="WiNet Lab logo using ${concept.name}">
+            <img src="${concept.asset}" alt="" />
+            <span class="wordmark"><span>WiNet</span><span>Lab</span></span>
+          </div>`;
+        container.append(card);
+      }
+    </script>
+  </body>
+</html>

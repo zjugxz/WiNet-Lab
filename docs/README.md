@@ -18,4 +18,4 @@
 
 最新内容批次：7条News已整合，首页介绍和新闻正文支持成对 `**` 标记加粗。修改位置及保存后的预览步骤见 [内容维护说明](content-maintenance.md)。
 
-最新设计批次：用户取消生图，改为参考其提供的 MARS Lab 标识截图制作简约 logo。已实现绿色 W 波形、橙色信号点和深色两行字标，页眉/居中页脚共用。技术验证通过，等待用户确认。见 [设计说明](logo-design.md)、[验证记录](verification/F02-brand.md) 和 [logo 预览](verification/logo-preview.png)。API 及密钥排查已停止，历史记录不代表待办。
+最新设计批次：用户明确不能直接用字母作图标，W 波形方案未获验收。已绘制 A 回波、B 感知之眼、C 跨域连接三个候选，等待用户选择后再替换网站。见 [设计说明](logo-design.md)、[候选对比图](design/logo-options/comparison.png) 与 [可打开的对比页面](design/logo-options/index.html)。API 及密钥排查已停止，历史记录不代表待办。

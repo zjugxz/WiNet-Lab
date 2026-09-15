@@ -1,8 +1,20 @@
 # WiNet Lab logo 设计记录
 
-日期：2026-09-15。当前状态：用户取消生图，改用简约 SVG 标识；已实现并验证，等待用户确认。
+日期：2026-09-15。当前状态：用户明确图标不能直接是字母，已准备三个图形候选，等待选择。
 
-## 当前方案：W 波形与两行字标
+## 当前候选：从研究对象提炼图形
+
+见 [桌面对比图](design/logo-options/comparison.png)、[手机对比图](design/logo-options/comparison-mobile.png) 和 [独立对比页面](design/logo-options/index.html)。这组图形均为本地 SVG 绘制，无生图 API；没有替换网站现有组件。
+
+- A 回波 / Echo：两侧简化回波包围一个菱形器件。以反向散射、低功耗无线和物理器件交互为设计隐喻。推荐作为细化方向，因为它更贴近用户提供的研究主题，且只有三个图形元素。
+- B 感知之眼 / Sensing：眼形轮廓与感知中心，强调理解物理世界。容易辨认，但可能使人首先联想到视觉研究，需要用户判断是否符合实验室定位。
+- C 跨域连接 / Connection：两个链环由橙色连接段相连，强调设备联网与软硬件协同。含义直接，但作为通用“链接”符号，课题组辨识度较弱。
+
+所有方案共用绿色 #207b66、橙色 #df8747、深色两行字标，白色背景。对比页使用同一模板渲染，原图标分别保存在 [echo.svg](design/logo-options/echo.svg)、[sensing.svg](design/logo-options/sensing.svg)、[connection.svg](design/logo-options/connection.svg)。上半部分108 px图形，下半部分48 px图文组合。选定后再按实际网站尺寸细化并接入共享 Brand/Mark；当前网站的 W 图标不代表已验收。
+
+验证脚本为 scripts/capture-logo-options.mjs，检查三张卡片、六处 SVG 引用加载、无脚本错误和390 px无横向溢出，并输出截图。已目视确认图形轮廓与小尺寸组合可辨认；SVG XML 解析通过。这是概念验证，不代替用户设计验收。
+
+## 历史：W 波形与两行字标（未获验收）
 
 用户提供的 MARS Lab 标识截图体现了清晰轮廓、少量颜色和紧凑两行字样。WiNet Lab 对应采用一条绿色连续 W 波形，右上保留一个橙色信号点；W 对应 Wireless，连续起伏呼应无线波形，信号点作为轻量点缀。字标使用深色加粗 WiNet / Lab 两行布局，页眉与居中页脚共享。图标只有一个 path 和一个 circle，适合小尺寸显示，无渐变、网络细线或额外口号。
 
