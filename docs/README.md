@@ -18,4 +18,4 @@
 
 最新内容批次：7条News已整合，首页介绍和新闻正文支持成对 `**` 标记加粗。修改位置及保存后的预览步骤见 [内容维护说明](content-maintenance.md)。
 
-最新设计批次：用户明确不能直接用字母作图标，W 波形方案未获验收。已绘制 A 回波、B 感知之眼、C 跨域连接三个候选，等待用户选择后再替换网站。见 [设计说明](logo-design.md)、[候选对比图](design/logo-options/comparison.png) 与 [可打开的对比页面](design/logo-options/index.html)。API 及密钥排查已停止，历史记录不代表待办。
+最新设计决定：用户不采用 A/B/C 三个候选，要求“先使用现在的版本”。网站保留现有绿色 W 波形、橙色信号点与两行 WiNet / Lab 字标，作为用户确认的暂用方案；不是最终品牌定稿。见 [设计说明](logo-design.md) 与 [现用 logo](verification/logo-preview.png)。候选图及 API 尝试归档，暂停 logo 探索，不再等待选图或排查密钥。
