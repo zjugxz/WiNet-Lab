@@ -18,4 +18,4 @@
 
 最新内容批次：7条News已整合，首页介绍和新闻正文支持成对 `**` 标记加粗。修改位置及保存后的预览步骤见 [内容维护说明](content-maintenance.md)。
 
-最新设计批次：页脚标识居中，删除标语及联系跳转。用户不满意上一版彩色 logo，已授权使用 API 生成一张新 logo。本次官方接口返回 401 / invalid_api_key，尚无新图片，待用户补充 key 来源或更新有效 key。见 [设计简报、实际提示词和调用记录](logo-design.md)。此前页面技术检查见 [验证记录](verification/F02-brand.md) 和 [页脚预览](verification/footer-logo.png)，不代表设计已验收。
+最新设计批次：页脚标识居中，删除标语及联系跳转。用户不满意上一版彩色 logo，已授权使用 API 生成一张新 logo，并确认 key 来自 OpenAI 官方平台。本次接口返回 401 / invalid_api_key，尚无新图片，待用户在本机更新有效 key。见 [设计简报、实际提示词和调用记录](logo-design.md)。此前页面技术检查见 [验证记录](verification/F02-brand.md) 和 [页脚预览](verification/footer-logo.png)，不代表设计已验收。
