@@ -34,7 +34,7 @@ try {
     .evaluate((element) => getComputedStyle(element).backgroundColor);
   assert.equal(
     background,
-    'rgb(247, 247, 240)',
+    'rgb(255, 255, 255)',
     'Styles must load under the repository base path',
   );
   for (const name of [

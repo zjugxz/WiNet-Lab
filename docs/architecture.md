@@ -17,9 +17,9 @@ Astro generates five static HTML pages. Only mobile navigation needs client Java
 
 ## Visual decisions
 
-The MARS Lab reference informed the five-page navigation and Home sequence: visual introduction, group introduction, News, Events, Collaborators, footer. Its page text and stylesheet structure were read; the live reference screenshot failed with ERR_CONNECTION_RESET. Pixel-level equivalence has not been verified or claimed.
+The MARS Lab reference informed the five-page navigation. Following user review, Home now contains the visual introduction, group introduction, News, and footer; Events and Collaborators were removed from markup, content data, and styles. The reference is guidance, not a requirement to reproduce every section. Its page text and stylesheet structure were read; the live reference screenshot failed with ERR_CONNECTION_RESET. Pixel-level equivalence has not been verified or claimed.
 
-This prototype uses warm off-white, forest green, system sans-serif body text, and Georgia headings. The network illustration, group mark, and event artwork are original code graphics, not approved branding or actual research imagery. No reference-site people, publications, partner logos, or photos were copied. Events is an empty-state panel; there is no carousel until real event records exist.
+This prototype uses a pure-white (#ffffff) page background, forest green accents, system sans-serif body text, and Georgia headings. The footer, News panel, and illustration container also use white; the illustration retains its own graphic colors. The network illustration and group mark are original code graphics, not approved branding or actual research imagery. No reference-site people, publications, partner logos, or photos were copied.
 
 ## Runtime
 

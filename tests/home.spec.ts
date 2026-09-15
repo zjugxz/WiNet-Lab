@@ -12,11 +12,18 @@ test('homepage content, links, local assets and accessibility', async ({
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page).toHaveTitle('Home | Winet Group');
   await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
-  for (const title of ['News', 'Events', 'Collaborators']) {
+  await expect(
+    page.getByRole('heading', { name: 'News', exact: true }),
+  ).toBeVisible();
+  for (const title of ['Events', 'Collaborators']) {
     await expect(
       page.getByRole('heading', { name: title, exact: true }),
-    ).toBeVisible();
+    ).toHaveCount(0);
   }
+  await expect(page.locator('body')).toHaveCSS(
+    'background-color',
+    'rgb(255, 255, 255)',
+  );
   await expect(
     page
       .getByRole('navigation')
