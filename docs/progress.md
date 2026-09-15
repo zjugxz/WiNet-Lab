@@ -2,6 +2,12 @@
 
 更新时间：2026-09-15（Asia/Shanghai）。
 
+## 最新状态：用户要求使用 gpt-image 重新设计 logo
+
+用户对下方记录的 W 形节点 logo 不满意，要求根据实验室研究方向调用 gpt-image 生成。该版设计未通过用户验收。当前已整理 [生成设计简报和提示词](logo-design.md)，尚未产生新图片或改动网站代码。
+
+工具阻塞：本会话没有内置 image_gen 可调用工具。imagegen 技能允许 CLI/API 备选，但明确要求用户选择该备选，且需本机 OPENAI_API_KEY。等待用户确认是否采用 API 方式；未调用 API、未检查或读取密钥值。此次仅更新文档并保存本地 Git 提交 `docs: prepare research-led logo generation brief`，未上传 GitHub。原有用户 home.json 与 index.astro 修改继续保留。
+
 ## 当前批次：页脚精简与彩色 logo
 
 用户要求已实现：页脚上半部分只保留居中的 WiNet Lab 标识，删除标语与 Get in touch 跳转。共享 Mark/Brand 组件更新为 W 形连接节点、无线信号弧线、靛蓝/青绿与橙色节点，以及渐变加粗字标；页眉同步使用同一版 logo。页脚不加副标题，页眉辅助文字改为 Wireless Intelligence。
