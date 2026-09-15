@@ -20,6 +20,9 @@ try {
       fullPage: true,
     });
     if (name === 'home-desktop') {
+      await page.locator('.site-header .brand').screenshot({
+        path: fileURLToPath(new URL('logo-preview.png', directory)),
+      });
       await page.locator('.site-footer').screenshot({
         path: fileURLToPath(new URL('footer-logo.png', directory)),
       });

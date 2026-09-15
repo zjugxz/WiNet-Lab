@@ -134,34 +134,24 @@
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     line-height: 1.2;
     flex-shrink: 0;
   }
   .brand svg {
-    width: 54px;
-    height: 54px;
+    width: 58px;
+    height: 58px;
     flex-shrink: 0;
   }
   .brand-name {
-    display: block;
-    font-size: 29px;
-    font-weight: 750;
-    letter-spacing: -1.2px;
+    display: grid;
+    gap: 3px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -1px;
     white-space: nowrap;
-    color: #36518b;
-    background: linear-gradient(110deg, #5054a6 12%, #36518b 48%, #147b6e 85%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .brand small {
-    display: block;
-    font-size: 8px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.55px;
-    margin-top: 4px;
-    color: #53657a;
+    color: #202923;
   }
   nav {
     display: flex;
@@ -328,7 +318,7 @@
     height: 64px;
   }
   .footer-top .brand-name {
-    font-size: 36px;
+    font-size: 30px;
   }
   .placeholder-page {
     padding-block: 95px 120px;
@@ -376,12 +366,8 @@
       font-size: 24px;
     }
     .brand svg {
-      width: 44px;
-      height: 44px;
-    }
-    .brand small {
-      font-size: 7px;
-      letter-spacing: 1.05px;
+      width: 50px;
+      height: 50px;
     }
     .menu-toggle {
       display: inline-flex;
@@ -489,12 +475,6 @@
     }
     * {
       transition: none !important;
-    }
-  }
-  @media (forced-colors: active) {
-    .brand-name {
-      background: none;
-      -webkit-text-fill-color: currentColor;
     }
   }
   @media print {

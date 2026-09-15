@@ -1,6 +1,18 @@
-# WiNet Lab 图像生成 logo 设计简报
+# WiNet Lab logo 设计记录
 
-日期：2026-09-15。状态：用户已授权 API；已尝试一次生成，因 HTTP 401 / invalid_api_key 失败，尚未生成图片。
+日期：2026-09-15。当前状态：用户取消生图，改用简约 SVG 标识；已实现并验证，等待用户确认。
+
+## 当前方案：W 波形与两行字标
+
+用户提供的 MARS Lab 标识截图体现了清晰轮廓、少量颜色和紧凑两行字样。WiNet Lab 对应采用一条绿色连续 W 波形，右上保留一个橙色信号点；W 对应 Wireless，连续起伏呼应无线波形，信号点作为轻量点缀。字标使用深色加粗 WiNet / Lab 两行布局，页眉与居中页脚共享。图标只有一个 path 和一个 circle，适合小尺寸显示，无渐变、网络细线或额外口号。
+
+源码为 [Mark.astro](../src/components/Mark.astro)、[Brand.astro](../src/components/Brand.astro)，样式在 [global.css](../src/styles/global.css)。见 [logo 预览](verification/logo-preview.png) 和 [验证记录](verification/F02-brand.md)。此方案借鉴参考图的简洁程度与图文比例，未复制其行星、轨道和星形。
+
+用户已取消下面的图像生成流程，不再排查 API key、不再调用生图服务。无需删除或更改用户已配置的系统密钥；本轮没有读取或改动该配置。
+
+## 历史存档：已取消的图像生成尝试
+
+以下为此前过程，不是当前待办。曾尝试一次 API 请求，因 HTTP 401 / invalid_api_key 失败，没有产生生成图片。其提示词和调用记录保留用于追溯。
 
 用户对上一版代码绘制的 W 形节点图标不满意，明确要求调用 gpt-image，围绕实验室研究方向重新绘制。上一版 logo 未获验收；此前居中页脚和移除标语/联系跳转的需求继续有效。
 

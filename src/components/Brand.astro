@@ -2,16 +2,14 @@
 import site from '../data/site.json';
 import { sitePath } from '../lib/paths';
 import Mark from './Mark.astro';
-interface Props {
-  tagline?: boolean;
-}
-const { tagline = false } = Astro.props;
+const words = site.name.trim().split(/\s+/);
 ---
 
 <a class="brand" href={sitePath()} aria-label={`${site.name} home`}>
   <Mark />
-  <span class="brand-type">
-    <span class="brand-name">{site.name}</span>
-    {tagline && <small>Wireless Intelligence</small>}
+  <span class="brand-name">
+    {words.map((word) => (
+      <span>{word}</span>
+    ))}
   </span>
 </a>
