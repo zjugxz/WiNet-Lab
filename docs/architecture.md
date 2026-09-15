@@ -6,6 +6,7 @@ Status: Home layout and first supplied content batch implemented, pending user a
 
 - `src/layouts/SiteLayout.astro`: document language, metadata, shared header/footer, global stylesheet, and skip link.
 - `src/components/`: shared Brand, navigation, footer, section heading, NewsList, EmphasisText, and small decorative brand mark. Header owns its mobile-menu script. Brand reads the name from site.json for both header and footer. Pages do not import other pages.
+- Mobile header layout uses a two-column grid with a minimum 86 px first row for the brand and menu button; the expanded navigation spans the next row. This keeps the toggle stationary and its focus outline visible. Regression tests use fixed click coordinates at 320, 390, and 760 px so they cannot silently follow a moving button.
 - `src/components/Mark.astro`: single inline SVG source for the minimal W waveform and signal dot, with no external assets or IDs. `Brand.astro` splits the canonical site name into stacked words, paired with the same mark in the header and footer. It has no tagline prop. Wordmark colors and sizes live in the shared stylesheet; footer centers the component at a larger size. The SVG is decorative and the home link has the complete accessible name. Plain text color works in forced-colors mode without a gradient override.
 - `src/pages/index.astro`: Home composition only.
 - `src/pages/[section].astro`: generates four explicitly unfinished route shells from navigation data. Replace with independent pages as their tasks are approved.

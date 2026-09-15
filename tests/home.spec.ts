@@ -128,6 +128,64 @@ test('all navigation destinations share the layout and explicitly identify draft
   await expect(page).toHaveURL('/');
 });
 
+for (const width of [320, 390, 760]) {
+  test(`mobile menu stays in place for repeated clicks at ${width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto('/');
+    const menu = page.getByRole('button', { name: 'Menu', exact: true });
+    const nav = page.getByRole('navigation');
+    const closed = (await menu.boundingBox())!;
+    const brand = page.locator('.site-header .brand');
+    const closedBrand = (await brand.boundingBox())!;
+
+    // Keep the original coordinates: locator.click() would follow a moving button.
+    for (const fraction of [0.25, 0.5, 0.75]) {
+      const x = closed.x + closed.width / 2;
+      const y = closed.y + closed.height * fraction;
+      await page.mouse.click(x, y);
+      await expect(menu).toHaveAttribute('aria-expanded', 'true');
+      await expect(nav).toBeVisible();
+      const opened = (await menu.boundingBox())!;
+      expect(opened.x).toBeCloseTo(closed.x, 1);
+      expect(opened.y).toBeCloseTo(closed.y, 1);
+      expect((await brand.boundingBox())!.y).toBeCloseTo(closedBrand.y, 1);
+      await page.mouse.click(x, y);
+      await expect(menu).toHaveAttribute('aria-expanded', 'false');
+      await expect(nav).not.toBeVisible();
+    }
+
+    await menu.focus();
+    await page.keyboard.press('Enter');
+    await expect(menu).toHaveAttribute('aria-expanded', 'true');
+    const focus = await menu.evaluate((button) => {
+      const rect = button.getBoundingClientRect();
+      const style = getComputedStyle(button);
+      const inset =
+        parseFloat(style.outlineWidth) + parseFloat(style.outlineOffset);
+      return {
+        visible: button.matches(':focus-visible'),
+        top: rect.top - inset,
+        left: rect.left - inset,
+        right: rect.right + inset,
+        bottom: rect.bottom + inset,
+      };
+    });
+    expect(focus.visible).toBe(true);
+    expect(focus.top).toBeGreaterThanOrEqual(0);
+    expect(focus.left).toBeGreaterThanOrEqual(0);
+    expect(focus.right).toBeLessThanOrEqual(width);
+    expect(focus.bottom).toBeLessThanOrEqual(844);
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth),
+    ).toBeLessThanOrEqual(width);
+    await page.keyboard.press('Escape');
+    await expect(menu).toHaveAttribute('aria-expanded', 'false');
+    await expect(menu).toBeFocused();
+  });
+}
+
 for (const width of [320, 390, 768, 1440]) {
   test(`homepage fits ${width}px and has accessible navigation`, async ({
     page,
