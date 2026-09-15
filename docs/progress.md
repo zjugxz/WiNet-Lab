@@ -4,6 +4,8 @@
 
 ## 最新状态：用户要求使用 gpt-image 重新设计 logo
 
+最新补充：用户询问仅有 API key 时如何调用，已核对官方文档并提供 Windows 环境变量及图片接口调用说明，详见 [API 指导记录](logo-design.md#api-调用指导补充)。本轮仅说明调用方式，未代为运行付费请求、未读取密钥、未生成图片。文档纳入本地 Git 提交 `docs: explain image API authentication and invocation`。
+
 用户对下方记录的 W 形节点 logo 不满意，要求根据实验室研究方向调用 gpt-image 生成。该版设计未通过用户验收。当前已整理 [生成设计简报和提示词](logo-design.md)，尚未产生新图片或改动网站代码。
 
 工具阻塞：本会话没有内置 image_gen 可调用工具。imagegen 技能允许 CLI/API 备选，但明确要求用户选择该备选，且需本机 OPENAI_API_KEY。等待用户确认是否采用 API 方式；未调用 API、未检查或读取密钥值。此次仅更新文档并保存本地 Git 提交 `docs: prepare research-led logo generation brief`，未上传 GitHub。原有用户 home.json 与 index.astro 修改继续保留。

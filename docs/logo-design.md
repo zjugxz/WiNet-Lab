@@ -34,3 +34,11 @@ Constraints: Only this name, no additional slogans or university seals. Original
 当前未切换到 API，未调用生成服务，未生成新图片，也未改动网站代码。下一步等待用户明确选择 API 备选；若选择，先阅读技能的 CLI/API 专用说明、核验本机配置，再使用其提供的脚本生成。不得将当前的“gpt-image 工具”请求记为已确认 API 路径。
 
 生成成功后的本任务验收：检查研究主题表达、字样准确、白底、小尺寸清晰度；将候选图片保存在项目内，记录实际使用的提示词和生成模式，再验证页面布局。用户确认设计后才进入下一子任务。整个项目验收前不上传 GitHub。
+
+## API 调用指导补充
+
+用户随后询问“只有 API key 应该如何调用”。本轮为指导说明，不视为已授权 agent 执行付费生成；未读取密钥或发送生成请求。
+
+2026-09-15 已核对并读取 [官方图片生成指南](https://developers.openai.com/api/docs/guides/image-generation)、[GPT Image 2 模型页](https://developers.openai.com/api/docs/models/gpt-image-2) 和 [官方快速入门](https://developers.openai.com/api/docs/quickstart)。直接生成接口为 POST https://api.openai.com/v1/images/generations，使用 Authorization: Bearer 认证，JSON 中指定 model 和 prompt。以 gpt-image-2 举例，使用1024x1024、medium、PNG；返回 data[0].b64_json，解码后保存图片。不需要在本机部署模型。该模型的免费层不支持；实际使用需可用额度及权限，GPT Image 可能要求组织验证。没有核验用户账户权限或余额。
+
+Windows 指导使用用户环境变量 OPENAI_API_KEY，不将密钥粘贴到聊天或存入网站代码、Git。环境变量设置后需重新打开终端；若要由 agent 使用，也需重启相应应用以继承环境。提供 PowerShell 直接 HTTP 调用示例作为教学内容，运行时会产生 API 用量。本轮不安装 SDK、不创建或执行独立生成脚本。key 若由第三方提供，应先依据服务商文档确认地址和模型权限，不推断其适用于官方接口。
