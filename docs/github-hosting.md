@@ -16,7 +16,27 @@
 - 项目站点需正确处理仓库子路径下的链接、图片和页面路由；实际仓库名未定，不硬编码。
 - GitHub Free 支持公开仓库的 Pages；若源仓库需私有，先核对老师账号方案与 Pages 资格。尚未获得公开源码决定。
 
-## 在线内容维护
+## 老师个人主页实例（2026-09-15 只读核验）
+
+用户提供老师主页 https://zjugxz.github.io/ 。已读取对应公开仓库 https://github.com/zjugxz/zjugxz.github.io ，确认该个人主页所属 GitHub 账号为 zjugxz，仓库名称为 zjugxz.github.io。此事实不等于已核验用户新建的课题组仓库，也不证明此前提供邮箱与该账号的关联或当前操作者权限。
+
+仓库包含 _pages、_news、_bibliography、_layouts、assets 等目录，README 标明 al-folio/Jekyll。_config.yml 的 url 为 https://zjugxz.github.io，baseurl 为空；论文来源配置为 _bibliography/papers.bib。
+
+.github/workflows/deploy.yml 配置在 main/master 的指定路径变更或手动触发时运行 Jekyll 构建，将 _site 输出交给发布 action；PR 运行不执行其发布步骤。未读取管理权限下的 Pages 设置或核对最近运行日志，不能将读取工作流当作当前部署健康检查。
+
+原理：仓库存储内容、图片和模板并保留版本；构建将内容与模板转成 HTML/CSS/JavaScript；Pages 托管生成的静态文件；浏览器请求并显示它们。配置正确且构建发布成功后，内容更新才会反映到网站。
+
+若课题组最终选择该账号下的 winet-group 仓库，项目站点默认地址可为 https://zjugxz.github.io/winet-group/ ，与现有个人主页分开管理。该地址仅为条件示例，尚未确认目标仓库或发布。
+
+本次仅解释并核查公开信息，没有更改老师仓库或网站。用户尚未同意此前提出的本地录入工具过渡方案；在线编辑需求保持有效，编辑器尚未实现。
+
+实例来源：
+
+- https://github.com/zjugxz/zjugxz.github.io
+- https://raw.githubusercontent.com/zjugxz/zjugxz.github.io/master/_config.yml
+- https://raw.githubusercontent.com/zjugxz/zjugxz.github.io/master/.github/workflows/deploy.yml
+
+## 在线内容维护方案
 
 可行方向是“表单 CMS 编辑结构化内容 → 更新 GitHub 内容仓库 → 自动构建并部署 Pages”。用户无需日常编辑组件代码。
 
