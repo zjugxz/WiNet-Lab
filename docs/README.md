@@ -2,7 +2,7 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
-当前任务：[GitHub Pages部署配置与发布步骤](github-pages-preview.md)。目标为 zjugxz/WiNet-Lab；本地Astro站点配置和自动部署工作流已补齐，类型检查、9项浏览器测试及 /WiNet-Lab/ 子路径验证通过。尚未上传或启用Pages，远程仓库实时状态尚未核实。
+当前任务：[GitHub Pages部署配置与发布步骤](github-pages-preview.md)。目标为 zjugxz/WiNet-Lab；部署配置及现有Home代码已本地提交，origin已关联，类型检查、9项浏览器测试及 /WiNet-Lab/ 子路径验证通过。仓库API已确认公开且Pages已开启；首次推送因本机Git未获授权而失败。用户现改为手动上传，等待推送和部署结果。
 
 待资料：[Publications 资料与实现准备](publications.md)。用户要求参考 MARS Lab Publications，并已选择自行提供收录论文清单；参考布局与筛选核对完成，等待实际清单后填充，本页仍为占位路由。
 
@@ -20,7 +20,7 @@
 8. [F02 首批资料整合验证](verification/F02-home.md)
 9. [域名调研存档（已取消购买）](domain-research.md)
 
-用户已取消购买域名和本地内容管理工具。Home 三段英文介绍、词云及News已整合，其他四页仍为占位路由。用户允许先上线现有初版，本地部署配置已完成；在线后台仍待实现，未上传GitHub。实际仓库信息留待部署前核验。当前状态以 progress.md 顶部为准，域名相关记录仅供历史存档。
+用户已取消购买域名和本地内容管理工具。Home 三段英文介绍、词云及News已整合，其他四页仍为占位路由。用户允许先上线现有初版，本地部署配置已完成；在线后台仍待实现，未上传GitHub。当前状态以 progress.md 顶部为准，域名相关记录仅供历史存档。
 
 最新内容批次：7条News已整合，首页介绍和新闻正文支持成对 `**` 标记加粗。修改位置及保存后的预览步骤见 [内容维护说明](content-maintenance.md)。
 

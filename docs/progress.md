@@ -6,7 +6,11 @@
 
 用户报告已开启GitHub Pages，并明确要求帮助上传代码，已授权向 https://github.com/zjugxz/WiNet-Lab 推送当前初版及必要的部署验证。本轮保存现有Home内容修改，关联目标远程，执行非强制首次推送，再检查工作流和在线站点；不涉及其他页面内容或后台实现。
 
-开始时HEAD为a98fce7，仅有home.json与index.astro两份已审阅、已随上轮构建/9项浏览器测试验证的修改。本轮git ls-remote连接成功且未返回任何HEAD/main/master提交，目标尚无可见默认分支提交。GitHub API的PowerShell读取仍遇到TLS错误；Pages开启状态目前来自用户报告，待实际部署核实。上传与部署结果待补充。
+开始时HEAD为a98fce7，仅有home.json与index.astro两份已审阅、已随上轮构建/9项浏览器测试验证的修改，已与任务记录保存为本地提交f305eea。origin已关联目标仓库。本轮git ls-remote连接成功且未返回任何HEAD/main/master提交；随后通过Git自带curl读取GitHub仓库API，确认仓库公开、默认分支main、size为0、has_pages为true。PowerShell API请求的TLS问题不再阻塞仓库核查；Pages构建来源及部署仍待验证。
+
+首次非交互推送因本机没有可用GitHub凭据失败，未上传代码。用户随后报告已在Firefox登录；复查本机Git凭据仍为空，推送仍未通过认证。已结束先前未完成的浏览器授权进程，改用Git Credential Manager设备授权，便于用户在已登录的Firefox中完成本机Git授权；不要求用户向聊天发送密码或令牌。授权与部署结果待补充。
+
+最新交接：用户改为手动运行上传，已停止本任务启动的后台登录进程，不再自动推送。浏览器和设备授权尝试均未取得本机登录成功证据；直连重试也未返回验证码。当前main分支代码已提交，origin地址已核对；只需在项目目录手动执行git push -u origin main，并在提示时完成Git Credential Manager授权。随后检查Actions的build/deploy与在线站点。此次交接文档保存为本地Git提交，哈希以git log为准；代码上传、部署成功及用户验收仍未发生，等待用户手动操作结果。
 
 ## 历史：补齐本地部署配置
 
