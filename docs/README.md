@@ -2,7 +2,9 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
-当前任务：[Publications 资料与实现准备](publications.md)。用户要求参考 MARS Lab Publications，并已选择自行提供收录论文清单；参考布局与筛选核对完成，等待实际清单后填充，本页仍为占位路由。
+当前任务：[将现有初版发布到GitHub Pages的操作指导](github-pages-preview.md)。用户于2026-09-17指定 zjugxz/WiNet-Lab 并提出初版提前上线；已提供配置与操作步骤，本轮未实施远程上传或启用Pages。仓库实时状态因连接失败尚未核实。
+
+待资料：[Publications 资料与实现准备](publications.md)。用户要求参考 MARS Lab Publications，并已选择自行提供收录论文清单；参考布局与筛选核对完成，等待实际清单后填充，本页仍为占位路由。
 
 最新修复：[Home 检查与手机菜单修复（2026-09-15）](verification/Home-review-2026-09-15.md)。手机菜单展开后按钮上移的问题已修复；类型检查、构建和9项浏览器测试通过，包含320/390/760 px下固定坐标连续点击与焦点框验证。[修复后截图](verification/home-menu-fixed.png)已目视检查，等待用户验收；其他四页仍为占位页。
 

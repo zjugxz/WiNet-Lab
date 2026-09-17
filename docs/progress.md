@@ -1,8 +1,18 @@
 # 当前进度
 
-更新时间：2026-09-15（Asia/Shanghai）。
+更新时间：2026-09-17（Asia/Shanghai）。
 
-## 当前任务：Publications 资料与实现准备
+## 当前任务：现有初版的 GitHub Pages 发布指导
+
+用户提供目标仓库 https://github.com/zjugxz/WiNet-Lab ，希望将现有代码上传以查看初版网站，并询问操作步骤。按最新指示允许此初版提前发布，不再以整站完成作为首次发布前提；这不等于整站已验收。本轮范围为仓库/本地状态核查及具体操作指导，未修改Astro配置、添加实际工作流、关联远程或推送代码。
+
+已确认本地main分支无远程，现有Astro静态配置支持SITE_BASE，但没有部署工作流和site设置。两份用户源码修改仍保留。已使用真实大小写的 /WiNet-Lab/ 子路径独立构建至 .tools/github-preview-dist：5页构建成功，首页导航、CSS及词云地址包含正确前缀；未重复整套浏览器测试，也未将构建成功视为部署成功。
+
+外部核查限制：网页工具未取得目标仓库，沙箱外只读请求仍出现API TLS失败及GitHub连接失败。没有核实目标仓库是否为空、是否公开、默认分支、操作者权限或Pages设置。根据用户提供的仓库URL，默认网站地址预计为 https://zjugxz.github.io/WiNet-Lab/ ，以实际部署结果为准。
+
+已整理 [完整发布指南](github-pages-preview.md)，包括待修改的Astro配置、待新增的Actions工作流、Pages设置、首次提交/推送命令和上线验证。规则及文档保存为本地Git提交 `docs: explain initial GitHub Pages publication`；未上传GitHub。下一步由用户按指南操作，或按其进一步实施请求执行；无需重复确认是否允许初版早于整站完成发布。Publications清单仍未提供，本轮未填充其他页面。
+
+## 待资料：Publications 资料与实现准备
 
 用户明确要求开始填充 Publications，并参考 MARS Lab 的实现。本轮已按新指示开展本页准备，不再要求重复批准进入本页；该指示不等于整个 Home 或整站正式验收。用户已回复选择“我会提供需要收录的论文清单”，因此不自动导入老师个人主页、参考站论文或以 News 推导完整文献。
 
