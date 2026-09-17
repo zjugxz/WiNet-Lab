@@ -2,7 +2,13 @@
 
 更新时间：2026-09-17（Asia/Shanghai）。
 
-## 当前任务：补齐本地部署配置
+## 当前任务：首次上传与部署验证
+
+用户报告已开启GitHub Pages，并明确要求帮助上传代码，已授权向 https://github.com/zjugxz/WiNet-Lab 推送当前初版及必要的部署验证。本轮保存现有Home内容修改，关联目标远程，执行非强制首次推送，再检查工作流和在线站点；不涉及其他页面内容或后台实现。
+
+开始时HEAD为a98fce7，仅有home.json与index.astro两份已审阅、已随上轮构建/9项浏览器测试验证的修改。本轮git ls-remote连接成功且未返回任何HEAD/main/master提交，目标尚无可见默认分支提交。GitHub API的PowerShell读取仍遇到TLS错误；Pages开启状态目前来自用户报告，待实际部署核实。上传与部署结果待补充。
+
+## 历史：补齐本地部署配置
 
 用户明确要求实施部署配置。本轮范围为 Astro site 设置、GitHub Pages 自动构建发布工作流和实际仓库子路径验证；验收标准为本地根路径与 /WiNet-Lab/ 构建和资源/导航正常，工作流结构有效，默认本地预览可继续使用。目标为 zjugxz/WiNet-Lab，默认部署地址为 https://zjugxz.github.io/WiNet-Lab/ 。本轮不执行推送、不修改远程设置。
 
