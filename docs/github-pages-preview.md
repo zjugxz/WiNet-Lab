@@ -1,12 +1,12 @@
 # 将现有初版发布到 GitHub Pages
 
-更新：2026-09-17（Asia/Shanghai）。目标仓库由用户提供：[zjugxz/WiNet-Lab](https://github.com/zjugxz/WiNet-Lab)。本文是操作指导，以下配置尚未写入项目，尚未关联远程、推送代码或启用 Pages。
+更新：2026-09-17（Asia/Shanghai）。目标仓库由用户提供：[zjugxz/WiNet-Lab](https://github.com/zjugxz/WiNet-Lab)。用户随后授权补齐部署配置，现已在本地实现并验证。尚未关联远程、推送代码或启用 Pages。
 
 ## 当前核查
 
 - 本地分支为 main，没有配置远程；home.json 和 index.astro 中仍有用户的两份未提交修改，发布当前效果时需要一起提交。
-- Astro 使用静态输出，尚无 .github/workflows/deploy.yml，配置尚未指定 site；本地默认根路径为 /。
-- 2026-09-17 使用 SITE_BASE=/WiNet-Lab/ 独立构建至 .tools/github-preview-dist，5页构建成功。生成首页的导航、样式和词云地址均带 /WiNet-Lab/。这不是远程部署验证，也没有重新运行整套浏览器测试。
+- Astro 使用静态输出，site 已设为 https://zjugxz.github.io；本地默认根路径仍为 /。工作流已新增，构建时传入 SITE_BASE=/WiNet-Lab/。
+- 最新验证：类型检查19个文件零错误/警告/提示；根路径5页构建成功；9项Chromium测试通过（5.7秒）；/WiNet-Lab/ 独立构建与浏览器子路径检查通过，5页导航、样式、词云和手机菜单正常，无失败请求。工作流YAML解析无错误/警告，尚未在GitHub执行。
 - 本机对 GitHub API 的 TLS 连接及 GitHub Git 连接失败，网页工具也未获取目标仓库，故没有确认仓库是否为空、可见性、默认分支、操作者权限或现有 Pages 设置。URL中的账号和仓库名来自用户提供的链接。
 - 默认项目站点地址预计为 https://zjugxz.github.io/WiNet-Lab/；最终以成功部署后 Pages 显示的地址为准。它使用独立项目路径，无需修改老师原有个人站点仓库。
 
@@ -16,64 +16,28 @@
 
 以下首次推送步骤适用于空仓库。如果已有 README、LICENSE 或其他提交，先获取并核对远程历史、保留已有内容后再合并；不要使用 force 推送覆盖。本文未核实该仓库为空。
 
-## 2. 配置 Astro 与自动部署
+## 2. 已完成的 Astro 与自动部署配置
 
-将 astro.config.mjs 调整为以下内容。保留环境变量控制 base，使默认本地预览仍从 / 访问，部署工作流中再指定真实仓库路径。
+无需再次手动创建文件：
 
-```js
-import { defineConfig } from 'astro/config';
+- [astro.config.mjs](../astro.config.mjs) 已设置 site，并保留环境变量控制 base；默认本地预览从 / 访问。
+- [.github/workflows/deploy.yml](../.github/workflows/deploy.yml) 在推送main或手动运行时触发，使用Node 24、锁文件安装依赖，执行 npm run check && npm run build。检查或构建失败则不发布；成功后上传站点产物，后续deploy任务发布到github-pages环境。工作流传入 /WiNet-Lab/，设置所需Pages权限并串行处理部署。
+- [scripts/check-base.mjs](../scripts/check-base.mjs) 默认检查 /WiNet-Lab/，支持SITE_BASE覆盖，使用独立的 .tools/base-dist 和4323端口。
 
-export default defineConfig({
-  site: 'https://zjugxz.github.io',
-  output: 'static',
-  base: process.env.SITE_BASE || '/',
-  trailingSlash: 'always',
-  devToolbar: { enabled: false },
-});
+动作版本及配置依据2026-09-17读取的 [Astro 官方部署指南](https://docs.astro.build/en/guides/deploy/github/)。保留并上传现有 package-lock.json；不需要上传 node_modules、.tools 或本机 dist。
+
+本机复现子路径验证（项目根目录PowerShell）：
+
+```powershell
+$env:PATH = "$PWD\.tools\node-v24.21.0-win-x64;$env:PATH"
+$env:PLAYWRIGHT_BROWSERS_PATH = "$PWD\.tools\browsers"
+$env:SITE_BASE = '/WiNet-Lab/'
+npm.cmd run build -- --outDir .tools/base-dist
+node.exe scripts/check-base.mjs
+Remove-Item Env:SITE_BASE
 ```
 
-新建 .github/workflows/deploy.yml：
-
-```yaml
-name: Publish WiNet Lab preview
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: winet-lab-pages
-  cancel-in-progress: false
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: withastro/action@v6
-        with:
-          node-version: 24
-        env:
-          SITE_BASE: /WiNet-Lab/
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.publish.outputs.page_url }}
-    steps:
-      - id: publish
-        uses: actions/deploy-pages@v5
-```
-
-动作版本及配置依据2026-09-17读取的 [Astro 官方部署指南](https://docs.astro.build/en/guides/deploy/github/)。保留并上传现有 package-lock.json；构建会安装锁定依赖，不需要上传 node_modules、.tools 或本机 dist。
+该检查只访问本地静态预览，不能证明远程仓库权限或GitHub实际部署成功。
 
 ## 3. 启用 GitHub Pages
 
@@ -81,14 +45,14 @@ jobs:
 
 ## 4. 保存当前版本并首次推送
 
-以下命令由用户在 PowerShell 中执行；本轮未代为执行。先完成前述配置文件，再运行：
+部署配置及相关文档已单独保存为本地提交；用户原有的两份Home修改仍未提交。下列命令先保存这两份内容，再连接远程并推送。本轮未代为执行这些操作：
 
 ```powershell
 Set-Location 'F:\WiNet Website Program'
 git status --short
-git add -- astro.config.mjs .github/workflows/deploy.yml src/data/home.json src/pages/index.astro
+git add -- src/data/home.json src/pages/index.astro
 git diff --cached --stat
-git commit -m "chore: prepare initial GitHub Pages preview"
+git commit -m "content: save current Home preview"
 git remote add origin https://github.com/zjugxz/WiNet-Lab.git
 git push -u origin main
 ```
@@ -109,4 +73,4 @@ git push 会发送 main 的已提交历史，包括已经纳入版本管理的 d
 
 ## 本轮交接
 
-用户已明确提出提前发布现有初版的新目标，替代此前必须等待整站完成再首次上传的时点限制；本轮问题是“应该怎么做”，因此交付操作指导及只读核查，不将其记录为已经上传或网站已经上线。Publications 仍待用户提供清单。文档与项目规则同步保存为本地提交 `docs: explain initial GitHub Pages publication`。
+发布时点限制已按用户的新指示更新。此前操作指南提交为179e451；用户随后要求实施本地配置，现将配置、检查脚本和同步文档保存为本地提交 `ci: configure GitHub Pages preview deployment`。Home两份原有修改保持原样且未纳入该提交。下一步核对远程仓库、Pages来源及当前内容版本后再推送；尚未执行上传、实际Actions运行或公开站点验证，技术准备完成不等于网站已上线。Publications仍待用户提供清单。

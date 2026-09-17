@@ -32,4 +32,4 @@ The browser tests create an isolated production preview on port 4322. With a pre
 
 See [docs/README.md](docs/README.md) for requirements, progress, architecture, content editing, and verification evidence. The form-based online CMS is a later milestone; editing JSON alone does not yet provide that workflow.
 
-This project has not been published. Do not push to GitHub or activate Pages before the user's full-project acceptance. The repository owner and final Pages base path remain unverified.
+The user now intends to publish an initial preview to zjugxz/WiNet-Lab. The local GitHub Pages workflow and Astro site configuration are ready: pushes to main (or manual dispatch) check and build with Node 24 and SITE_BASE=/WiNet-Lab/, then deploy the static output. Local development still defaults to /. See [deployment instructions](docs/github-pages-preview.md) for Pages settings and first-push steps. The workflow has not run on GitHub; repository access/settings and the live site remain unverified. The online CMS is still a later milestone.

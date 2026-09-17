@@ -2,7 +2,17 @@
 
 更新时间：2026-09-17（Asia/Shanghai）。
 
-## 当前任务：现有初版的 GitHub Pages 发布指导
+## 当前任务：补齐本地部署配置
+
+用户明确要求实施部署配置。本轮范围为 Astro site 设置、GitHub Pages 自动构建发布工作流和实际仓库子路径验证；验收标准为本地根路径与 /WiNet-Lab/ 构建和资源/导航正常，工作流结构有效，默认本地预览可继续使用。目标为 zjugxz/WiNet-Lab，默认部署地址为 https://zjugxz.github.io/WiNet-Lab/ 。本轮不执行推送、不修改远程设置。
+
+已完成：site设为 https://zjugxz.github.io；新增 .github/workflows/deploy.yml，推送main或手动运行时使用Node 24安装依赖，先类型检查再构建，然后发布静态产物；工作流传入 /WiNet-Lab/，本地预览保持根路径。子路径检查脚本改为默认验证 /WiNet-Lab/ 并支持 SITE_BASE。
+
+验证：类型检查19个文件零错误/警告/提示，根路径5页构建成功，9项Chromium测试全部通过（5.7秒）；真实仓库子路径独立构建与浏览器检查通过，5页导航、CSS、词云、手机菜单无失败请求。工作流YAML解析无错误或警告，配置字段经核对；尚未在GitHub运行，不声称已上线。具体步骤见 [发布指南](github-pages-preview.md)。
+
+配置、脚本和相关文档保存为本地Git提交 `ci: configure GitHub Pages preview deployment`，哈希以git log为准。用户原有 home.json/index.astro 两份修改继续保留，不纳入本轮提交。无远程配置、未推送、未修改Pages设置。下一步等待用户确认本地准备结果，再按其指示核对远程并上传；不重复要求其批准初版提前发布。
+
+## 历史：现有初版的 GitHub Pages 发布指导
 
 用户提供目标仓库 https://github.com/zjugxz/WiNet-Lab ，希望将现有代码上传以查看初版网站，并询问操作步骤。按最新指示允许此初版提前发布，不再以整站完成作为首次发布前提；这不等于整站已验收。本轮范围为仓库/本地状态核查及具体操作指导，未修改Astro配置、添加实际工作流、关联远程或推送代码。
 

@@ -2,8 +2,10 @@ import assert from 'node:assert/strict';
 import { preview } from 'astro';
 import { chromium } from '@playwright/test';
 
+const base = (process.env.SITE_BASE || '/WiNet-Lab/').replace(/\/?$/, '/');
+const baseUrl = `http://127.0.0.1:4323${base}`;
 const server = await preview({
-  base: '/winet-group/',
+  base,
   outDir: './.tools/base-dist',
   server: { host: '127.0.0.1', port: 4323 },
 });
@@ -16,7 +18,7 @@ try {
       failed.push(`${response.status()} ${response.url()}`);
   });
   page.on('requestfailed', (request) => failed.push(request.url()));
-  await page.goto('http://127.0.0.1:4323/winet-group/', {
+  await page.goto(baseUrl, {
     waitUntil: 'networkidle',
   });
   const links = await page
@@ -26,7 +28,7 @@ try {
     );
   assert(
     links.every(
-      (link) => link.startsWith('#') || link.startsWith('/winet-group/'),
+      (link) => link.startsWith('#') || link.startsWith(base),
     ),
   );
   const background = await page
@@ -42,7 +44,7 @@ try {
   });
   assert.equal(
     await heroImage.getAttribute('src'),
-    '/winet-group/images/winet-lab-wordcloud.png',
+    `${base}images/winet-lab-wordcloud.png`,
   );
   assert(
     await heroImage.evaluate(
@@ -60,7 +62,7 @@ try {
       .getByRole('navigation')
       .getByRole('link', { name, exact: true })
       .click();
-    assert(page.url().startsWith('http://127.0.0.1:4323/winet-group/'));
+    assert(page.url().startsWith(baseUrl));
     assert.equal(await page.title(), `${name} | WiNet Lab`);
   }
   await page.setViewportSize({ width: 390, height: 844 });
@@ -73,7 +75,7 @@ try {
   );
   assert.deepEqual(failed, []);
   console.log(
-    'Repository base path verified: five pages, links, CSS, hero image, and mobile menu; no failed requests.',
+    `Repository base path ${base} verified: five pages, links, CSS, hero image, and mobile menu; no failed requests.`,
   );
 } finally {
   await browser.close();

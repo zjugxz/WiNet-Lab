@@ -16,7 +16,7 @@ Status: Home layout and first supplied content batch implemented, pending user a
 - `src/styles/global.css`: design tokens, layout, components, responsive rules. No external fonts or image services.
 - `tests/` and `scripts/`: production-browser verification, screenshot capture, and a separate repository-base-path check.
 
-Astro generates five static HTML pages. Only mobile navigation needs client JavaScript. No application server, database, remote CMS, or deployment workflow is configured.
+Astro generates five static HTML pages. Only mobile navigation needs client JavaScript. No application server, database, or remote CMS is configured. The GitHub Pages workflow is implemented locally; it has not been pushed or run remotely.
 
 NewsList receives structured records with unique id, YYYY-MM date, and nonempty text; validates those fields at build time; and sorts a copy by descending month while preserving input order within a month. It renders semantic list items and time elements, with a small empty state only when the list is empty. EmphasisText is shared by the hero description, introduction paragraphs, and News text. It supports paired **bold** markers only and renders semantic strong elements; other content remains escaped text. It does not render arbitrary HTML or provide a complete Markdown engine.
 
@@ -34,6 +34,8 @@ Astro requirements were checked against [official setup documentation](https://d
 
 ## Deployment boundary
 
-SITE_BASE defaults to /. A trial /winet-group/ build was independently exercised on localhost. This trial name does not confirm the user's repository. Verify actual owner and repository before applying the [GitHub Pages configuration](https://docs.astro.build/en/guides/deploy/github/).
+The user supplied zjugxz/WiNet-Lab as the target on 2026-09-17. Astro site is https://zjugxz.github.io; SITE_BASE defaults to / for local previews. The .github/workflows/deploy.yml workflow supplies /WiNet-Lab/, uses Node 24 and the official Astro action to install dependencies and run type checking plus a static build, then deploys the generated artifact to Pages. It triggers on pushes to main and manual dispatch, with required Pages permissions and serialized deployments. Its YAML and both root/subpath builds were checked locally; GitHub execution remains unverified.
+
+scripts/check-base.mjs defaults to /WiNet-Lab/ and supports SITE_BASE. It exercises five routes, CSS, the original word cloud and the mobile menu from an isolated .tools/base-dist build on port4323. The earlier /winet-group/ path was only a historical trial name. See [deployment instructions](github-pages-preview.md) for preparation, validation and remaining remote steps.
 
 Preview metadata includes noindex, nofollow; review and remove it before an approved public release. No remote is configured and no code has been uploaded. Local proof does not establish mainland-China or international production availability.
