@@ -55,6 +55,14 @@ git push -u origin main
 
 无需重复remote add或commit。若push提示登录，使用拥有该仓库写权限的GitHub账号完成Git Credential Manager授权；仅登录GitHub网页不一定完成本机Git授权。可在已登录的Firefox中打开工具提供的授权链接，不向聊天发送密码或令牌。
 
+2026-09-17排障补充：用户直连上传出现github.com:443超时。本机Clash代理127.0.0.1:7890已运行，通过该代理执行git ls-remote成功。保持Clash开启，在本项目目录使用一次性代理参数上传，无需修改全局配置：
+
+```powershell
+git -c http.proxy=http://127.0.0.1:7890 push -u origin main
+```
+
+此地址仅适用于当前本机已核实的代理端口；其他设备或后续端口变化时应重新核对。只读连接成功不等于已获得写权限，也不等于部署成功。
+
 git push 会发送 main 的已提交历史，包括已经纳入版本管理的 docs/ 和截图，不只发送网页源码；本项目 .gitignore 已排除 .env、.tools、node_modules、dist 等本机文件。推送前可用 git ls-files 查看被跟踪的文件。
 
 若推送被拒绝并提示远程已有提交，停止该步并核对远程内容后合并，不强推。若在首次推送后才设置 Pages 来源，可在 Actions 中手动运行此工作流。
