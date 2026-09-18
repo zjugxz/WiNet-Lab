@@ -14,7 +14,7 @@ const paperSchema = z
     title: text,
     summary: text,
     citation: text.optional(),
-    bibtex: id.optional(),
+    citationId: id.optional(),
     publication: z
       .object({
         venue: text.optional(),
@@ -40,8 +40,11 @@ const paperSchema = z
     demo: download.optional(),
   })
   .refine(
-    (paper) => !paper.bibtex || paper.publication?.status === 'published',
-    { message: 'Only published papers may provide BibTeX', path: ['bibtex'] },
+    (paper) => !paper.citationId || paper.publication?.status === 'published',
+    {
+      message: 'Only published papers may provide citations',
+      path: ['citationId'],
+    },
   );
 const uniqueIds = (items: { id: string }[]) =>
   new Set(items.map((item) => item.id)).size === items.length;

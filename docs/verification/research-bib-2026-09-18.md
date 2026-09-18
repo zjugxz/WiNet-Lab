@@ -1,5 +1,7 @@
 # Research BibTeX引用组件
 
+此页保留上一轮Bib实现与验证记录。用户随后要求Cite多格式入口，当前实现及维护字段以[Cite记录](research-cite-2026-09-18.md)为准。
+
 2026-09-18（Asia/Shanghai）。开始HEAD6391b28，工作区干净。用户要求为已录用paper增加Bib组件并参考出版机构引用规范。本轮完成Research现有3篇已发表论文的本地功能，不改Publications、不恢复未录用PDF、不自动上传GitHub。技术验证不等于用户验收。
 
 ## 引用资料与规范

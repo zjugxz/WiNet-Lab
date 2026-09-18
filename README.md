@@ -40,7 +40,7 @@ For deployment checks, build a second output with `SITE_BASE=/WiNet-Lab/` into `
 
 ## Content and handoff
 
-The latest local Research addition provides BibTeX view/copy/download for the three published papers. Citation sources live in `src/data/citations/`, with optional `bibtex` IDs in research.json; submitted papers have no Bib entry. Run `node scripts/check-research-citations.mjs` against root/base builds. See [citation sources and verification](docs/verification/research-bib-2026-09-18.md). This addition has not yet been published.
+The latest local Research addition provides a Cite dialog with Text/BibTeX/RIS view, copy and download for the three published papers, plus publisher links. Citation sources live in `src/data/citations/`, with optional `citationId` references in research.json; submitted papers have no Cite entry. Run `node scripts/check-research-citations.mjs` against root/base builds. See [citation sources and verification](docs/verification/research-cite-2026-09-18.md). This addition has not yet been published.
 
 See [docs/README.md](docs/README.md) for requirements, progress, architecture, content editing, and verification evidence. The form-based online CMS is a later milestone; editing JSON alone does not yet provide that workflow.
 

@@ -2,7 +2,17 @@
 
 更新时间：2026-09-18（Asia/Shanghai）。
 
-## 当前任务：已录用Research论文BibTeX组件
+## 当前任务：Cite多格式引用
+
+用户纠正入口应为Cite，并要求Bib、Text等多种方式，授权查询论文网页搜集引用资料。本轮在3篇已发表Research论文上扩展Text/BibTeX/RIS切换、当前格式复制和下载，并提供出版页链接；默认Text，保持投稿论文无入口及受限PDF不公开。核对ScienceDirect/IEEE的导出说明、论文公开记录与Crossref登记/导出。验收为3篇×3格式的字段正确、切换不串内容、复制下载一致、键盘/手机及无JS回退可用。开始HEAD5e89fc2，工作区干净；本轮本地实现并保存，不自动上传。
+
+实现完成：入口改为Cite，提供Text（Cell/IEEE样式）/BibTeX/RIS、格式说明、复制、9个静态文件下载和出版页链接；citationId替代旧bibtex字段。资料通过DOI内容协商取得并核对，详细来源及维护见[Cite记录](verification/research-cite-2026-09-18.md)。
+
+最终Astro检查39文件零错误/警告/提示，两种base各5页/9引用文件构建完成；3篇×3格式逐项复制/下载/HTTP内容、RIS字段、键盘/焦点、4种宽度、无JS回退与无障碍检查通过。原Research下载/排序/字体/PDF404及全站子路径回归通过。实际4321预览已刷新，3个Cite入口与三种格式HTTP 200正常。
+
+代码、资料和相关文档一并本地Git保存，提交号以main日志为准；未push，线上不包含此功能。下一步等待用户查看本地Research的Cite并反馈，不进入其他子任务。
+
+## 历史：已录用Research论文BibTeX组件
 
 用户要求为已录用paper增加Bib组件，并参考出版机构的引用规范。范围为Research中已有的3篇已发表论文：Device、Cell Reports Physical Science及IEEE TMC；在Paper/Demo旁提供Bib入口、查看/复制/下载标准BibTeX，投稿论文无入口。核对出版方页面、引用导出说明及出版方向Crossref登记的元数据；不编造缺少的卷期，Mighty使用正式卷期年2025。验收包括作者/DOI/刊会/年份正确、键盘与手机可用、复制失败可手工复制、下载内容一致、两种base可用及受限PDF仍404。
 

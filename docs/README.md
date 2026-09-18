@@ -6,7 +6,7 @@
 
 当前内容：Home正式介绍、词云及7条News；Research三方向及6篇研究；Publications 74条记录、73个出版入口；Contact合作/招生文字和邮箱。People与Research第三方向仍为占位，在线后台未实现。
 
-最新本地功能：[Research Bib引用组件](verification/research-bib-2026-09-18.md)，已发表3篇可查看、复制及下载核对后的BibTeX；投稿论文无入口。该功能在上述发布之后实现，尚未上传，等待用户查看。
+最新本地功能：[Research Cite多格式引用](verification/research-cite-2026-09-18.md)，已发表3篇可切换Text/BibTeX/RIS，查看、复制及下载，并可打开出版页；投稿论文无入口。它替代上一版仅Bib的组件，在上述发布之后实现，尚未上传，等待用户查看。
 
 Research每方向有Demo优先，无Demo不显示按钮；受限论文显示不可点击的Paper coming soon，PDF不在公开目录。已发表3篇显示暖棕色衬线刊会名称及年份；投稿3篇不填刊会/年份，仅保留接口。上传使用基于远程既有历史的干净快照，不把曾包含受限PDF的本地开发历史上传；原历史仅保留在本地备份分支，原稿留在Git忽略的resources中。
 

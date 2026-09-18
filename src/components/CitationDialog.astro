@@ -1,0 +1,427 @@
+---
+import { getCitation } from '../lib/citations';
+
+interface Props {
+  citationId: string;
+  title: string;
+  headingId: string;
+}
+const { citationId, title, headingId } = Astro.props;
+const { source, formats } = getCitation(citationId);
+const defaultFormat = formats[0];
+---
+
+<citation-dialog>
+  <a
+    class="bib-button"
+    data-cite-open
+    href={defaultFormat.href}
+    download={defaultFormat.filename}
+    aria-label={`Cite: ${title}`}
+  >
+    <svg viewBox="0 0 20 20" aria-hidden="true" fill="none">
+      <path d="M3 5h5v6H4c0 2 1 3 3 4M12 5h5v6h-4c0 2 1 3 3 4" />
+    </svg>
+    Cite
+  </a>
+  <dialog aria-labelledby={headingId} aria-describedby={`${headingId}-paper`}>
+    <div class="citation-header">
+      <h2 id={headingId}>Cite this paper</h2>
+      <button
+        class="close-button"
+        type="button"
+        data-cite-close
+        aria-label="Close citation"
+      >
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="m5 5 10 10M15 5 5 15" />
+        </svg>
+      </button>
+    </div>
+    <p class="citation-title" id={`${headingId}-paper`}>
+      {title}
+    </p>
+    <fieldset class="format-picker">
+      <legend>Citation format</legend>
+      <div class="format-options">
+        {formats.map((format, index) => (
+          <label class="format-option">
+            <input
+              type="radio"
+              name={`${headingId}-format`}
+              value={format.extension}
+              checked={index === 0}
+              aria-controls={`${headingId}-${format.extension}-panel`}
+            />
+            <span>{format.label}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+    {formats.map((format, index) => (
+      <section
+        id={`${headingId}-${format.extension}-panel`}
+        data-format-panel={format.extension}
+        data-format-label={format.label}
+        hidden={index !== 0}
+      >
+        <p class="format-help" id={`${headingId}-${format.extension}-help`}>
+          {format.description}
+        </p>
+        <label
+          class="content-label"
+          for={`${headingId}-${format.extension}-text`}
+        >
+          {format.label} citation
+        </label>
+        <textarea
+          id={`${headingId}-${format.extension}-text`}
+          readonly
+          spellcheck="false"
+          class:list={{ 'plain-text': format.extension === 'txt' }}
+          aria-describedby={`${headingId}-${format.extension}-help`}
+          rows="12"
+        >{format.text}</textarea>
+        <div class="citation-actions">
+          <button class="bib-button copy-button" type="button" data-cite-copy>
+            Copy {format.label}
+          </button>
+          <a class="bib-button" href={format.href} download={format.filename}>
+            Download .{format.extension}
+          </a>
+        </div>
+        <p
+          class="copy-status"
+          role="status"
+          aria-live="polite"
+          data-cite-status
+        ></p>
+      </section>
+    ))}
+    <a
+      class="publisher-link"
+      href={source.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View publication ↗
+    </a>
+  </dialog>
+  <noscript>
+    {formats.slice(1).map((format) => (
+      <a class="bib-button" href={format.href} download={format.filename}>
+        {format.label}
+      </a>
+    ))}
+  </noscript>
+</citation-dialog>
+
+<script>
+  class CitationDialog extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.ready) return;
+      this.dataset.ready = 'true';
+      const opener = this.querySelector<HTMLAnchorElement>('[data-cite-open]')!;
+      const dialog = this.querySelector('dialog')!;
+      const panels = this.querySelectorAll<HTMLElement>('[data-format-panel]');
+      let revision = 0;
+      const resetStatus = () => {
+        revision++;
+        this.querySelectorAll('[data-cite-status]').forEach((node) => {
+          node.textContent = '';
+        });
+      };
+      // Without JavaScript, Cite downloads Text and noscript offers BibTeX/RIS.
+      if (typeof dialog.showModal !== 'function') return;
+      opener.setAttribute('role', 'button');
+      opener.setAttribute('aria-haspopup', 'dialog');
+      const open = () => {
+        resetStatus();
+        dialog.showModal();
+      };
+      opener.addEventListener('click', (event) => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)
+          return;
+        event.preventDefault();
+        open();
+      });
+      opener.addEventListener('keydown', (event) => {
+        if (event.key !== ' ') return;
+        event.preventDefault();
+        open();
+      });
+      this.querySelector('[data-cite-close]')!.addEventListener('click', () =>
+        dialog.close(),
+      );
+      dialog.addEventListener('close', () => {
+        resetStatus();
+        opener.focus({ preventScroll: true });
+      });
+      this.querySelector('.format-picker')!.addEventListener(
+        'change',
+        (event) => {
+          const input = event.target;
+          if (!(input instanceof HTMLInputElement)) return;
+          panels.forEach((panel) => {
+            panel.hidden = panel.dataset.formatPanel !== input.value;
+          });
+          resetStatus();
+        },
+      );
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key !== 'Tab') return;
+        const controls = [
+          ...dialog.querySelectorAll<HTMLElement>(
+            'button:not(:disabled), a[href], textarea, input:checked',
+          ),
+        ].filter((node) => !node.closest('[hidden]'));
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
+      dialog.addEventListener('click', (event) => {
+        if (event.target !== dialog) return;
+        const bounds = dialog.getBoundingClientRect();
+        if (
+          event.clientX < bounds.left ||
+          event.clientX > bounds.right ||
+          event.clientY < bounds.top ||
+          event.clientY > bounds.bottom
+        )
+          dialog.close();
+      });
+      panels.forEach((panel) => {
+        const text = panel.querySelector('textarea')!;
+        const status = panel.querySelector<HTMLElement>('[data-cite-status]')!;
+        const copy =
+          panel.querySelector<HTMLButtonElement>('[data-cite-copy]')!;
+        copy.addEventListener('click', async () => {
+          const currentRevision = revision;
+          copy.disabled = true;
+          try {
+            await navigator.clipboard.writeText(text.value);
+            if (dialog.open && currentRevision === revision)
+              status.textContent = `${panel.dataset.formatLabel} copied.`;
+          } catch {
+            if (dialog.open && currentRevision === revision) {
+              text.focus();
+              text.select();
+              status.textContent =
+                'Copy unavailable. Copy the selected text manually, or download the citation file.';
+            }
+          } finally {
+            copy.disabled = false;
+          }
+        });
+      });
+    }
+  }
+  if (!customElements.get('citation-dialog'))
+    customElements.define('citation-dialog', CitationDialog);
+</script>
+
+<style>
+  citation-dialog {
+    display: inline-flex;
+    gap: 8px;
+  }
+  .bib-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 30px;
+    padding: 4px 9px;
+    border: 1px solid var(--green);
+    border-radius: 4px;
+    background: white;
+    color: var(--green);
+    font:
+      12px/1.5 Arial,
+      Helvetica,
+      sans-serif;
+    cursor: pointer;
+  }
+  .bib-button:hover {
+    background: var(--green);
+    color: white;
+  }
+  .bib-button svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  dialog {
+    width: min(680px, calc(100% - 32px));
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 28px;
+    overflow: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--ink);
+    background: white;
+    box-shadow: 0 20px 70px #18221c33;
+  }
+  dialog::backdrop {
+    background: #18221c99;
+  }
+  .citation-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+  }
+  h2 {
+    font: 28px/1.2 var(--serif);
+    color: var(--green);
+  }
+  .close-button {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+  .close-button svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+  .citation-title {
+    margin: 16px 0 22px;
+    font: 17px/1.5 var(--serif);
+    overflow-wrap: anywhere;
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #a45122;
+    font: italic 700 15px/1.4 var(--serif);
+  }
+  textarea {
+    display: block;
+    width: 100%;
+    height: 280px;
+    max-height: 45dvh;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #f5f7f4;
+    color: var(--ink);
+    font:
+      12px/1.7 Consolas,
+      'Courier New',
+      monospace;
+    resize: vertical;
+    overflow-wrap: anywhere;
+  }
+  textarea:focus-visible {
+    outline: 3px solid var(--green);
+    outline-offset: 2px;
+  }
+  .format-picker {
+    border: 0;
+    margin: 0 0 12px;
+    padding: 0;
+  }
+  legend {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .format-options {
+    display: flex;
+    gap: 6px;
+  }
+  .format-option {
+    position: relative;
+    margin: 0;
+    font:
+      13px/1.5 Arial,
+      Helvetica,
+      sans-serif;
+    color: var(--green);
+    cursor: pointer;
+  }
+  .format-option input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+  .format-option span {
+    display: block;
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .format-option input:checked + span {
+    background: var(--green);
+    border-color: var(--green);
+    color: white;
+  }
+  .format-option input:focus-visible + span {
+    outline: 3px solid var(--green);
+    outline-offset: 3px;
+  }
+  .format-help {
+    margin: 10px 0;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .content-label {
+    font-size: 13px;
+  }
+  textarea.plain-text {
+    height: 180px;
+    font: 16px/1.75 var(--serif);
+  }
+  .publisher-link {
+    font-size: 12px;
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .citation-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .citation-actions .bib-button {
+    min-height: 36px;
+  }
+  .copy-button {
+    background: var(--green);
+    color: white;
+  }
+  .copy-status {
+    min-height: 20px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--green);
+  }
+  @media (max-width: 480px) {
+    dialog {
+      padding: 18px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+  }
+</style>

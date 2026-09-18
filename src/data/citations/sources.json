@@ -1,0 +1,14 @@
+{
+  "magnetic-rf-computing": {
+    "url": "https://www.sciencedirect.com/science/article/pii/S2666998626001936",
+    "textStyle": "Cell"
+  },
+  "mechanical-metasurface": {
+    "url": "https://www.sciencedirect.com/science/article/pii/S2666386426003085",
+    "textStyle": "Cell"
+  },
+  "mighty-drone-backscatter": {
+    "url": "https://doi.org/10.1109/TMC.2024.3486993",
+    "textStyle": "IEEE"
+  }
+}

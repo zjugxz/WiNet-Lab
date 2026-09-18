@@ -1,6 +1,6 @@
 ---
 import { researchAssetPath, type ResearchPaper } from '../lib/research';
-import BibCitation from './BibCitation.astro';
+import CitationDialog from './CitationDialog.astro';
 
 interface Props {
   paper?: ResearchPaper;
@@ -124,9 +124,9 @@ const downloads = [
           </button>
         ),
       )}
-      {paper?.publication?.status === 'published' && paper.bibtex && (
-        <BibCitation
-          citationId={paper.bibtex}
+      {paper?.publication?.status === 'published' && paper.citationId && (
+        <CitationDialog
+          citationId={paper.citationId}
           title={title}
           headingId={`${headingId}-citation`}
         />
