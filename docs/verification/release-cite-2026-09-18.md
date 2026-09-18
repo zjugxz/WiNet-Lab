@@ -14,6 +14,18 @@
 
 ## 上传与线上结果
 
-发布文档已准备，普通push、GitHub Actions和线上Cite验证正在进行，完成后补充实际证据。网站地址：[WiNet Lab Research](https://zjugxz.github.io/WiNet-Lab/research/)。
+已通过现有127.0.0.1:7890代理普通push main，远程由6391b28快进到1b225ecab6d27e1bfaa566e2311cc247ad861cf7（包含两次功能提交及发布准备文档）。未推送备份分支，未强推。
 
-下一步完成上传及验证后等待用户查看线上效果；不自动开展新内容或后台任务。
+[Actions 35328701395](https://github.com/zjugxz/WiNet-Lab/actions/runs/35328701395)对应1b225ec，GitHub API确认completed/success，于2026-09-18 09:18:24 UTC（北京时间17:18:24）完成。网站地址：[WiNet Lab Research](https://zjugxz.github.io/WiNet-Lab/research/)。
+
+部署后对真实线上页面执行Chromium检查，全部通过：
+
+- 三篇已发表论文各有Cite，首次默认Text，包含出版页链接；逐一切换Text/BibTeX/RIS，正文与本地核对来源完全一致。
+- 九次真实剪贴板复制成功，九个真实下载的文件名和全部字节正确；九个直接引用文件URL均HTTP 200且正文一致。
+- 三篇投稿论文无Cite，三份受限PDF旧URL均HTTP 404。
+- Esc关闭后焦点返回；390px弹窗及页面没有横向溢出，线上手机截图保存在本地.tools/live-cite-mobile.png。
+- 五页均HTTP 200；Publications仍为74条，Contact邮箱入口正确。
+
+本次线上检查经本机现有代理完成，不等同于跨地区网络质量验证。发布后仅将本记录及索引/进度补齐为文档收尾提交，再普通推送main；网站文件不变，最终提交号以main日志为准。技术发布不等于整站用户验收。
+
+下一步等待用户查看线上效果；不自动开展新内容或后台任务。

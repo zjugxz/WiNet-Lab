@@ -8,6 +8,8 @@
 
 具体准备、提交及部署结果见[Cite发布记录](verification/release-cite-2026-09-18.md)。本轮已获得新的发布授权，覆盖下方Cite实现阶段的“未push”限制，但不记录为整站验收。
 
+发布完成：main已从6391b28普通快进到1b225ec；[Actions 35328701395](https://github.com/zjugxz/WiNet-Lab/actions/runs/35328701395)构建部署success（北京时间17:18:24）。真实线上三篇×三格式的查看/复制/下载及HTTP内容一致均通过，投稿无Cite且受限PDF404，手机弹窗无横向溢出；五页可访问、Publications 74条和Contact邮箱正确。发布结果文档收尾提交同步上传，不改网站文件；最终提交号以main日志为准。下一步等待用户查看线上版本，不自动开展新功能。
+
 ## 历史：Cite多格式引用
 
 用户纠正入口应为Cite，并要求Bib、Text等多种方式，授权查询论文网页搜集引用资料。本轮在3篇已发表Research论文上扩展Text/BibTeX/RIS切换、当前格式复制和下载，并提供出版页链接；默认Text，保持投稿论文无入口及受限PDF不公开。核对ScienceDirect/IEEE的导出说明、论文公开记录与Crossref登记/导出。验收为3篇×3格式的字段正确、切换不串内容、复制下载一致、键盘/手机及无JS回退可用。开始HEAD5e89fc2，工作区干净；本轮本地实现并保存，不自动上传。
