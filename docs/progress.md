@@ -2,7 +2,19 @@
 
 更新时间：2026-09-18（Asia/Shanghai）。
 
-## 当前任务：更新文档并发布Cite
+## 当前任务：视频加载速度诊断（尚未实施优化）
+
+2026-09-18用户询问视频加载慢的优化办法。本轮范围为核对文件大小、编码、MP4索引位置和公共组件加载策略，提供有证据的方案；不修改网站或媒体、不自动发布。开始HEAD196230f，工作区干净。
+
+核查结果：5段预览合计138.81 MiB（文件总量，不代表首屏实测下载量）。机械超表面73.85 MiB/78.67秒/1080p/约7.87 Mbps，EEG30.42 MiB/34.09秒/968×544/约7.48 Mbps，磁场RF19.50 MiB/41.47秒/1080p，Mighty8.83 MiB/102.33秒/720p，心脏监测6.22 MiB/35.09秒/720p；均为H.264。FFmpeg只读元数据检查及MP4顶层box检查确认，超表面和EEG的moov在mdat之后，另外三段已前置索引。
+
+ResearchPaperCard初始直接设置所有video src及autoplay/loop/muted，只有preload=metadata，没有视口延迟加载。autoplay优先于preload，实际请求/缓冲受浏览器策略影响，不能据此声称五段每次均完整下载。已有封面可用于等待加载。未测定用户网络吞吐，不能将延迟全部归因于GitHub Pages。
+
+建议优先：按卡片尺寸生成适量压缩的独立预览（最高720p、不放大小尺寸原片、核验图中文字），添加faststart；临近视口再加载，进入后继续无需点击的静音循环播放。完整Demo与原稿保持原质量；超表面和Mighty当前预览/Demo共用同一文件，实施压缩前必须分开路径。暂不截短片段、替换托管或承诺固定压缩比例。后续验收应包括首屏媒体请求量、首帧等待时间、清晰度、循环播放和原Demo字节一致性。
+
+技术资料查询于2026-09-18：[MDN video preload/autoplay](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video#preload)、[web.dev视频延迟加载](https://web.dev/articles/lazy-loading-video)、[FFmpeg MP4 faststart](https://ffmpeg.org/ffmpeg-formats.html#mov_002c-mp4_002c-ismv)。诊断完成，仅此记录本地Git保存（提交号见日志），未push；下一步等待用户决定是否实施，不记为优化已完成或用户验收。
+
+## 历史：更新文档并发布Cite
 
 用户明确要求更新文档、上传GitHub仓库，授权发布当前Cite功能。开始HEADf936eed，工作区干净，远程main经API核实为6391b28，本地两次功能提交在其后，可正常快进。范围为同步文档、普通push main、确认Actions及线上三篇×三格式引用正常、受限PDF仍404。发布历史审计通过，原稿和本地备份不上传；不修改现有功能，不强推。
 
