@@ -53,7 +53,12 @@ try {
   );
   assert(
     await heroImage.evaluate(
-      (img) => img.complete && img.naturalWidth === 2154,
+      (img, siteBase) =>
+        img.complete &&
+        img.naturalWidth > 0 &&
+        new URL(img.currentSrc).pathname.startsWith(`${siteBase}_astro/`) &&
+        img.currentSrc.endsWith('.webp'),
+      base,
     ),
   );
   for (const name of [

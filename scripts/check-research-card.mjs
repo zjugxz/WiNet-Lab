@@ -119,7 +119,7 @@ try {
           loop: element.loop,
           inline: element.playsInline,
         })),
-        { autoplay: true, muted: true, loop: true, inline: true },
+        { autoplay: false, muted: true, loop: true, inline: true },
       );
       await expect
         .poll(() =>

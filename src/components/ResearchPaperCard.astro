@@ -38,28 +38,62 @@ const downloads = [
         height="360"
       />
     ) : preview?.type === 'video' ? (
-      <video
-        src={researchAssetPath(preview.src)}
-        poster={preview.poster ? researchAssetPath(preview.poster) : undefined}
-        controls
-        autoplay
-        loop
-        muted
-        playsinline
-        preload="metadata"
-        aria-label={`Short demo: ${title}`}
-      >
-        {preview.captions && (
-          <track
-            kind="captions"
-            src={researchAssetPath(preview.captions.src)}
-            srclang={preview.captions.language}
-            label={preview.captions.label}
-            default
-          />
-        )}
-        Your browser does not support video playback.
-      </video>
+      <>
+        <video
+          data-preview-video
+          data-src={researchAssetPath(preview.src)}
+          poster={
+            preview.poster ? researchAssetPath(preview.poster) : undefined
+          }
+          controls
+          loop
+          muted
+          playsinline
+          preload="none"
+          aria-label={`Short demo: ${title}`}
+        >
+          {preview.captions && (
+            <track
+              kind="captions"
+              src={researchAssetPath(preview.captions.src)}
+              srclang={preview.captions.language}
+              label={preview.captions.label}
+              default
+            />
+          )}
+          Your browser does not support video playback.
+        </video>
+        <noscript>
+          <style is:inline>
+            video[data-preview-video] {
+              display: none !important;
+            }
+          </style>
+          <video
+            src={researchAssetPath(preview.src)}
+            poster={
+              preview.poster ? researchAssetPath(preview.poster) : undefined
+            }
+            controls
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            aria-label={`Short demo: ${title}`}
+          >
+            {preview.captions && (
+              <track
+                kind="captions"
+                src={researchAssetPath(preview.captions.src)}
+                srclang={preview.captions.language}
+                label={preview.captions.label}
+                default
+              />
+            )}
+            Your browser does not support video playback.
+          </video>
+        </noscript>
+      </>
     ) : (
       <div class="preview-placeholder">
         <svg viewBox="0 0 48 40" aria-hidden="true" fill="none">
@@ -134,6 +168,11 @@ const downloads = [
     </div>
   </div>
 </article>
+
+<script>
+  import { initializeResearchVideos } from '../lib/research-video';
+  initializeResearchVideos();
+</script>
 
 <style>
   .paper-card {

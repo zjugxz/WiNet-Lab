@@ -32,7 +32,9 @@
         {
           "id": "underwater-visible-light-backscatter",
           "title": "Event-based Visible Light Backscatter Communication System in Underwater Environment",
-          "publication": { "status": "submitted" },
+          "publication": {
+            "status": "submitted"
+          },
           "summary": "An underwater communication system combines liquid-crystal polarization modulation with an event camera to recover reflected light signals. Event-driven decoding supports low-power data links for underwater Internet of Things devices.",
           "preview": {
             "type": "image",
@@ -61,7 +63,7 @@
             "filename": "mechanical-metasurface-paper.pdf"
           },
           "demo": {
-            "src": "research/mechanical-metasurface/preview.mp4",
+            "src": "research/mechanical-metasurface/demo.mp4",
             "filename": "mechanical-metasurface-demo.mp4"
           }
         }
@@ -75,7 +77,9 @@
         {
           "id": "eeg-fatigue-interaction",
           "title": "A low-power single-channel EEG sensor for fatigue monitoring and command interaction",
-          "publication": { "status": "submitted" },
+          "publication": {
+            "status": "submitted"
+          },
           "summary": "A lightweight single-channel EEG sensor combines conformal dry electrodes, low-power backscatter communication, and neural signal reconstruction to support fatigue monitoring and hands-free command interaction.",
           "preview": {
             "type": "video",

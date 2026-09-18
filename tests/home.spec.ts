@@ -27,8 +27,9 @@ test('homepage content, links, local assets and accessibility', async ({
       visual.evaluate(
         (img: HTMLImageElement) =>
           img.complete &&
-          img.naturalWidth === 2154 &&
-          img.naturalHeight === 1614,
+          img.naturalWidth > 0 &&
+          Math.abs(img.naturalWidth / img.naturalHeight - 2154 / 1614) < 0.01 &&
+          new URL(img.currentSrc).pathname.endsWith('.webp'),
       ),
     )
     .toBe(true);

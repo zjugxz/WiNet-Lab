@@ -1,0 +1,89 @@
+{
+  "previews": [
+    {
+      "id": "magnetic-rf-computing",
+      "source": "research/magnetic-rf-computing/preview.mp4",
+      "beforeBytes": 20445464,
+      "afterBytes": 12227137,
+      "sha256": "6bbbc110f9f1bc3683ca64e22e18b293abe0eef0f93993d2f0fcb73a254321be"
+    },
+    {
+      "id": "mechanical-metasurface",
+      "source": "research/mechanical-metasurface/preview.mp4",
+      "beforeBytes": 77433649,
+      "afterBytes": 12534002,
+      "sha256": "309923a9dd0e3192a901e6c1460a169d7a317f70624195339b1acb187991d92d"
+    },
+    {
+      "id": "eeg-fatigue-interaction",
+      "source": "research/eeg-fatigue-interaction/preview.mp4",
+      "beforeBytes": 31892531,
+      "afterBytes": 3002563,
+      "sha256": "a6ad0e1fc2e5ae0d408f9a82807cfc603e3c8aa4367fea7a3b1fe6dd5a09acf2"
+    },
+    {
+      "id": "cardiac-monitoring",
+      "source": "research/cardiac-monitoring/preview.mp4",
+      "beforeBytes": 6526168,
+      "afterBytes": 6526168,
+      "sha256": "855a9599d293f5f94e402c7e31bbb6d5163d6b1791bf93c9daaa736a51a02b54"
+    },
+    {
+      "id": "mighty-drone-backscatter",
+      "source": "research/mighty-drone-backscatter/preview.mp4",
+      "beforeBytes": 9258937,
+      "afterBytes": 9258937,
+      "sha256": "34acb42e8cde37c791ab94a26c2486dc593344a8b967f53f37ae3dba0e050b12"
+    }
+  ],
+  "downloads": [
+    {
+      "id": "magnetic-rf-computing",
+      "type": "pdf",
+      "source": "research/magnetic-rf-computing/paper.pdf",
+      "sha256": "7fc9564fb93bc297e98ee291ed894ec77080250393dd03b59161b3c20dfa14f8"
+    },
+    {
+      "id": "magnetic-rf-computing",
+      "type": "demo",
+      "source": "research/magnetic-rf-computing/demo.mp4",
+      "sha256": "12bb21fb383a1c950bcd2e71650f6ce2cb676b623454e13cafab7da47fd6cd44"
+    },
+    {
+      "id": "mechanical-metasurface",
+      "type": "pdf",
+      "source": "research/mechanical-metasurface/paper.pdf",
+      "sha256": "97d42b0685419f9459afd014ff5342c298e7600ce90722e54ddff8887d95bf21"
+    },
+    {
+      "id": "mechanical-metasurface",
+      "type": "demo",
+      "source": "research/mechanical-metasurface/demo.mp4",
+      "sha256": "4d2b0feb47233a668970f124f1ec33ea975a72b5a2d4a70ac6373177d0b5a829"
+    },
+    {
+      "id": "eeg-fatigue-interaction",
+      "type": "demo",
+      "source": "research/eeg-fatigue-interaction/demos.zip",
+      "sha256": "8fdf5442a4d4d431fa5134ae1aa173e93ae22e0c5a4a2b8b6946d70422f14320"
+    },
+    {
+      "id": "cardiac-monitoring",
+      "type": "demo",
+      "source": "research/cardiac-monitoring/demos.zip",
+      "sha256": "216bc6ca2b949245df0391977a188e25adb4e022ec949f8dbfcf6af438aba33e"
+    },
+    {
+      "id": "mighty-drone-backscatter",
+      "type": "pdf",
+      "source": "research/mighty-drone-backscatter/paper.pdf",
+      "sha256": "77159c330fc04121ce513d56e280634bee286899f5daa258fb3fa221a7b878e9"
+    },
+    {
+      "id": "mighty-drone-backscatter",
+      "type": "demo",
+      "source": "research/mighty-drone-backscatter/preview.mp4",
+      "sha256": "34acb42e8cde37c791ab94a26c2486dc593344a8b967f53f37ae3dba0e050b12"
+    }
+  ]
+}

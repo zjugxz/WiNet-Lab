@@ -5,6 +5,24 @@ import EmphasisText from '../components/EmphasisText.astro';
 import NewsList from '../components/NewsList.astro';
 import home from '../data/home.json';
 import { assetPath, sitePath } from '../lib/paths';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+// Import the configured original so Astro generates and caches each size at build time.
+const originals = import.meta.glob<{ default: ImageMetadata }>(
+  '../../public/images/*.{png,jpg,jpeg}',
+  { eager: true },
+);
+const original = originals[`../../public/${home.heroImage.src}`]?.default;
+if (!original)
+  throw new Error(`Home image source not found: ${home.heroImage.src}`);
+const responsiveImage = await getImage({
+  src: original,
+  format: 'webp',
+  widths: [480, 640, 960, 1200, 1600, 2154].filter(
+    (width) => width <= original.width,
+  ),
+});
 ---
 
 <SiteLayout title="Home" current="">
@@ -25,15 +43,22 @@ import { assetPath, sitePath } from '../lib/paths';
         </a>
       </div>
       <figure class="hero-visual">
-        <img
-          src={assetPath(home.heroImage.src)}
-          alt={home.heroImage.alt}
-          width={home.heroImage.width}
-          height={home.heroImage.height}
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset={responsiveImage.srcSet.attribute}
+            sizes="(max-width: 760px) min(560px, calc(100vw - 40px)), (max-width: 1000px) calc((100vw - 88px) / 2), (max-width: 1276px) calc((100vw - 131px) / 2), 572.5px"
+          />
+          <img
+            src={assetPath(home.heroImage.src)}
+            alt={home.heroImage.alt}
+            width={home.heroImage.width}
+            height={home.heroImage.height}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
       </figure>
     </section>
     <section class="about section" aria-labelledby="about-title">

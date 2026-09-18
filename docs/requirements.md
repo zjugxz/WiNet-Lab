@@ -2,6 +2,8 @@
 
 更新日期：2026-09-18（Asia/Shanghai）。
 
+最新媒体优化指示：用户在Home/Research性能诊断后明确要求“直接执行修改，更新本地网站的home和Research页的功能”，授权两页作为同一批次实施。现本地已实现响应式WebP、三段压缩预览、faststart和视口加载/播放；保留原图、完整Demo原质量与可见时无需点击的静音循环，并尊重手动暂停。两页之间不再另等确认，本批完成后交用户查看；不自动发布、不视为整站验收。
+
 ## 网站
 
 - 名称：WiNet Lab，已由用户明确指定；替换网站原有 Winet Group 名称。完整名称为 Wireless Intelligence for Networked and Embodied Things (WiNet) Lab，单位为 Zhejiang University。

@@ -7,6 +7,12 @@ export default defineConfig({
   base: process.env.SITE_BASE || '/',
   trailingSlash: 'always',
   devToolbar: { enabled: false },
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: { webp: { lossless: true } },
+    },
+  },
   vite: {
     server: {
       watch: {
