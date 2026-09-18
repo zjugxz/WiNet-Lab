@@ -2,6 +2,8 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
+最新诊断：[Home图片与Research视频加载优化方案](verification/media-performance-2026-09-18.md)。已核对资源大小、视频编码/索引、加载代码及线上缓存/分段响应，并试测首页WebP体积；当前仅完成分析，方案待确认，尚未替换素材或发布优化。
+
 网站地址：[WiNet Lab](https://zjugxz.github.io/WiNet-Lab/)。用户于2026-09-18明确要求更新文档后上传当前本地网站，已上传发布提交918672b，Actions构建/部署及线上关键页面检查通过，具体证据见[发布记录](verification/release-2026-09-18.md)。此前线上版本为f943625；技术验证或发布均不等于用户完成整站验收。
 
 当前内容：Home正式介绍、词云及7条News；Research三方向及6篇研究；Publications 74条记录、73个出版入口；Contact合作/招生文字和邮箱。People与Research第三方向仍为占位，在线后台未实现。
