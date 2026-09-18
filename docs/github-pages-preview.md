@@ -8,7 +8,7 @@
 
 日后只推送经过审阅的main。resources、.tools、dist、node_modules和环境文件由.gitignore排除；public中的文件及main可达历史会公开。未录用论文保持pdf:null及Paper coming soon，不能仅因新素材到达就恢复。发布前检查旧URL404和三个受限PDF对象不在待上传可达历史。
 
-本轮验证：32文件类型检查零错误/警告/提示，17项Home/导航/Publications测试通过，两种base构建、全站子路径、Research排序/投稿标签/刊会字体/8下载字节/受限PDF404检查通过。GitHub实际上传及Actions状态在发布记录中单独记录，不把本地测试当作已上线。
+本轮验证：32文件类型检查零错误/警告/提示，17项Home/导航/Publications测试通过，两种base构建、全站子路径、Research排序/投稿标签/刊会字体/8下载字节/受限PDF404检查通过。918672b已普通推送，[Actions 35324590700](https://github.com/zjugxz/WiNet-Lab/actions/runs/35324590700)构建/部署成功；线上5页、74条Publications及搜索、Research资源入口/排序/投稿状态均验证通过，三个受限PDF URL均404。发布后文档收尾提交不改变网站文件，具体结果见发布记录。
 
 ## 历史：2026-09-17首次发布
 
