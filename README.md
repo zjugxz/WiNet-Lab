@@ -40,6 +40,8 @@ For deployment checks, build a second output with `SITE_BASE=/WiNet-Lab/` into `
 
 ## Content and handoff
 
+The latest local Research addition provides BibTeX view/copy/download for the three published papers. Citation sources live in `src/data/citations/`, with optional `bibtex` IDs in research.json; submitted papers have no Bib entry. Run `node scripts/check-research-citations.mjs` against root/base builds. See [citation sources and verification](docs/verification/research-bib-2026-09-18.md). This addition has not yet been published.
+
 See [docs/README.md](docs/README.md) for requirements, progress, architecture, content editing, and verification evidence. The form-based online CMS is a later milestone; editing JSON alone does not yet provide that workflow.
 
 The user authorized publishing the current website on 2026-09-18. Pushes to main (or manual dispatch) check and build with Node 24 and SITE_BASE=/WiNet-Lab/, then deploy the static output. Local development defaults to /. See [deployment instructions and release status](docs/github-pages-preview.md).

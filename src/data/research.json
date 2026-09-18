@@ -8,6 +8,7 @@
         {
           "id": "magnetic-rf-computing",
           "title": "Physical computing across magnetic and RF domains for passive wireless information retrieval",
+          "bibtex": "magnetic-rf-computing",
           "publication": {
             "venue": "Device",
             "year": 2026,
@@ -43,6 +44,7 @@
         {
           "id": "mechanical-metasurface",
           "title": "Mechanically programmable metasurface for ultralow-power subterahertz beam steering",
+          "bibtex": "mechanical-metasurface",
           "publication": {
             "venue": "Cell Reports Physical Science",
             "year": 2026,
@@ -107,6 +109,7 @@
         {
           "id": "mighty-drone-backscatter",
           "title": "Mighty: Towards Long-Range and High-Throughput Backscatter for Drones",
+          "bibtex": "mighty-drone-backscatter",
           "publication": {
             "venue": "IEEE Transactions on Mobile Computing",
             "year": 2025,

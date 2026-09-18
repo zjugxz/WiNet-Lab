@@ -8,35 +8,41 @@ const download = z.object({
   src: file,
   filename: text.regex(/^[^/\\]+$/).optional(),
 });
-const paperSchema = z.object({
-  id,
-  title: text,
-  summary: text,
-  citation: text.optional(),
-  publication: z
-    .object({
-      venue: text.optional(),
-      year: z.number().int().min(1900).max(2100).optional(),
-      status: z.enum(['published', 'submitted']),
-    })
-    .optional(),
-  preview: z
-    .discriminatedUnion('type', [
-      z.object({ type: z.literal('image'), src: file, alt: text }),
-      z.object({
-        type: z.literal('video'),
-        src: file,
-        poster: file.optional(),
-        captions: z
-          .object({ src: file, language: text, label: text })
-          .optional(),
-      }),
-    ])
-    .optional(),
-  // null withholds the file and shows a non-downloadable submission placeholder.
-  pdf: download.nullable().optional(),
-  demo: download.optional(),
-});
+const paperSchema = z
+  .object({
+    id,
+    title: text,
+    summary: text,
+    citation: text.optional(),
+    bibtex: id.optional(),
+    publication: z
+      .object({
+        venue: text.optional(),
+        year: z.number().int().min(1900).max(2100).optional(),
+        status: z.enum(['published', 'submitted']),
+      })
+      .optional(),
+    preview: z
+      .discriminatedUnion('type', [
+        z.object({ type: z.literal('image'), src: file, alt: text }),
+        z.object({
+          type: z.literal('video'),
+          src: file,
+          poster: file.optional(),
+          captions: z
+            .object({ src: file, language: text, label: text })
+            .optional(),
+        }),
+      ])
+      .optional(),
+    // null withholds the file and shows a non-downloadable submission placeholder.
+    pdf: download.nullable().optional(),
+    demo: download.optional(),
+  })
+  .refine(
+    (paper) => !paper.bibtex || paper.publication?.status === 'published',
+    { message: 'Only published papers may provide BibTeX', path: ['bibtex'] },
+  );
 const uniqueIds = (items: { id: string }[]) =>
   new Set(items.map((item) => item.id)).size === items.length;
 const directionSchema = z.object({

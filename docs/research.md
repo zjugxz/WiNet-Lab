@@ -1,6 +1,10 @@
 # Research框架与验证
 
-更新：2026-09-18（Asia/Shanghai）。当前6篇研究、前两个方向各3篇，第三方向保留占位；静音循环、双列、小号图标按钮、Demo优先、投稿Paper coming soon及刊会样式已实现。用户已授权本轮上传，部署结果见[发布记录](verification/release-2026-09-18.md)。以下每轮验证保留当时状态；发布不等于用户验收。
+更新：2026-09-18（Asia/Shanghai）。当前6篇研究、前两个方向各3篇，第三方向保留占位；静音循环、双列、小号图标按钮、Demo优先、投稿Paper coming soon及刊会样式已实现并发布，见[发布记录](verification/release-2026-09-18.md)。最新Bib组件为本地新增，尚未上传。以下每轮验证保留当时状态；发布不等于用户验收。
+
+## 最新：已录用论文Bib引用
+
+已发表3篇新增与Paper/Demo并列的Bib按钮，可打开弹窗查看、复制及下载BibTeX。按ScienceDirect/IEEE支持的格式及出版方登记书目整理；Device缺卷期则省略，Mighty使用正式年2025。投稿中的3篇与空方向占位不生成Bib入口或文件。源文件位于src/data/citations，research.json通过bibtex字段关联；展示/复制/静态下载共用同一份数据。支持键盘、手机、复制拒绝回退及无JS直接下载，不恢复未录用PDF。来源、维护和验证详见[Bib组件记录](verification/research-bib-2026-09-18.md)。本轮本地提交、不自动发布，等待用户查看。
 
 ## 最新：排序、Paper coming soon与刊会信息
 

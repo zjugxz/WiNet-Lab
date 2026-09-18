@@ -1,5 +1,6 @@
 ---
 import { researchAssetPath, type ResearchPaper } from '../lib/research';
+import BibCitation from './BibCitation.astro';
 
 interface Props {
   paper?: ResearchPaper;
@@ -122,6 +123,13 @@ const downloads = [
             <span class="unavailable-label">coming soon</span>
           </button>
         ),
+      )}
+      {paper?.publication?.status === 'published' && paper.bibtex && (
+        <BibCitation
+          citationId={paper.bibtex}
+          title={title}
+          headingId={`${headingId}-citation`}
+        />
       )}
     </div>
   </div>
