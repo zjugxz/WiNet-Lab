@@ -1,6 +1,6 @@
 # Research框架与验证
 
-更新：2026-09-18（Asia/Shanghai）。当前6篇研究、前两个方向各3篇，第三方向保留占位；静音循环、双列、小号图标按钮、Demo优先、投稿Paper coming soon及刊会样式已实现并发布，见[发布记录](verification/release-2026-09-18.md)。最新Cite组件为本地新增，尚未上传。以下每轮验证保留当时状态；发布不等于用户验收。
+更新：2026-09-18（Asia/Shanghai）。当前6篇研究、前两个方向各3篇，第三方向保留占位；静音循环、双列、小号图标按钮、Demo优先、投稿Paper coming soon及刊会样式已实现并发布，见[发布记录](verification/release-2026-09-18.md)。最新Cite组件已获单独上传授权，结果见[Cite发布记录](verification/release-cite-2026-09-18.md)。以下每轮验证保留当时状态；发布不等于用户验收。
 
 ## 最新：Cite多格式引用
 

@@ -1,6 +1,10 @@
 # 将现有初版发布到 GitHub Pages
 
-## 当前发布：2026-09-18
+## 当前发布：2026-09-18 Cite更新
+
+用户在Cite完成后明确要求更新文档并上传，范围为Research的Text/BibTeX/RIS引用功能及文档。基于已发布6391b28普通快进推送main，无需再建干净快照或重写历史；受限PDF及本地备份继续不上传。具体提交、Actions及线上结果见[Cite发布记录](verification/release-cite-2026-09-18.md)。
+
+## 历史：2026-09-18全站内容发布
 
 用户已明确要求更新文档后上传当前网站到zjugxz/WiNet-Lab。当前内容包括Home、Research六篇、Publications 74条和Contact；People和第三研究方向保留占位。最新结果以[发布记录](verification/release-2026-09-18.md)为准，以下2026-09-17内容保留为首次发布历史。
 
