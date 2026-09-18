@@ -1,0 +1,106 @@
+---
+import ResearchPaperCard from './ResearchPaperCard.astro';
+import type { ResearchDirectionData } from '../lib/research';
+
+interface Props {
+  direction: ResearchDirectionData;
+  number: string;
+}
+const { direction, number } = Astro.props;
+// Keep the source order within each group; never mutate the shared data.
+const papers = direction.papers.toSorted(
+  (a, b) => Number(Boolean(b.demo)) - Number(Boolean(a.demo)),
+);
+---
+
+<section
+  id={direction.id}
+  class="research-direction"
+  aria-labelledby={`${direction.id}-title`}
+  tabindex="-1"
+>
+  <header class="direction-heading">
+    <span class="direction-number" aria-hidden="true">
+      {number}
+    </span>
+    <div>
+      <h2 id={`${direction.id}-title`}>{direction.title}</h2>
+      <p class="direction-subtitle">{direction.subtitle}</p>
+    </div>
+  </header>
+  <div class="direction-papers">
+    {direction.papers.length > 0 ? (
+      papers.map((paper) => (
+        <ResearchPaperCard
+          paper={paper}
+          headingId={`${direction.id}-${paper.id}-title`}
+        />
+      ))
+    ) : (
+      <ResearchPaperCard headingId={`${direction.id}-placeholder-title`} />
+    )}
+  </div>
+</section>
+
+<style>
+  .research-direction {
+    padding-block: 40px 48px;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 32px;
+  }
+  .research-direction:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 8px;
+  }
+  .direction-heading {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 20px;
+    margin-bottom: 0;
+  }
+  .direction-number {
+    color: var(--green);
+    font: 22px/1.4 var(--serif);
+    padding-top: 4px;
+  }
+  h2 {
+    font: 34px/1.2 var(--serif);
+    letter-spacing: -0.6px;
+  }
+  .direction-subtitle {
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .direction-papers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 32px;
+    padding-top: 28px;
+    margin-left: 64px;
+  }
+  @media (max-width: 760px) {
+    .research-direction {
+      padding-block: 30px 36px;
+    }
+    .direction-heading {
+      grid-template-columns: 30px minmax(0, 1fr);
+      gap: 12px;
+    }
+    h2 {
+      font-size: 28px;
+    }
+    .direction-number {
+      font-size: 19px;
+    }
+    .direction-subtitle {
+      font-size: 14px;
+    }
+    .direction-papers {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+      padding-top: 24px;
+      margin-left: 0;
+    }
+  }
+</style>

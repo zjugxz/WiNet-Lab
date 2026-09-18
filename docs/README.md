@@ -2,11 +2,17 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
-当前任务：[GitHub Pages部署配置与发布步骤](github-pages-preview.md)。目标为 zjugxz/WiNet-Lab；部署配置及现有Home代码已本地提交，origin已关联，类型检查、9项浏览器测试及 /WiNet-Lab/ 子路径验证通过。仓库API已确认公开且Pages已开启；首次推送因本机Git未获授权而失败。用户现改为手动上传，等待推送和部署结果。
+网站地址：[WiNet Lab](https://zjugxz.github.io/WiNet-Lab/)。用户于2026-09-18明确要求更新文档后上传当前本地网站，本轮发布进行中，具体提交、Actions及线上结果见[发布记录](verification/release-2026-09-18.md)。此前线上版本为f943625；技术验证或发布均不等于用户完成整站验收。
 
-待资料：[Publications 资料与实现准备](publications.md)。用户要求参考 MARS Lab Publications，并已选择自行提供收录论文清单；参考布局与筛选核对完成，等待实际清单后填充，本页仍为占位路由。
+当前内容：Home正式介绍、词云及7条News；Research三方向及6篇研究；Publications 74条记录、73个出版入口；Contact合作/招生文字和邮箱。People与Research第三方向仍为占位，在线后台未实现。
 
-最新修复：[Home 检查与手机菜单修复（2026-09-15）](verification/Home-review-2026-09-15.md)。手机菜单展开后按钮上移的问题已修复；类型检查、构建和9项浏览器测试通过，包含320/390/760 px下固定坐标连续点击与焦点框验证。[修复后截图](verification/home-menu-fixed.png)已目视检查，等待用户验收；其他四页仍为占位页。
+Research每方向有Demo优先，无Demo不显示按钮；受限论文显示不可点击的Paper coming soon，PDF不在公开目录。已发表3篇显示暖棕色衬线刊会名称及年份；投稿3篇不填刊会/年份，仅保留接口。上传使用基于远程既有历史的干净快照，不把曾包含受限PDF的本地开发历史上传；原历史仅保留在本地备份分支，原稿留在Git忽略的resources中。
+
+[Contact实现与验证](verification/contact-2026-09-18.md)已完成合作介绍、Join Us招生说明和guoxz@zju.edu.cn邮箱入口，已纳入本次发布范围，尚未记为用户验收。
+
+[Publications](publications.md)当前展示74条、73个出版入口；P71已删除，编号不重排；P34替换为《跨技术通信研究》，P37题名/CCF入口已更新。页面无Details pending，刊会彩色衬线、年份分隔加强。已纳入本次发布范围，尚未记为整页验收。
+
+历史修复：[Home手机菜单修复（2026-09-15）](verification/Home-review-2026-09-15.md)解决展开后按钮上移；当前发布前17项Home/导航/Publications测试通过，Research另有下载和组件检查。历史验证页中的占位状态不代表当前页面状态。
 
 ## 阅读顺序
 
@@ -20,7 +26,7 @@
 8. [F02 首批资料整合验证](verification/F02-home.md)
 9. [域名调研存档（已取消购买）](domain-research.md)
 
-用户已取消购买域名和本地内容管理工具。Home 三段英文介绍、词云及News已整合，其他四页仍为占位路由。用户允许先上线现有初版，本地部署配置已完成；在线后台仍待实现，未上传GitHub。当前状态以 progress.md 顶部为准，域名相关记录仅供历史存档。
+用户已取消购买域名和本地内容管理工具。使用现有GitHub Pages项目地址；在线后台待后续单独实施。当前状态以progress.md顶部为准，域名调研及旧轮次“不上传”记录仅说明当时范围，不覆盖本轮明确发布授权。
 
 最新内容批次：7条News已整合，首页介绍和新闻正文支持成对 `**` 标记加粗。修改位置及保存后的预览步骤见 [内容维护说明](content-maintenance.md)。
 

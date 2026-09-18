@@ -1,0 +1,471 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import {
+  publications,
+  publicationYears,
+  publicationTypes,
+} from '../lib/publications';
+---
+
+<SiteLayout title="Publications" current="publications">
+  <div class="container publications-page" data-publications-page>
+    <header class="publications-heading">
+      <p class="eyebrow">WiNet Lab / Research output</p>
+      <h1>Publications</h1>
+      <p class="publications-intro">
+        Journal articles, conference papers, and books from our research.
+      </p>
+    </header>
+    <div class="publications-layout">
+      <aside
+        class="publication-filters"
+        aria-label="Publication filters"
+        hidden
+      >
+        <button
+          type="button"
+          class="filter-toggle"
+          aria-expanded="false"
+          aria-controls="publication-filters"
+        >
+          Show filters
+        </button>
+        <form
+          id="publication-filters"
+          role="search"
+          aria-label="Search publications"
+        >
+          <div class="filter-heading">
+            <h2>Filter publications</h2>
+            <button type="reset">Clear all</button>
+          </div>
+          <label class="search-label" for="publication-search">
+            Search
+          </label>
+          <input
+            id="publication-search"
+            name="query"
+            type="search"
+            placeholder="Title, author, or venue"
+            autocomplete="off"
+            aria-controls="publication-results"
+          />
+          <fieldset>
+            <legend>Year</legend>
+            <div class="year-options">
+              {publicationYears.map((year) => (
+                <label>
+                  <input
+                    type="checkbox"
+                    name="year"
+                    value={year}
+                    aria-controls="publication-results"
+                  />
+                  <span>{year}</span>
+                  <span class="filter-count">
+                    {publications.filter((p) => p.year === year).length}
+                  </span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Publication type</legend>
+            {Object.entries(publicationTypes).map(([type, label]) => (
+              <label>
+                <input
+                  type="checkbox"
+                  name="type"
+                  value={type}
+                  aria-controls="publication-results"
+                />
+                <span>{label}</span>
+                <span class="filter-count">
+                  {publications.filter((p) => p.type === type).length}
+                </span>
+              </label>
+            ))}
+          </fieldset>
+        </form>
+      </aside>
+      <div id="publication-results" class="publication-results">
+        <div class="results-heading">
+          <p
+            data-result-count
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {publications.length} publications
+          </p>
+          <span>Newest first</span>
+        </div>
+        <div class="publication-empty" hidden>
+          <h2>No matching publications</h2>
+          <p>Try another keyword or clear your filters.</p>
+          <button type="button" data-clear-filters>
+            Clear filters
+          </button>
+        </div>
+        {publicationYears.map((year) => (
+          <section
+            class="publication-year"
+            data-year-group
+            aria-labelledby={`year-${year}`}
+          >
+            <h2 id={`year-${year}`}>{year}</h2>
+            <ul role="list" aria-label={`Publications from ${year}`}>
+              {publications
+                .filter((item) => item.year === year)
+                .map((item) => (
+                  <PublicationCard publication={item} />
+                ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</SiteLayout>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-publications-page]');
+  if (root) {
+    const form = root.querySelector<HTMLFormElement>('#publication-filters')!;
+    const panel = root.querySelector<HTMLElement>('.publication-filters')!;
+    const toggle = root.querySelector<HTMLButtonElement>('.filter-toggle')!;
+    const setExpanded = (expanded: boolean) => {
+      panel.classList.toggle('is-open', expanded);
+      toggle.setAttribute('aria-expanded', String(expanded));
+      toggle.textContent = expanded ? 'Hide filters' : 'Show filters';
+    };
+    toggle.addEventListener('click', () =>
+      setExpanded(toggle.getAttribute('aria-expanded') !== 'true'),
+    );
+    const search = form.querySelector<HTMLInputElement>('[name="query"]')!;
+    const normalize = (value: string) =>
+      value.normalize('NFKC').toLocaleLowerCase().trim();
+    const items = [
+      ...root.querySelectorAll<HTMLElement>('[data-publication]'),
+    ].map((element) => ({
+      element,
+      text: normalize(element.textContent || ''),
+      year: element.dataset.year!,
+      type: element.dataset.type!,
+    }));
+    const groups = [...root.querySelectorAll<HTMLElement>('[data-year-group]')];
+    const count = root.querySelector<HTMLElement>('[data-result-count]')!;
+    const empty = root.querySelector<HTMLElement>('.publication-empty')!;
+    const selected = (name: string) =>
+      [
+        ...form.querySelectorAll<HTMLInputElement>(
+          `input[name="${name}"]:checked`,
+        ),
+      ].map((input) => input.value);
+    const update = () => {
+      const years = selected('year');
+      const types = selected('type');
+      const terms = normalize(search.value).split(/\s+/).filter(Boolean);
+      let visible = 0;
+      for (const item of items) {
+        const matches =
+          (!years.length || years.includes(item.year)) &&
+          (!types.length || types.includes(item.type)) &&
+          terms.every((term) => item.text.includes(term));
+        item.element.hidden = !matches;
+        if (matches) visible++;
+      }
+      for (const group of groups)
+        group.hidden = !group.querySelector('[data-publication]:not([hidden])');
+      count.textContent =
+        visible === items.length
+          ? `${items.length} publications`
+          : `${visible} of ${items.length} publications`;
+      empty.hidden = visible > 0;
+    };
+    form.addEventListener('input', update);
+    form.addEventListener('submit', (event) => event.preventDefault());
+    // Form values reset after the reset event has been dispatched.
+    form.addEventListener('reset', () => setTimeout(update, 0));
+    root
+      .querySelector('[data-clear-filters]')!
+      .addEventListener('click', () => {
+        form.reset();
+        setExpanded(true);
+        search.focus();
+      });
+    panel.hidden = false;
+    root.classList.add('is-filterable');
+    update();
+  }
+</script>
+
+<style>
+  .publications-page {
+    padding-block: 64px 80px;
+  }
+  .publications-heading {
+    margin-bottom: 48px;
+  }
+  h1 {
+    font: 56px/1.12 var(--serif);
+    letter-spacing: -1.6px;
+    margin: 18px 0;
+  }
+  .publications-intro {
+    color: var(--muted);
+    max-width: 560px;
+    font-size: 16px;
+  }
+  .publications-layout {
+    display: grid;
+    gap: 56px;
+    align-items: start;
+  }
+  .is-filterable .publications-layout {
+    grid-template-columns: minmax(0, 1fr) 250px;
+  }
+  .publication-filters {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 24px;
+    max-height: calc(100dvh - 48px);
+    overflow-y: auto;
+    padding: 2px 6px 12px;
+  }
+  .publication-results {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .filter-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .filter-toggle {
+    display: none;
+  }
+  .filter-heading h2 {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  button {
+    border: 0;
+    border-bottom: 1px solid #b9cabc;
+    padding: 2px 0;
+    background: transparent;
+    color: var(--green);
+    cursor: pointer;
+    font-size: 12px;
+    min-height: 32px;
+  }
+  button:hover {
+    border-color: var(--green);
+  }
+  .search-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  input[type='search'] {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #bac5b4;
+    border-radius: 3px;
+    background: white;
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+    padding: 11px 12px;
+  }
+  input[type='search']::placeholder {
+    color: var(--muted);
+    opacity: 1;
+  }
+  input:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+  }
+  fieldset {
+    border: 0;
+    border-top: 1px solid var(--line);
+    padding: 20px 0 0;
+    margin: 26px 0 0;
+    min-width: 0;
+  }
+  legend {
+    padding: 0 10px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    min-height: 36px;
+    cursor: pointer;
+  }
+  fieldset input {
+    accent-color: var(--green);
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .filter-count {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+  }
+  .year-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 22px;
+  }
+  .results-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+  .results-heading > span {
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .publication-year {
+    margin-top: 56px;
+    scroll-margin-top: 24px;
+  }
+  .publication-year:first-of-type {
+    margin-top: 32px;
+  }
+  .publication-year > h2 {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--green);
+    background: #f3f6f1;
+    font: 44px/1.1 var(--serif);
+    letter-spacing: -1.5px;
+    color: var(--green);
+  }
+  .publication-year > h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #b9cabc;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .publication-empty {
+    padding: 60px 0;
+  }
+  .publication-empty h2 {
+    font: 27px var(--serif);
+    margin-bottom: 12px;
+  }
+  .publication-empty p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  @media (max-width: 1000px) {
+    .publications-layout {
+      gap: 32px;
+    }
+    .is-filterable .publications-layout {
+      grid-template-columns: minmax(0, 1fr) 225px;
+    }
+  }
+  @media (max-width: 760px) {
+    .publication-year {
+      margin-top: 40px;
+    }
+    .publication-year > h2 {
+      padding: 14px 16px;
+      font-size: 36px;
+      gap: 20px;
+    }
+    .publications-page {
+      padding-block: 40px 48px;
+    }
+    .publications-heading {
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-size: 44px;
+    }
+    .publications-intro {
+      font-size: 14px;
+    }
+    .is-filterable .publications-layout {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+    .publication-filters {
+      grid-column: 1;
+      grid-row: auto;
+      position: static;
+      max-height: none;
+      padding: 2px 4px 4px;
+    }
+    .publication-results {
+      grid-row: auto;
+    }
+    form {
+      display: none;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0 24px;
+    }
+    .filter-toggle {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 12px 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .is-open form {
+      display: grid;
+      padding-top: 20px;
+    }
+    .filter-heading,
+    .search-label,
+    input[type='search'] {
+      grid-column: 1 / -1;
+    }
+    fieldset {
+      margin-top: 24px;
+      padding-top: 12px;
+    }
+    .year-options {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media print {
+    .publication-filters {
+      display: none;
+    }
+    .is-filterable .publications-layout {
+      display: block;
+    }
+  }
+</style>

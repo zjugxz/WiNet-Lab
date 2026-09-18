@@ -4,7 +4,11 @@ import site from '../data/site.json';
 import { sitePath } from '../lib/paths';
 export function getStaticPaths() {
   return site.navigation
-    .filter((item) => item.path)
+    .filter(
+      (item) =>
+        item.path &&
+        !['research', 'publications', 'contact'].includes(item.path),
+    )
     .map((item) => ({
       params: { section: item.path },
       props: { title: item.label },

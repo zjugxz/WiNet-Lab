@@ -1,0 +1,139 @@
+{
+  "directions": [
+    {
+      "id": "bits-meet-physics",
+      "title": "Bits Meet Physics",
+      "subtitle": "Smart and Programmable Wireless Systems",
+      "papers": [
+        {
+          "id": "magnetic-rf-computing",
+          "title": "Physical computing across magnetic and RF domains for passive wireless information retrieval",
+          "publication": {
+            "venue": "Device",
+            "year": 2026,
+            "status": "published"
+          },
+          "summary": "A passive physical computing system transforms local magnetic signals directly into RF backscatter. Analog encoding and receiver-side neural reconstruction enable wireless magnetic information retrieval without on-device digital signal processing.",
+          "preview": {
+            "type": "video",
+            "src": "research/magnetic-rf-computing/preview.mp4",
+            "poster": "research/magnetic-rf-computing/poster.jpg"
+          },
+          "pdf": {
+            "src": "research/magnetic-rf-computing/paper.pdf",
+            "filename": "magnetic-rf-computing-paper.pdf"
+          },
+          "demo": {
+            "src": "research/magnetic-rf-computing/demo.mp4",
+            "filename": "magnetic-rf-computing-demo.mp4"
+          }
+        },
+        {
+          "id": "underwater-visible-light-backscatter",
+          "title": "Event-based Visible Light Backscatter Communication System in Underwater Environment",
+          "publication": { "status": "submitted" },
+          "summary": "An underwater communication system combines liquid-crystal polarization modulation with an event camera to recover reflected light signals. Event-driven decoding supports low-power data links for underwater Internet of Things devices.",
+          "preview": {
+            "type": "image",
+            "src": "research/underwater-visible-light-backscatter/preview.png",
+            "alt": "Underwater visible light backscatter system showing the light source, event camera, submerged tag, and event-stream decoding pipeline."
+          },
+          "pdf": null
+        },
+        {
+          "id": "mechanical-metasurface",
+          "title": "Mechanically programmable metasurface for ultralow-power subterahertz beam steering",
+          "publication": {
+            "venue": "Cell Reports Physical Science",
+            "year": 2026,
+            "status": "published"
+          },
+          "summary": "A mechanically programmable metasurface steers subterahertz beams by adjusting its surface geometry. Mechanical latching retains beam states without holding power, supporting continuous steering, multiple beams, and beam tracking for directional wireless links.",
+          "preview": {
+            "type": "video",
+            "src": "research/mechanical-metasurface/preview.mp4",
+            "poster": "research/mechanical-metasurface/poster.jpg"
+          },
+          "pdf": {
+            "src": "research/mechanical-metasurface/paper.pdf",
+            "filename": "mechanical-metasurface-paper.pdf"
+          },
+          "demo": {
+            "src": "research/mechanical-metasurface/preview.mp4",
+            "filename": "mechanical-metasurface-demo.mp4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wireless-without-batteries",
+      "title": "Wireless without Batteries",
+      "subtitle": "Connecting Devices without Batteries",
+      "papers": [
+        {
+          "id": "eeg-fatigue-interaction",
+          "title": "A low-power single-channel EEG sensor for fatigue monitoring and command interaction",
+          "publication": { "status": "submitted" },
+          "summary": "A lightweight single-channel EEG sensor combines conformal dry electrodes, low-power backscatter communication, and neural signal reconstruction to support fatigue monitoring and hands-free command interaction.",
+          "preview": {
+            "type": "video",
+            "src": "research/eeg-fatigue-interaction/preview.mp4",
+            "poster": "research/eeg-fatigue-interaction/poster.jpg"
+          },
+          "pdf": null,
+          "demo": {
+            "src": "research/eeg-fatigue-interaction/demos.zip",
+            "filename": "eeg-fatigue-interaction-demos.zip"
+          }
+        },
+        {
+          "id": "cardiac-monitoring",
+          "title": "A magneto-mechanical bio-interface with ultra-low-power analog backscatter for inclusive cardiac monitoring",
+          "publication": {
+            "status": "submitted"
+          },
+          "summary": "A wearable bio-interface converts heart-induced skin micro-vibrations into magnetic signals and transmits them through analog backscatter. The low-power design supports cardiac monitoring across diverse users without on-tag digitization or active radio transmission.",
+          "preview": {
+            "type": "video",
+            "src": "research/cardiac-monitoring/preview.mp4",
+            "poster": "research/cardiac-monitoring/poster.jpg"
+          },
+          "pdf": null,
+          "demo": {
+            "src": "research/cardiac-monitoring/demos.zip",
+            "filename": "cardiac-monitoring-demos.zip"
+          }
+        },
+        {
+          "id": "mighty-drone-backscatter",
+          "title": "Mighty: Towards Long-Range and High-Throughput Backscatter for Drones",
+          "publication": {
+            "venue": "IEEE Transactions on Mobile Computing",
+            "year": 2025,
+            "status": "published"
+          },
+          "summary": "Mighty combines a low-power backscatter radio with a lightweight video pipeline to reduce the energy cost of drone video streaming. It shifts demanding processing and communication work to the ground controller while supporting long-range, high-throughput wireless links.",
+          "preview": {
+            "type": "video",
+            "src": "research/mighty-drone-backscatter/preview.mp4",
+            "poster": "research/mighty-drone-backscatter/poster.jpg"
+          },
+          "pdf": {
+            "src": "research/mighty-drone-backscatter/paper.pdf",
+            "filename": "mighty-drone-backscatter-paper.pdf"
+          },
+          "demo": {
+            "src": "research/mighty-drone-backscatter/preview.mp4",
+            "filename": "mighty-drone-backscatter-demo.mp4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "embodied-intelligence-of-things",
+      "title": "Embodied Intelligence of Things",
+      "subtitle": "Robots, Human Motion, and Physical-World Sensing",
+      "papers": []
+    }
+  ]
+}

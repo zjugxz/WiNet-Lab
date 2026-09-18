@@ -1,0 +1,66 @@
+---
+// Injected only by scripts/check-research-card.mjs; never a published route.
+import SiteLayout from '../../src/layouts/SiteLayout.astro';
+import ResearchDirection from '../../src/components/ResearchDirection.astro';
+import { researchSchema } from '../../src/lib/research';
+
+const { directions } = researchSchema.parse({
+  directions: [
+    {
+      id: 'component-check',
+      title: 'Component verification fixtures',
+      subtitle: 'Synthetic test content, not lab research',
+      papers: [
+        {
+          id: 'image',
+          title: 'Image preview fixture',
+          summary: 'Image, full paper and full demo use separate files.',
+          citation: 'Synthetic component test',
+          preview: {
+            type: 'image',
+            src: 'images/winet-lab-wordcloud.png',
+            alt: 'Existing word cloud used only as a test image',
+          },
+          pdf: {
+            src: 'research-check/paper sample.pdf',
+            filename: 'test-paper.pdf',
+          },
+          demo: {
+            src: 'research-check/full-demo.webm',
+            filename: 'test-full-demo.webm',
+          },
+        },
+        {
+          id: 'video',
+          title: 'Video preview fixture',
+          summary:
+            'The short preview is playable; the complete demo has its own download.',
+          preview: {
+            type: 'video',
+            src: 'research-check/short-preview.webm',
+            poster: 'images/winet-lab-wordcloud.png',
+            captions: {
+              src: 'research-check/captions.vtt',
+              language: 'en',
+              label: 'English',
+            },
+          },
+          demo: { src: 'research-check/full-demo.webm' },
+        },
+        {
+          id: 'missing',
+          title: 'Missing resources fixture',
+          summary: 'No media or downloads have been supplied.',
+        },
+      ],
+    },
+  ],
+});
+---
+
+<SiteLayout title="Research component check" current="research">
+  <div class="container">
+    <h1>Research component check</h1>
+    <ResearchDirection direction={directions[0]} number="01" />
+  </div>
+</SiteLayout>

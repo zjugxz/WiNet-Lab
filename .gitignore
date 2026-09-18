@@ -1,4 +1,6 @@
 node_modules/
+# Local source material can contain unpublished manuscripts; publish only reviewed copies.
+resources/
 dist/
 .astro/
 .tools/

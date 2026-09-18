@@ -1,0 +1,178 @@
+---
+import {
+  publicationDetails,
+  publicationTypes,
+  type Publication,
+} from '../lib/publications';
+interface Props {
+  publication: Publication;
+}
+const { publication: item } = Astro.props;
+---
+
+<li
+  id={item.id}
+  class="publication"
+  data-publication
+  data-year={item.year}
+  data-type={item.type}
+>
+  <article aria-labelledby={`${item.id}-title`}>
+    <div class="publication-meta">
+      <span class="publication-venue" lang={item.language}>
+        {item.venueShort}
+      </span>
+      <span>{publicationTypes[item.type]}</span>
+    </div>
+    <div class="publication-content">
+      <h3 id={`${item.id}-title`} lang={item.language}>
+        {item.url ? (
+          <a href={item.url} target="_blank" rel="noopener noreferrer">
+            {item.title}
+          </a>
+        ) : (
+          item.title
+        )}
+      </h3>
+      <p class="publication-authors" lang={item.language}>
+        {item.authors.map((name, index) => (
+          <>
+            {index > 0 && ', '}
+            {name === 'Xiuzhen Guo' || name === '郭秀珍' ? (
+              <strong>{name}</strong>
+            ) : (
+              name
+            )}
+          </>
+        ))}
+      </p>
+      <p class="publication-details" lang={item.language}>
+        {publicationDetails(item)}
+      </p>
+      {item.url && (
+        <a
+          class="publication-resource"
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${item.type === 'book' ? 'Book' : 'Paper'}: ${item.title} (opens in a new tab)`}
+        >
+          {item.type === 'book' ? 'Book' : 'Paper'}{' '}
+          <span aria-hidden="true">↗</span>
+        </a>
+      )}
+    </div>
+  </article>
+</li>
+
+<style>
+  .publication {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 24px;
+  }
+  article {
+    display: grid;
+    grid-template-columns: 136px minmax(0, 1fr);
+    gap: 24px;
+  }
+  .publication-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--muted);
+    padding-top: 3px;
+  }
+  .publication-venue {
+    color: #326859;
+    font-family: Georgia, 'Times New Roman', 'Songti SC', SimSun, serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.35px;
+    overflow-wrap: anywhere;
+  }
+  .publication[data-type='conference'] .publication-venue,
+  .publication[data-type='poster'] .publication-venue {
+    color: #99533d;
+  }
+  .publication[data-type='book'] .publication-venue {
+    color: #5d527e;
+  }
+  .publication-venue:lang(zh-CN) {
+    font-size: 18px;
+    font-style: normal;
+    letter-spacing: 0.5px;
+  }
+  .publication-content {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  h3 {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.25px;
+  }
+  h3 a:hover {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .publication-authors {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+  .publication-authors strong {
+    color: var(--ink);
+  }
+  .publication-details {
+    margin-top: 7px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .publication-resource {
+    display: inline-flex;
+    gap: 9px;
+    align-items: center;
+    margin-top: 12px;
+    min-height: 32px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #b9cabc;
+  }
+  .publication-resource:hover {
+    border-color: var(--green);
+  }
+  @media (max-width: 1000px) {
+    article {
+      grid-template-columns: 1fr;
+      gap: 9px;
+    }
+    .publication-meta {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      align-items: center;
+    }
+  }
+  @media (max-width: 760px) {
+    .publication {
+      padding: 24px 0;
+    }
+    h3 {
+      font-size: 18px;
+    }
+  }
+  @media print {
+    .publication {
+      break-inside: avoid;
+    }
+  }
+</style>

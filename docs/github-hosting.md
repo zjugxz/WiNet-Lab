@@ -2,6 +2,8 @@
 
 核查日期：2026-09-15（Asia/Shanghai）。本文记录可行性和待确认项，不代表完整实施方案已通过用户验收。
 
+当前状态（2026-09-18）：目标已确定为zjugxz/WiNet-Lab公开仓库、main分支，Pages项目地址https://zjugxz.github.io/WiNet-Lab/；初版f943625已部署。用户现授权文档更新后发布当前Research/Publications/Contact等实现，见[本轮发布记录](verification/release-2026-09-18.md)。下文关于未知仓库、未部署等表述均为早期调研历史。
+
 2026-09-17补充：用户已提供目标仓库 https://github.com/zjugxz/WiNet-Lab ，要求初版提前上线，并随后授权补齐部署配置。新目标替代“整站验收后才首次上传”的历史时点限制。Astro站点配置和GitHub Actions工作流已本地实现并验证，见 [初版发布指南](github-pages-preview.md)。未核实仓库是否为空、是否公开或Pages状态；未上传或启用Pages。下文尚未取得仓库链接等为历史记录。
 
 ## 已确认方向

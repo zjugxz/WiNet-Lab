@@ -1,6 +1,12 @@
 # WiNet Lab website
 
-An English-language academic lab website, with a static Astro frontend and shared page components. Home includes the supplied WiNet Lab introduction, word-cloud image, and seven News records. Introductory and News body text supports paired **bold** markers in the content data. Research, Publications, People, and Contact are explicitly marked placeholders.
+An academic lab website with an English interface, a static Astro frontend, and shared page components. Website: [zjugxz.github.io/WiNet-Lab](https://zjugxz.github.io/WiNet-Lab/).
+
+- Home: supplied lab introduction, word-cloud image, and seven News records; body text supports paired **bold** markers.
+- Research: three directions and six paper cards, five looping video previews, one image, three open papers, and five full-demo downloads. Cards with a Demo appear first. Unavailable papers show `Paper coming soon`; unpublished PDFs are excluded from the site. Published venue/year labels use a warm brown serif style; submission venue/year fields remain unfilled.
+- Publications: 74 records (original item 71 removed), year/type filters, keyword search, and 73 publication links. Original Chinese titles are retained.
+- Contact: collaboration and PhD/Master recruitment information, with the supplied public email.
+- People and the third Research direction: explicit placeholders. The online content-management backend is not implemented.
 
 ## Local preview on this computer
 
@@ -28,8 +34,14 @@ npm test
 
 The browser tests create an isolated production preview on port 4322. With a preview running on port 4321, `node scripts/capture.mjs` updates the desktop and mobile review screenshots. On this computer, set `PLAYWRIGHT_BROWSERS_PATH` to the project's `.tools/browsers` directory to use the prepared browser; otherwise Playwright uses its standard cache.
 
+`node scripts/capture-publications.mjs` captures Publications desktop/mobile views and a filtered book result using its own temporary preview on port 4324. Publication data lives in `src/data/publications.json`; see [content maintenance](docs/content-maintenance.md) for all data fields. Internal bibliography-audit flags are not rendered as pending labels.
+
+For deployment checks, build a second output with `SITE_BASE=/WiNet-Lab/` into `.tools/base-dist`, then run `node scripts/check-base.mjs` and `node scripts/check-research-downloads.mjs`. The latter checks both builds, including withheld PDF URLs returning 404, Demo-first ordering, venue styles, and exact download bytes. `node scripts/check-research-card.mjs` separately checks media playback, accessibility, and responsive cards using isolated fixtures.
+
 ## Content and handoff
 
 See [docs/README.md](docs/README.md) for requirements, progress, architecture, content editing, and verification evidence. The form-based online CMS is a later milestone; editing JSON alone does not yet provide that workflow.
 
-The user now intends to publish an initial preview to zjugxz/WiNet-Lab. The local GitHub Pages workflow and Astro site configuration are ready: pushes to main (or manual dispatch) check and build with Node 24 and SITE_BASE=/WiNet-Lab/, then deploy the static output. Local development still defaults to /. See [deployment instructions](docs/github-pages-preview.md) for Pages settings and first-push steps. The workflow has not run on GitHub; repository access/settings and the live site remain unverified. The online CMS is still a later milestone.
+The user authorized publishing the current website on 2026-09-18. Pushes to main (or manual dispatch) check and build with Node 24 and SITE_BASE=/WiNet-Lab/, then deploy the static output. Local development defaults to /. See [deployment instructions and release status](docs/github-pages-preview.md).
+
+`resources/` contains private source material and is Git-ignored. Only reviewed copies belong in `public/`. The local archive branch `codex/local-history-2026-09-18` preserves earlier development history containing withdrawn manuscripts; never push that branch or use `git push --all`/`--mirror`. Published main uses the existing remote history plus a clean snapshot of current files, so the withdrawn PDFs are not reachable from the published history. Keep publication permission separate from whether a file exists locally.

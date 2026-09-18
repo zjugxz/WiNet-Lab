@@ -1,0 +1,126 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ResearchDirection from '../components/ResearchDirection.astro';
+import researchData from '../data/research.json';
+import { researchSchema } from '../lib/research';
+
+const research = researchSchema.parse(researchData);
+---
+
+<SiteLayout title="Research" current="research">
+  <div class="container research-page">
+    <header class="research-heading">
+      <h1>Research</h1>
+      <p>Our research spans three directions:</p>
+    </header>
+    <ol class="direction-index" aria-label="Research directions">
+      {research.directions.map((direction, index) => (
+        <li>
+          <a href={`#${direction.id}`}>
+            <span class="index-number" aria-hidden="true">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <span class="index-title">{direction.title}</span>
+            <span class="index-subtitle">{direction.subtitle}</span>
+            <span class="index-arrow" aria-hidden="true">
+              ↘
+            </span>
+          </a>
+        </li>
+      ))}
+    </ol>
+    <div class="research-sections">
+      {research.directions.map((direction, index) => (
+        <ResearchDirection
+          direction={direction}
+          number={String(index + 1).padStart(2, '0')}
+        />
+      ))}
+    </div>
+  </div>
+</SiteLayout>
+
+<style>
+  .research-page {
+    padding-block: 64px 40px;
+  }
+  h1 {
+    font: 56px/1.12 var(--serif);
+    letter-spacing: -1.6px;
+    margin-bottom: 24px;
+  }
+  .research-heading p {
+    color: var(--muted);
+    font-size: 17px;
+  }
+  .direction-index {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 52px;
+  }
+  .direction-index a {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 330px) minmax(0, 1fr) 24px;
+    gap: 20px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .index-number {
+    font: 17px var(--serif);
+    color: var(--green);
+  }
+  .index-title {
+    font: 22px/1.35 var(--serif);
+  }
+  .index-subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .index-arrow {
+    color: var(--green);
+    font-size: 20px;
+  }
+  .direction-index a:hover .index-title {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+  @media (max-width: 1000px) {
+    .direction-index a {
+      grid-template-columns: 30px minmax(0, 1fr) minmax(0, 1fr) 20px;
+      gap: 16px;
+    }
+  }
+  @media (max-width: 760px) {
+    .research-page {
+      padding-block: 40px 16px;
+    }
+    h1 {
+      font-size: 44px;
+    }
+    .research-heading p {
+      font-size: 16px;
+    }
+    .direction-index {
+      margin: 24px 0 36px;
+    }
+    .direction-index a {
+      grid-template-columns: 30px minmax(0, 1fr) 20px;
+      gap: 8px 12px;
+      padding-block: 20px;
+    }
+    .index-title {
+      font-size: 21px;
+    }
+    .index-subtitle {
+      grid-column: 2;
+      font-size: 14px;
+    }
+    .index-arrow {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  }
+</style>

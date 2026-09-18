@@ -1,14 +1,28 @@
 # 将现有初版发布到 GitHub Pages
 
-更新：2026-09-17（Asia/Shanghai）。目标仓库由用户提供：[zjugxz/WiNet-Lab](https://github.com/zjugxz/WiNet-Lab)。部署配置及当前Home代码已本地提交，origin已关联。仓库API确认公开、默认分支main且Pages已开启。首次推送因本机Git未获授权失败；用户现选择手动上传，后台登录尝试已停止。
+## 当前发布：2026-09-18
+
+用户已明确要求更新文档后上传当前网站到zjugxz/WiNet-Lab。当前内容包括Home、Research六篇、Publications 74条和Contact；People和第三研究方向保留占位。最新结果以[发布记录](verification/release-2026-09-18.md)为准，以下2026-09-17内容保留为首次发布历史。
+
+本轮发布基于核实的远程main f943625，用当前允许公开的完整文件树创建一个普通后继提交。先把原本地开发历史保存到`codex/local-history-2026-09-18`，再切换本地main到干净历史，最终普通push main；不强推、不覆盖已上线提交、不删除resources原稿。原开发历史含受限PDF，只能本地保留，禁止推送备份分支及使用`git push --all`、`--mirror`。当前目录已移除的PDF不代表旧Git提交自动移除，这是本轮采用干净快照的原因。
+
+日后只推送经过审阅的main。resources、.tools、dist、node_modules和环境文件由.gitignore排除；public中的文件及main可达历史会公开。未录用论文保持pdf:null及Paper coming soon，不能仅因新素材到达就恢复。发布前检查旧URL404和三个受限PDF对象不在待上传可达历史。
+
+本轮验证：32文件类型检查零错误/警告/提示，17项Home/导航/Publications测试通过，两种base构建、全站子路径、Research排序/投稿标签/刊会字体/8下载字节/受限PDF404检查通过。GitHub实际上传及Actions状态在发布记录中单独记录，不把本地测试当作已上线。
+
+## 历史：2026-09-17首次发布
+
+更新：2026-09-17（Asia/Shanghai）。目标仓库由用户提供：[zjugxz/WiNet-Lab](https://github.com/zjugxz/WiNet-Lab)。部署配置及当前Home代码已提交并由用户手动上传，origin已关联。仓库公开，默认分支为main，Pages已开启并成功发布。
+
+最新结果：用户已手动上传f943625；[首次Actions运行](https://github.com/zjugxz/WiNet-Lab/actions/runs/35186671693)的build/deploy均成功，[初版网站](https://zjugxz.github.io/WiNet-Lab/)已上线。线上Chromium验证HTTP 200、5页导航、CSS、原始词云和手机菜单通过，无失败请求。以下首次推送和排障步骤保留供参考，无需重复初始化；后续更新提交到main再push即可触发部署。线上验证记录仅本地提交，未代为再次上传。
 
 ## 当前核查
 
 - 本地分支为 main，origin指向目标仓库；home.json 和 index.astro 中的用户修改已保存为f305eea，无需重复提交。
 - Astro 使用静态输出，site 已设为 https://zjugxz.github.io；本地默认根路径仍为 /。工作流已新增，构建时传入 SITE_BASE=/WiNet-Lab/。
-- 最新验证：类型检查19个文件零错误/警告/提示；根路径5页构建成功；9项Chromium测试通过（5.7秒）；/WiNet-Lab/ 独立构建与浏览器子路径检查通过，5页导航、样式、词云和手机菜单正常，无失败请求。工作流YAML解析无错误/警告，尚未在GitHub执行。
+- 本地验证：类型检查19个文件零错误/警告/提示；根路径5页构建成功；9项Chromium测试通过（5.7秒）；/WiNet-Lab/ 独立构建与浏览器子路径检查通过。工作流YAML解析无错误/警告，现已在GitHub实际执行并成功发布。
 - 2026-09-17使用git ls-remote核对时未返回远程提交；通过Git自带curl读取仓库API确认public、main、size=0、has_pages=true。Pages构建来源及操作者写权限仍待实际推送/部署验证。
-- 默认项目站点地址预计为 https://zjugxz.github.io/WiNet-Lab/；最终以成功部署后 Pages 显示的地址为准。它使用独立项目路径，无需修改老师原有个人站点仓库。
+- 已验证实际项目站点地址为 https://zjugxz.github.io/WiNet-Lab/，5页导航、样式、词云和手机菜单正常，无失败请求。它使用独立项目路径，无需修改老师原有个人站点仓库。
 
 ## 1. 核对仓库条件
 
@@ -45,7 +59,7 @@ Remove-Item Env:SITE_BASE
 
 ## 4. 保存当前版本并首次推送
 
-部署配置、Home修改均已保存为本地提交，origin已配置。现在只需在PowerShell中执行：
+部署配置、Home修改均已保存为本地提交，origin已配置，首次推送已完成。以下命令保留作为上传参考：
 
 ```powershell
 Set-Location 'F:\WiNet Website Program'
@@ -77,4 +91,4 @@ git push 会发送 main 的已提交历史，包括已经纳入版本管理的 d
 
 ## 本轮交接
 
-配置提交为a98fce7，Home内容提交为f305eea。推送尝试未通过身份验证，未上传代码；用户现改为手动操作，所有本任务后台登录尝试已停止。下一步由用户完成git push并检查Actions及公开站点；准备完成不等于已上线或已通过用户验收。Publications仍待用户提供清单。
+配置提交为a98fce7，Home内容提交为f305eea，首次实际发布版本为f943625。用户手动上传后，Actions发布及真实线上浏览器检查通过；本轮未修改网站源码或代为再次push。验证结果文档保存为本地提交，尚未上传，不影响当前线上代码。下一步等待用户查看初版并反馈；Publications仍待用户提供清单。技术发布不等于用户验收，后台也尚未实现。

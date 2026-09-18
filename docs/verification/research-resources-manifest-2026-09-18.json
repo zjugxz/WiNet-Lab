@@ -1,0 +1,201 @@
+{
+  "papers": [
+    {
+      "id": "magnetic-rf-computing",
+      "preview": "public/research/magnetic-rf-computing/preview.mp4",
+      "demo": "public/research/magnetic-rf-computing/demo.mp4",
+      "metadata": [
+        "Duration: 00:00:41.47, start: 0.000000, bitrate: 3944 kb/s",
+        "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 3810 kb/s, 30 fps, 30 tbr, 15360 tbn (default)"
+      ]
+    },
+    {
+      "id": "underwater-visible-light-backscatter",
+      "preview": "public/research/underwater-visible-light-backscatter/preview.png",
+      "demo": null,
+      "metadata": [
+        "(2872, 918)"
+      ]
+    },
+    {
+      "id": "mechanical-metasurface",
+      "preview": "public/research/mechanical-metasurface/preview.mp4",
+      "demo": "public/research/mechanical-metasurface/preview.mp4",
+      "metadata": [
+        "Duration: 00:01:18.67, start: 0.000000, bitrate: 7874 kb/s",
+        "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 7676 kb/s, 30 fps, 30 tbr, 600 tbn (default)"
+      ]
+    },
+    {
+      "id": "eeg-fatigue-interaction",
+      "preview": "public/research/eeg-fatigue-interaction/preview.mp4",
+      "demo": "public/research/eeg-fatigue-interaction/demos.zip",
+      "metadata": [
+        "Duration: 00:00:34.09, start: 0.000000, bitrate: 7484 kb/s",
+        "Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 968x544 [SAR 1:1 DAR 121:68], 7288 kb/s, 30 fps, 30 tbr, 30 tbn (default)"
+      ]
+    },
+    {
+      "id": "cardiac-monitoring",
+      "preview": "public/research/cardiac-monitoring/preview.mp4",
+      "demo": "public/research/cardiac-monitoring/demos.zip",
+      "metadata": [
+        "Duration: 00:00:35.09, start: 0.000000, bitrate: 1488 kb/s",
+        "Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720, 1479 kb/s, SAR 1:1 DAR 16:9, 30 fps, 30 tbr, 15360 tbn (default)"
+      ]
+    },
+    {
+      "id": "mighty-drone-backscatter",
+      "preview": "public/research/mighty-drone-backscatter/preview.mp4",
+      "demo": "public/research/mighty-drone-backscatter/preview.mp4",
+      "metadata": [
+        "Duration: 00:01:42.33, start: 0.000000, bitrate: 723 kb/s",
+        "Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720, 644 kb/s, SAR 1:1 DAR 16:9, 30 fps, 30 tbr, 15360 tbn (default)"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "source": "resources/paper/Bits Meet Physics/Computing across Magnetic and RF Domains for Passive Wireless Information Retrieval.pdf",
+      "destination": "public/research/magnetic-rf-computing/paper.pdf",
+      "sha256": "7fc9564fb93bc297e98ee291ed894ec77080250393dd03b59161b3c20dfa14f8",
+      "bytes": 8523741
+    },
+    {
+      "source": "resources/display/Bits Meet Physics/Computing across Magnetic and RF Domains for Passive Wireless Information Retrieval/1.mp4",
+      "destination": "public/research/magnetic-rf-computing/demo.mp4",
+      "sha256": "12bb21fb383a1c950bcd2e71650f6ce2cb676b623454e13cafab7da47fd6cd44",
+      "bytes": 31326593,
+      "webPreview": "public/research/magnetic-rf-computing/preview.mp4",
+      "webPreviewSha256": "1b0cb60a47e7501ca6de97d37ef79c33c3977ad6065b186e8e1f28dbf7b6355e",
+      "conversion": "HEVC to H.264/AAC, CRF 23, yuv420p, faststart; original preserved"
+    },
+    {
+      "source": "resources/demo/Bits Meet Physics/Computing across Magnetic and RF Domains for Passive Wireless Information Retrieval/1.mp4",
+      "destination": "public/research/magnetic-rf-computing/demo.mp4",
+      "sha256": "12bb21fb383a1c950bcd2e71650f6ce2cb676b623454e13cafab7da47fd6cd44",
+      "bytes": 31326593
+    },
+    {
+      "source": "resources/paper/Bits Meet Physics/Event based Visible Light Backscatter Communication System in Underwater Environment.pdf",
+      "destination": "public/research/underwater-visible-light-backscatter/paper.pdf",
+      "sha256": "116c65fe1050a3e7b8f7783521398fe58bbbe25ee9900b58734df98d805c9c2d",
+      "bytes": 9274121
+    },
+    {
+      "source": "resources/display/Bits Meet Physics/Event based Visible Light Backscatter Communication System in Underwater Environment/System Overview_01.png",
+      "destination": "public/research/underwater-visible-light-backscatter/preview.png",
+      "sha256": "796cce8eaafb884d32d06f5e475dd9db38e34004ddf44722ed2e9cd6a9a3313e",
+      "bytes": 363831
+    },
+    {
+      "source": "resources/paper/Bits Meet Physics/Mechanically Programmable Metasurface for Ultralow-Power Sub-terahertz Beam Steering Physical.pdf",
+      "destination": "public/research/mechanical-metasurface/paper.pdf",
+      "sha256": "97d42b0685419f9459afd014ff5342c298e7600ce90722e54ddff8887d95bf21",
+      "bytes": 26351429
+    },
+    {
+      "source": "resources/display/Bits Meet Physics/Mechanically Programmable Metasurface for Ultralow-Power Sub-terahertz Beam Steering Physical/Mechanically Programmable.mp4",
+      "destination": "public/research/mechanical-metasurface/preview.mp4",
+      "sha256": "4d2b0feb47233a668970f124f1ec33ea975a72b5a2d4a70ac6373177d0b5a829",
+      "bytes": 77433649
+    },
+    {
+      "source": "resources/demo/Bits Meet Physics/Mechanically Programmable Metasurface for Ultralow-Power Sub-terahertz Beam Steering Physical/Mechanically Programmable.mp4",
+      "destination": "public/research/mechanical-metasurface/preview.mp4",
+      "sha256": "4d2b0feb47233a668970f124f1ec33ea975a72b5a2d4a70ac6373177d0b5a829",
+      "bytes": 77433649
+    },
+    {
+      "source": "resources/paper/Wireless without Batteries/A low-power wireless single-channel EEG sensor for fatigue monitoring and command interaction.pdf",
+      "destination": "public/research/eeg-fatigue-interaction/paper.pdf",
+      "sha256": "000a7abdab3619ed76cf7034cbad13886479589629a780542a68954e058f7772",
+      "bytes": 8011828
+    },
+    {
+      "source": "resources/display/Wireless without Batteries/A low-power single-channel EEG sensor for fatigue monitoring and command interaction/1.mp4",
+      "destination": "public/research/eeg-fatigue-interaction/preview.mp4",
+      "sha256": "5706be790106633138def371db05ddfddb8bba2149d323d1deab3a75c95b9c03",
+      "bytes": 31892531
+    },
+    {
+      "source": "resources/demo/Wireless without Batteries/A low-power single-channel EEG sensor for fatigue monitoring and command interaction/1.mp4",
+      "destination": "public/research/eeg-fatigue-interaction/demos.zip",
+      "sha256": "a46295f6eb5a6d407ccc7bd51156abe61e569bccd21ae3e27685917c8de7d00f",
+      "bytes": 11848920,
+      "zipMember": "1.mp4"
+    },
+    {
+      "source": "resources/demo/Wireless without Batteries/A low-power single-channel EEG sensor for fatigue monitoring and command interaction/2.mp4",
+      "destination": "public/research/eeg-fatigue-interaction/demos.zip",
+      "sha256": "2045408c55e9a3b8369147ce7ff2810745193e963202d4931bd4734fc791c5f5",
+      "bytes": 18177027,
+      "zipMember": "2.mp4"
+    },
+    {
+      "source": "resources/demo/Wireless without Batteries/A low-power single-channel EEG sensor for fatigue monitoring and command interaction/3.mp4",
+      "destination": "public/research/eeg-fatigue-interaction/demos.zip",
+      "sha256": "5a9f87e8da7218799f5d79fa4f4947e79039e4ee754010f44e4383b39e958c0c",
+      "bytes": 15658638,
+      "zipMember": "3.mp4"
+    },
+    {
+      "source": "resources/paper/Wireless without Batteries/npj_Flexible_Electronics_MagnetCard_main_revision_clean.pdf",
+      "destination": "public/research/cardiac-monitoring/paper.pdf",
+      "sha256": "cc0d100c3b261b5abd40c1992dbc773f6069bb21a631877aeb8e6340f397c4ef",
+      "bytes": 6778845
+    },
+    {
+      "source": "resources/display/Wireless without Batteries/A magneto-mechanical bio-interface with ultra-low-power analog backscatter for inclusive cardiac monitoring/3.mp4",
+      "destination": "public/research/cardiac-monitoring/preview.mp4",
+      "sha256": "855a9599d293f5f94e402c7e31bbb6d5163d6b1791bf93c9daaa736a51a02b54",
+      "bytes": 6526168
+    },
+    {
+      "source": "resources/demo/Wireless without Batteries/A magneto-mechanical bio-interface with ultra-low-power analog backscatter for inclusive cardiac monitoring/1.mp4",
+      "destination": "public/research/cardiac-monitoring/demos.zip",
+      "sha256": "70a7df9e7ed2b283f646de2a1e7cf05bc66ccb8b82f829f49e94a48b7ba8fd50",
+      "bytes": 7905710,
+      "zipMember": "1.mp4"
+    },
+    {
+      "source": "resources/demo/Wireless without Batteries/A magneto-mechanical bio-interface with ultra-low-power analog backscatter for inclusive cardiac monitoring/2.mp4",
+      "destination": "public/research/cardiac-monitoring/demos.zip",
+      "sha256": "a0508f3d32d543cce5b2393f9cd480099007463d08c1053a0d4dcde9a3cd4097",
+      "bytes": 8320989,
+      "zipMember": "2.mp4"
+    },
+    {
+      "source": "resources/demo/Wireless without Batteries/A magneto-mechanical bio-interface with ultra-low-power analog backscatter for inclusive cardiac monitoring/3.mp4",
+      "destination": "public/research/cardiac-monitoring/demos.zip",
+      "sha256": "855a9599d293f5f94e402c7e31bbb6d5163d6b1791bf93c9daaa736a51a02b54",
+      "bytes": 6526168,
+      "zipMember": "3.mp4"
+    },
+    {
+      "source": "resources/demo/Wireless without Batteries/A magneto-mechanical bio-interface with ultra-low-power analog backscatter for inclusive cardiac monitoring/4.mp4",
+      "destination": "public/research/cardiac-monitoring/demos.zip",
+      "sha256": "b3ca98092d11c5e3acf72b27f660fb58f5b2088218e5c883af67ae85da46e89f",
+      "bytes": 8167536,
+      "zipMember": "4.mp4"
+    },
+    {
+      "source": "resources/paper/Wireless without Batteries/Mighty Towards Long-Range and High-Throughput Backscatter for Drones.pdf",
+      "destination": "public/research/mighty-drone-backscatter/paper.pdf",
+      "sha256": "77159c330fc04121ce513d56e280634bee286899f5daa258fb3fa221a7b878e9",
+      "bytes": 6370751
+    },
+    {
+      "source": "resources/display/Wireless without Batteries/Mighty Towards Long-Range and High-Throughput Backscatter for Drones/Might Demo.mp4",
+      "destination": "public/research/mighty-drone-backscatter/preview.mp4",
+      "sha256": "34acb42e8cde37c791ab94a26c2486dc593344a8b967f53f37ae3dba0e050b12",
+      "bytes": 9258937
+    },
+    {
+      "source": "resources/demo/Wireless without Batteries/Mighty Towards Long-Range and High-Throughput Backscatter for Drones/Might Demo.mp4",
+      "destination": "public/research/mighty-drone-backscatter/preview.mp4",
+      "sha256": "34acb42e8cde37c791ab94a26c2486dc593344a8b967f53f37ae3dba0e050b12",
+      "bytes": 9258937
+    }
+  ]
+}

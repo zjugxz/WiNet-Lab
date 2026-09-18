@@ -1,0 +1,277 @@
+---
+import { researchAssetPath, type ResearchPaper } from '../lib/research';
+
+interface Props {
+  paper?: ResearchPaper;
+  headingId: string;
+}
+const { paper, headingId } = Astro.props;
+const preview = paper?.preview;
+const title = paper?.title ?? 'Paper title coming soon';
+const publication = paper?.publication;
+const downloads = [
+  {
+    label: 'Paper',
+    resource: paper?.pdf,
+    description: 'full paper',
+    icon: 'M11 2H4v16h12V7l-5-5Zm0 0v5h5M7 10h6M7 13h6',
+  },
+  {
+    label: 'Demo',
+    resource: paper?.demo,
+    description: 'full demo',
+    icon: 'M4 3h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm4 4v6l5-3-5-3Z',
+  },
+].filter(({ label, resource }) => label !== 'Demo' || Boolean(resource));
+---
+
+<article class="paper-card" aria-labelledby={headingId}>
+  <figure class="paper-preview">
+    {preview?.type === 'image' ? (
+      <img
+        src={researchAssetPath(preview.src)}
+        alt={preview.alt}
+        loading="lazy"
+        decoding="async"
+        width="640"
+        height="360"
+      />
+    ) : preview?.type === 'video' ? (
+      <video
+        src={researchAssetPath(preview.src)}
+        poster={preview.poster ? researchAssetPath(preview.poster) : undefined}
+        controls
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+        aria-label={`Short demo: ${title}`}
+      >
+        {preview.captions && (
+          <track
+            kind="captions"
+            src={researchAssetPath(preview.captions.src)}
+            srclang={preview.captions.language}
+            label={preview.captions.label}
+            default
+          />
+        )}
+        Your browser does not support video playback.
+      </video>
+    ) : (
+      <div class="preview-placeholder">
+        <svg viewBox="0 0 48 40" aria-hidden="true" fill="none">
+          <rect x="3" y="3" width="42" height="34" rx="3" />
+          <circle cx="15" cy="13" r="3" />
+          <path d="m4 31 12-12 8 8 8-10 12 14" />
+        </svg>
+        <span>Paper image or short demo</span>
+        <span class="preview-note">Coming soon</span>
+      </div>
+    )}
+  </figure>
+  <div class="paper-details">
+    {!paper && <p class="sample-label">Paper preview · Content coming soon</p>}
+    {publication?.venue && (
+      <p class="paper-publication">
+        {publication.status === 'submitted' && (
+          <span class="publication-status">Submitted to</span>
+        )}
+        {publication.venue && (
+          <span class="venue-name">{publication.venue}</span>
+        )}
+        {publication.year && <span class="venue-year">{publication.year}</span>}
+      </p>
+    )}
+    <h3 id={headingId}>{title}</h3>
+    {paper?.citation && <p class="paper-citation">{paper.citation}</p>}
+    <p class="paper-summary">
+      {paper?.summary ??
+        'A short introduction to the paper and its key findings will appear here.'}
+    </p>
+    <div class="paper-downloads" aria-label={`Downloads for ${title}`}>
+      {downloads.map(({ label, resource, description, icon }) =>
+        resource ? (
+          <a
+            class="download-button"
+            href={researchAssetPath(resource.src)}
+            download={resource.filename ?? true}
+            aria-label={`${label}: Download ${description} — ${title}`}
+          >
+            <svg viewBox="0 0 20 20" aria-hidden="true" fill="none">
+              <path d={icon} />
+            </svg>
+            {label}
+          </a>
+        ) : (
+          <button
+            class="download-button"
+            type="button"
+            disabled
+            title={
+              paper?.pdf === null
+                ? 'Paper coming soon — manuscript in submission'
+                : 'Paper coming soon'
+            }
+          >
+            <svg viewBox="0 0 20 20" aria-hidden="true" fill="none">
+              <path d={icon} />
+            </svg>
+            {label}
+            <span class="unavailable-label">coming soon</span>
+          </button>
+        ),
+      )}
+    </div>
+  </div>
+</article>
+
+<style>
+  .paper-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 16px;
+  }
+  .paper-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .paper-preview {
+    min-width: 0;
+  }
+  .paper-preview img,
+  .paper-preview video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #f5f7f4;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .paper-preview video {
+    background: #18221c;
+  }
+  video:focus-visible {
+    outline: 3px solid var(--green);
+    outline-offset: 5px;
+  }
+  .preview-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    aspect-ratio: 16 / 9;
+    padding: 20px;
+    border: 1px dashed #b8c7bb;
+    border-radius: 6px;
+    background: #f5f7f4;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+  }
+  .preview-placeholder svg {
+    width: 40px;
+    height: 34px;
+    stroke: var(--green);
+    stroke-width: 1.5;
+    margin-bottom: 4px;
+  }
+  .preview-note,
+  .sample-label {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .sample-label {
+    margin-bottom: 8px;
+  }
+  h3 {
+    font: 24px/1.35 var(--serif);
+    overflow-wrap: anywhere;
+  }
+  .paper-citation {
+    margin-top: 8px;
+    color: var(--green);
+    font-size: 13px;
+  }
+  .paper-publication {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 9px;
+    margin-bottom: 9px;
+    color: #a45122;
+  }
+  .venue-name {
+    font: italic 700 18px/1.4 var(--serif);
+    overflow-wrap: anywhere;
+  }
+  .venue-year {
+    font: 700 13px/1.4 var(--serif);
+    letter-spacing: 0.06em;
+  }
+  .publication-status {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+  .paper-summary {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+  }
+  .paper-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 16px;
+  }
+  .download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 30px;
+    padding: 4px 9px;
+    border: 1px solid var(--green);
+    border-radius: 4px;
+    color: var(--green);
+    background: white;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .download-button svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  a.download-button:hover {
+    background: var(--green);
+    color: white;
+  }
+  .download-button:disabled {
+    border-color: var(--line);
+    color: var(--muted);
+    background: #f5f7f4;
+    cursor: not-allowed;
+  }
+  .unavailable-label {
+    font-size: 11px;
+  }
+  @media (max-width: 760px) {
+    h3 {
+      font-size: 23px;
+    }
+  }
+</style>

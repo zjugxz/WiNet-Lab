@@ -105,7 +105,7 @@ test('homepage content, links, local assets and accessibility', async ({
   await expect(page.locator('main')).toBeFocused();
 });
 
-test('all navigation destinations share the layout and explicitly identify draft content', async ({
+test('all navigation destinations share the layout and unfinished pages identify draft content', async ({
   page,
 }) => {
   await page.goto('/');
@@ -115,16 +115,38 @@ test('all navigation destinations share the layout and explicitly identify draft
       .getByRole('link', { name, exact: true })
       .click();
     await expect(page.getByRole('heading', { level: 1, name })).toBeVisible();
-    await expect(
-      page.getByText('This page is in preparation.', { exact: true }),
-    ).toBeVisible();
+    if (name === 'Publications') {
+      await expect(page.locator('[data-publication]')).toHaveCount(74);
+    } else if (name === 'Research') {
+      await expect(page.getByRole('heading', { level: 2 })).toHaveText([
+        'Bits Meet Physics',
+        'Wireless without Batteries',
+        'Embodied Intelligence of Things',
+      ]);
+      await expect(
+        page
+          .getByRole('list', { name: 'Research directions' })
+          .getByRole('link'),
+      ).toHaveCount(3);
+    } else if (name === 'Contact') {
+      await expect(
+        page.getByRole('link', { name: 'guoxz@zju.edu.cn', exact: true }),
+      ).toHaveAttribute('href', 'mailto:guoxz@zju.edu.cn');
+    } else {
+      await expect(
+        page.getByText('This page is in preparation.', { exact: true }),
+      ).toBeVisible();
+    }
     await expect(
       page.getByRole('navigation').getByRole('link', { name, exact: true }),
     ).toHaveAttribute('aria-current', 'page');
     await expect(page.getByRole('contentinfo')).toBeVisible();
     await expect(page.getByRole('navigation').getByRole('link')).toHaveCount(5);
   }
-  await page.getByRole('link', { name: 'Back to Home' }).click();
+  await page
+    .getByRole('navigation')
+    .getByRole('link', { name: 'Home', exact: true })
+    .click();
   await expect(page).toHaveURL('/');
 });
 

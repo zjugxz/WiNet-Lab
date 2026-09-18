@@ -1,0 +1,3623 @@
+{
+  "auditDate": "2026-09-18",
+  "timezone": "Asia/Shanghai",
+  "source": "docs/文章列表.docx",
+  "sourceSha256": "6BB8AE783EB0FCE6BF73D7AB1F6A35E7453898175FF026BAF1C18008CB00981D",
+  "scope": "逐条书目核验；非全文科学结论评审，非网页数据导入。",
+  "method": "逐项比对Google Scholar作者档案94条记录并补充题名查询，使用出版社提交的Crossref DOI元数据、会议官网及出版社页面确认具体发表版本。",
+  "yearPolicy": "建议按正式卷期/会议年展示，在线日期另列；尚未获用户确认，未改动网站。",
+  "unverifiedFields": [
+    "通讯作者/共同一作标记（未系统核验）",
+    "Cover Paper/Research highlight/Best Paper Award",
+    "CCF分类/SCI分区/影响因子及其适用年份",
+    "论文展示图、Code/Website资源及逐篇研究主题"
+  ],
+  "counts": {
+    "total": 75,
+    "matched": 39,
+    "matched_with_changes": 32,
+    "partial": 3,
+    "unconfirmed": 1,
+    "primaryMatched": 71,
+    "doiMatched": 68
+  },
+  "records": [
+    {
+      "id": 1,
+      "original": "Long Tan, Xu Chen, Xiuzhen Guo*, Shibo He, Chaojie Gu, Peng Cheng, Yuanchao Shu, Jiming Chen. “Mechanically programmable metasurface for ultralow-power subterahertz beam steering”, Cell Reports Physical Science, 2026. (Cell 子刊, 通讯).",
+      "sourceTitle": "Mechanically programmable metasurface for ultralow-power subterahertz beam steering",
+      "sourceYear": 2026,
+      "status": "matched",
+      "bibliography": {
+        "title": "Mechanically programmable metasurface for ultralow-power subterahertz beam steering",
+        "authors": [
+          "Long Tan",
+          "Xu Chen",
+          "Xiuzhen Guo",
+          "Shibo He",
+          "Chaojie Gu",
+          "Peng Cheng",
+          "Yuanchao Shu",
+          "Jiming Chen"
+        ],
+        "venue": "Cell Reports Physical Science",
+        "year": 2026,
+        "publishedPrint": [
+          2026,
+          7
+        ],
+        "publishedOnline": null,
+        "volume": "7",
+        "issue": "7",
+        "pages": "103402",
+        "articleNumber": "103402",
+        "type": "journal-article",
+        "doi": "10.1016/j.xcrp.2026.103402",
+        "url": "https://doi.org/10.1016/j.xcrp.2026.103402"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:1sJd4Hv_s6UC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1016/j.xcrp.2026.103402"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1016/j.xcrp.2026.103402"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 2,
+      "original": "Long Tan, Xiuzhen Guo*, Junying Huang, Binghe Li, Chaojie Gu, Yuanchao Shu, Jiming Chen. Physical computing across magnetic and RF domains for passive wireless information retrieval, Cell Device, 2026. (Cover Paper) (Cell 子刊,通讯).",
+      "sourceTitle": "Physical computing across magnetic and RF domains for passive wireless information retrieval",
+      "sourceYear": 2026,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Physical computing across magnetic and RF domains for passive wireless information retrieval",
+        "authors": [
+          "Long Tan",
+          "Xiuzhen Guo",
+          "Junying Huang",
+          "Binghe Li",
+          "Chaojie Gu",
+          "Yuanchao Shu",
+          "Jiming Chen"
+        ],
+        "venue": "Device",
+        "year": 2026,
+        "publishedPrint": [
+          2026,
+          7
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "101241",
+        "articleNumber": "101241",
+        "type": "journal-article",
+        "doi": "10.1016/j.device.2026.101241",
+        "url": "https://doi.org/10.1016/j.device.2026.101241"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:P5F9QuxV20EC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1016/j.device.2026.101241"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1016/j.device.2026.101241"
+        }
+      ],
+      "notes": "期刊正式名称为 Device，不是 Cell Device；可另述其属于 Cell Press。Cover Paper 未在本次书目核验中确认。"
+    },
+    {
+      "id": 3,
+      "original": "Junying Huang, Xiuzhen Guo*, Long Tan, Xu Chen, Yuanchao Shu, Jizhou Song, Jiming Chen, “A magneto-mechanical bio-interface with ultra-low-power analog backscatter for inclusive cardiac monitoring”, Nature Portfolio Flexible Electronics, 2026. (npj Flexible Electronics, IF=14.6)",
+      "sourceTitle": "A magneto-mechanical bio-interface with ultra-low-power analog backscatter for inclusive cardiac monitoring",
+      "sourceYear": 2026,
+      "status": "unconfirmed",
+      "bibliography": null,
+      "scholar": {
+        "url": "https://scholar.google.com/scholar?hl=zh-CN&q=%22A%20magneto-mechanical%20bio-interface%22",
+        "note": "补充检索未取得匹配的Scholar记录。",
+        "query": "\"A magneto-mechanical bio-interface\""
+      },
+      "sources": [],
+      "notes": "Google Scholar题名片段检索、Nature站点限定检索及Crossref均未找到可匹配的正式记录。保留原文；可能存在未索引、题名变化或录用未出版等情况，本次无法判断。需要DOI、出版社文章页或论文首页。"
+    },
+    {
+      "id": 4,
+      "original": "Xiuzhen Guo, Longfei Shangguan, Yuan He, Jia Zhang, Haotian Jiang, Awais Ahmad Siddiqi, Yunhao Liu. “Efficient Ambient LoRa Backscatter with On-Off Keying Modulation”, IEEE/ACM Transactions on Networking, 2022, 30(2): 641-654. (TON, CCF-A).",
+      "sourceTitle": "Efficient Ambient LoRa Backscatter with On-Off Keying Modulation",
+      "sourceYear": 2022,
+      "status": "matched",
+      "bibliography": {
+        "title": "Efficient Ambient LoRa Backscatter With On-Off Keying Modulation",
+        "authors": [
+          "Xiuzhen Guo",
+          "Longfei Shangguan",
+          "Yuan He",
+          "Jia Zhang",
+          "Haotian Jiang",
+          "Awais Ahmad Siddiqi",
+          "Yunhao Liu"
+        ],
+        "venue": "IEEE/ACM Transactions on Networking",
+        "year": 2022,
+        "publishedPrint": [
+          2022,
+          4
+        ],
+        "publishedOnline": null,
+        "volume": "30",
+        "issue": "2",
+        "pages": "641-654",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tnet.2021.3121787",
+        "url": "https://doi.org/10.1109/tnet.2021.3121787"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:k_IJM867U9cC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tnet.2021.3121787"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tnet.2021.3121787"
+        }
+      ],
+      "notes": "原文2022与正式卷期一致；Scholar显示2021，不能据此把30(2):641–654改成2021。"
+    },
+    {
+      "id": 5,
+      "original": "Xiuzhen Guo, Yuan He, Xiaolong Zheng. “WiZig: Cross-Technology Energy Communication over a Noisy Channel”, IEEE/ACM Transactions on Networking, 2020, 28(6): 2449-2460. (TON, CCF-A).",
+      "sourceTitle": "WiZig: Cross-Technology Energy Communication over a Noisy Channel",
+      "sourceYear": 2020,
+      "status": "matched",
+      "bibliography": {
+        "title": "WiZig: Cross-Technology Energy Communication Over a Noisy Channel",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Xiaolong Zheng"
+        ],
+        "venue": "IEEE/ACM Transactions on Networking",
+        "year": 2020,
+        "publishedPrint": [
+          2020,
+          12
+        ],
+        "publishedOnline": null,
+        "volume": "28",
+        "issue": "6",
+        "pages": "2449-2460",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tnet.2020.3013921",
+        "url": "https://doi.org/10.1109/tnet.2020.3013921"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:ufrVoPGSRksC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tnet.2020.3013921"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tnet.2020.3013921"
+        }
+      ],
+      "notes": "确认2020年TON期刊版；与#27的2017年INFOCOM版分别保留，作者顺序不同。"
+    },
+    {
+      "id": 6,
+      "original": "Xiuzhen Guo, Yuan He, Xiaolong Zheng, Liangcheng Yu, Omprakash Gnawali, “ZigFi: Harnessing Channel State Information for Cross-Technology Communication”, IEEE/ACM Transactions on Networking, 2020, 28(1): 301--311. (TON, CCF-A).",
+      "sourceTitle": "ZigFi: Harnessing Channel State Information for Cross-Technology Communication",
+      "sourceYear": 2020,
+      "status": "matched",
+      "bibliography": {
+        "title": "ZigFi: Harnessing Channel State Information for Cross-Technology Communication",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Xiaolong Zheng",
+          "Liangcheng Yu",
+          "Omprakash Gnawali"
+        ],
+        "venue": "IEEE/ACM Transactions on Networking",
+        "year": 2020,
+        "publishedPrint": [
+          2020,
+          2
+        ],
+        "publishedOnline": null,
+        "volume": "28",
+        "issue": "1",
+        "pages": "301-311",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tnet.2019.2962707",
+        "url": "https://doi.org/10.1109/tnet.2019.2962707"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:mVmsd5A6BfQC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tnet.2019.2962707"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tnet.2019.2962707"
+        }
+      ],
+      "notes": "确认2020年TON期刊版；与#26的2018年INFOCOM版分别保留。"
+    },
+    {
+      "id": 7,
+      "original": "Yuan He, Xiuzhen Guo*, Jia Zhang, Haotian Zhang,“WIDE: Physical-level CTC via Digital Emulation”, IEEE/ACM Transactions on Networking, 2021, 29(4): 1567-1579.",
+      "sourceTitle": "WIDE: Physical-level CTC via Digital Emulation",
+      "sourceYear": 2021,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "WIDE: Physical-Level CTC via Digital Emulation",
+        "authors": [
+          "Yuan He",
+          "Xiuzhen Guo",
+          "Jia Zhang",
+          "Haotian Jiang"
+        ],
+        "venue": "IEEE/ACM Transactions on Networking",
+        "year": 2021,
+        "publishedPrint": [
+          2021,
+          8
+        ],
+        "publishedOnline": null,
+        "volume": "29",
+        "issue": "4",
+        "pages": "1567-1579",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tnet.2021.3071782",
+        "url": "https://doi.org/10.1109/tnet.2021.3071782"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:Wp0gIr-vW9MC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tnet.2021.3071782"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tnet.2021.3071782"
+        }
+      ],
+      "notes": "末位作者应为 Haotian Jiang，原文为 Haotian Zhang。期刊版第一作者为 Yuan He，与#29会议版不同。"
+    },
+    {
+      "id": 8,
+      "original": "Xiuzhen Guo, Longfei Shangguan, Yuan He, Nan Jing, Jiacheng Zhang, Haotian Jiang, Yunhao Liu， “A Low-power Demodulator for LoRa Backscatter Systems with Frequency-Amplitude Transformation”， IEEE/ACM Transactions on Networking, 2024, 32(4): 3515-3527. (TON, CCF-A)",
+      "sourceTitle": "A Low-power Demodulator for LoRa Backscatter Systems with Frequency-Amplitude Transformation",
+      "sourceYear": 2024,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "A Low-Power Demodulator for LoRa Backscatter Systems With Frequency-Amplitude Transformation",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Jing Nan",
+          "Jiacheng Zhang",
+          "Yunhao Liu",
+          "Longfei Shangguan"
+        ],
+        "venue": "IEEE/ACM Transactions on Networking",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          8
+        ],
+        "publishedOnline": null,
+        "volume": "32",
+        "issue": "4",
+        "pages": "3515-3527",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tnet.2024.3396509",
+        "url": "https://doi.org/10.1109/tnet.2024.3396509"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:BqipwSGYUEgC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tnet.2024.3396509"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tnet.2024.3396509"
+        },
+        {
+          "label": "作者保存的期刊论文首页",
+          "url": "https://zjugxz.github.io/assets/pdf/2024.SaiyanToN.pdf"
+        }
+      ],
+      "notes": "正式期刊版为6位作者：Xiuzhen Guo, Yuan He, Jing Nan, Jiacheng Zhang, Yunhao Liu, Longfei Shangguan。原文混入会议版的7人名单及顺序；作者保存的论文首页与Crossref均支持上述期刊署名。此版写作 Jing Nan，勿将#23会议记录的 Nan Jing 自动套用到本条。"
+    },
+    {
+      "id": 9,
+      "original": "Xiuzhen Guo, Yuan He, Zihao Yu, Jiacheng Zhang, Yunhao Liu, Longfei Shangguan, “Towards Programmable Backscatter Radio Design for Heterogeneous Wireless Networks”， IEEE/ACM Transactions on Networking, 2024, 32(6): 5020-5032. (TON, CCF-A)",
+      "sourceTitle": "Towards Programmable Backscatter Radio Design for Heterogeneous Wireless Networks",
+      "sourceYear": 2024,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Towards Programmable Backscatter Radio Design for Heterogeneous Wireless Networks",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Jiacheng Zhang",
+          "Yunhao Liu",
+          "Longfei Shangguan"
+        ],
+        "venue": "IEEE/ACM Transactions on Networking",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          12
+        ],
+        "publishedOnline": null,
+        "volume": "32",
+        "issue": "6",
+        "pages": "5020-5032",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tnet.2024.3454095",
+        "url": "https://doi.org/10.1109/tnet.2024.3454095"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:lSLTfruPkqcC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tnet.2024.3454095"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tnet.2024.3454095"
+        },
+        {
+          "label": "作者主页的期刊BibTeX",
+          "url": "https://zjugxz.github.io/"
+        }
+      ],
+      "notes": "正式期刊版5位作者，不含原文列出的 Zihao Yu；保留已确认的5人顺序。#24会议版确实有Zihao Yu，不能混用。"
+    },
+    {
+      "id": 10,
+      "original": "Xin Na, Yuan He, Xiuzhen Guo, Jia Zhang, Yang Zou, Zihao Yu, Yunhao Liu. “Analog Backscatter for Commodity WiFi with Payload Transparency”, IEEE Transactions on Networking, 2025. (TON, CCF-A)",
+      "sourceTitle": "Analog Backscatter for Commodity WiFi with Payload Transparency",
+      "sourceYear": 2025,
+      "status": "matched",
+      "bibliography": {
+        "title": "Analog Backscatter for Commodity WiFi With Payload Transparency",
+        "authors": [
+          "Xin Na",
+          "Yuan He",
+          "Xiuzhen Guo",
+          "Jia Zhang",
+          "Yang Zou",
+          "Zihao Yu",
+          "Yunhao Liu"
+        ],
+        "venue": "IEEE Transactions on Networking",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          12
+        ],
+        "publishedOnline": null,
+        "volume": "33",
+        "issue": "6",
+        "pages": "3132-3145",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/ton.2025.3582020",
+        "url": "https://doi.org/10.1109/ton.2025.3582020"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:cFHS6HbyZ2cC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/ton.2025.3582020"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/ton.2025.3582020"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 11,
+      "original": "Xiuzhen Guo, Long Tan, Yuan He, Yuanchao Shu, Jiming Chen, “Lotus: Rethinking Polarization Mismatch for Carrier Cancellation in Backscatter Systems”, IEEE Transactions on Networking, 2026. (TON, CCF-A)",
+      "sourceTitle": "Lotus: Rethinking Polarization Mismatch for Carrier Cancellation in Backscatter Systems",
+      "sourceYear": 2026,
+      "status": "matched",
+      "bibliography": {
+        "title": "Lotus: Rethinking Polarization Mismatch for Carrier Cancellation in Backscatter Systems",
+        "authors": [
+          "Xiuzhen Guo",
+          "Long Tan",
+          "Yuan He",
+          "Yuanchao Shu",
+          "Jiming Chen"
+        ],
+        "venue": "IEEE Transactions on Networking",
+        "year": 2026,
+        "publishedPrint": [
+          2026
+        ],
+        "publishedOnline": null,
+        "volume": "34",
+        "issue": null,
+        "pages": "2762-2774",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/ton.2026.3652168",
+        "url": "https://doi.org/10.1109/ton.2026.3652168"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:f2IySw72cVMC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/ton.2026.3652168"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/ton.2026.3652168"
+        }
+      ],
+      "notes": "将Crossref题名中的LaTeX排版标记还原为普通文本 Lotus；不是另一篇无前缀文章。"
+    },
+    {
+      "id": 12,
+      "original": "Jingze Zheng, Chao Gu, Yuanchao Shu, Xiuzhen Guo, Shibo He, Jiming Chen, Wwei Zheng, Guohui Shen. SoftNB: Design and Implementation of an NB-IoT PHY Software-Defined Radio, IEEE Transactions on Networking, 2026. (TON, CCF-A)",
+      "sourceTitle": "SoftNB: Design and Implementation of an NB-IoT PHY Software-Defined Radio",
+      "sourceYear": 2026,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "SoftNB: Design and Implementation of an NB-IoT PHY Software-Defined Radio",
+        "authors": [
+          "Jingze Zheng",
+          "Chaojie Gu",
+          "Yuanchao Shu",
+          "Xiuzhen Guo",
+          "Shibo He",
+          "Jiming Chen",
+          "Wei Zheng",
+          "Guohui Shen"
+        ],
+        "venue": "IEEE Transactions on Networking",
+        "year": 2026,
+        "publishedPrint": [
+          2026
+        ],
+        "publishedOnline": null,
+        "volume": "34",
+        "issue": null,
+        "pages": "3792-3807",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/ton.2026.3665549",
+        "url": "https://doi.org/10.1109/ton.2026.3665549"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:abG-DnoFyZgC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/ton.2026.3665549"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/ton.2026.3665549"
+        }
+      ],
+      "notes": "Chao Gu 应为 Chaojie Gu；Wwei Zheng 应为 Wei Zheng。"
+    },
+    {
+      "id": 13,
+      "original": "Haoran Shi, Yichuan Yang, Xiuzhen Guo, Zhiguo Shi, Shibo He, Wenchao Meng, Chaojie Gu. “Nonlinear Chirp Spread Spectrum: Performance Analysis and Optimization for LoRa Networks”, IEEE Transactions on Communications, 2026. (TC, CCF-A)",
+      "sourceTitle": "Nonlinear Chirp Spread Spectrum: Performance Analysis and Optimization for LoRa Networks",
+      "sourceYear": 2026,
+      "status": "matched",
+      "bibliography": {
+        "title": "Nonlinear Chirp Spread Spectrum: Performance Analysis and Optimization for LoRa Networks",
+        "authors": [
+          "Haoran Shi",
+          "Yichuan Yang",
+          "Xiuzhen Guo",
+          "Zhiguo Shi",
+          "Shibo He",
+          "Wenchao Meng",
+          "Chaojie Gu"
+        ],
+        "venue": "IEEE Transactions on Communications",
+        "year": 2026,
+        "publishedPrint": [
+          2026
+        ],
+        "publishedOnline": null,
+        "volume": "74",
+        "issue": null,
+        "pages": "7106-7120",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tcomm.2026.3681655",
+        "url": "https://doi.org/10.1109/tcomm.2026.3681655"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:NhqRSupF_l8C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tcomm.2026.3681655"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tcomm.2026.3681655"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 14,
+      "original": "Xiuzhen Guo, Boya Liu, Nan Jing, Chaojie Gu, Yuanchao Shu, Jiming Chen, “Enabling Cross-Band Backscatter Communication with Twaltz”, IEEE Transactions on Mobile Computing, 2025. (TMC, CCF-A)",
+      "sourceTitle": "Enabling Cross-Band Backscatter Communication with Twaltz",
+      "sourceYear": 2025,
+      "status": "matched",
+      "bibliography": {
+        "title": "Enabling Cross-Band Backscatter Communication With Twaltz",
+        "authors": [
+          "Xiuzhen Guo",
+          "Boya Liu",
+          "Nan Jing",
+          "Chaojie Gu",
+          "Yuanchao Shu",
+          "Jiming Chen"
+        ],
+        "venue": "IEEE Transactions on Mobile Computing",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          11
+        ],
+        "publishedOnline": null,
+        "volume": "24",
+        "issue": "11",
+        "pages": "11323-11336",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tmc.2025.3581900",
+        "url": "https://doi.org/10.1109/tmc.2025.3581900"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:4OULZ7Gr8RgC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tmc.2025.3581900"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tmc.2025.3581900"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 15,
+      "original": "Xiuzhen Guo, Long Tan, Chaojie Gu, Yuanchao Shu, Shibo He, Jiming Chen， “MagWear: Vital Sign Monitoring based on Biomagnetism Sensing”，IEEE Transactions on Mobile Computing, 2024, 23(12): 14918-14933. (TMC, CCF-A)",
+      "sourceTitle": "MagWear: Vital Sign Monitoring based on Biomagnetism Sensing",
+      "sourceYear": 2024,
+      "status": "matched",
+      "bibliography": {
+        "title": "MagWear: Vital Sign Monitoring Based on Biomagnetism Sensing",
+        "authors": [
+          "Xiuzhen Guo",
+          "Long Tan",
+          "Chaojie Gu",
+          "Yuanchao Shu",
+          "Shibo He",
+          "Jiming Chen"
+        ],
+        "venue": "IEEE Transactions on Mobile Computing",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          12
+        ],
+        "publishedOnline": null,
+        "volume": "23",
+        "issue": "12",
+        "pages": "14918-14933",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tmc.2024.3452499",
+        "url": "https://doi.org/10.1109/tmc.2024.3452499"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:J_g5lzvAfSwC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tmc.2024.3452499"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tmc.2024.3452499"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 16,
+      "original": "Xiuzhen Guo, Yuan He, Longfei Shangguan, Yande Chen, Chaojie Gu, Yuanchao Shu, Kyle Jamieson, Jiming Chen， “Mighty: Towards Long-Range and High-Throughput Backscatter for Drones”， IEEE Transactions on Mobile Computing, 2024, 24(3): 1833-1845. (TMC, CCF-A)",
+      "sourceTitle": "Mighty: Towards Long-Range and High-Throughput Backscatter for Drones",
+      "sourceYear": 2024,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Mighty: Towards Long-Range and High-Throughput Backscatter for Drones",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Longfei Shangguan",
+          "Yande Chen",
+          "Chaojie Gu",
+          "Yuanchao Shu",
+          "Kyle Jamieson",
+          "Jiming Chen"
+        ],
+        "venue": "IEEE Transactions on Mobile Computing",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          3
+        ],
+        "publishedOnline": null,
+        "volume": "24",
+        "issue": "3",
+        "pages": "1833-1845",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tmc.2024.3486993",
+        "url": "https://doi.org/10.1109/tmc.2024.3486993"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:M05iB0D1s5AC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tmc.2024.3486993"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tmc.2024.3486993"
+        }
+      ],
+      "notes": "原文和Scholar为2024；正式卷期24(3):1833–1845属于2025。建议网页按正式卷期归2025；如需保留2024，须另标在线发表/录用口径，不能与2025卷期混写。本次Crossref未提供独立online日期。"
+    },
+    {
+      "id": 17,
+      "original": "Long Tan, Xu Chen, Xiuzhen Guo*, Xinghua Guo, Yuanchao Shu, Jiming Chen, “BatTera: Non-Destructive Lithium-ion Battery Coating Measurement with Terahertz”, IEEE Transactions on Mobile Computing, 2025. (TMC, CCF-A)",
+      "sourceTitle": "BatTera: Non-Destructive Lithium-ion Battery Coating Measurement with Terahertz",
+      "sourceYear": 2025,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "BatTera: Non-Destructive Lithium-Ion Battery Coating Measurement With Terahertz",
+        "authors": [
+          "Long Tan",
+          "Xu Chen",
+          "Xiuzhen Guo",
+          "Xinghua Guo",
+          "Yuanchao Shu",
+          "Jiming Chen"
+        ],
+        "venue": "IEEE Transactions on Mobile Computing",
+        "year": 2026,
+        "publishedPrint": [
+          2026,
+          2
+        ],
+        "publishedOnline": null,
+        "volume": "25",
+        "issue": "2",
+        "pages": "1714-1728",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tmc.2025.3604081",
+        "url": "https://doi.org/10.1109/tmc.2025.3604081"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:D03iK_w7-QYC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tmc.2025.3604081"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tmc.2025.3604081"
+        }
+      ],
+      "notes": "原文和Scholar为2025；现有正式卷期25(2):1714–1728属于2026。建议正式出版年用2026；2025仅作为Scholar所示年份保留，online日期未独立确认。"
+    },
+    {
+      "id": 18,
+      "original": "Junying Huang, Chaojie Gu, Xiuzhen Guo*, Shibo He, Yuanchao Shu, Jiming Chen， “WindScatter: An Ultra-Low-Power, Long-Range, Large-Scale Wind Speed Monitoring System”， IEEE Transactions on Mobile Computing, 2026. (TMC, CCF-A)",
+      "sourceTitle": "WindScatter: An Ultra-Low-Power, Long-Range, Large-Scale Wind Speed Monitoring System",
+      "sourceYear": 2026,
+      "status": "matched",
+      "bibliography": {
+        "title": "WindScatter: An Ultra-Low-Power, Long-Range, Large-Scale Wind Speed Monitoring System",
+        "authors": [
+          "Junying Huang",
+          "Chaojie Gu",
+          "Xiuzhen Guo",
+          "Shibo He",
+          "Yuanchao Shu",
+          "Jiming Chen"
+        ],
+        "venue": "IEEE Transactions on Mobile Computing",
+        "year": 2026,
+        "publishedPrint": [
+          2026,
+          6
+        ],
+        "publishedOnline": null,
+        "volume": "25",
+        "issue": "6",
+        "pages": "8355-8368",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tmc.2026.3650936",
+        "url": "https://doi.org/10.1109/tmc.2026.3650936"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:b0M2c_1WBrUC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tmc.2026.3650936"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tmc.2026.3650936"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 19,
+      "original": "Zhipeng Tang, Xiuzhen Guo, Shibo He, Yuanchao Shu, Gaofeng Li, Chaojie Gu. “Robot-Assisted Cross-modal Synthetic Augmentation of mmWave Datasets for Sign Language Recognition”, IEEE Transactions on Mobile Computing, 2026. (TMC, CCF-A)",
+      "sourceTitle": "Robot-Assisted Cross-modal Synthetic Augmentation of mmWave Datasets for Sign Language Recognition",
+      "sourceYear": 2026,
+      "status": "matched",
+      "bibliography": {
+        "title": "Robot-Assisted Cross-Modal Synthetic Augmentation of mmWave Datasets for Sign Language Recognition",
+        "authors": [
+          "Zhipeng Tang",
+          "Xiuzhen Guo",
+          "Shibo He",
+          "Yuanchao Shu",
+          "Gaofeng Li",
+          "Chaojie Gu"
+        ],
+        "venue": "IEEE Transactions on Mobile Computing",
+        "year": 2026,
+        "publishedPrint": [
+          2026,
+          9
+        ],
+        "publishedOnline": null,
+        "volume": "25",
+        "issue": "9",
+        "pages": "15000-15013",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tmc.2026.3689215",
+        "url": "https://doi.org/10.1109/tmc.2026.3689215"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:CHSYGLWDkRkC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tmc.2026.3689215"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tmc.2026.3689215"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 20,
+      "original": "Rabiu Sale Zakariyya, Yong Wang, Xiuzhen Guo, Zhiguo Shi, Hua Zhang. “State-of-The-Art of In-Body Radar Detection Applications and Future Challenges-A Review”, IEEE SenSors Journal, 2026",
+      "sourceTitle": "State-of-The-Art of In-Body Radar Detection Applications and Future Challenges-A Review",
+      "sourceYear": 2026,
+      "status": "matched",
+      "bibliography": {
+        "title": "State of the Art of In-Body Radar Detection Applications and Future Challenges: A Review",
+        "authors": [
+          "Rabiu Sale Zakariyya",
+          "Yong Wang",
+          "Xiuzhen Guo",
+          "Zhiguo Shi",
+          "Hua Zhang"
+        ],
+        "venue": "IEEE Sensors Journal",
+        "year": 2026,
+        "publishedPrint": [
+          2026,
+          6,
+          1
+        ],
+        "publishedOnline": null,
+        "volume": "26",
+        "issue": "11",
+        "pages": "16562-16576",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/jsen.2026.3681549",
+        "url": "https://doi.org/10.1109/jsen.2026.3681549"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:xtRiw3GOFMkC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/jsen.2026.3681549"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/jsen.2026.3681549"
+        }
+      ],
+      "notes": "统一期刊名称为 IEEE Sensors Journal；正式题名的连字符及冒号以记录为准。"
+    },
+    {
+      "id": 21,
+      "original": "Junying Huang, Xiuzhen Guo, Chaojie Gu, Yuchen Miao, Shibo He, Yuanchao Shu, Jiming Chen, “MagKey: Empowering Wearables with Ballistocardiography-based Key Generation through Magnetic Field Vibration Sensing”, ACM UbiComp 2025, 9(1): 1-28. (CCF-A, 通讯作者)",
+      "sourceTitle": "MagKey: Empowering Wearables with Ballistocardiography-based Key Generation through Magnetic Field Vibration Sensing",
+      "sourceYear": 2025,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "MagKey: Empowering Wearables with Ballistocardiography-based Key Generation through Magnetic Field Vibration Sensing",
+        "authors": [
+          "Junying Huang",
+          "Xiuzhen Guo",
+          "Chaojie Gu",
+          "Yuchen Miao",
+          "Shibo He",
+          "Yuanchao Shu",
+          "Jiming Chen"
+        ],
+        "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          3,
+          3
+        ],
+        "publishedOnline": [
+          2025,
+          3,
+          4
+        ],
+        "volume": "9",
+        "issue": "1",
+        "pages": "1-28",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1145/3712272",
+        "url": "https://doi.org/10.1145/3712272"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:HoB7MX3m0LUC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3712272"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3712272"
+        }
+      ],
+      "notes": "正式书目载体为 Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies（IMWUT），9(1):1–28，2025。UbiComp可作为展示标签，不能替代带卷期的期刊名称。"
+    },
+    {
+      "id": 22,
+      "original": "Xiuzhen Guo, Long Tan, Tao Chen, Chaojie Gu, Yuanchao Shu, Shibo He, Yuan He, Jiming Chen, Longfei Shangguan, “Exploring Biomagnetism for Inclusive Vital Sign Monitoring: Modeling and Implementation”, ACM MobiCom, 2024. (CCF-A)",
+      "sourceTitle": "Exploring Biomagnetism for Inclusive Vital Sign Monitoring: Modeling and Implementation",
+      "sourceYear": 2024,
+      "status": "matched",
+      "bibliography": {
+        "title": "Exploring Biomagnetism for Inclusive Vital Sign Monitoring: Modeling and Implementation",
+        "authors": [
+          "Xiuzhen Guo",
+          "Long Tan",
+          "Tao Chen",
+          "Chaojie Gu",
+          "Yuanchao Shu",
+          "Shibo He",
+          "Yuan He",
+          "Jiming Chen",
+          "Longfei Shangguan"
+        ],
+        "venue": "Proceedings of the 30th Annual International Conference on Mobile Computing and Networking",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          5,
+          29
+        ],
+        "publishedOnline": [
+          2024,
+          5,
+          29
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "93-107",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3636534.3649349",
+        "url": "https://doi.org/10.1145/3636534.3649349"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:blknAaTinKkC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3636534.3649349"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3636534.3649349"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 23,
+      "original": "Xiuzhen Guo, Longfei Shangguan, Yuan He, Nan Jing, Jiacheng Zhang, Haotian Jiang, Yunhao Liu, “Saiyan: Design and Implementation of a Low-power Demodulator for LoRa Backscatter Systems”, USENIX NSDI, 2022. (CCF-A)",
+      "sourceTitle": "Saiyan: Design and Implementation of a Low-power Demodulator for LoRa Backscatter Systems",
+      "sourceYear": 2022,
+      "status": "matched",
+      "bibliography": {
+        "title": "Saiyan: Design and Implementation of a Low-power Demodulator for LoRa Backscatter Systems",
+        "authors": [
+          "Xiuzhen Guo",
+          "Longfei Shangguan",
+          "Yuan He",
+          "Nan Jing",
+          "Jiacheng Zhang",
+          "Haotian Jiang",
+          "Yunhao Liu"
+        ],
+        "venue": "19th USENIX Symposium on Networked Systems Design and Implementation (NSDI 22)",
+        "year": 2022,
+        "pages": "437-451",
+        "type": "conference-paper",
+        "url": "https://www.usenix.org/conference/nsdi22/presentation/guo"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:3fE2CSJIrl8C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "会议官方记录",
+          "url": "https://www.usenix.org/conference/nsdi22/presentation/guo"
+        }
+      ],
+      "notes": "会议官网确认7位作者、2022年及437–451页；与#8期刊版的6人署名分别保留。"
+    },
+    {
+      "id": 24,
+      "original": "Xiuzhen Guo, Yuan He, Zihao Yu, Jiacheng Zhang, Yunhao Liu, Longfei Shangguan, “RF-Transformer: A Unified Backscatter Radio Hardware Abstraction”, ACM MobiCom, 2022. (CCF-A)",
+      "sourceTitle": "RF-Transformer: A Unified Backscatter Radio Hardware Abstraction",
+      "sourceYear": 2022,
+      "status": "matched",
+      "bibliography": {
+        "title": "RF-transformer: a unified backscatter radio hardware abstraction",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Zihao Yu",
+          "Jiacheng Zhang",
+          "Yunhao Liu",
+          "Longfei Shangguan"
+        ],
+        "venue": "Proceedings of the 28th Annual International Conference on Mobile Computing And Networking",
+        "year": 2022,
+        "publishedPrint": [
+          2022,
+          10,
+          14
+        ],
+        "publishedOnline": [
+          2022,
+          10,
+          14
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "446-458",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3495243.3560549",
+        "url": "https://doi.org/10.1145/3495243.3560549"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:qxL8FJ1GzNcC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3495243.3560549"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3495243.3560549"
+        }
+      ],
+      "notes": "ACM将主标题与副标题分字段保存；合并为完整标题，不能只显示 RF-transformer。"
+    },
+    {
+      "id": 25,
+      "original": "Xiuzhen Guo, Yuan He, Xiaolong Zheng, Zihao Yu, Yunhao Liu, “LEGO-Fi: Transmitter-Transparent CTC with Cross-Demapping”, IEEE INFOCOM, 2019. (CCF-A)",
+      "sourceTitle": "LEGO-Fi: Transmitter-Transparent CTC with Cross-Demapping",
+      "sourceYear": 2019,
+      "status": "matched",
+      "bibliography": {
+        "title": "LEGO-Fi: Transmitter-Transparent CTC with Cross-Demapping",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Xiaolong Zheng",
+          "Zihao Yu",
+          "Yunhao Liu"
+        ],
+        "venue": "IEEE INFOCOM 2019 - IEEE Conference on Computer Communications",
+        "year": 2019,
+        "publishedPrint": [
+          2019,
+          4
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "2125-2133",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/infocom.2019.8737659",
+        "url": "https://doi.org/10.1109/infocom.2019.8737659"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:-f6ydRqryjwC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/infocom.2019.8737659"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/infocom.2019.8737659"
+        }
+      ],
+      "notes": "确认2019年INFOCOM版；与#32的2021年IOTJ版分别保留。"
+    },
+    {
+      "id": 26,
+      "original": "Xiuzhen Guo, Yuan He, Xiaolong Zheng, Liangcheng Yu, Omprakash Gnawali, “ZigFi: Harnessing Channel State Information for Cross-Technology Communication”, IEEE INFOCOM, 2018. (CCF-A)",
+      "sourceTitle": "ZigFi: Harnessing Channel State Information for Cross-Technology Communication",
+      "sourceYear": 2018,
+      "status": "matched",
+      "bibliography": {
+        "title": "ZIGFI: Harnessing Channel State Information for Cross-Technology Communication",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Xiaolong Zheng",
+          "Liangcheng Yu",
+          "Omprakash Gnawali"
+        ],
+        "venue": "IEEE INFOCOM 2018 - IEEE Conference on Computer Communications",
+        "year": 2018,
+        "publishedPrint": [
+          2018,
+          4
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "360-368",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/infocom.2018.8486364",
+        "url": "https://doi.org/10.1109/infocom.2018.8486364"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/scholar?hl=zh-CN&q=%22ZigFi%22%20%222018%22",
+        "note": "作者档案只有同名期刊记录；补充查询未取得独立会议主记录。",
+        "query": "\"ZigFi\" \"2018\""
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/infocom.2018.8486364"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/infocom.2018.8486364"
+        }
+      ],
+      "notes": "确认2018年INFOCOM版。Scholar补充检索主要返回2020年期刊合并记录，会议版以独立IEEE DOI核实。"
+    },
+    {
+      "id": 27,
+      "original": "Xiuzhen Guo, Xiaolong Zheng, Yuan He, “WiZig: Cross-Technology Energy Communication over a Noisy Channel”, IEEE INFOCOM, 2017. (CCF-A)",
+      "sourceTitle": "WiZig: Cross-Technology Energy Communication over a Noisy Channel",
+      "sourceYear": 2017,
+      "status": "matched",
+      "bibliography": {
+        "title": "WiZig: Cross-technology energy communication over a noisy channel",
+        "authors": [
+          "Xiuzhen Guo",
+          "Xiaolong Zheng",
+          "Yuan He"
+        ],
+        "venue": "IEEE INFOCOM 2017 - IEEE Conference on Computer Communications",
+        "year": 2017,
+        "publishedPrint": [
+          2017,
+          5
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "1-9",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/infocom.2017.8057108",
+        "url": "https://doi.org/10.1109/infocom.2017.8057108"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/scholar?hl=zh-CN&q=%22WiZig%22%20%222017%22",
+        "note": "作者档案只有同名期刊记录；补充查询未取得独立会议主记录。",
+        "query": "\"WiZig\" \"2017\""
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/infocom.2017.8057108"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/infocom.2017.8057108"
+        }
+      ],
+      "notes": "确认2017年INFOCOM版，顺序为Xiuzhen Guo, Xiaolong Zheng, Yuan He。Scholar档案为2020年期刊版，补充查询未获得独立会议主记录；会议版依据IEEE DOI。"
+    },
+    {
+      "id": 28,
+      "original": "Xiuzhen Guo, Longfei Shangguan, Yuan He, Jia Zhang, Haotian Jiang, Awais Ahmad Siddiqi, Yunhao Liu. “Rethinking ON-OFF Keying Modulation for Ambient LoRa Backscatter”, ACM SenSys, 2020. (CCF-B)",
+      "sourceTitle": "Rethinking ON-OFF Keying Modulation for Ambient LoRa Backscatter",
+      "sourceYear": 2020,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Aloba: rethinking ON-OFF keying modulation for ambient LoRa backscatter",
+        "authors": [
+          "Xiuzhen Guo",
+          "Longfei Shangguan",
+          "Yuan He",
+          "Jia Zhang",
+          "Haotian Jiang",
+          "Awais Ahmad Siddiqi",
+          "Yunhao Liu"
+        ],
+        "venue": "Proceedings of the 18th Conference on Embedded Networked Sensor Systems",
+        "year": 2020,
+        "publishedPrint": [
+          2020,
+          11,
+          16
+        ],
+        "publishedOnline": [
+          2020,
+          11,
+          16
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "192-204",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3384419.3430719",
+        "url": "https://doi.org/10.1145/3384419.3430719"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:isC4tDSrTZIC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3384419.3430719"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3384419.3430719"
+        }
+      ],
+      "notes": "原文遗漏题名前缀 Aloba:，补齐为 Aloba: rethinking ON-OFF keying modulation for ambient LoRa backscatter。"
+    },
+    {
+      "id": 29,
+      "original": "Xiuzhen Guo, Yuan He, Jia Zhang, Haotian Zhang. “WIDE: Physical-level CTC via Digital Emulation”, IEEE/ACM IPSN, 2019. (CCF-B)",
+      "sourceTitle": "WIDE: Physical-level CTC via Digital Emulation",
+      "sourceYear": 2019,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "WIDE: physical-level CTC via digital emulation",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Jia Zhang",
+          "Haotian Jiang"
+        ],
+        "venue": "Proceedings of the 18th International Conference on Information Processing in Sensor Networks",
+        "year": 2019,
+        "publishedPrint": [
+          2019,
+          4,
+          16
+        ],
+        "publishedOnline": [
+          2019,
+          4,
+          16
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "49-60",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3302506.3310388",
+        "url": "https://doi.org/10.1145/3302506.3310388"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/scholar?hl=zh-CN&q=%22WIDE%3A%20Physical-level%20CTC%20via%20Digital%20Emulation%22",
+        "note": "精确题名检索取得此发表版本。",
+        "query": "\"WIDE: Physical-level CTC via Digital Emulation\""
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3302506.3310388"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3302506.3310388"
+        }
+      ],
+      "notes": "末位作者应为 Haotian Jiang，原文为 Haotian Zhang。会议版第一作者为Xiuzhen Guo，勿用#7期刊版作者顺序替代。"
+    },
+    {
+      "id": 30,
+      "original": "Haotian Jiang, Jiacheng Zhang, Xiuzhen Guo*, Yuan He, “Sense Me on the Ride: Accurate Mobile Sensing over a LoRa Backscatter Channel”, ACM SenSys , 2021. (CCF-B，通讯作者)",
+      "sourceTitle": "Sense Me on the Ride: Accurate Mobile Sensing over a LoRa Backscatter Channel",
+      "sourceYear": 2021,
+      "status": "matched",
+      "bibliography": {
+        "title": "Sense Me on the Ride: Accurate Mobile Sensing over a LoRa Backscatter Channel",
+        "authors": [
+          "Haotian Jiang",
+          "Jiacheng Zhang",
+          "Xiuzhen Guo",
+          "Yuan He"
+        ],
+        "venue": "Proceedings of the 19th ACM Conference on Embedded Networked Sensor Systems",
+        "year": 2021,
+        "publishedPrint": [
+          2021,
+          11,
+          15
+        ],
+        "publishedOnline": [
+          2021,
+          11,
+          15
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "125-137",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3485730.3485933",
+        "url": "https://doi.org/10.1145/3485730.3485933"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:KlAtU1dfN6UC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3485730.3485933"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3485730.3485933"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 31,
+      "original": "Xiuzhen Guo, Yuan He, Jia zhang, Haotian Jiang, Zihao Yu, Xin Na, “Taming the Errors in Cross-Technology Communication: A Probabilistic Approach”, ACM Transactions on Sensor Networks, 2022, 18(1): 3-20. (TOSN, CCF-B).",
+      "sourceTitle": "Taming the Errors in Cross-Technology Communication: A Probabilistic Approach",
+      "sourceYear": 2022,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Taming the Errors in Cross-Technology Communication: A Probabilistic Approach",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Jia Zhang",
+          "Haotian Jiang",
+          "Zihao Yu",
+          "Xin Na"
+        ],
+        "venue": "ACM Transactions on Sensor Networks",
+        "year": 2022,
+        "publishedPrint": [
+          2022,
+          2,
+          28
+        ],
+        "publishedOnline": [
+          2021,
+          10,
+          22
+        ],
+        "volume": "18",
+        "issue": "1",
+        "pages": "1-20",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1145/3469031",
+        "url": "https://doi.org/10.1145/3469031"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:MXK_kJrjxJIC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3469031"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3469031"
+        }
+      ],
+      "notes": "页码应为1–20，原文3–20不能直接作为页码。正式卷期年2022正确；另有明确在线日期2021-10-22，二者分别记录。Jia zhang统一姓名大小写。"
+    },
+    {
+      "id": 32,
+      "original": "Xiuzhen Guo, Yuan He, Xiaolong Zheng, Zihao Yu, Yunhao Liu. “LEGO-Fi: Transmitter-Transparent CTC with Cross-Demapping”, IEEE Internet of Things Journal, 2021, 8(8): 6665-6676. (IOTJ, SCI一区, IF=9.936)",
+      "sourceTitle": "LEGO-Fi: Transmitter-Transparent CTC with Cross-Demapping",
+      "sourceYear": 2021,
+      "status": "matched",
+      "bibliography": {
+        "title": "LEGO-Fi: Transmitter-Transparent CTC With Cross-Demapping",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Xiaolong Zheng",
+          "Zihao Yu",
+          "Yunhao Liu"
+        ],
+        "venue": "IEEE Internet of Things Journal",
+        "year": 2021,
+        "publishedPrint": [
+          2021,
+          4,
+          15
+        ],
+        "publishedOnline": null,
+        "volume": "8",
+        "issue": "8",
+        "pages": "6665-6676",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/jiot.2021.3054669",
+        "url": "https://doi.org/10.1109/jiot.2021.3054669"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/scholar?hl=zh-CN&q=%22LEGO-Fi%3A%20Transmitter-Transparent%20CTC%20with%20Cross-Demapping%22",
+        "note": "精确题名检索取得此发表版本。",
+        "query": "\"LEGO-Fi: Transmitter-Transparent CTC with Cross-Demapping\""
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/jiot.2021.3054669"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/jiot.2021.3054669"
+        }
+      ],
+      "notes": "确认2021年IOTJ版8(8):6665–6676；Scholar精确标题检索也返回该期刊版，不能用#25的2019会议记录替代。"
+    },
+    {
+      "id": 33,
+      "original": "Yuan He, Xiuzhen Guo, Xiaolong Zheng, Zihao Yu, Jia Zhang, Haotian Jiang, Xin Na, Jiacheng Zhang, “Cross-Technology Communication for the Internet of Things: A Survey”, ACM Computing Surveys, 2022. (CSUR，SCI一区，IF=10.282，通讯)",
+      "sourceTitle": "Cross-Technology Communication for the Internet of Things: A Survey",
+      "sourceYear": 2022,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Cross-Technology Communication for the Internet of Things: A Survey",
+        "authors": [
+          "Yuan He",
+          "Xiuzhen Guo",
+          "Xiaolong Zheng",
+          "Zihao Yu",
+          "Jia Zhang",
+          "Haotian Jiang",
+          "Xin Na",
+          "Jiacheng Zhang"
+        ],
+        "venue": "ACM Computing Surveys",
+        "year": 2023,
+        "publishedPrint": [
+          2023,
+          5,
+          31
+        ],
+        "publishedOnline": [
+          2022,
+          12,
+          3
+        ],
+        "volume": "55",
+        "issue": "5",
+        "pages": "1-29",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1145/3530049",
+        "url": "https://doi.org/10.1145/3530049"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:YOwf2qJgpHMC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3530049"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3530049"
+        }
+      ],
+      "notes": "原文2022对应明确在线日期2022-12-03；正式卷期55(5):1–29为2023。建议正式出版年用2023，并保留onlineYear=2022。"
+    },
+    {
+      "id": 34,
+      "original": "郭秀珍, 何源. 跨协议通信技术研究进展[J]. 计算机研究与发展, 2021. (CCF-T1中文期刊)",
+      "sourceTitle": "跨协议通信技术研究进展",
+      "sourceYear": 2021,
+      "status": "partial",
+      "bibliography": null,
+      "scholar": {
+        "url": "https://scholar.google.com/scholar?hl=zh-CN&q=%22%E8%B7%A8%E5%8D%8F%E8%AE%AE%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95%22",
+        "note": "补充检索未取得匹配的Scholar记录。",
+        "query": "\"跨协议通信技术研究进展\""
+      },
+      "sources": [
+        {
+          "label": "作者简历（部分线索）",
+          "url": "https://tns.thss.tsinghua.edu.cn/sun/members/XiuzhenGuo/Curriculum_vitae.pdf"
+        }
+      ],
+      "notes": "Google Scholar精确题名检索无匹配，Crossref无匹配，出版社站点检索未取得文章记录。作者简历确有同题、同作者及2021年记录，但仍缺正式卷期页码/DOI，不能据此宣称已完成出版核验。需出版社文章页或论文首页。"
+    },
+    {
+      "id": 35,
+      "original": "Xiuzhen Guo, Yuan He, Yunhao Liu, Longfei Shangguan, “A new design paradigm for polymorphic backscatter Radios”, ACM GetMobile, 2023, 27(3): 18-22. (SIGMOBILE 会刊, Research highlight文章)",
+      "sourceTitle": "A new design paradigm for polymorphic backscatter Radios",
+      "sourceYear": 2023,
+      "status": "matched",
+      "bibliography": {
+        "title": "A New Design Paradigm for Polymorphic Backscatter Radios",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Yunhao Liu",
+          "Longfei Shangguan"
+        ],
+        "venue": "GetMobile: Mobile Computing and Communications",
+        "year": 2023,
+        "publishedPrint": [
+          2023,
+          10,
+          31
+        ],
+        "publishedOnline": [
+          2023,
+          11
+        ],
+        "volume": "27",
+        "issue": "3",
+        "pages": "18-22",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1145/3631588.3631594",
+        "url": "https://doi.org/10.1145/3631588.3631594"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:r0BpntZqJG4C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3631588.3631594"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3631588.3631594"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 36,
+      "original": "Tao Chen, Yongjie Yang, Xiaoran Fan, Xiuzhen Guo, Jie Xiong, Longfei Shangguan. “Cardiac auscultation with earphones”, ACM GetMobile, 2025, 29(1): 14-19. (SIGMOBILE 会刊, Research highlight文章)",
+      "sourceTitle": "Cardiac auscultation with earphones",
+      "sourceYear": 2025,
+      "status": "matched",
+      "bibliography": {
+        "title": "Cardiac Auscultation with Earphones",
+        "authors": [
+          "Tao Chen",
+          "Yongjie Yang",
+          "Xiaoran Fan",
+          "Xiuzhen Guo",
+          "Jie Xiong",
+          "Longfei Shangguan"
+        ],
+        "venue": "GetMobile: Mobile Computing and Communications",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          4,
+          30
+        ],
+        "publishedOnline": [
+          2025,
+          4,
+          30
+        ],
+        "volume": "29",
+        "issue": "1",
+        "pages": "14-19",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1145/3733892.3733898",
+        "url": "https://doi.org/10.1145/3733892.3733898"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:zA6iFVUQeVQC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3733892.3733898"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3733892.3733898"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 37,
+      "original": "何源，郭秀珍，关于“射频计算的思考”[J]，2023, 19(4):1-4. 中国计算机学会通讯.",
+      "sourceTitle": "关于射频计算的思考",
+      "sourceYear": 2023,
+      "status": "partial",
+      "bibliography": null,
+      "scholar": {
+        "url": "https://scholar.google.com/scholar?hl=zh-CN&q=%22%E5%85%B3%E4%BA%8E%22%20%22%E5%B0%84%E9%A2%91%E8%AE%A1%E7%AE%97%22%20%22%E6%80%9D%E8%80%83%22",
+        "note": "补充检索未取得匹配的Scholar记录。",
+        "query": "\"关于\" \"射频计算\" \"思考\""
+      },
+      "sources": [
+        {
+          "label": "转载线索（非正式出版核验依据）",
+          "url": "https://www.modb.pro/db/653163"
+        }
+      ],
+      "notes": "Google Scholar与Crossref未匹配。公开转载存在题名《关于“射频计算”的思考》及何源、郭秀珍署名，但CCF原文入口未成功读取。2023,19(4):1–4未获正式刊物证据；题名引号疑点和卷期页码仍待CCF原页或PDF确认。"
+    },
+    {
+      "id": 38,
+      "original": "Yifan Yan, Shuai Yang, Xiuzhen Guo*, Xiangguang Wang, Wei Chou, Yuanchao Shu, Shibo He, \"mmExpert: Integrating Large Language Models for Comprehensive mmWave Data Synthesis and Understanding\", ACM MobiHoc, 2025 (CCF-B, 通讯作者)",
+      "sourceTitle": "mmExpert: Integrating Large Language Models for Comprehensive mmWave Data Synthesis and Understanding",
+      "sourceYear": 2025,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "mmExpert: Integrating Large Language Models for Comprehensive mmWave Data Synthesis and Understanding",
+        "authors": [
+          "Yifan Yan",
+          "Shuai Yang",
+          "Xiuzhen Guo",
+          "Xiangguang Wang",
+          "Wei Chow",
+          "Yuanchao Shu",
+          "Shibo He"
+        ],
+        "venue": "Proceedings of the Twenty-sixth International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          10,
+          27
+        ],
+        "publishedOnline": [
+          2025,
+          10,
+          23
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "1-10",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3704413.3764420",
+        "url": "https://doi.org/10.1145/3704413.3764420"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:pyW8ca7W8N0C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3704413.3764420"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3704413.3764420"
+        }
+      ],
+      "notes": "Crossref及Scholar记录作者 Wei Chow，原文为 Wei Chou；按正式出版记录建议修正。"
+    },
+    {
+      "id": 39,
+      "original": "Haobo Zhang, Xiangchao Huang, Xiuzhen Guo*, Shibo He, Chaojie Gu, Yuanchao Shu, Jiming Chen, “Terahertz Sensing, Communication, and Networking: A Survey”, IEEE Transactions on Network Science and Engineering (IEEE TNSE) 2025 (通讯作者)",
+      "sourceTitle": "Terahertz Sensing, Communication, and Networking: A Survey",
+      "sourceYear": 2025,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Terahertz Sensing, Communication, and Networking: A Survey",
+        "authors": [
+          "Haobo Zhang",
+          "Xiangchao Huang",
+          "Xiuzhen Guo",
+          "Shibo He",
+          "Chaojie Gu",
+          "Yuanchao Shu",
+          "Jiming Chen"
+        ],
+        "venue": "IEEE Transactions on Network Science and Engineering",
+        "year": 2026,
+        "publishedPrint": [
+          2026
+        ],
+        "publishedOnline": null,
+        "volume": "13",
+        "issue": null,
+        "pages": "501-521",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tnse.2025.3584922",
+        "url": "https://doi.org/10.1109/tnse.2025.3584922"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:fPk4N6BV_jEC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tnse.2025.3584922"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tnse.2025.3584922"
+        }
+      ],
+      "notes": "原文和Scholar为2025；正式卷13:501–521为2026。建议按正式出版年归2026，不能把DOI中的2025当成已核验online日期。"
+    },
+    {
+      "id": 40,
+      "original": "Yuan He, Yimiao Sun, Xiuzhen Guo. “RF computing: A new realm of IoT research”, Journal of Computer Science and Technology. (Cover Paper)",
+      "sourceTitle": "RF computing: A new realm of IoT research",
+      "sourceYear": null,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "RF Computing: A New Realm of IoT Research",
+        "authors": [
+          "Yuan He",
+          "Yi-Miao Sun",
+          "Xiu-Zhen Guo"
+        ],
+        "venue": "Journal of Computer Science and Technology",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          7
+        ],
+        "publishedOnline": [
+          2025,
+          8,
+          30
+        ],
+        "volume": "40",
+        "issue": "4",
+        "pages": "941-956",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1007/s11390-025-5484-y",
+        "url": "https://doi.org/10.1007/s11390-025-5484-y"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:a0OBvERweLwC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1007/s11390-025-5484-y"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1007/s11390-025-5484-y"
+        },
+        {
+          "label": "JCST出版社页面",
+          "url": "https://jcst.ict.ac.cn/article/doi/10.1007/s11390-025-5484-y"
+        }
+      ],
+      "notes": "补全年份2025、40(4):941–956、DOI。出版社作者名采用Yi-Miao Sun、Xiu-Zhen Guo，与原文非连字符写法属于姓名格式差异。Cover Paper尚未独立核验。"
+    },
+    {
+      "id": 41,
+      "original": "Jingze Zheng, Zhiguo Shi, Xiuzhen Guo, Shibo He, Chaojie Gu, Jiming Chen. “A Tutorial on SDR-based NB-IoT PHY: Synchronization, Demodulation and Validation” , IEEE Communication Surveys & Tutorials (IEEE COMST), 2026 (SCI-1区, IF=46)",
+      "sourceTitle": "A Tutorial on SDR-based NB-IoT PHY: Synchronization, Demodulation and Validation",
+      "sourceYear": 2026,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "A Tutorial on SDR-Based NB-IoT PHY: Synchronization, Demodulation, and Validation",
+        "authors": [
+          "Jingze Zheng",
+          "Zhiguo Shi",
+          "Xiuzhen Guo",
+          "Shibo He",
+          "Chaojie Gu",
+          "Jiming Chen"
+        ],
+        "venue": "IEEE Communications Surveys & Tutorials",
+        "year": 2026,
+        "publishedPrint": [
+          2026
+        ],
+        "publishedOnline": null,
+        "volume": "28",
+        "issue": null,
+        "pages": "4458-4484",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/comst.2026.3654924",
+        "url": "https://doi.org/10.1109/comst.2026.3654924"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:_xSYboBqXhAC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/comst.2026.3654924"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/comst.2026.3654924"
+        }
+      ],
+      "notes": "期刊正式名称为 IEEE Communications Surveys & Tutorials（Communications为复数）。"
+    },
+    {
+      "id": 42,
+      "original": "Yufei Ma, Xiuzhen Guo*, Jianpeng Li, Wenxuan Wang, Yongmin Chen, Jiabao Pan, Jiming Chen, “A Survey on Magnetic Sensing and Communication: Technologies, Sensors, and Applications”, IEEE Communication Surveys & Tutorials (IEEE COMST) 2025 (SCI-1区, IF=46, 通讯作者)",
+      "sourceTitle": "A Survey on Magnetic Sensing and Communication: Technologies, Sensors, and Applications",
+      "sourceYear": 2025,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "A Survey on Magnetic Sensing and Communication: Technologies, Sensors, and Applications",
+        "authors": [
+          "Yufei Ma",
+          "Xiuzhen Guo",
+          "Jianpeng Li",
+          "Wenxuan Wang",
+          "Yongming Chen",
+          "Jiabao Pan",
+          "Jiming Chen"
+        ],
+        "venue": "IEEE Communications Surveys & Tutorials",
+        "year": 2026,
+        "publishedPrint": [
+          2026
+        ],
+        "publishedOnline": null,
+        "volume": "28",
+        "issue": null,
+        "pages": "1776-1802",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/comst.2025.3578396",
+        "url": "https://doi.org/10.1109/comst.2025.3578396"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:rO6llkc54NcC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/comst.2025.3578396"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/comst.2025.3578396"
+        }
+      ],
+      "notes": "Yongmin Chen 应为 Yongming Chen；期刊名Communications为复数。原文和Scholar为2025，正式卷28:1776–1802为2026；建议按正式年归2026，online日期未独立核实。"
+    },
+    {
+      "id": 43,
+      "original": "Chenning Li, Xiuzhen Guo, Longfei Shangguan, Zhichao Cao, kyle Jamieson, “CurvingLoRa to Boost LoRa Network Throughput via Concurrent Transmission”, USENIX NSDI, 2022. (CCF-A)",
+      "sourceTitle": "CurvingLoRa to Boost LoRa Network Throughput via Concurrent Transmission",
+      "sourceYear": 2022,
+      "status": "matched",
+      "bibliography": {
+        "title": "CurvingLoRa to Boost LoRa Network Throughput via Concurrent Transmission",
+        "authors": [
+          "Chenning Li",
+          "Xiuzhen Guo",
+          "Longfei Shangguan",
+          "Zhichao Cao",
+          "Kyle Jamieson"
+        ],
+        "venue": "19th USENIX Symposium on Networked Systems Design and Implementation (NSDI 22)",
+        "year": 2022,
+        "pages": "879-895",
+        "type": "conference-paper",
+        "url": "https://www.usenix.org/conference/nsdi22/presentation/li-chenning"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:4TOpqqG69KYC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "会议官方记录",
+          "url": "https://www.usenix.org/conference/nsdi22/presentation/li-chenning"
+        }
+      ],
+      "notes": "姓名 kyle Jamieson 统一为 Kyle Jamieson；采用NSDI正式标题中的Throughput，不替换为另一个预印本题名中的Capacity。"
+    },
+    {
+      "id": 44,
+      "original": "Xin Na, Jia Zhang, Jiacheng Zhang, Xiuzhen Guo, Yang Zou, Meng Jin, Yimiao Sun, Yunhao Liu, Yuan He, “QuinID: Enabling FDMA-based Fully parallel RFID with Frequency-selective Antenna”, ACM MobiCom 2025. (CCF-A)",
+      "sourceTitle": "QuinID: Enabling FDMA-based Fully parallel RFID with Frequency-selective Antenna",
+      "sourceYear": 2025,
+      "status": "matched",
+      "bibliography": {
+        "title": "QuinID: Enabling FDMA-Based Fully Parallel RFID with Frequency-Selective Antenna",
+        "authors": [
+          "Xin Na",
+          "Jia Zhang",
+          "Jiacheng Zhang",
+          "Xiuzhen Guo",
+          "Yang Zou",
+          "Meng Jin",
+          "Yimiao Sun",
+          "Yunhao Liu",
+          "Yuan He"
+        ],
+        "venue": "Proceedings of the 31st Annual International Conference on Mobile Computing and Networking",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          11,
+          3
+        ],
+        "publishedOnline": [
+          2025,
+          11,
+          21
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "93-107",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3680207.3723462",
+        "url": "https://doi.org/10.1145/3680207.3723462"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:ZHo1McVdvXMC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3680207.3723462"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3680207.3723462"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 45,
+      "original": "Demin Gao, Haoyu Wang, Yongrui Chen, Qiaolin Ye, Weizheng Wang, Xiuzhen Guo, Shuai Wang, Yunhuai Liu, Tian He. “LoBee: Bidirectional communication between LoRa and ZigBee based on physical-layer CTC”, IEEE Transactions on Wireless Communications, 2025 (IEEE TWC)",
+      "sourceTitle": "LoBee: Bidirectional communication between LoRa and ZigBee based on physical-layer CTC",
+      "sourceYear": 2025,
+      "status": "matched",
+      "bibliography": {
+        "title": "LoBee: Bidirectional Communication Between LoRa and ZigBee Based on Physical-Layer CTC",
+        "authors": [
+          "Demin Gao",
+          "Haoyu Wang",
+          "Yongrui Chen",
+          "Qiaolin Ye",
+          "Weizheng Wang",
+          "Xiuzhen Guo",
+          "Shuai Wang",
+          "Yunhuai Liu",
+          "Tian He"
+        ],
+        "venue": "IEEE Transactions on Wireless Communications",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          8
+        ],
+        "publishedOnline": null,
+        "volume": "24",
+        "issue": "8",
+        "pages": "6857-6868",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/twc.2025.3556552",
+        "url": "https://doi.org/10.1109/twc.2025.3556552"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:3s1wT3WcHBgC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/twc.2025.3556552"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/twc.2025.3556552"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 46,
+      "original": "Tao Chen, Yongjie Yang, Xiaoran Fan, Xiuzhen Guo, Jie Xiong, Longfei Shanggguan, “Exploring the Feasibility of Remote Cardiac Auscultation Using Earphones”, ACM MobiCom 2024. (CCF-A, Best Paper Award)",
+      "sourceTitle": "Exploring the Feasibility of Remote Cardiac Auscultation Using Earphones",
+      "sourceYear": 2024,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Exploring the Feasibility of Remote Cardiac Auscultation Using Earphones",
+        "authors": [
+          "Tao Chen",
+          "Yongjie Yang",
+          "Xiaoran Fan",
+          "Xiuzhen Guo",
+          "Jie Xiong",
+          "Longfei Shangguan"
+        ],
+        "venue": "Proceedings of the 30th Annual International Conference on Mobile Computing and Networking",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          5,
+          29
+        ],
+        "publishedOnline": [
+          2024,
+          5,
+          29
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "357-372",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3636534.3649366",
+        "url": "https://doi.org/10.1145/3636534.3649366"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:NMxIlDl6LWMC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3636534.3649366"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3636534.3649366"
+        }
+      ],
+      "notes": "Longfei Shanggguan 应为 Longfei Shangguan；Best Paper Award未纳入本次书目核验结论。"
+    },
+    {
+      "id": 47,
+      "original": "Weiguo Wang, Yuan He, Meng Jin, Yimiao Sun, Xiuzhen Guo. \"Meta-Speaker: Acoustic Source Projection by Exploiting Air Nonlinearity\", ACM MobiCom 2023. (CCF-A)",
+      "sourceTitle": "Meta-Speaker: Acoustic Source Projection by Exploiting Air Nonlinearity",
+      "sourceYear": 2023,
+      "status": "matched",
+      "bibliography": {
+        "title": "Meta-Speaker: Acoustic Source Projection by Exploiting Air Nonlinearity",
+        "authors": [
+          "Weiguo Wang",
+          "Yuan He",
+          "Meng Jin",
+          "Yimiao Sun",
+          "Xiuzhen Guo"
+        ],
+        "venue": "Proceedings of the 29th Annual International Conference on Mobile Computing and Networking",
+        "year": 2023,
+        "publishedPrint": [
+          2023,
+          10,
+          2
+        ],
+        "publishedOnline": [
+          2023,
+          10,
+          2
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "1-15",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3570361.3613279",
+        "url": "https://doi.org/10.1145/3570361.3613279"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:4JMBOYKVnBMC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3570361.3613279"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3570361.3613279"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 48,
+      "original": "Jia Zhang, Xiuzhen Guo, Yuan He, “Link Quality Estimation of Cross-Technology Communication”, IEEE INFOCOM 2020. (CCF-A)",
+      "sourceTitle": "Link Quality Estimation of Cross-Technology Communication",
+      "sourceYear": 2020,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Link Quality Estimation of Cross-Technology Communication",
+        "authors": [
+          "Jia Zhang",
+          "Xiuzhen Guo",
+          "Haotian Jiang",
+          "Xiaolong Zheng",
+          "Yuan He"
+        ],
+        "venue": "IEEE INFOCOM 2020 - IEEE Conference on Computer Communications",
+        "year": 2020,
+        "publishedPrint": [
+          2020,
+          7
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "496-505",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/infocom41043.2020.9155437",
+        "url": "https://doi.org/10.1109/infocom41043.2020.9155437"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:d1gkVwhDpl0C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/infocom41043.2020.9155437"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/infocom41043.2020.9155437"
+        }
+      ],
+      "notes": "原文漏列 Haotian Jiang、Xiaolong Zheng；完整顺序为 Jia Zhang, Xiuzhen Guo, Haotian Jiang, Xiaolong Zheng, Yuan He。"
+    },
+    {
+      "id": 49,
+      "original": "Xiaolong Zheng, Yuan He, Xiuzhen Guo, “Stripcomm: Interference-resilient Cross Technology Communication in Coexisting Environments”, IEEE INFOCOM, 2018. (CCF-A)",
+      "sourceTitle": "Stripcomm: Interference-resilient Cross Technology Communication in Coexisting Environments",
+      "sourceYear": 2018,
+      "status": "matched",
+      "bibliography": {
+        "title": "StripComm: Interference-Resilient Cross-Technology Communication in Coexisting Environments",
+        "authors": [
+          "Xiaolong Zheng",
+          "Yuan He",
+          "Xiuzhen Guo"
+        ],
+        "venue": "IEEE INFOCOM 2018 - IEEE Conference on Computer Communications",
+        "year": 2018,
+        "publishedPrint": [
+          2018,
+          4
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "171-179",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/infocom.2018.8486374",
+        "url": "https://doi.org/10.1109/infocom.2018.8486374"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:zYLM7Y9cAGgC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/infocom.2018.8486374"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/infocom.2018.8486374"
+        }
+      ],
+      "notes": "规范标题中的 StripComm、Cross-Technology 大小写和连字符；无实质书目差异。"
+    },
+    {
+      "id": 50,
+      "original": "Yang Zou, Xin Na, Xiuzhen Guo, Yimiao Sun, Yuan He, “TRIDENT: Interference Avoidance in Multi-reader Backscatter Network Via Frequency-space Division”, IEEE INFOCOM 2024. (CCF-A)",
+      "sourceTitle": "TRIDENT: Interference Avoidance in Multi-reader Backscatter Network Via Frequency-space Division",
+      "sourceYear": 2024,
+      "status": "matched",
+      "bibliography": {
+        "title": "Trident: Interference Avoidance in Multi-reader Backscatter Network via Frequency-space Division",
+        "authors": [
+          "Yang Zou",
+          "Xin Na",
+          "Xiuzhen Guo",
+          "Yimiao Sun",
+          "Yuan He"
+        ],
+        "venue": "IEEE INFOCOM 2024 - IEEE Conference on Computer Communications",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          5,
+          20
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "1761-1770",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/infocom52122.2024.10621258",
+        "url": "https://doi.org/10.1109/infocom52122.2024.10621258"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:u_35RYKgDlwC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/infocom52122.2024.10621258"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/infocom52122.2024.10621258"
+        }
+      ],
+      "notes": "确认INFOCOM 2024会议版作者名单；Scholar档案条目缺完整发表信息，不借用作者不同的Trident期刊版填充。"
+    },
+    {
+      "id": 51,
+      "original": "Weiguo Wang, Jinming Li, Yuan He, Xiuzhen Guo, Yunhao Liu, “MotorBeat: Acoustic Communication for Home Appliances via Variable Pulse Width Modulation”, ACM UbiComp, 2022. (CCF-A)",
+      "sourceTitle": "MotorBeat: Acoustic Communication for Home Appliances via Variable Pulse Width Modulation",
+      "sourceYear": 2022,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "MotorBeat: Acoustic Communication for Home Appliances via Variable Pulse Width Modulation",
+        "authors": [
+          "Weiguo Wang",
+          "Jinming Li",
+          "Yuan He",
+          "Xiuzhen Guo",
+          "Yunhao Liu"
+        ],
+        "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
+        "year": 2022,
+        "publishedPrint": [
+          2022,
+          3,
+          29
+        ],
+        "publishedOnline": [
+          2022,
+          3,
+          29
+        ],
+        "volume": "6",
+        "issue": "1",
+        "pages": "1-24",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1145/3517255",
+        "url": "https://doi.org/10.1145/3517255"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:_kc_bZDykSQC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3517255"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3517255"
+        }
+      ],
+      "notes": "正式载体为IMWUT期刊6(1):1–24，2022；UbiComp可作为展示标签。ACM主副标题合并后保留MotorBeat完整题名。"
+    },
+    {
+      "id": 52,
+      "original": "Yongjie Yang, Tao Chen, Yujing Huang, Xiuzhen Guo, Longfei Shangguan, “MAF: Exploring Mobile Acoustic Field for Hand-to-Face Gesture Interactions”, ACM CHI 2024. (CCF-A)",
+      "sourceTitle": "MAF: Exploring Mobile Acoustic Field for Hand-to-Face Gesture Interactions",
+      "sourceYear": 2024,
+      "status": "matched",
+      "bibliography": {
+        "title": "MAF: Exploring Mobile Acoustic Field for Hand-to-Face Gesture Interactions",
+        "authors": [
+          "Yongjie Yang",
+          "Tao Chen",
+          "Yujing Huang",
+          "Xiuzhen Guo",
+          "Longfei Shangguan"
+        ],
+        "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          5,
+          11
+        ],
+        "publishedOnline": [
+          2024,
+          5,
+          11
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "1-20",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3613904.3642437",
+        "url": "https://doi.org/10.1145/3613904.3642437"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:hMod-77fHWUC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3613904.3642437"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3613904.3642437"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 53,
+      "original": "Demin Gao, Liyuan Ou, Yongrui Chen, Xiuzhen Guo, Ruofeng Liu, Yunhuai Liu, Tian He, “Physical-layer CTC from BLE to Wi-Fi with IEEE 802.11ax”, IEEE TMC 2024 (CCF-A)",
+      "sourceTitle": "Physical-layer CTC from BLE to Wi-Fi with IEEE 802.11ax",
+      "sourceYear": 2024,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Physical-Layer CTC From BLE to Wi-Fi With IEEE 802.11ax",
+        "authors": [
+          "Demin Gao",
+          "Liyuan Ou",
+          "Yongrui Chen",
+          "Xiuzhen Guo",
+          "Ruofeng Liu",
+          "Yunhuai Liu",
+          "Tian He"
+        ],
+        "venue": "IEEE Transactions on Mobile Computing",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          1
+        ],
+        "publishedOnline": null,
+        "volume": "24",
+        "issue": "1",
+        "pages": "338-351",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/tmc.2024.3462941",
+        "url": "https://doi.org/10.1109/tmc.2024.3462941"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:vV6vV6tmYwMC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/tmc.2024.3462941"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/tmc.2024.3462941"
+        }
+      ],
+      "notes": "原文和Scholar为2024，正式卷期24(1):338–351为2025；建议网页正式出版年用2025。"
+    },
+    {
+      "id": 54,
+      "original": "Xin Na, Xiuzhen Guo, Zihao Yu, Jia Zhang, Yuan He, “Leggiero: Analog WiFi Backscatter with Payload Transparency”, ACM MobiSys, 2023. (CCF-B)",
+      "sourceTitle": "Leggiero: Analog WiFi Backscatter with Payload Transparency",
+      "sourceYear": 2023,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Leggiero: Analog WiFi Backscatter with Payload Transparency",
+        "authors": [
+          "Xin Na",
+          "Xiuzhen Guo",
+          "Zihao Yu",
+          "Jia Zhang",
+          "Yuan He",
+          "Yunhao Liu"
+        ],
+        "venue": "Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services",
+        "year": 2023,
+        "publishedPrint": [
+          2023,
+          6,
+          18
+        ],
+        "publishedOnline": [
+          2023,
+          6,
+          18
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "436-449",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3581791.3596835",
+        "url": "https://doi.org/10.1145/3581791.3596835"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:4DMP91E08xMC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3581791.3596835"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3581791.3596835"
+        }
+      ],
+      "notes": "原文漏列末位作者 Yunhao Liu；其余5人的顺序一致。"
+    },
+    {
+      "id": 55,
+      "original": "Jingze Zheng, Chaojie Gu, Yuanchao Shu, Xiuzhen Guo, Shibo He, Zhiguo Shi, Jiming Chen, “SoftNB: A Fully Functional NB-IoT PHY for Various SDR Platforms”, IEEE ICNP, 2024. (CCF-B)",
+      "sourceTitle": "SoftNB: A Fully Functional NB-IoT PHY for Various SDR Platforms",
+      "sourceYear": 2024,
+      "status": "matched",
+      "bibliography": {
+        "title": "SoftNB: A Fully Functional NB-IoT PHY for Various SDR Platforms",
+        "authors": [
+          "Jingze Zheng",
+          "Chaojie Gu",
+          "Yuanchao Shu",
+          "Xiuzhen Guo",
+          "Shibo He",
+          "Zhiguo Shi",
+          "Jiming Chen"
+        ],
+        "venue": "2024 IEEE 32nd International Conference on Network Protocols (ICNP)",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          10,
+          28
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "1-11",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/icnp61940.2024.10858545",
+        "url": "https://doi.org/10.1109/icnp61940.2024.10858545"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:pqnbT2bcN3wC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/icnp61940.2024.10858545"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/icnp61940.2024.10858545"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 56,
+      "original": "Jia Zhang, Xiuzhen Guo, Yuan He, “Link Quality Estimation of Cross-Technology Communication: The Case with Physical-Level Emulation”, ACM Transactions on Sensor Networks 2021. 18(1): 1-20. (TOSN, CCF-B)",
+      "sourceTitle": "Link Quality Estimation of Cross-Technology Communication: The Case with Physical-Level Emulation",
+      "sourceYear": 2021,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Link Quality Estimation of Cross-Technology Communication: The Case with Physical-Level Emulation",
+        "authors": [
+          "Jia Zhang",
+          "Xiuzhen Guo",
+          "Haotian Jiang",
+          "Xiaolong Zheng",
+          "Yuan He"
+        ],
+        "venue": "ACM Transactions on Sensor Networks",
+        "year": 2022,
+        "publishedPrint": [
+          2022,
+          2,
+          28
+        ],
+        "publishedOnline": [
+          2021,
+          10,
+          5
+        ],
+        "volume": "18",
+        "issue": "1",
+        "pages": "1-20",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1145/3482527",
+        "url": "https://doi.org/10.1145/3482527"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:8k81kl-MbHgC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3482527"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3482527"
+        }
+      ],
+      "notes": "原文漏列 Haotian Jiang、Xiaolong Zheng；完整顺序与#48相同。2021为明确在线日期2021-10-05所在年，18(1):1–20正式卷期年为2022。"
+    },
+    {
+      "id": 57,
+      "original": "Yimiao Sun, Yuan He, Jiacheng Zhang, Xin Na, Yande Chen, Weiguo Wang, Xiuzhen Guo, “Exploiting Dispersion Effect of Signals for Accurate Indoor WiFi Localization”, 2025. (TOSN, CCF-B)",
+      "sourceTitle": "Exploiting Dispersion Effect of Signals for Accurate Indoor WiFi Localization",
+      "sourceYear": 2025,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Exploiting Dispersion Effect of Signals for Accurate Indoor WiFi Localization",
+        "authors": [
+          "Yimiao Sun",
+          "Yuan He",
+          "Jiacheng Zhang",
+          "Xin Na",
+          "Yande Chen",
+          "Weiguo Wang",
+          "Xiuzhen Guo"
+        ],
+        "venue": "ACM Transactions on Sensor Networks",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          5,
+          31
+        ],
+        "publishedOnline": [
+          2025,
+          5,
+          21
+        ],
+        "volume": "21",
+        "issue": "3",
+        "pages": "1-21",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1145/3725850",
+        "url": "https://doi.org/10.1145/3725850"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:SeFeTyx0c_EC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3725850"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3725850"
+        }
+      ],
+      "notes": "原文仅在括注给出TOSN；补全正式期刊名称、21(3):1–21及DOI，原年份2025一致。"
+    },
+    {
+      "id": 58,
+      "original": "Miao Guo, Shibo He, Chaojie Gu, Xiuzhen Guo, Jiming Chen, Tao Gao, Tongtong Wang, “Towards Distributed Flow Scheduling in IEEE 802.1Qbv Time-Sensitive Networks”. ACM Transactions on Sensor Networks, 2024. (TOSN, CCF-B)",
+      "sourceTitle": "Towards Distributed Flow Scheduling in IEEE 802.1Qbv Time-Sensitive Networks",
+      "sourceYear": 2024,
+      "status": "matched",
+      "bibliography": {
+        "title": "Towards Distributed Flow Scheduling in IEEE 802.1Qbv Time-Sensitive Networks",
+        "authors": [
+          "Miao Guo",
+          "Shibo He",
+          "Chaojie Gu",
+          "Xiuzhen Guo",
+          "Jiming Chen",
+          "Tao Gao",
+          "Tongtong Wang"
+        ],
+        "venue": "ACM Transactions on Sensor Networks",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          9,
+          30
+        ],
+        "publishedOnline": [
+          2024,
+          7,
+          23
+        ],
+        "volume": "20",
+        "issue": "5",
+        "pages": "1-30",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1145/3676848",
+        "url": "https://doi.org/10.1145/3676848"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:ns9cj8rnVeAC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3676848"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3676848"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 59,
+      "original": "Xin Na, Xiuzhen Guo, Yuan He, “Wi-attack: Cross-technology Impersonation Attack against iBeacon Services”, IEEE SECON, 2021. (CCF-B)",
+      "sourceTitle": "Wi-attack: Cross-technology Impersonation Attack against iBeacon Services",
+      "sourceYear": 2021,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Wi-attack: Cross-technology Impersonation Attack against iBeacon Services",
+        "authors": [
+          "Xin Na",
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Rui Xi"
+        ],
+        "venue": "2021 18th Annual IEEE International Conference on Sensing, Communication, and Networking (SECON)",
+        "year": 2021,
+        "publishedPrint": [
+          2021,
+          7,
+          6
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "1-9",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/secon52354.2021.9491605",
+        "url": "https://doi.org/10.1109/secon52354.2021.9491605"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:5nxA0vEk-isC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/secon52354.2021.9491605"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/secon52354.2021.9491605"
+        }
+      ],
+      "notes": "原文漏列末位作者 Rui Xi。"
+    },
+    {
+      "id": 60,
+      "original": "Xueteng Qian, Xiuzhen Guo, Yongjie Yang, Longfei Shangguan, “HeadFi II: Toward More Resilient Earable Computing Platform”, ACM SenSys 2022. (CCF-B)",
+      "sourceTitle": "HeadFi II: Toward More Resilient Earable Computing Platform",
+      "sourceYear": 2022,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "HeadFi II: Toward More Resilient Earable Computing Platform",
+        "authors": [
+          "Xueteng Qian",
+          "Xiuzhen Guo",
+          "Yongjie Yang",
+          "Xiaoran Fan",
+          "Longfei Shangguan"
+        ],
+        "venue": "Proceedings of the 20th ACM Conference on Embedded Networked Sensor Systems",
+        "year": 2022,
+        "publishedPrint": [
+          2022,
+          11,
+          6
+        ],
+        "publishedOnline": [
+          2023,
+          1,
+          24
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "827-828",
+        "articleNumber": null,
+        "type": "conference-poster",
+        "doi": "10.1145/3560905.3568092",
+        "url": "https://doi.org/10.1145/3560905.3568092"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:aqlVkmm33-oC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3560905.3568092"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3560905.3568092"
+        },
+        {
+          "label": "SenSys 2022官方日程：Posters",
+          "url": "https://sensys.acm.org/2022/program/"
+        }
+      ],
+      "notes": "原文漏列 Xiaoran Fan，应位于Yongjie Yang与Longfei Shangguan之间。会议官方日程将其列入Posters，宜标SenSys 2022 Poster（2页，827–828），不能默认为常规长论文。Crossref在线日期为2023-01-24，会议年份仍为2022。"
+    },
+    {
+      "id": 61,
+      "original": "Xiaolong Zheng, Dan Xia, Xiuzhen Guo, Liang Liu, Yuan He, Huadong Ma, “Portal: Transparent Cross-technology Opportunistic Forwarding”, ACM MobiHoc, 2020. (CCF-B)",
+      "sourceTitle": "Portal: Transparent Cross-technology Opportunistic Forwarding",
+      "sourceYear": 2020,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Portal: transparent cross-technology opportunistic forwarding for low-power wireless networks",
+        "authors": [
+          "Xiaolong Zheng",
+          "Dan Xia",
+          "Xiuzhen Guo",
+          "Liang Liu",
+          "Yuan He",
+          "Huadong Ma"
+        ],
+        "venue": "Proceedings of the Twenty-First International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing",
+        "year": 2020,
+        "publishedPrint": [
+          2020,
+          10,
+          11
+        ],
+        "publishedOnline": [
+          2020,
+          10,
+          11
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "241-250",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3397166.3409134",
+        "url": "https://doi.org/10.1145/3397166.3409134"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:YsMSGLbcyi4C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3397166.3409134"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3397166.3409134"
+        }
+      ],
+      "notes": "原文标题缺少结尾 for low-power wireless networks，按ACM完整题名补齐。作者保存PDF的页脚与参考格式出现两个不同DOI，本报告以能返回匹配题名的Crossref注册记录10.1145/3397166.3409134为准。"
+    },
+    {
+      "id": 62,
+      "original": "Tao Chen, Yongjie Yang, Chonghao Qiu, Xiaoran Fan, Xiuzhen Guo, Longfei Shangguan, “Enabling Hands-Free Voice Assistant Activation on Earphones”, ACM MobiSys, 2024. (CCF-B)",
+      "sourceTitle": "Enabling Hands-Free Voice Assistant Activation on Earphones",
+      "sourceYear": 2024,
+      "status": "matched",
+      "bibliography": {
+        "title": "Enabling Hands-Free Voice Assistant Activation on Earphones",
+        "authors": [
+          "Tao Chen",
+          "Yongjie Yang",
+          "Chonghao Qiu",
+          "Xiaoran Fan",
+          "Xiuzhen Guo",
+          "Longfei Shangguan"
+        ],
+        "venue": "Proceedings of the 22nd Annual International Conference on Mobile Systems, Applications and Services",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          6,
+          3
+        ],
+        "publishedOnline": [
+          2024,
+          6,
+          4
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "155-168",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3643832.3661890",
+        "url": "https://doi.org/10.1145/3643832.3661890"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:GnPB-g6toBAC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3643832.3661890"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3643832.3661890"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 63,
+      "original": "Zihao Yu, Xin Na, Carlo Alberto Boano, Yuan He, Xiuzhen Guo, Pengyu Li, Meng Jin, “SmarTiSCH: An Interference-Aware Engine for IEEE 802.15.4e-based Networks”, IEEE/ACM IPSN, 2022. (CCF-B)",
+      "sourceTitle": "SmarTiSCH: An Interference-Aware Engine for IEEE 802.15.4e-based Networks",
+      "sourceYear": 2022,
+      "status": "matched",
+      "bibliography": {
+        "title": "SmarTiSCH: An Interference-Aware Engine for IEEE 802.15.4e-based Networks",
+        "authors": [
+          "Zihao Yu",
+          "Xin Na",
+          "Carlo Alberto Boano",
+          "Yuan He",
+          "Xiuzhen Guo",
+          "Pengyu Li",
+          "Meng Jin"
+        ],
+        "venue": "2022 21st ACM/IEEE International Conference on Information Processing in Sensor Networks (IPSN)",
+        "year": 2022,
+        "publishedPrint": [
+          2022,
+          5
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "350-362",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/ipsn54338.2022.00035",
+        "url": "https://doi.org/10.1109/ipsn54338.2022.00035"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:ULOm3_A8WrAC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/ipsn54338.2022.00035"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/ipsn54338.2022.00035"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 64,
+      "original": "Zihao Yu, Pengyu Li, Carlo Alberto Boano, Yuan He, Meng Jin, Xiuzhen Guo, Xiaolong Zheng, “BiCord: Bidirectional Coordination among Coexisting Wireless Devices”, IEEE ICDCS, 2021. (CCF-B)",
+      "sourceTitle": "BiCord: Bidirectional Coordination among Coexisting Wireless Devices",
+      "sourceYear": 2021,
+      "status": "matched",
+      "bibliography": {
+        "title": "BiCord: Bidirectional Coordination among Coexisting Wireless Devices",
+        "authors": [
+          "Zihao Yu",
+          "Pengyu Li",
+          "Carlo Alberto Boano",
+          "Yuan He",
+          "Meng Jin",
+          "Xiuzhen Guo",
+          "Xiaolong Zheng"
+        ],
+        "venue": "2021 IEEE 41st International Conference on Distributed Computing Systems (ICDCS)",
+        "year": 2021,
+        "publishedPrint": [
+          2021,
+          7
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "304-314",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/icdcs51616.2021.00037",
+        "url": "https://doi.org/10.1109/icdcs51616.2021.00037"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:UebtZRa9Y70C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/icdcs51616.2021.00037"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/icdcs51616.2021.00037"
+        }
+      ],
+      "notes": "采用2021年ICDCS会议论文；排除Crossref同名2023年书籍章节，其作者及发表类型均不同。"
+    },
+    {
+      "id": 65,
+      "original": "Lilin Xu, Keyi Wang, Chaojie Gu, Xiuzhen Guo, Shibo He, Jiming Chen, “GesturePrint: Enabling User Identification for mmWave-based Gesture Recognition Systems”. IEEE ICDCS, 2024. (CCF-B)",
+      "sourceTitle": "GesturePrint: Enabling User Identification for mmWave-based Gesture Recognition Systems",
+      "sourceYear": 2024,
+      "status": "matched",
+      "bibliography": {
+        "title": "GesturePrint: Enabling User Identification for mmWave-Based Gesture Recognition Systems",
+        "authors": [
+          "Lilin Xu",
+          "Keyi Wang",
+          "Chaojie Gu",
+          "Xiuzhen Guo",
+          "Shibo He",
+          "Jiming Chen"
+        ],
+        "venue": "2024 IEEE 44th International Conference on Distributed Computing Systems (ICDCS)",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          7,
+          23
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "1074-1085",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/icdcs60910.2024.00103",
+        "url": "https://doi.org/10.1109/icdcs60910.2024.00103"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:RGFaLdJalmkC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/icdcs60910.2024.00103"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/icdcs60910.2024.00103"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 66,
+      "original": "Yimiao Sun, Yuan He, Jiacheng Zhang, Xin Na, Yande Chen, Weiguo Wang, Xiuzhen Guo, “BIFROST: Reinventing WiFi signals based on dispersion effect for accurate indoor localization,” ACM SenSys 2023. (CCF-B)",
+      "sourceTitle": "BIFROST: Reinventing WiFi signals based on dispersion effect for accurate indoor localization,",
+      "sourceYear": 2023,
+      "status": "matched",
+      "bibliography": {
+        "title": "BIFROST: Reinventing WiFi Signals Based on Dispersion Effect for Accurate Indoor Localization",
+        "authors": [
+          "Yimiao Sun",
+          "Yuan He",
+          "Jiacheng Zhang",
+          "Xin Na",
+          "Yande Chen",
+          "Weiguo Wang",
+          "Xiuzhen Guo"
+        ],
+        "venue": "Proceedings of the 21st ACM Conference on Embedded Networked Sensor Systems",
+        "year": 2023,
+        "publishedPrint": [
+          2023,
+          11,
+          12
+        ],
+        "publishedOnline": [
+          2024,
+          4,
+          26
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "376-389",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1145/3625687.3625786",
+        "url": "https://doi.org/10.1145/3625687.3625786"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:iH-uZ7U-co4C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1145/3625687.3625786"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1145/3625687.3625786"
+        }
+      ],
+      "notes": "原文引号内末尾逗号属于引用标点，不是标题。会议年份2023正确；Crossref另记录2024-04-26在线日期，不用于改写会议年。"
+    },
+    {
+      "id": 67,
+      "original": "Weiguo Wang, Xiaolong Zheng, Yuan He, Xiuzhen Guo, “AdaComm: Tracing Channel Dynamics for Reliable Cross-Technology Communication”, IEEE SECON, 2019. (CCF-B)",
+      "sourceTitle": "AdaComm: Tracing Channel Dynamics for Reliable Cross-Technology Communication",
+      "sourceYear": 2019,
+      "status": "matched",
+      "bibliography": {
+        "title": "AdaComm: Tracing Channel Dynamics for Reliable Cross-Technology Communication",
+        "authors": [
+          "Weiguo Wang",
+          "Xiaolong Zheng",
+          "Yuan He",
+          "Xiuzhen Guo"
+        ],
+        "venue": "2019 16th Annual IEEE International Conference on Sensing, Communication, and Networking (SECON)",
+        "year": 2019,
+        "publishedPrint": [
+          2019,
+          6
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "1-9",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/sahcn.2019.8824843",
+        "url": "https://doi.org/10.1109/sahcn.2019.8824843"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:roLk4NBRz8UC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/sahcn.2019.8824843"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/sahcn.2019.8824843"
+        }
+      ],
+      "notes": "题名、作者顺序及原文年份与出版记录相符；缺失的卷期页码/文章号和DOI已在核验书目中补充。"
+    },
+    {
+      "id": 68,
+      "original": "Haoran Shi, Yichuan Yang, Xiuzhen Guo, Wenchao Meng, Chaoiie Gu and Shibo He, “Understanding and Optimizing Nonlinear Chirp Spread Spectrum Modulation in LoRa Networks”, IEEE HPCC, 2024. (CCF-C, Best Paper Award)",
+      "sourceTitle": "Understanding and Optimizing Nonlinear Chirp Spread Spectrum Modulation in LoRa Networks",
+      "sourceYear": 2024,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Understanding and Optimizing Nonlinear Chirp Spread Spectrum Modulation in LoRa Networks",
+        "authors": [
+          "Haoran Shi",
+          "Yichuan Yang",
+          "Xiuzhen Guo",
+          "Wenchao Meng",
+          "Chaojie Gu",
+          "Shibo He"
+        ],
+        "venue": "2024 IEEE International Conference on High Performance Computing and Communications (HPCC)",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          12,
+          13
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "876-884",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/hpcc64274.2024.00120",
+        "url": "https://doi.org/10.1109/hpcc64274.2024.00120"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:yD5IFk8b50cC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/hpcc64274.2024.00120"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/hpcc64274.2024.00120"
+        }
+      ],
+      "notes": "Chaoiie Gu 应为 Chaojie Gu；Best Paper Award未纳入本次书目核验结论。"
+    },
+    {
+      "id": 69,
+      "original": "Huajian Zhou, Miao Guo, Xiuzhen Guo, Shibo He, Chaojie Gu, Jiming Chen, “Hybrid heuristic optimization for joint routing and scheduling in time-sensitive networking”, IEEE MSN, 2024. (CCF-C, Best Paper Award)",
+      "sourceTitle": "Hybrid heuristic optimization for joint routing and scheduling in time-sensitive networking",
+      "sourceYear": 2024,
+      "status": "matched",
+      "bibliography": {
+        "title": "Hybrid Heuristic Optimization for Joint Routing and Scheduling in Time-Sensitive Networking",
+        "authors": [
+          "Huajian Zhou",
+          "Miao Guo",
+          "Xiuzhen Guo",
+          "Shibo He",
+          "Chaojie Gu",
+          "Jiming Chen"
+        ],
+        "venue": "2024 20th International Conference on Mobility, Sensing and Networking (MSN)",
+        "year": 2024,
+        "publishedPrint": [
+          2024,
+          12,
+          20
+        ],
+        "publishedOnline": null,
+        "volume": null,
+        "issue": null,
+        "pages": "290-297",
+        "articleNumber": null,
+        "type": "proceedings-article",
+        "doi": "10.1109/msn63567.2024.00048",
+        "url": "https://doi.org/10.1109/msn63567.2024.00048"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:dfsIfKJdRG4C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/msn63567.2024.00048"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/msn63567.2024.00048"
+        }
+      ],
+      "notes": "书目匹配；Best Paper Award未纳入本次书目核验结论。"
+    },
+    {
+      "id": 70,
+      "original": "Zihao Yu, Chengkun Jiang, Yuan He, Xiaolong Zheng, Xiuzhen Guo, “Crocs: Cross-Technology Clock Synchronization for WiFi and ZigBee”, ACM EWSN, 2018.",
+      "sourceTitle": "Crocs: Cross-Technology Clock Synchronization for WiFi and ZigBee",
+      "sourceYear": 2018,
+      "status": "matched",
+      "bibliography": {
+        "title": "Crocs: Cross-Technology Clock Synchronization for WiFi and ZigBee",
+        "authors": [
+          "Zihao Yu",
+          "Chengkun Jiang",
+          "Yuan He",
+          "Xiaolong Zheng",
+          "Xiuzhen Guo"
+        ],
+        "venue": "International Conference on Embedded Wireless Systems and Networks (EWSN)",
+        "year": 2018,
+        "pages": "135-144",
+        "type": "conference-paper",
+        "url": "https://www.ewsn.org/file-repository/ewsn-2018/135_144_yu.pdf"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:WF5omc3nYNoC",
+        "note": "匹配到2022年arXiv版本；2018年会议版另查官方PDF。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "会议官方记录",
+          "url": "https://www.ewsn.org/file-repository/ewsn-2018/135_144_yu.pdf"
+        }
+      ],
+      "notes": "会议官方PDF确认EWSN 2018、作者5人及135–144页。Scholar返回2022年arXiv版本，不能把会议年改为2022。未发现可确认DOI，使用官方PDF作为论文入口。"
+    },
+    {
+      "id": 71,
+      "original": "Jiacheng Zhang, Xiuzhen Guo*, Yuan He, “Location Tracking over a LoRa Backscattering Channel”, CWSN, 2021. (通讯)",
+      "sourceTitle": "Location Tracking over a LoRa Backscattering Channel",
+      "sourceYear": 2021,
+      "status": "partial",
+      "bibliography": null,
+      "scholar": {
+        "url": "https://scholar.google.com/scholar?hl=zh-CN&q=%22Location%20Tracking%20over%20a%20LoRa%20Backscattering%20Channel%22",
+        "note": "补充检索未取得匹配的Scholar记录。",
+        "query": "\"Location Tracking over a LoRa Backscattering Channel\""
+      },
+      "sources": [
+        {
+          "label": "作者主页（部分线索）",
+          "url": "https://zjugxz.github.io/"
+        }
+      ],
+      "notes": "Google Scholar精确题名查询与Crossref未匹配；作者公开主页列有同题、3位作者及CWSN 2021，但未找到正式论文集记录/DOI/全文。保持部分确认，不能用#30相近研究自动替代；需论文首页或会议论文集链接。"
+    },
+    {
+      "id": 72,
+      "original": "Demin Gao, Haoyu Wang, Xiuzhen Guo, Lei Wang, Guai Guo, Weizheng Wang, Zhimeng Yin, Shuai Wang, Yunhai Liu, Tian He, “Federated Learning Based on CTC for Heterogeneous Internet of Things”, IEEE Internet of Things Journal, 2023, 10(24): 22673-22685. (IOTJ, SCI一区, IF=9.936)",
+      "sourceTitle": "Federated Learning Based on CTC for Heterogeneous Internet of Things",
+      "sourceYear": 2023,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Federated Learning Based on CTC for Heterogeneous Internet of Things",
+        "authors": [
+          "Demin Gao",
+          "Haoyu Wang",
+          "Xiuzhen Guo",
+          "Lei Wang",
+          "Guan Gui",
+          "Weizheng Wang",
+          "Zhimeng Yin",
+          "Shuai Wang",
+          "Yunhuai Liu",
+          "Tian He"
+        ],
+        "venue": "IEEE Internet of Things Journal",
+        "year": 2023,
+        "publishedPrint": [
+          2023,
+          12,
+          15
+        ],
+        "publishedOnline": null,
+        "volume": "10",
+        "issue": "24",
+        "pages": "22673-22685",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/jiot.2023.3305189",
+        "url": "https://doi.org/10.1109/jiot.2023.3305189"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:RHpTSmoSYBkC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/jiot.2023.3305189"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/jiot.2023.3305189"
+        }
+      ],
+      "notes": "Guai Guo 应为 Guan Gui；Yunhai Liu 应为 Yunhuai Liu。"
+    },
+    {
+      "id": 73,
+      "original": "Jia Zhang, Rui Xi, Yuan He, Yimiao Sun, Xiuzhen Guo, Weiguo Wang, Xin Na, Yunhao Liu, Zhenguo Shi, Tao Gu, \"A Survey of mmWave-based Human Sensing: Technology, Platforms and Applications\", IEEE Communications Surveys & Tutorials, 2023, 25(4): 205-2087. (COMST, SCI一区, IF=35.6)",
+      "sourceTitle": "A Survey of mmWave-based Human Sensing: Technology, Platforms and Applications",
+      "sourceYear": 2023,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "A Survey of mmWave-Based Human Sensing: Technology, Platforms and Applications",
+        "authors": [
+          "Jia Zhang",
+          "Rui Xi",
+          "Yuan He",
+          "Yimiao Sun",
+          "Xiuzhen Guo",
+          "Weiguo Wang",
+          "Xin Na",
+          "Yunhao Liu",
+          "Zhenguo Shi",
+          "Tao Gu"
+        ],
+        "venue": "IEEE Communications Surveys & Tutorials",
+        "year": 2023,
+        "publishedPrint": [
+          2023
+        ],
+        "publishedOnline": null,
+        "volume": "25",
+        "issue": "4",
+        "pages": "2052-2087",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/comst.2023.3298300",
+        "url": "https://doi.org/10.1109/comst.2023.3298300"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:hFOr9nPyWt4C",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/comst.2023.3298300"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/comst.2023.3298300"
+        }
+      ],
+      "notes": "起始页应为2052，完整页码2052–2087；原文205–2087缺少一个2。"
+    },
+    {
+      "id": 74,
+      "original": "Yande Chen, Chongzhi Xu, Kexin Li, Jia Zhang, Xiuzhen Guo, Meng Jin, Xiaolong Zheng, Yuan He. \"Wireless Sensing for Material Identification: A Survey\", IEEE Communications Surveys & Tutorials, 2024. (COMST, SCI一区, IF=35.6)",
+      "sourceTitle": "Wireless Sensing for Material Identification: A Survey",
+      "sourceYear": 2024,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Wireless Sensing for Material Identification: A Survey",
+        "authors": [
+          "Yande Chen",
+          "Chongzhi Xu",
+          "Kexin Li",
+          "Jia Zhang",
+          "Xiuzhen Guo",
+          "Meng Jin",
+          "Xiaolong Zheng",
+          "Yuan He"
+        ],
+        "venue": "IEEE Communications Surveys & Tutorials",
+        "year": 2025,
+        "publishedPrint": [
+          2025,
+          6
+        ],
+        "publishedOnline": null,
+        "volume": "27",
+        "issue": "3",
+        "pages": "1598-1617",
+        "articleNumber": null,
+        "type": "journal-article",
+        "doi": "10.1109/comst.2024.3456076",
+        "url": "https://doi.org/10.1109/comst.2024.3456076"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:RYcK_YlVTxYC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1109/comst.2024.3456076"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1109/comst.2024.3456076"
+        }
+      ],
+      "notes": "原文和Scholar为2024；正式卷期27(3):1598–1617为2025。建议按正式出版年归2025。"
+    },
+    {
+      "id": 75,
+      "original": "【Book】Xiuzhen Guo, Yuan He, Yunhao Liu, “Cross-Technology Communication for Internet of Things: Fundamentals and Key Technologies”, Springer, 2023.08, 1-184. ISBN:9789819937189.",
+      "sourceTitle": "Cross-Technology Communication for Internet of Things: Fundamentals and Key Technologies",
+      "sourceYear": 2023,
+      "status": "matched_with_changes",
+      "bibliography": {
+        "title": "Cross-Technology Communication for Internet of Things: Fundamentals and Key Technologies",
+        "authors": [
+          "Xiuzhen Guo",
+          "Yuan He",
+          "Yunhao Liu"
+        ],
+        "venue": "Springer Nature Singapore",
+        "year": 2023,
+        "publishedPrint": [
+          2023,
+          8,
+          1
+        ],
+        "publishedOnline": [
+          2023,
+          7,
+          31
+        ],
+        "volume": null,
+        "issue": null,
+        "pages": "XV, 183",
+        "articleNumber": null,
+        "type": "book",
+        "doi": "10.1007/978-981-99-3719-6",
+        "url": "https://doi.org/10.1007/978-981-99-3719-6",
+        "isbnPrint": "9789819937189",
+        "isbnEbook": "9789819937196"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JMmLdgsAAAAJ&citation_for_view=JMmLdgsAAAAJ:YFjsv_pBGBYC",
+        "note": "已与作者Scholar档案条目逐项比对；完整书目以所列出版来源为依据。",
+        "query": null
+      },
+      "sources": [
+        {
+          "label": "DOI出版入口",
+          "url": "https://doi.org/10.1007/978-981-99-3719-6"
+        },
+        {
+          "label": "Crossref出版社注册元数据",
+          "url": "https://api.crossref.org/works/10.1007/978-981-99-3719-6"
+        },
+        {
+          "label": "Springer专著页面",
+          "url": "https://link.springer.com/book/10.1007/978-981-99-3719-6"
+        }
+      ],
+      "notes": "作者、2023年及ISBN 9789819937189一致。出版社页数为XV,183，原文1–184不准确；硬封面出版日期2023-08-01，电子版2023-07-31。保留副标题Fundamentals and Key Technologies；不同装帧/电子版ISBN不混用。"
+    }
+  ]
+}

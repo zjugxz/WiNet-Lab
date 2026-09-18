@@ -17,7 +17,16 @@ try {
     if (response.status() >= 400)
       failed.push(`${response.status()} ${response.url()}`);
   });
-  page.on('requestfailed', (request) => failed.push(request.url()));
+  page.on('requestfailed', (request) => {
+    // Navigating away cancels in-flight video ranges. Actual media decoding and
+    // downloads are verified separately; keep all other network failures fatal.
+    if (
+      request.resourceType() === 'media' &&
+      request.failure()?.errorText === 'net::ERR_ABORTED'
+    )
+      return;
+    failed.push(request.url());
+  });
   await page.goto(baseUrl, {
     waitUntil: 'networkidle',
   });
@@ -26,11 +35,7 @@ try {
     .evaluateAll((elements) =>
       elements.map((element) => element.getAttribute('href')),
     );
-  assert(
-    links.every(
-      (link) => link.startsWith('#') || link.startsWith(base),
-    ),
-  );
+  assert(links.every((link) => link.startsWith('#') || link.startsWith(base)));
   const background = await page
     .locator('body')
     .evaluate((element) => getComputedStyle(element).backgroundColor);
@@ -64,6 +69,18 @@ try {
       .click();
     assert(page.url().startsWith(baseUrl));
     assert.equal(await page.title(), `${name} | WiNet Lab`);
+    if (name === 'Publications') {
+      assert.equal(
+        await page.locator('[data-publication]:visible').count(),
+        74,
+      );
+      await page.getByRole('searchbox').fill('wizig');
+      assert.equal(await page.locator('[data-publication]:visible').count(), 2);
+      assert.equal(
+        await page.locator('#p05 .publication-resource').getAttribute('href'),
+        'https://doi.org/10.1109/tnet.2020.3013921',
+      );
+    }
   }
   await page.setViewportSize({ width: 390, height: 844 });
   await page.getByRole('button', { name: 'Menu' }).click();
@@ -75,7 +92,7 @@ try {
   );
   assert.deepEqual(failed, []);
   console.log(
-    `Repository base path ${base} verified: five pages, links, CSS, hero image, and mobile menu; no failed requests.`,
+    `Repository base path ${base} verified: five pages, links, CSS, hero image, 74 publications, filters, and mobile menu; no failed requests.`,
   );
 } finally {
   await browser.close();
