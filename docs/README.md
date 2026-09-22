@@ -2,7 +2,7 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
-当前进行中：Research第三方向首批论文已录入（2026-09-22），mmExpert（MobiHoc 2025）开放下载、mmPRISM未录用屏蔽PDF，待用户查看；People页面亦待查看。16人（PI 1、PhD 8、Master 7）；PI简介默认展示，点击卡片弹出变暗背景的悬浮窗显示简介，无JS时回退静态详情页；中文简介已译英文、PI简介原文保留；照片压缩为WebP并验证两种base；未发布。待决项见[People验证记录](verification/people-2026-09-22.md)。
+最新发布：用户授权后于2026-09-22将16个本地提交推送main（196230f..60ca9cb），Actions 35697405893 success；线上页面/优化媒体/受限404均已核验，证据见[发布记录](verification/release-2026-09-22.md)。上线内容含媒体优化、People全功能、Research第三方向与mmExpert Cite等；技术发布不等于整站验收。16人（PI 1、PhD 8、Master 7）；PI简介默认展示，点击卡片弹出变暗背景的悬浮窗显示简介，无JS时回退静态详情页；中文简介已译英文、PI简介原文保留；照片压缩为WebP并验证两种base；未发布。待决项见[People验证记录](verification/people-2026-09-22.md)。
 
 最新本地实现：[Home图片与Research视频优化](verification/media-optimization-2026-09-18.md)。首页使用多尺寸无损WebP；预览视频总量减少70%，按视口加载/播放并保留手动暂停和完整Demo原质量。两种base及实际本地预览验证通过，等待用户查看，尚未发布。[前期诊断](verification/media-performance-2026-09-18.md)保留为历史依据。
 
