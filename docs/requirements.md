@@ -6,6 +6,7 @@
 
 ## 网站
 
+- 2026-09-22用户明确开展People页面，功能参考MARS Lab的People实现。分组仅保留PI、PhD Students、Master Students三类，不需要Alumni、Postdoc及其他分组；PI为大卡片带英文简介，学生为照片卡片，缺照片成员可按参考站形式用文字列表。成员英文姓名、照片、入学年份、可选课题及PI职称/简介待用户提供，未提供前不编造成员、照片或去向。此指示授权本地实现，不自动发布、不代表其他页面验收。
 - 名称：WiNet Lab，已由用户明确指定；替换网站原有 Winet Group 名称。完整名称为 Wireless Intelligence for Networked and Embodied Things (WiNet) Lab，单位为 Zhejiang University。
 - 参考网站：https://marslab.tech/ 。已读取五个栏目的网页内容；实际桌面、手机视觉与交互尚未逐项验证。
 - 页面：Home、Research、Publications、People、Contact。

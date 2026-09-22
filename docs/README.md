@@ -2,6 +2,8 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
+当前进行中：People页面资料准备。2026-09-22确认功能参考MARS Lab People，分组仅PI、PhD Students、Master Students三类；等待用户提供成员姓名、照片、年份、课题及PI简介，未提供前不编造成员。
+
 最新本地实现：[Home图片与Research视频优化](verification/media-optimization-2026-09-18.md)。首页使用多尺寸无损WebP；预览视频总量减少70%，按视口加载/播放并保留手动暂停和完整Demo原质量。两种base及实际本地预览验证通过，等待用户查看，尚未发布。[前期诊断](verification/media-performance-2026-09-18.md)保留为历史依据。
 
 网站地址：[WiNet Lab](https://zjugxz.github.io/WiNet-Lab/)。用户于2026-09-18明确要求更新文档后上传当前本地网站，已上传发布提交918672b，Actions构建/部署及线上关键页面检查通过，具体证据见[发布记录](verification/release-2026-09-18.md)。此前线上版本为f943625；技术验证或发布均不等于用户完成整站验收。
