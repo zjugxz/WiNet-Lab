@@ -88,6 +88,22 @@ try {
       return [...new Set(rects)];
     });
   assert.equal(boxes.length, 1, `Photos must share one size, got ${boxes}`);
+  // Desktop grids use three equal columns per row.
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const columnCheck = await page.evaluate(() => {
+    const grid = document.querySelector('.gallery-grid');
+    const photo = grid?.querySelector('.gallery-photo');
+    if (!grid || !photo) return null;
+    const g = grid.getBoundingClientRect();
+    const p = photo.getBoundingClientRect();
+    return { grid: g.width, photo: p.width };
+  });
+  assert.ok(columnCheck, 'Gallery grid must exist');
+  const expectedColumn = (columnCheck.grid - 2 * 16) / 3;
+  assert.ok(
+    Math.abs(columnCheck.photo - expectedColumn) < 8,
+    `Each photo should fill one of three columns (${expectedColumn.toFixed(0)}px), got ${columnCheck.photo.toFixed(0)}px`,
+  );
 
   const scan = await new AxeBuilder({ page })
     .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
