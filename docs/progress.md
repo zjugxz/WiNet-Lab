@@ -4,7 +4,7 @@
 
 ## 当前任务：正文下划线链接标记（2026-09-22 晚，本地完成，待用户使用反馈）
 
-用户要求"特定文字加下划线、点击跳转其他网址"，确认采用通用标记语法。`EmphasisText.astro` 在 `**加粗**` 基础上新增 `[文字](https://网址)` 链接标记：绿色下划线、悬停下划线加粗、外链新标签打开（rel=noopener noreferrer）、仅 http(s) 白名单（javascript/ftp/相对路径等一律按字面文字，防注入）、标记不嵌套。生效面：首页 about.paragraphs、news.items[].text 与 Contact 的 introduction/recruitment（contact.astro 改用该组件）。验证：新增 `scripts/check-text-links.mjs`（夹具注入，两种 base：渲染/href/target/rel/下划线 CSS/协议白名单/axe/无外联请求全过）；home 测试增加链接标记不泄漏断言；astro check 零错误、两种 base 各 21 页、17 项测试通过、4321 Contact 200。写法说明已更新 content-maintenance.md。本地 Git 提交未 push；现有内容暂无链接实例，用户在数据文件写入即生效，发布另需明确请求。
+用户要求"特定文字加下划线、点击跳转其他网址"，确认采用通用标记语法。`EmphasisText.astro` 在 `**加粗**` 基础上新增 `[文字](https://网址)` 链接标记：绿色下划线、悬停下划线加粗、外链新标签打开（rel=noopener noreferrer）、仅 http(s) 白名单（javascript/ftp/相对路径等一律按字面文字，防注入）、标记不嵌套。生效面：首页 about.paragraphs、news.items[].text 与 Contact 的 introduction/recruitment（contact.astro 改用该组件）。验证：新增 `scripts/check-text-links.mjs`（夹具注入，两种 base：渲染/href/target/rel/下划线 CSS/协议白名单/axe/无外联请求全过）；home 测试增加链接标记不泄漏断言；astro check 零错误、两种 base 各 21 页、17 项测试通过、4321 Contact 200。写法说明已更新 content-maintenance.md。本地 Git 提交未 push；发布另需明确请求。其后应用户要求加入首个实例：About 首段 "Dr. Xiuzhen Guo" 由加粗改为链接指向 https://zjugxz.github.io（用户指定原文，未加路径），实测渲染为绿色下划线新标签链接，首页既有 "Meet the lab" 同名类链接样式不受影响，17 项测试复跑通过。
 
 ## 历史（并行会话）：Publications全条目Cite（2026-09-22，本地完成，待用户查看）
 
