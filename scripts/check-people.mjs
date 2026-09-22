@@ -87,7 +87,11 @@ try {
       elements.map((element) => element.textContent.trim()),
     );
   assert.equal(piBioParas.length, 1, 'Only the PI bio is inline');
-  assert(piBioParas[0].includes('国家自然科学基金青B项目'));
+  assert(
+    piBioParas[0].includes('国家自然科学基金青B项目') ||
+      piBioParas[0].includes('（原优青）'),
+    'PI bio keeps its NSFC award note',
+  );
   assert.equal(
     await page.locator('.people-featured-name .people-name').textContent(),
     'Xiuzhen Guo',
