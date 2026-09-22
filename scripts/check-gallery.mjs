@@ -77,17 +77,33 @@ try {
     'Gallery photos are static, not clickable controls',
   );
   assert.equal(await page.locator('.gallery-empty').count(), 0);
-  // Uniform tiles: identical rendered size within the grid.
-  const boxes = await page
+  // Photos scale proportionally: rendered box matches the natural ratio
+  // (no cropping), and tiles share the column width.
+  const ratios = await page
     .locator('.gallery-photo')
-    .evaluateAll((nodes) => {
-      const rects = nodes.map((node) => {
-        const r = node.getBoundingClientRect();
-        return `${Math.round(r.width)}x${Math.round(r.height)}`;
-      });
-      return [...new Set(rects)];
-    });
-  assert.equal(boxes.length, 1, `Photos must share one size, got ${boxes}`);
+    .evaluateAll((nodes) =>
+      nodes.map((node) => {
+        const image = node;
+        const r = image.getBoundingClientRect();
+        return {
+          rendered: r.width / r.height,
+          natural: image.naturalWidth / image.naturalHeight,
+          width: Math.round(r.width),
+        };
+      }),
+    );
+  assert.ok(ratios.length > 0);
+  for (const ratio of ratios) {
+    assert.ok(
+      Math.abs(ratio.rendered - ratio.natural) < 0.01,
+      `Photos must render at their natural aspect ratio (rendered ${ratio.rendered.toFixed(3)} vs natural ${ratio.natural.toFixed(3)})`,
+    );
+  }
+  assert.equal(
+    new Set(ratios.map((r) => r.width)).size,
+    1,
+    'Photos must share the column width',
+  );
   // Desktop grids use three equal columns per row.
   await page.setViewportSize({ width: 1440, height: 900 });
   const columnCheck = await page.evaluate(() => {
