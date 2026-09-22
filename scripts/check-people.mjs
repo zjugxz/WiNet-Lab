@@ -175,6 +175,58 @@ try {
   );
   assert.equal(page.url(), `${baseUrl}people/`, 'Still no navigation');
 
+  // Fixed dialog geometry and in-dialog scrolling for long bios.
+  const sizeOf = async (id) => {
+    await page.locator(`a[data-person-open="${id}"]`).first().click();
+    await page.waitForSelector('person-dialog dialog[open]');
+    return page.evaluate(() => {
+      const dialog = document.querySelector('person-dialog dialog');
+      const photo = dialog.querySelector('[data-person-photo]');
+      const bio = dialog.querySelector('[data-person-bio]');
+      const box = (node) => {
+        const r = node.getBoundingClientRect();
+        return { width: r.width, height: r.height };
+      };
+      return { dialog: box(dialog), photo: box(photo), bio: box(bio) };
+    });
+  };
+  const sizes = [];
+  for (const id of ['zhou-yang', 'xiangguang-wang', 'yu-cao']) {
+    sizes.push(await sizeOf(id));
+    await page.keyboard.press('Escape');
+  }
+  for (const [kind] of Object.entries(sizes[0])) {
+    for (const later of sizes.slice(1)) {
+      assert.ok(
+        Math.abs(sizes[0][kind].width - later[kind].width) < 1 &&
+          Math.abs(sizes[0][kind].height - later[kind].height) < 1,
+        `${kind} area must be identical for every member`,
+      );
+    }
+  }
+  await page.locator('a[data-person-open="xiangguang-wang"]').click();
+  await page.waitForSelector('person-dialog dialog[open]');
+  const scrollable = await page.evaluate(() => {
+    const bio = document.querySelector(
+      'person-dialog dialog [data-person-bio]',
+    );
+    return { overflow: getComputedStyle(bio).overflowY, tall: bio.scrollHeight > bio.clientHeight };
+  });
+  assert.equal(scrollable.overflow, 'auto');
+  assert.ok(scrollable.tall, 'The longest bio must exceed the fixed text area');
+  const scrolled = await page.evaluate(() => {
+    const bio = document.querySelector(
+      'person-dialog dialog [data-person-bio]',
+    );
+    bio.scrollTop = 9999;
+    return bio.scrollTop > 0;
+  });
+  assert.ok(scrolled, 'The bio area must actually scroll');
+  await page.screenshot({
+    path: `.tools/person-dialog-scroll-${base === '/' ? 'root' : 'base'}-1440.png`,
+  });
+  await page.keyboard.press('Escape');
+
   // Detail pages: photo, name, and the bio live here.
   for (const [index, [id, name]] of allMembers.entries()) {
     await page.goto(`${baseUrl}people/${id}/`, { waitUntil: 'networkidle' });
