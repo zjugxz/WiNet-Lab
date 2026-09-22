@@ -2,7 +2,11 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：正文链接 + People 链接按钮已发布（2026-09-22 晚，待用户线上查看）
+## 当前任务：Gallery栏目接口实现（2026-09-22 晚，本地完成，未发布，待用户查看）
+
+用户要求新增同级Gallery栏目放置团建图片（参考清华TNS站分组照片墙+点击放大），图片后补、先实现接口。已完成gallery.json数据源（组id/标题/日期/描述/照片id/src/alt，zod校验）、gallery.astro分组4:3缩略图网格、共享native dialog灯箱（大图不裁切、左右/方向键切换、Esc/背景/×关闭、焦点归还）、空状态占位；导航新增Gallery，home.spec导航计数6并断言空状态，check-base路由加Gallery并将链接断言放宽为允许显式外链（首页新闻已引入PI主页外链）。验证：零错误、两种base 22页、17项测试、check-base/check-people通过、截图目视通过。提交bd9fb26，未推送；图片到位后按[Gallery记录](verification/gallery-2026-09-22.md)填充即可。
+
+## 历史：正文链接 + People 链接按钮已发布（2026-09-22 晚，待用户线上查看）
 
 用户要求提交全部本地改动，推送 `8250e20..8e259c1`（5 提交：正文链接标记三提交、People 链接按钮、邮箱复制反馈），Actions `8e259c1` success。线上已核验：首页 Dr. Xiuzhen Guo 绿色下划线粗体链接（16px/700）新标签打开；People 16 邮箱按钮 + PI 网站/Scholar；真实浏览器实测剪贴板复制 `guoxz@zju.edu.cn` 与 copied 状态、无跳转、零错误；受限 PDF 仍 404。详见[发布记录](verification/release-text-links-people-2026-09-22.md)。技术发布不等于验收；待用户线上反馈，学生 website/scholar 信息到货即加字段。
 
