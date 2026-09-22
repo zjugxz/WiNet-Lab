@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import EmphasisText from '../components/EmphasisText.astro';
 import contact from '../data/contact.json';
 ---
 
@@ -9,12 +10,16 @@ import contact from '../data/contact.json';
       <h1>Contact</h1>
       <div class="contact-introduction">
         {contact.introduction.map((paragraph) => (
-          <p>{paragraph}</p>
+          <p>
+            <EmphasisText text={paragraph} />
+          </p>
         ))}
       </div>
       <section class="contact-recruitment" aria-labelledby="join-us">
         <h2 id="join-us">Join Us</h2>
-        <p>{contact.recruitment}</p>
+        <p>
+          <EmphasisText text={contact.recruitment} />
+        </p>
         <p class="contact-email">
           <span>Email:</span>
           <a href={`mailto:${contact.email}`}>{contact.email}</a>

@@ -2,7 +2,11 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：Publications全条目Cite（2026-09-22，本地完成，待用户查看）
+## 当前任务：正文下划线链接标记（2026-09-22 晚，本地完成，待用户使用反馈）
+
+用户要求"特定文字加下划线、点击跳转其他网址"，确认采用通用标记语法。`EmphasisText.astro` 在 `**加粗**` 基础上新增 `[文字](https://网址)` 链接标记：绿色下划线、悬停下划线加粗、外链新标签打开（rel=noopener noreferrer）、仅 http(s) 白名单（javascript/ftp/相对路径等一律按字面文字，防注入）、标记不嵌套。生效面：首页 about.paragraphs、news.items[].text 与 Contact 的 introduction/recruitment（contact.astro 改用该组件）。验证：新增 `scripts/check-text-links.mjs`（夹具注入，两种 base：渲染/href/target/rel/下划线 CSS/协议白名单/axe/无外联请求全过）；home 测试增加链接标记不泄漏断言；astro check 零错误、两种 base 各 21 页、17 项测试通过、4321 Contact 200。写法说明已更新 content-maintenance.md。本地 Git 提交未 push；现有内容暂无链接实例，用户在数据文件写入即生效，发布另需明确请求。
+
+## 历史（并行会话）：Publications全条目Cite（2026-09-22，本地完成，待用户查看）
 
 用户要求为Publications页所有已发表论文提供与Research页完全一致的Cite入口（按钮/图标/交互），且逐篇访问论文网站取得真实引用信息。已完成：73条（p01–p75除p03，p03无DOI/URL且审计unconfirmed、与Research页在投论文同篇，不提供入口）×Text/BibTeX/RIS；68条经Crossref DOI内容协商实际抓取（18条差异逐条甄别：7条ACM截断题名、LaTeX/HTML噪声、3条印刷年份、Device新增卷期、专著副标题），p23/p43取USENIX官方BibTeX、p34经CRAD官网（ISTIC DOI）、p37经CCF页面、p70经EWSN官方PDF；中文两条用GB/T 7714样式。复用CitationDialog组件零视觉差异，静态导出219个文件到/publications/citations/，搜索索引剔除弹窗文本保持原行为。验证：astro check零错误、两种base构建、新check-publication-citations.mjs（73×3静态核对+219个HTTP逐字节+抽样弹窗/复制/下载/axe/无JS）、既有17项测试与Research引用/子路径回归全部通过；4321预览实测与截图目视通过。详见[验证记录](verification/publications-cite-2026-09-22.md)。本地Git提交（不含并行会话已发布内容），未push，待用户查看反馈，不记为验收。
 

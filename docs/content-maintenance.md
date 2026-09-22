@@ -76,7 +76,7 @@ After visual changes, verify the actual running development preview as well as p
 
 The three About paragraphs, lab's full name, Zhejiang University affiliation, word-cloud image, and seven News records were supplied by the user and are now integrated. The News wording retains the supplied journal titles and first-person award statement; the Chinese award note was rendered as Category B to keep the site English-only. Remaining hero slogans and the small brand mark are design drafts. Detailed research projects, publications, member details/photos, and final logo are still needed. The teacher's GitHub-related email is not approved public contact information.
 
-## 修改加粗和新闻内容
+## 修改加粗、链接和新闻内容
 
 当前工作区中用户已从 src/pages/index.astro 移除顶部简介的渲染段落，因此 introduction 字段虽保留，但不再显示在首页主标题下方。下方关于 introduction 的加粗能力只适用于重新启用该段落的情况。
 
@@ -86,6 +86,8 @@ The three About paragraphs, lab's full name, Zhejiang University affiliation, wo
 - 新闻正文：news.items 中每条记录的 text。
 - 顶部简介：introduction。
 
+Contact 页的 introduction 各段与 recruitment 段（[contact.json](../src/data/contact.json)）同样支持以下两种标记。
+
 在需要加粗的文字两侧分别加两个星号。例如：
 
 ```json
@@ -94,7 +96,15 @@ The three About paragraphs, lab's full name, Zhejiang University affiliation, wo
 
 页面显示时星号会转成加粗；删去两侧星号即可取消加粗。仅上述正文位置支持此写法，标题、日期、图片说明等其他字段目前按普通文字处理。标记应成对、放在同一段内；无需填写 HTML 标签。保留 JSON 的双引号与逗号，字符串中如果使用英文直双引号，需要写为 `\"`。
 
-粗体显示由 [global.css](../src/styles/global.css) 中的 strong 规则统一控制，目前为 font-weight: 700。日常选哪些文字加粗只改内容文件。
+加下划线可点击跳转的链接写法为 `[显示文字](https://网址)`。例如：
+
+```json
+"text": "Our work was accepted by [Nature Portfolio Flexible Electronics](https://www.nature.com/natelectron/)!"
+```
+
+链接规则：网址必须以 `http://` 或 `https://` 开头，其他形式（含站内相对路径、ftp、javascript 等）一律按普通文字显示，不会变成可点击链接；链接在新标签页打开；显示文字内不能再嵌套加粗或链接标记（`**[a](https://x)**` 会整体按字面显示）。链接样式为绿色下划线，悬停时下划线加粗。
+
+粗体显示由 [global.css](../src/styles/global.css) 中的 strong 规则统一控制，目前为 font-weight: 700。日常选哪些文字加粗、哪些文字挂链接只改内容文件。
 
 当前 localhost:4321 是开发预览，保存JSON后会自动更新。如果改用生产预览，保存后需要重新构建再刷新；在项目根目录的PowerShell中可使用现有本地Node：
 

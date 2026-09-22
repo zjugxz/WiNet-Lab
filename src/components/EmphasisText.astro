@@ -3,14 +3,44 @@ interface Props {
   text: string;
 }
 const { text } = Astro.props;
-// Support paired **bold** markers only; Astro escapes all other text as usual.
-const parts = text.split(/(\*\*[^*\n]+\*\*)/g);
+// Paired **bold** markers and [label](https://url) links; all other text
+// stays escaped. Only http(s) URLs become anchors, so malformed or
+// executable URLs never reach the href attribute. Markers do not nest.
+const parts = text.split(
+  /(\*\*[^*\n]+\*\*|\[[^\]\n]+\]\(https?:\/\/[^)\s]+\))/g,
+);
+const BOLD = /^\*\*([^*\n]+)\*\*$/;
+const LINK = /^\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)$/;
 ---
-
-{parts.map((part) =>
-  part.startsWith('**') && part.endsWith('**') && part.length > 4 ? (
-    <strong>{part.slice(2, -2)}</strong>
-  ) : (
-    part
-  ),
-)}
+{
+  parts.map((part) => {
+    const bold = part.match(BOLD);
+    if (bold) {
+      return <strong>{bold[1]}</strong>;
+    }
+    const link = part.match(LINK);
+    if (link) {
+      return (
+        <a class="text-link" href={link[2]} target="_blank" rel="noopener noreferrer">
+          {link[1]}
+        </a>
+      );
+    }
+    return part;
+  })
+}
+<style>
+  a.text-link {
+    color: var(--green);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  a.text-link:hover {
+    text-decoration-thickness: 2px;
+  }
+  a.text-link:focus-visible {
+    outline: 3px solid var(--green);
+    outline-offset: 3px;
+  }
+</style>

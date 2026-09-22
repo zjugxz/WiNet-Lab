@@ -100,6 +100,7 @@ test('homepage content, links, local assets and accessibility', async ({
   // Chinese text is allowed on the site since the 2026-09-22 user decision.
   expect(text).not.toMatch(/winet\s+group/i);
   expect(text).not.toContain('**');
+  expect(text).not.toMatch(/\]\(https?:/);
   await page.keyboard.press('Tab');
   await expect(
     page.getByRole('link', { name: 'Skip to content' }),
