@@ -19,20 +19,14 @@ const memberSchema = z.object({
 });
 const uniqueIds = (items: { id: string }[]) =>
   new Set(items.map((item) => item.id)).size === items.length;
-const sectionSchema = z
-  .object({
-    id,
-    title: text,
-    layout: z.enum(['featured', 'grid']),
-    members: z
-      .array(memberSchema)
-      .min(1)
-      .refine(uniqueIds, 'Member IDs must be unique within each section'),
-  })
-  .refine(
-    (section) => section.layout !== 'featured' || section.members.length === 1,
-    'A featured section renders exactly one member',
-  );
+const sectionSchema = z.object({
+  id,
+  title: text,
+  members: z
+    .array(memberSchema)
+    .min(1)
+    .refine(uniqueIds, 'Member IDs must be unique within each section'),
+});
 export const peopleSchema = z
   .object({
     sections: z

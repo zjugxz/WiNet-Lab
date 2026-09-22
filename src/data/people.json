@@ -3,7 +3,6 @@
     {
       "id": "pi",
       "title": "Principal Investigator",
-      "layout": "featured",
       "members": [
         {
           "id": "xiuzhen-guo",
@@ -19,7 +18,6 @@
     {
       "id": "phd-students",
       "title": "Ph.D. Students",
-      "layout": "grid",
       "members": [
         {
           "id": "haobo-zhang",
@@ -94,7 +92,6 @@
     {
       "id": "master-students",
       "title": "Master Students",
-      "layout": "grid",
       "members": [
         {
           "id": "binghe-li",

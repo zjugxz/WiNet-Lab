@@ -11,19 +11,18 @@ const people = peopleSchema.parse(peopleData);
   <div class="container people-page">
     <h1>People</h1>
     {people.sections.map((section) => (
-      <section class="people-section" aria-labelledby={`${section.id}-title`}>
+      <section
+        class:list={['people-section', `people-section-${section.id}`]}
+        aria-labelledby={`${section.id}-title`}
+      >
         <h2 id={`${section.id}-title`}>{section.title}</h2>
-        {section.layout === 'featured' ? (
-          <PeopleCard member={section.members[0]} variant="featured" />
-        ) : (
-          <ul class="people-grid">
-            {section.members.map((member) => (
-              <li>
-                <PeopleCard member={member} variant="grid" />
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul class="people-grid">
+          {section.members.map((member) => (
+            <li>
+              <PeopleCard member={member} />
+            </li>
+          ))}
+        </ul>
       </section>
     ))}
   </div>
@@ -56,6 +55,10 @@ const people = peopleSchema.parse(peopleData);
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 36px 28px;
     align-items: stretch;
+  }
+  /* The PI section has a single card; keep it at a normal card width. */
+  .people-section-pi .people-grid {
+    grid-template-columns: minmax(250px, 340px);
   }
   .people-grid li {
     display: flex;

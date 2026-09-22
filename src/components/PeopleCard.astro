@@ -1,15 +1,15 @@
 ---
 import type { PeopleMember } from '../lib/people';
 import { peoplePhotoPath } from '../lib/people';
+import { sitePath } from '../lib/paths';
 
 interface Props {
   member: PeopleMember;
-  variant: 'featured' | 'grid';
 }
-const { member, variant } = Astro.props;
+const { member } = Astro.props;
 ---
 
-<figure class:list={['people-card', `people-card-${variant}`]}>
+<a class="people-card" href={sitePath(`people/${member.id}`)}>
   <div class="people-photo">
     <img
       src={peoplePhotoPath(member.photo)}
@@ -20,19 +20,18 @@ const { member, variant } = Astro.props;
       height="1200"
     />
   </div>
-  <figcaption class="people-info">
+  <div class="people-info">
     <h3 class="people-name">{member.name}</h3>
     {member.role && <p class="people-role">{member.role}</p>}
-    <div class="people-bio">
-      {member.bio.map((paragraph) => <p>{paragraph}</p>)}
-    </div>
-  </figcaption>
-</figure>
+  </div>
+</a>
 
 <style>
   .people-card {
     display: flex;
     flex-direction: column;
+    color: inherit;
+    text-decoration: none;
   }
   .people-photo {
     aspect-ratio: 4 / 5;
@@ -44,10 +43,22 @@ const { member, variant } = Astro.props;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.25s ease;
+  }
+  .people-card:hover .people-photo img,
+  .people-card:focus-visible .people-photo img {
+    transform: scale(1.03);
+  }
+  .people-info {
+    padding-top: 12px;
   }
   .people-name {
-    font: 22px/1.25 var(--serif);
+    font: 19px/1.25 var(--serif);
     letter-spacing: -0.2px;
+  }
+  .people-card:hover .people-name,
+  .people-card:focus-visible .people-name {
+    color: var(--green);
   }
   .people-role {
     margin-top: 4px;
@@ -55,54 +66,5 @@ const { member, variant } = Astro.props;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--green);
-  }
-  .people-bio p {
-    font-size: 15px;
-    line-height: 1.75;
-    color: var(--muted);
-  }
-  .people-bio p + p {
-    margin-top: 10px;
-  }
-
-  .people-card-grid .people-info {
-    padding-top: 14px;
-  }
-  .people-card-grid .people-name {
-    font-size: 19px;
-  }
-  .people-card-grid .people-bio {
-    margin-top: 10px;
-  }
-
-  .people-card-featured {
-    display: grid;
-    grid-template-columns: minmax(220px, 300px) 1fr;
-    gap: 36px;
-    align-items: start;
-  }
-  .people-card-featured .people-name {
-    font-size: 30px;
-  }
-  .people-card-featured .people-bio {
-    margin-top: 16px;
-  }
-  .people-card-featured .people-bio p {
-    font-size: 16px;
-  }
-
-  @media (max-width: 760px) {
-    .people-card-featured {
-      grid-template-columns: minmax(160px, 220px) 1fr;
-      gap: 20px;
-    }
-    .people-card-featured .people-name {
-      font-size: 24px;
-    }
-  }
-  @media (max-width: 560px) {
-    .people-card-featured {
-      grid-template-columns: 1fr;
-    }
   }
 </style>

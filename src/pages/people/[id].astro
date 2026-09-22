@@ -1,0 +1,135 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import peopleData from '../../data/people.json';
+import { peopleSchema, peoplePhotoPath } from '../../lib/people';
+import { sitePath } from '../../lib/paths';
+
+export function getStaticPaths() {
+  const people = peopleSchema.parse(peopleData);
+  return people.sections.flatMap((section) =>
+    section.members.map((member) => ({
+      params: { id: member.id },
+      props: { member, sectionTitle: section.title },
+    })),
+  );
+}
+const { member, sectionTitle } = Astro.props;
+---
+
+<SiteLayout title={member.name} current="people">
+  <div class="container person-page">
+    <a class="back-link" href={sitePath('people')}>
+      <span aria-hidden="true">←</span> People
+    </a>
+    <div class="person-detail">
+      <div class="person-photo">
+        <img
+          src={peoplePhotoPath(member.photo)}
+          alt={`Photo of ${member.name}`}
+          loading="eager"
+          decoding="async"
+          width="960"
+          height="1200"
+        />
+      </div>
+      <div class="person-info">
+        <p class="eyebrow">{sectionTitle}</p>
+        <h1>{member.name}</h1>
+        {member.role && <p class="person-role">{member.role}</p>}
+        <div class="person-bio">
+          {member.bio.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</SiteLayout>
+
+<style>
+  .person-page {
+    padding-block: 48px 88px;
+  }
+  .back-link {
+    display: inline-block;
+    font-size: 15px;
+    color: var(--green);
+    margin-bottom: 32px;
+  }
+  .back-link span {
+    margin-right: 6px;
+    transition: margin 0.2s ease;
+  }
+  .back-link:hover span {
+    margin-right: 10px;
+  }
+  .person-detail {
+    display: grid;
+    grid-template-columns: minmax(240px, 340px) 1fr;
+    gap: 44px;
+    align-items: start;
+  }
+  .person-photo {
+    aspect-ratio: 4 / 5;
+    background: #f3f5f0;
+    overflow: hidden;
+  }
+  .person-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .person-info {
+    max-width: 720px;
+  }
+  h1 {
+    font: 48px/1.12 var(--serif);
+    letter-spacing: -1.2px;
+    margin-top: 8px;
+  }
+  .person-role {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  .person-bio {
+    margin-top: 20px;
+  }
+  .person-bio p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--muted);
+  }
+  .person-bio p + p {
+    margin-top: 14px;
+  }
+
+  @media (max-width: 760px) {
+    .person-page {
+      padding-block: 32px 48px;
+    }
+    .back-link {
+      margin-bottom: 20px;
+    }
+    .person-detail {
+      grid-template-columns: minmax(180px, 260px) 1fr;
+      gap: 24px;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    .person-bio p {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 560px) {
+    .person-detail {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .person-photo {
+      max-width: 320px;
+    }
+  }
+</style>

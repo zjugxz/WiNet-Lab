@@ -6,7 +6,7 @@ An academic lab website with an English interface, a static Astro frontend, and 
 - Research: three directions and six paper cards, five looping video previews, one image, three open papers, and five full-demo downloads. Cards with a Demo appear first. Unavailable papers show `Paper coming soon`; unpublished PDFs are excluded from the site. Published venue/year labels use a warm brown serif style; submission venue/year fields remain unfilled.
 - Publications: 74 records (original item 71 removed), year/type filters, keyword search, and 73 publication links. Original Chinese titles are retained.
 - Contact: collaboration and PhD/Master recruitment information, with the supplied public email.
-- People: 16 members (1 PI, 8 Ph.D., 7 Master) with optimized WebP photos and English bios; the PI bio keeps the supplied mixed Chinese/English text verbatim. Local only, not yet published.
+- People: 16 members (1 PI, 8 Ph.D., 7 Master) as clickable photo cards; each opens a static profile page at `/people/{id}/` with the full bio (the PI bio keeps the supplied mixed Chinese/English text verbatim). Optimized WebP photos. Local only, not yet published.
 - The third Research direction: explicit placeholder. The online content-management backend is not implemented.
 
 ## Local preview on this computer

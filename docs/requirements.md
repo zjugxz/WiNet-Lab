@@ -7,6 +7,7 @@
 ## 网站
 
 - 2026-09-22用户明确开展People页面，功能参考MARS Lab的People实现。分组仅保留PI、PhD Students、Master Students三类，不需要Alumni、Postdoc及其他分组；PI为大卡片带英文简介，学生为照片卡片，缺照片成员可按参考站形式用文字列表。此指示授权本地实现，不自动发布、不代表其他页面验收。
+- 2026-09-22用户进一步要求People改为可点击卡片结构（参考MARS Lab）：列表页每行仅显示照片+姓名，自我介绍必须点开该成员后才出现，解决简介长短不一导致行高不均的问题；含PI在内所有成员均为独立详情页。此为纯静态路由实现，无弹窗JS；据此移除列表页内联简介及featured大卡布局。仍不自动发布、不代表用户验收。
 - 2026-09-22用户提供 `resources/people/` 资料（16人，每人一图一docx/txt自我介绍）并明确处理规则：中文自我介绍翻译成英文；特例PI的自我介绍不修改，按原有中英混合上站。本轮据此本地实现：三份纯中文简介直译、两份中英双版取英文、"Winet/WiNet Group"按已确认站名改为"WiNet Lab"；PI简介逐字保留。照片统一有损WebP≤960px，4:5裁切；未提供正脸照或研究内容的成员（Binghe Li背影照、Yifan Yan/Zhou Yang简介无研究内容）按现有资料如实呈现，待用户后续补充。Binghe Li文档附带的邮箱/GitHub默认不展示。仍不自动发布、不代表用户验收。
 - 名称：WiNet Lab，已由用户明确指定；替换网站原有 Winet Group 名称。完整名称为 Wireless Intelligence for Networked and Embodied Things (WiNet) Lab，单位为 Zhejiang University。
 - 参考网站：https://marslab.tech/ 。已读取五个栏目的网页内容；实际桌面、手机视觉与交互尚未逐项验证。

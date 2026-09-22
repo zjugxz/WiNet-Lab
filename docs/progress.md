@@ -4,6 +4,8 @@
 
 ## 当前任务：People页面本地实现完成，待用户查看
 
+**2026-09-22第二批改版**：应用户要求改为可点击卡片——列表页仅照片+姓名（PI卡含职称行），16名成员各自生成静态详情页 `/people/{id}/`（返回链接、分组标签、姓名、简介），解决简介长短导致行高不均的问题。纯静态路由无JS。复验通过（零错误、21页两种base、16卡片+16详情页检查、17项测试、4321预览200），提交见git log，未push。下方为首版与更新批次记录。
+
 **2026-09-22更新批次**：用户更新 resources/people 资料后重建——Yifan Yan/Zhou Yang/Zikang Zhang 三份简介替换为新原文（前两人换成正式研究简介，Zikang改为第三人称），PI照片更换并复核4:5裁切，其余文字未变。复验全部通过（check、两种base构建与检查、17项测试、4321预览），提交见git log，未push。更新前状态见下方首版记录。
 
 用户提供 `resources/people/` 资料（16人：PI 1、PhD 8、Master 7，每人一图一自我介绍），要求功能参考MARS Lab People，中文简介译成英文，PI简介原文保留。本轮已本地实现：`src/data/people.json` 数据源、`lib/people.ts` zod校验、`PeopleCard.astro`（PI featured大卡+学生网格卡）、`pages/people.astro` 替换占位路由；16张照片经 `scripts/prepare-people-photos.mjs`（sharp：EXIF矫正、长边≤960、有损WebP q82）由约36MB压至约1.25MB，卡片4:5裁切经目视核对无切脸。
