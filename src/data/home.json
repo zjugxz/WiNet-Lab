@@ -11,7 +11,7 @@
   "about": {
     "title": "About WiNet Lab",
     "paragraphs": [
-      "Welcome to the **Wireless Intelligence for Networked and Embodied Things (WiNet) Lab at Zhejiang University**. We seek to build intelligent wireless systems that connect, sense, and interact with the physical world.",
+      "Welcome to the **Wireless Intelligence for Networked and Embodied Things (WiNet) Lab** at **Zhejiang University**, led by **Dr. Xiuzhen Guo**. We seek to build intelligent wireless systems that connect, sense, and interact with the physical world.",
       "Our research is driven by a central question: How can wireless devices become smarter, more energy-efficient, and more deeply integrated with the physical world? To address this question, **we combine wireless communication, sensing, artificial intelligence, and hardware–software co-design**. Our research spans programmable wireless hardware, battery-free and ultra-low-power connectivity, multimodal sensing, and embodied intelligence—from novel devices and signal processing to learning algorithms and real-world systems.",
       "Our long-term goal is to create intelligent IoT systems that operate with minimal energy, understand people and their surroundings, and work reliably in healthcare, robotics, smart environments, and industrial applications."
     ]
@@ -27,7 +27,7 @@
       {
         "id": "nsfc-young-scientists-2026",
         "date": "2026-08",
-        "text": "I won the **Excellent Young Scientists Fund of NSFC**! (Category B)"
+        "text": "Xiuzhen Guo received the Young Scientists Fund (Type B) from National Natural Science Foundation China （原优青）"
       },
       {
         "id": "magsticker-2026",

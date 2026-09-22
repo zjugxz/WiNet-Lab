@@ -1,6 +1,6 @@
 # Content maintenance and planned editing tool
 
-Updated 2026-09-18. The interface is English; the two supplied Chinese publication citations retain their original language. The online content editor is required but not implemented.
+Updated 2026-09-22. The interface is primarily English; the user allowed Chinese text on the site on 2026-09-22 (e.g. the NSFC news note （原优青） and the two supplied Chinese publication citations retain their original language). The online content editor is required but not implemented.
 
 The user explicitly declined the proposed local content-management tool. The current priority is integrating real material into the initial five-page website; the final online editor follows. Do not build a local editor as an intermediate deliverable. Keep content separate from presentation so the final editor can use the same data. Home material, 74 retained publication records (75 originally supplied), Contact copy, and six Research papers across the first two directions are integrated. The third Research direction and People records are still pending.
 

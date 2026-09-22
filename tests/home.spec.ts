@@ -66,7 +66,9 @@ test('homepage content, links, local assets and accessibility', async ({
     'font-weight',
     '700',
   );
-  await expect(news).toContainText('Excellent Young Scientists Fund of NSFC');
+  await expect(news).toContainText(
+    'Young Scientists Fund (Type B) from National Natural Science Foundation China',
+  );
   await expect(news).toContainText('Cover Paper');
   await expect(news).toContainText('SoftNB');
   await expect(
@@ -95,7 +97,7 @@ test('homepage content, links, local assets and accessibility', async ({
   ).toEqual([]);
   expect(errors).toEqual([]);
   const text = await page.locator('body').innerText();
-  expect(text).not.toMatch(/[\u3400-\u9fff]/);
+  // Chinese text is allowed on the site since the 2026-09-22 user decision.
   expect(text).not.toMatch(/winet\s+group/i);
   expect(text).not.toContain('**');
   await page.keyboard.press('Tab');
