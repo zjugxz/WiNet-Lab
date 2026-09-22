@@ -144,6 +144,7 @@
         {
           "id": "mmexpert",
           "title": "mmExpert: Integrating Large Language Models for Comprehensive mmWave Data Synthesis and Understanding",
+          "citationId": "mmexpert",
           "publication": {
             "venue": "ACM MobiHoc",
             "year": 2025,

@@ -10,5 +10,9 @@
   "mighty-drone-backscatter": {
     "url": "https://doi.org/10.1109/TMC.2024.3486993",
     "textStyle": "IEEE"
+  },
+  "mmexpert": {
+    "url": "https://doi.org/10.1145/3704413.3764420",
+    "textStyle": "IEEE"
   }
 }

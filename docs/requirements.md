@@ -15,7 +15,8 @@
 - 名称：WiNet Lab，已由用户明确指定；替换网站原有 Winet Group 名称。完整名称为 Wireless Intelligence for Networked and Embodied Things (WiNet) Lab，单位为 Zhejiang University。
 - 参考网站：https://marslab.tech/ 。已读取五个栏目的网页内容；实际桌面、手机视觉与交互尚未逐项验证。
 - 页面：Home、Research、Publications、People、Contact。
-- 2026-09-22用户在resources新增两篇论文资料并要求录入Research第三方向Embodied Intelligence of Things：mmExpert（PDF页眉显示ACM MobiHoc 2025已发表，提供Paper/Demo下载与刊会行）；mmPRISM（Privacy Preserving Two Hand Reconstruction Using Millimeter Wave Radar for Sign Language Understanding）尚未录用，明确不提供PDF下载渠道，按既有pdf:null边界处理。未提供mmExpert引用资料，暂无Cite入口。本地实现，不自动发布。
+- 2026-09-22用户进一步要求mmExpert提供与既有已发表论文一致的Cite按钮。书目以PDF页脚DOI经内容协商核对、与Publications已核验记录p38一致后录入Text/BibTeX/RIS；本地实现，不自动发布。
+- 2026-09-22用户在resources新增两篇论文资料并要求录入Research第三方向Embodied Intelligence of Things：mmExpert（PDF页眉显示ACM MobiHoc 2025已发表，提供Paper/Demo下载与刊会行）；mmPRISM（Privacy Preserving Two Hand Reconstruction Using Millimeter Wave Radar for Sign Language Understanding）尚未录用，明确不提供PDF下载渠道，按既有pdf:null边界处理。mmExpert引用资料其后经DOI内容协商补齐（见上条）。本地实现，不自动发布。
 - 2026-09-22用户明确允许网站出现中文，解除此前“正文全英文”限制；首页NSFC新闻的中文括注（原优青）按用户原文保留，后续中英文混排以用户提供的原文为准，不为翻译而改写已确认内容。既有英文内容不因此自动翻译。
 - 用户已确认网站正文全英文（2026-09-22起由上条解除，此条保留为历史口径）。本次开始公共导航、页脚及 Home 首页原型；缺少的真实资料使用明确的英文占位内容。其他四页仅为导航验收保留占位路由，不算完成内页任务。
 - 用户同意本地页面实现可先进行，仓库链接及远程核验不是本地开发的前置条件；仍须在部署前核对。

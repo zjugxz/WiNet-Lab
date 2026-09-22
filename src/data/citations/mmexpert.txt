@@ -1,0 +1,1 @@
+Y. Yan et al., “mmExpert: Integrating Large Language Models for Comprehensive mmWave Data Synthesis and Understanding,” in Proceedings of the Twenty-sixth International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing (MobiHoc), ACM, Oct. 2025, pp. 1–10, doi: 10.1145/3704413.3764420.

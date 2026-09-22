@@ -19,7 +19,7 @@ const sourceText = async (id, ext) =>
   (await readFile(`src/data/citations/${id}.${ext}`, 'utf8'))
     .replace(/\r\n?/g, '\n')
     .trim() + '\n';
-assert.equal(published.length, 3);
+assert.equal(published.length, 4);
 // Independently cross-check bibliographic fields against the verified publication list.
 for (const paper of published) {
   const record = publications.find((p) => p.title === paper.title);
@@ -28,7 +28,10 @@ for (const paper of published) {
   const fields = [...ris.matchAll(/^([A-Z0-9]{2})  -(?: (.*))?$/gm)];
   const values = (tag) =>
     fields.filter((f) => f[1] === tag).map((f) => f[2] || '');
-  assert.equal(values('TY')[0], 'JOUR');
+  assert.equal(
+    values('TY')[0],
+    record.type === 'conference' ? 'CONF' : 'JOUR',
+  );
   assert.equal(values('TI')[0], record.title);
   assert.equal(values('T2')[0], record.venue);
   assert.equal(values('PY')[0], String(record.year));
@@ -70,7 +73,7 @@ try {
       page.on('pageerror', (error) => errors.push(error.message));
       await page.goto(`${origin}${base}research/`);
       await expect(page.getByRole('button', { name: /^Cite: / })).toHaveCount(
-        3,
+        4,
       );
       for (const paper of published) {
         const opener = page.getByRole('button', {
@@ -247,7 +250,7 @@ try {
             name: format.ext === 'txt' ? /^Cite: / : format.label,
             exact: true,
           });
-          await expect(links).toHaveCount(3);
+          await expect(links).toHaveCount(4);
           const ready = plain.waitForEvent('download');
           await links.first().click();
           const download = await ready;
@@ -264,7 +267,7 @@ try {
         await noJS.close();
       }
       console.log(
-        `${base}: 3 papers x Text/BibTeX/RIS view/copy/download passed; metadata, restricted URLs, keyboard, fallback, no-JS, four widths and axe passed`,
+        `${base}: ${published.length} papers x Text/BibTeX/RIS view/copy/download passed; metadata, restricted URLs, keyboard, fallback, no-JS, four widths and axe passed`,
       );
     } finally {
       await context.close();

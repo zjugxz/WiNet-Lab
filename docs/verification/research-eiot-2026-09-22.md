@@ -24,6 +24,10 @@
 - check-research-citations.mjs 通过：3 篇 Cite 不变（mmExpert 无引用资料，不生成入口），受限 URL 检查正常。
 - 17 项 Playwright 回归通过；4321 开发预览 /research/ 200 且含新内容。第三方向桌面（双列、刊会标签、Paper coming soon 禁用、Demo 按钮、视频画面）与手机 390px（单列、无溢出）截图目视通过（.tools/eiot-direction-*.png）。
 
+## 补充：mmExpert Cite 入口（同日）
+
+用户要求 mmExpert 与既有已发表论文一样提供 Cite 按钮。书目来源：PDF 页脚 DOI `10.1145/3704413.3764420`（与页眉 MobiHoc '25 一致）→ DOI 内容协商取得权威 BibTeX，与 publications.json 已核验记录 p38 逐项一致（7位作者顺序、会议全称、2025、页1–10、在线2025-10-23）。据此新建 `src/data/citations/mmexpert.{txt,bib,ris}`（Text 为 IEEE 会议样式含会议全名、BibTeX 保护 mmExpert/mmWave 缩写、RIS 为 TY CONF 无卷期）及 sources.json（doi.org 链接、IEEE 样式标注）；research.json 加 `citationId: "mmexpert"`。check-research-citations.mjs 适配：4 篇计数、TY 按记录类型 JOUR/CONF 断言、no-JS 链接计数、动态消息。两种 base 全过：4×3 格式查看/复制/下载与 HTTP 内容一致、p38 字段交叉核对、键盘/无JS/回退/四宽度/axe；下载回归、17 项测试不受影响；4321 预览确认 Cite: mmExpert 按钮。
+
 ## 边界
 
-- 未 push；mmPRISM PDF 恢复须用户录用后另行授权；resources 原件不入库。mmExpert 如需 Cite 入口，需用户提供或授权核对引用元数据。
+- 未 push；mmPRISM PDF 恢复须用户录用后另行授权；resources 原件不入库。mmExpert Cite 已按上节补充完成。

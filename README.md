@@ -41,7 +41,7 @@ For deployment checks, build a second output with `SITE_BASE=/WiNet-Lab/` into `
 
 ## Content and handoff
 
-Research provides a Cite dialog with Text/BibTeX/RIS view, copy and download for the three published papers, plus publisher links. Citation sources live in `src/data/citations/`, with optional `citationId` references in research.json; submitted papers have no Cite entry. Run `node scripts/check-research-citations.mjs` against root/base builds. See [citation sources and verification](docs/verification/research-cite-2026-09-18.md). The user separately authorized this update's publication on 2026-09-18; see the [Cite release record](docs/verification/release-cite-2026-09-18.md) for upload and deployment evidence.
+Research provides a Cite dialog with Text/BibTeX/RIS view, copy and download for the four published papers (including the MobiHoc 2025 mmExpert), plus publisher links. Citation sources live in `src/data/citations/`, with optional `citationId` references in research.json; submitted papers have no Cite entry. Run `node scripts/check-research-citations.mjs` against root/base builds. See [citation sources and verification](docs/verification/research-cite-2026-09-18.md). The user separately authorized this update's publication on 2026-09-18; see the [Cite release record](docs/verification/release-cite-2026-09-18.md) for upload and deployment evidence.
 
 See [docs/README.md](docs/README.md) for requirements, progress, architecture, content editing, and verification evidence. The form-based online CMS is a later milestone; editing JSON alone does not yet provide that workflow.
 
