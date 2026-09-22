@@ -2,7 +2,11 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：正文下划线链接标记（2026-09-22 晚，本地完成，待用户使用反馈）
+## 当前任务：People 个人链接按钮（2026-09-22 晚，本地完成，待用户查看）
+
+用户参照 MARS Lab（卡片底部纯图标按钮）要求每人网站/邮箱/Google Scholar 三个跳转按钮，暂只提供 PI 信息，两个小决策按推荐执行（无数据不显示该按钮；悬浮窗不加按钮保持尺寸人人一致）。实现：`people.json` 新增可选 `website`/`googleScholar`（http(s) 校验，弃用的 zod .url() 改 regex）；新组件 `PersonLinks.astro`（icons 变体=卡片下方 34px 方形图标按钮，labeled 变体=详情页图标+文字按钮，地球/信封/学士帽 SVG，外链 _blank+noopener，邮箱 mailto，aria-label）；学生卡按钮行在卡片锚点外（嵌套链接非法），PeopleCard 包裹为 people-cell；PI 特色卡简介下方一行；详情页 meta 下方 labeled 行。email 全员必有→16 人人手邮箱按钮，PI 另有网站+Scholar（用户提供的原文网址，Scholar 含 hl=zh-CN 参数原样保留）。验证：check-people.mjs 两种 base 扩展断言全过（PI 3 按钮 href/target/rel/aria、学生 15 行邮箱 mailto 逐一、详情页 labeled、axe、无溢出）；astro check 零 hint；17 项测试；1440/390 截图目视通过；4321 实测 16 email+1 website+1 scholar。people.json 一并携带并行会话的 PI 简介措辞更新（获奖表述改第三人称中文括注）。本地提交未 push，发布另需明确请求；后续学生 website/scholar 信息到了直接加字段即可。
+
+## 历史：正文下划线链接标记（2026-09-22 晚，本地完成，待用户使用反馈）
 
 用户要求"特定文字加下划线、点击跳转其他网址"，确认采用通用标记语法。`EmphasisText.astro` 在 `**加粗**` 基础上新增 `[文字](https://网址)` 链接标记：绿色下划线、悬停下划线加粗、外链新标签打开（rel=noopener noreferrer）、仅 http(s) 白名单（javascript/ftp/相对路径等一律按字面文字，防注入）。链接不改变文字粗细字号；加粗链接用组合语法 `**[文字](网址)**` 或 `[**文字**](网址)`（等效）。生效面：首页 about.paragraphs、news.items[].text 与 Contact 的 introduction/recruitment（contact.astro 改用该组件）。**样式教训**：组件链接类名最初用 `.text-link`，与 global.css 中首页 "Meet the lab" 按钮式链接的既有同名规则冲突（12px/inline-flex/border-bottom 全被继承，用户截图发现字号变小、粗体丢失——原文字在 `**` 内改链接标记后粗体也丢了）；已改为独立 `.inline-link` 类并把数据改用组合语法。夹具检查 `scripts/check-text-links.mjs` 扩展两种组合语法断言（strong 嵌 anchor、700/16px）；验证全过：astro check 零错误、两种 base 21 页、17 项测试、4321 实测 Dr. Xiuzhen Guo = 下划线+绿色+700/16px、"Meet the lab" 12px 按钮样式不变（其间 dev 服务器 HMR 出现模板新类名/样式旧规则的半更新不一致，重启后恢复）。首个实例：About 首段 "Dr. Xiuzhen Guo" 链接 https://zjugxz.github.io（用户指定原文）。写法说明已更新 content-maintenance.md。本地 Git 提交未 push；发布另需明确请求。
 

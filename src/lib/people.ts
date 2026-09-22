@@ -9,6 +9,7 @@ const photo = text
     (src) => !/[:\\?#]/.test(src) && !src.includes('..'),
     'Photo must be a file path relative to public/',
   );
+const externalUrl = text.regex(/^https?:\/\/\S+$/, 'Use an http(s) URL');
 
 const memberSchema = z.object({
   id,
@@ -17,6 +18,8 @@ const memberSchema = z.object({
   photo,
   age: z.number().int().min(15).max(100).optional(),
   email: text.regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Use a plain email address'),
+  website: externalUrl.optional(),
+  googleScholar: externalUrl.optional(),
   bio: z.array(text).min(1),
 });
 const uniqueIds = (items: { id: string }[]) =>

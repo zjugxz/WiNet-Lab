@@ -2,6 +2,7 @@
 import type { PeopleMember } from '../lib/people';
 import { peoplePhotoPath } from '../lib/people';
 import { sitePath } from '../lib/paths';
+import PersonLinks from './PersonLinks.astro';
 
 interface Props {
   member: PeopleMember;
@@ -9,28 +10,37 @@ interface Props {
 const { member } = Astro.props;
 ---
 
-<a
-  class="people-card"
-  href={sitePath(`people/${member.id}`)}
-  data-person-open={member.id}
->
-  <div class="people-photo">
-    <img
-      src={peoplePhotoPath(member.photo)}
-      alt={`Photo of ${member.name}`}
-      loading="lazy"
-      decoding="async"
-      width="960"
-      height="1200"
-    />
-  </div>
-  <div class="people-info">
-    <h3 class="people-name">{member.name}</h3>
-    {member.role && <p class="people-role">{member.role}</p>}
-  </div>
-</a>
+<div class="people-cell">
+  <a
+    class="people-card"
+    href={sitePath(`people/${member.id}`)}
+    data-person-open={member.id}
+  >
+    <div class="people-photo">
+      <img
+        src={peoplePhotoPath(member.photo)}
+        alt={`Photo of ${member.name}`}
+        loading="lazy"
+        decoding="async"
+        width="960"
+        height="1200"
+      />
+    </div>
+    <div class="people-info">
+      <h3 class="people-name">{member.name}</h3>
+      {member.role && <p class="people-role">{member.role}</p>}
+    </div>
+  </a>
+  <!-- Outside the card anchor: nested links would be invalid HTML. -->
+  <PersonLinks member={member} />
+</div>
 
 <style>
+  .people-cell {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
   .people-card {
     display: flex;
     flex-direction: column;

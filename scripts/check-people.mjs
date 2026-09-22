@@ -100,6 +100,58 @@ try {
     await page.locator('.people-role').first().textContent(),
     'Tenure-track Assistant Professor',
   );
+
+  // PI link buttons: website/email/scholar with correct targets; students
+  // have no link rows until their data is supplied.
+  const expectedLinks = {
+    website: 'https://zjugxz.github.io',
+    email: 'mailto:guoxz@zju.edu.cn',
+    scholar:
+      'https://scholar.google.com/citations?user=JMmLdgsAAAAJ&hl=zh-CN',
+  };
+  assert.equal(
+    await page.locator('.people-featured-info .person-link').count(),
+    3,
+  );
+  for (const [key, href] of Object.entries(expectedLinks)) {
+    const link = page.locator(
+      `.people-featured-info a[data-person-link="${key}"]`,
+    );
+    assert.equal(await link.getAttribute('href'), href);
+    assert.equal(
+      await link.getAttribute('aria-label'),
+      {
+        website: 'Personal website of Xiuzhen Guo',
+        email: 'Email Xiuzhen Guo',
+        scholar: 'Xiuzhen Guo on Google Scholar',
+      }[key],
+    );
+    if (key === 'email') {
+      assert.equal(await link.getAttribute('target'), null);
+      assert.equal(await link.getAttribute('rel'), null);
+    } else {
+      assert.equal(await link.getAttribute('target'), '_blank');
+      assert.equal(await link.getAttribute('rel'), 'noopener noreferrer');
+    }
+  }
+  // Every student already has an email button; website/scholar appear per
+  // member once their data is supplied.
+  const studentRows = page.locator('.people-grid .person-links');
+  assert.equal(
+    await studentRows.count(),
+    15,
+    'Every student card has a link row',
+  );
+  const rowLinks = await studentRows
+    .locator('a.person-link')
+    .evaluateAll((links) => links.map((link) => link.getAttribute('href')));
+  assert.deepEqual(
+    rowLinks,
+    allMembers
+      .filter(([id]) => id !== 'xiuzhen-guo')
+      .map(([id]) => `mailto:${emails[id]}`),
+    'Each student row has exactly their email button',
+  );
   const hrefs = await cards.evaluateAll((elements) =>
     elements.map((element) => element.getAttribute('href')),
   );
@@ -301,7 +353,29 @@ try {
     assert.equal(await metaMail.textContent(), emails[id]);
     if (id === 'xiuzhen-guo') {
       assert.equal(await page.locator('.person-meta span').count(), 0);
+      const labeled = page.locator('.person-links .person-link');
+      assert.equal(await labeled.count(), 3, 'PI detail shows labeled links');
+      assert.equal(
+        await page
+          .locator('.person-links a[data-person-link="scholar"]')
+          .textContent(),
+        'Google Scholar',
+      );
+      assert.equal(
+        await page
+          .locator('.person-links a[data-person-link="website"]')
+          .getAttribute('href'),
+        'https://zjugxz.github.io',
+      );
     } else {
+      const labeled = page.locator('.person-links .person-link');
+      assert.equal(await labeled.count(), 1, 'Student detail shows email only');
+      assert.equal(
+        await labeled.first().getAttribute('href'),
+        `mailto:${emails[id]}`,
+      );
+    }
+    if (id !== 'xiuzhen-guo') {
       assert.match(
         await page.locator('.person-meta span').textContent(),
         /^Age \d+$/,

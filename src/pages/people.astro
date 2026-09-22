@@ -2,6 +2,7 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import PeopleCard from '../components/PeopleCard.astro';
 import PersonDialog from '../components/PersonDialog.astro';
+import PersonLinks from '../components/PersonLinks.astro';
 import peopleData from '../data/people.json';
 import { peopleSchema, peoplePhotoPath } from '../lib/people';
 import { sitePath } from '../lib/paths';
@@ -50,6 +51,7 @@ const people = peopleSchema.parse(peopleData);
                 <div class="people-bio">
                   {member.bio.map((paragraph) => <p>{paragraph}</p>)}
                 </div>
+                <PersonLinks member={member} />
               </div>
             </div>
           ))
@@ -148,7 +150,7 @@ const people = peopleSchema.parse(peopleData);
   .people-grid li {
     display: flex;
   }
-  .people-grid li > :global(.people-card) {
+  .people-grid li > :global(.people-cell) {
     width: 100%;
   }
 

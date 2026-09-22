@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import PersonLinks from '../../components/PersonLinks.astro';
 import peopleData from '../../data/people.json';
 import { peopleSchema, peoplePhotoPath } from '../../lib/people';
 import { sitePath } from '../../lib/paths';
@@ -40,6 +41,7 @@ const { member, sectionTitle } = Astro.props;
           {member.age && <span>Age {member.age}</span>}
           <a href={`mailto:${member.email}`}>{member.email}</a>
         </div>
+        <PersonLinks member={member} variant="labeled" />
         <div class="person-bio">
           {member.bio.map((paragraph) => <p>{paragraph}</p>)}
         </div>
