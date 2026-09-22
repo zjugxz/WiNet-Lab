@@ -4,6 +4,8 @@
 
 ## 当前任务：People页面本地实现完成，待用户查看
 
+**2026-09-22更新批次**：用户更新 resources/people 资料后重建——Yifan Yan/Zhou Yang/Zikang Zhang 三份简介替换为新原文（前两人换成正式研究简介，Zikang改为第三人称），PI照片更换并复核4:5裁切，其余文字未变。复验全部通过（check、两种base构建与检查、17项测试、4321预览），提交见git log，未push。更新前状态见下方首版记录。
+
 用户提供 `resources/people/` 资料（16人：PI 1、PhD 8、Master 7，每人一图一自我介绍），要求功能参考MARS Lab People，中文简介译成英文，PI简介原文保留。本轮已本地实现：`src/data/people.json` 数据源、`lib/people.ts` zod校验、`PeopleCard.astro`（PI featured大卡+学生网格卡）、`pages/people.astro` 替换占位路由；16张照片经 `scripts/prepare-people-photos.mjs`（sharp：EXIF矫正、长边≤960、有损WebP q82）由约36MB压至约1.25MB，卡片4:5裁切经目视核对无切脸。
 
 文本处理：Xu Chen/Yifan Yan/Zhou Yang 三份中文简介直译为英文（未补造研究内容）；Binghe Li/Xiangguang Wang 取文档英文版；"Winet/WiNet Group"两处按已确认站名改为"WiNet Lab"，Zikang Zhang结尾缺字母补全；PI简介逐字保留含中文括注。Binghe Li文档中的邮箱/GitHub未展示（默认不放个人链接）。
