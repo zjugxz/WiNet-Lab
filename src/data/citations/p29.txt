@@ -1,0 +1,1 @@
+X. Guo, Y. He, J. Zhang, and H. Jiang, “WIDE: physical-level CTC via digital emulation,” Proceedings of the 18th International Conference on Information Processing in Sensor Networks, pp. 49–60, Apr. 2019, doi: 10.1145/3302506.3310388.

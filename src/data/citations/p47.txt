@@ -1,0 +1,1 @@
+W. Wang, Y. He, M. Jin, Y. Sun, and X. Guo, “Meta-Speaker: Acoustic Source Projection by Exploiting Air Nonlinearity,” Proceedings of the 29th Annual International Conference on Mobile Computing and Networking, pp. 1–15, Oct. 2023, doi: 10.1145/3570361.3613279.

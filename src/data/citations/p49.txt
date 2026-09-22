@@ -1,0 +1,1 @@
+X. Zheng, Y. He, and X. Guo, “StripComm: Interference-Resilient Cross-Technology Communication in Coexisting Environments,” IEEE INFOCOM 2018 - IEEE Conference on Computer Communications, pp. 171–179, Apr. 2018, doi: 10.1109/infocom.2018.8486374.

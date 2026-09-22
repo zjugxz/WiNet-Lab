@@ -1,0 +1,1 @@
+X. Qian, X. Guo, Y. Yang, X. Fan, and L. Shangguan, “HeadFi II: Toward More Resilient Earable Computing Platform,” Proceedings of the 20th ACM Conference on Embedded Networked Sensor Systems, pp. 827–828, Nov. 2022, doi: 10.1145/3560905.3568092.

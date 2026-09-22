@@ -1,0 +1,1 @@
+Y. Sun et al., “BIFROST: Reinventing WiFi Signals Based on Dispersion Effect for Accurate Indoor Localization,” Proceedings of the 21st ACM Conference on Embedded Networked Sensor Systems, pp. 376–389, Nov. 2023, doi: 10.1145/3625687.3625786.

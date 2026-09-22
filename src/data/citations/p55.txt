@@ -1,0 +1,1 @@
+J. Zheng et al., “SoftNB: A Fully Functional NB-IoT PHY for Various SDR Platforms,” 2024 IEEE 32nd International Conference on Network Protocols (ICNP), pp. 1–11, Oct. 2024, doi: 10.1109/icnp61940.2024.10858545.

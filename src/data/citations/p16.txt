@@ -1,0 +1,1 @@
+X. Guo et al., “Mighty: Towards Long-Range and High-Throughput Backscatter for Drones,” IEEE Transactions on Mobile Computing, vol. 24, no. 3, pp. 1833–1845, Mar. 2025, doi: 10.1109/tmc.2024.3486993.

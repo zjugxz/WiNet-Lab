@@ -1,0 +1,1 @@
+W. Wang, X. Zheng, Y. He, and X. Guo, “AdaComm: Tracing Channel Dynamics for Reliable Cross-Technology Communication,” 2019 16th Annual IEEE International Conference on Sensing, Communication, and Networking (SECON), pp. 1–9, Jun. 2019, doi: 10.1109/sahcn.2019.8824843.

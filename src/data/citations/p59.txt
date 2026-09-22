@@ -1,0 +1,1 @@
+X. Na, X. Guo, Y. He, and R. Xi, “Wi-attack: Cross-technology Impersonation Attack against iBeacon Services,” 2021 18th Annual IEEE International Conference on Sensing, Communication, and Networking (SECON), pp. 1–9, Jul. 2021, doi: 10.1109/secon52354.2021.9491605.

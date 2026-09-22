@@ -1,0 +1,1 @@
+X. Guo et al., “Saiyan: Design and Implementation of a Low-power Demodulator for LoRa Backscatter Systems,” in 19th USENIX Symposium on Networked Systems Design and Implementation (NSDI 22), 2022, pp. 437–451.

@@ -1,0 +1,1 @@
+H. Jiang, J. Zhang, X. Guo, and Y. He, “Sense Me on the Ride: Accurate Mobile Sensing over a LoRa Backscatter Channel,” Proceedings of the 19th ACM Conference on Embedded Networked Sensor Systems, pp. 125–137, Nov. 2021, doi: 10.1145/3485730.3485933.

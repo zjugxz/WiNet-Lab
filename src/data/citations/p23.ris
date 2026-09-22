@@ -1,0 +1,17 @@
+TY  - CONF
+TI  - Saiyan: Design and Implementation of a Low-power Demodulator for LoRa Backscatter Systems
+T2  - 19th USENIX Symposium on Networked Systems Design and Implementation (NSDI 22)
+AU  - Guo, Xiuzhen
+AU  - Shangguan, Longfei
+AU  - He, Yuan
+AU  - Jing, Nan
+AU  - Zhang, Jiacheng
+AU  - Jiang, Haotian
+AU  - Liu, Yunhao
+PY  - 2022
+DA  - 2022/04
+SP  - 437
+EP  - 451
+PB  - USENIX Association
+UR  - https://www.usenix.org/conference/nsdi22/presentation/guo
+ER  -

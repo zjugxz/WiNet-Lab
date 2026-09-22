@@ -1,0 +1,1 @@
+X. Guo et al., “Aloba: rethinking ON-OFF keying modulation for ambient LoRa backscatter,” Proceedings of the 18th Conference on Embedded Networked Sensor Systems, pp. 192–204, Nov. 2020, doi: 10.1145/3384419.3430719.

@@ -1,0 +1,1 @@
+M. Guo et al., “Towards Distributed Flow Scheduling in IEEE 802.1Qbv Time-Sensitive Networks,” ACM Transactions on Sensor Networks, vol. 20, no. 5, pp. 1–30, Jul. 2024, doi: 10.1145/3676848.

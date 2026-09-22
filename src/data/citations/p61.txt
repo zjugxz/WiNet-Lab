@@ -1,0 +1,1 @@
+X. Zheng, D. Xia, X. Guo, L. Liu, Y. He, and H. Ma, “Portal: transparent cross-technology opportunistic forwarding for low-power wireless networks,” Proceedings of the Twenty-First International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing, pp. 241–250, Oct. 2020, doi: 10.1145/3397166.3409134.

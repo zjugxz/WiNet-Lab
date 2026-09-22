@@ -1,0 +1,1 @@
+J. Huang, C. Gu, X. Guo, S. He, Y. Shu, and J. Chen, “WindScatter: An Ultra-Low-Power, Long-Range, Large-Scale Wind Speed Monitoring System,” IEEE Transactions on Mobile Computing, vol. 25, no. 6, pp. 8355–8368, Jun. 2026, doi: 10.1109/tmc.2026.3650936.

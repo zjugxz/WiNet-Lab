@@ -1,0 +1,1 @@
+H. Shi et al., “Nonlinear Chirp Spread Spectrum: Performance Analysis and Optimization for LoRa Networks,” IEEE Transactions on Communications, vol. 74, pp. 7106–7120, 2026, doi: 10.1109/tcomm.2026.3681655.

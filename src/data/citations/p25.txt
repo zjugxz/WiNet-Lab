@@ -1,0 +1,1 @@
+X. Guo, Y. He, X. Zheng, Z. Yu, and Y. Liu, “LEGO-Fi: Transmitter-Transparent CTC with Cross-Demapping,” IEEE INFOCOM 2019 - IEEE Conference on Computer Communications, pp. 2125–2133, Apr. 2019, doi: 10.1109/infocom.2019.8737659.

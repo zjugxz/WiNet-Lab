@@ -1,0 +1,1 @@
+D. Gao et al., “Physical-Layer CTC From BLE to Wi-Fi With IEEE 802.11ax,” IEEE Transactions on Mobile Computing, vol. 24, no. 1, pp. 338–351, Jan. 2025, doi: 10.1109/tmc.2024.3462941.

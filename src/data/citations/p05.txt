@@ -1,0 +1,1 @@
+X. Guo, Y. He, and X. Zheng, “WiZig: Cross-Technology Energy Communication Over a Noisy Channel,” IEEE/ACM Transactions on Networking, vol. 28, no. 6, pp. 2449–2460, Dec. 2020, doi: 10.1109/tnet.2020.3013921.

@@ -1,0 +1,1 @@
+X. Guo et al., “Efficient Ambient LoRa Backscatter With On-Off Keying Modulation,” IEEE/ACM Transactions on Networking, vol. 30, no. 2, pp. 641–654, Apr. 2022, doi: 10.1109/tnet.2021.3121787.

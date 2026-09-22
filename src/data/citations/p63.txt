@@ -1,0 +1,1 @@
+Z. Yu et al., “SmarTiSCH: An Interference-Aware Engine for IEEE 802.15.4e-based Networks,” 2022 21st ACM/IEEE International Conference on Information Processing in Sensor Networks (IPSN), pp. 350–362, May 2022, doi: 10.1109/ipsn54338.2022.00035.

@@ -1,0 +1,1 @@
+Y. Zou, X. Na, X. Guo, Y. Sun, and Y. He, “Trident: Interference Avoidance in Multi-reader Backscatter Network via Frequency-space Division,” IEEE INFOCOM 2024 - IEEE Conference on Computer Communications, pp. 1761–1770, May 2024, doi: 10.1109/infocom52122.2024.10621258.

@@ -1,0 +1,1 @@
+X. Guo, Y. He, J. Zhang, Y. Liu, and L. Shangguan, “Towards Programmable Backscatter Radio Design for Heterogeneous Wireless Networks,” IEEE/ACM Transactions on Networking, vol. 32, no. 6, pp. 5020–5032, Dec. 2024, doi: 10.1109/tnet.2024.3454095.

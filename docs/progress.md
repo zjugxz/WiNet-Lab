@@ -2,7 +2,11 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：P0 媒体优化已发布上线（2026-09-22 晚，待用户线上查看）
+## 当前任务：Publications全条目Cite（2026-09-22，本地完成，待用户查看）
+
+用户要求为Publications页所有已发表论文提供与Research页完全一致的Cite入口（按钮/图标/交互），且逐篇访问论文网站取得真实引用信息。已完成：73条（p01–p75除p03，p03无DOI/URL且审计unconfirmed、与Research页在投论文同篇，不提供入口）×Text/BibTeX/RIS；68条经Crossref DOI内容协商实际抓取（18条差异逐条甄别：7条ACM截断题名、LaTeX/HTML噪声、3条印刷年份、Device新增卷期、专著副标题），p23/p43取USENIX官方BibTeX、p34经CRAD官网（ISTIC DOI）、p37经CCF页面、p70经EWSN官方PDF；中文两条用GB/T 7714样式。复用CitationDialog组件零视觉差异，静态导出219个文件到/publications/citations/，搜索索引剔除弹窗文本保持原行为。验证：astro check零错误、两种base构建、新check-publication-citations.mjs（73×3静态核对+219个HTTP逐字节+抽样弹窗/复制/下载/axe/无JS）、既有17项测试与Research引用/子路径回归全部通过；4321预览实测与截图目视通过。详见[验证记录](verification/publications-cite-2026-09-22.md)。本地Git提交（不含并行会话已发布内容），未push，待用户查看反馈，不记为验收。
+
+## 历史：P0 媒体优化已发布上线（2026-09-22 晚，待用户线上查看）
 
 用户要求发送远程。首次尝试时 github.com 全路由阻断（7890 代理客户端关闭、直连/IPv6 均超时），暂缓并留监视器；16:12 直连恢复后，并行会话将本批 `dcbce97`（诊断文档）、`1f944f4`（P0 实施）与其照片提交 `129c0bd` 一并推送 main（Actions success）。线上已核验：五个新媒体 Content-Length 与本地逐字节一致、四篇受限 PDF 仍 404、真实浏览器端到端——首段立即起播、同排第二段 12s 后放行、下方五段滚动前未加载、零页面错误。详见[发布记录](verification/release-p0-2026-09-22.md)与[实施验证](verification/research-video-p0-2026-09-22.md)。技术发布不等于验收；GIF 式降级后备与 P1（预览去音轨、People 照片降尺寸、词云有损化）仍待用户确认，未实施。
 

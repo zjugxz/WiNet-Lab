@@ -1,0 +1,1 @@
+L. Xu, K. Wang, C. Gu, X. Guo, S. He, and J. Chen, “GesturePrint: Enabling User Identification for mmWave-Based Gesture Recognition Systems,” 2024 IEEE 44th International Conference on Distributed Computing Systems (ICDCS), pp. 1074–1085, Jul. 2024, doi: 10.1109/icdcs60910.2024.00103.

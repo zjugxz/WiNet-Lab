@@ -1,0 +1,1 @@
+X. Na et al., “Analog Backscatter for Commodity WiFi With Payload Transparency,” IEEE Transactions on Networking, vol. 33, no. 6, pp. 3132–3145, Dec. 2025, doi: 10.1109/ton.2025.3582020.

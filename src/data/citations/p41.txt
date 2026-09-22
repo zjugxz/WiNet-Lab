@@ -1,0 +1,1 @@
+J. Zheng, Z. Shi, X. Guo, S. He, C. Gu, and J. Chen, “A Tutorial on SDR-Based NB-IoT PHY: Synchronization, Demodulation, and Validation,” IEEE Communications Surveys & Tutorials, vol. 28, pp. 4458–4484, 2026, doi: 10.1109/comst.2026.3654924.

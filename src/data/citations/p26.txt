@@ -1,0 +1,1 @@
+X. Guo, Y. He, X. Zheng, L. Yu, and O. Gnawali, “ZIGFI: Harnessing Channel State Information for Cross-Technology Communication,” IEEE INFOCOM 2018 - IEEE Conference on Computer Communications, pp. 360–368, Apr. 2018, doi: 10.1109/infocom.2018.8486364.

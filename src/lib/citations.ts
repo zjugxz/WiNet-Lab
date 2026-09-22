@@ -14,12 +14,18 @@ const metadata = z
     z.string(),
     z.object({
       url: z.url({ protocol: /^https$/ }),
-      textStyle: z.enum(['Cell', 'IEEE']),
+      textStyle: z.enum(['Cell', 'IEEE', 'GB/T 7714']),
     }),
   )
   .parse(sources);
 
-export function getCitation(id: string) {
+export const citationSections = {
+  research: 'research',
+  publications: 'publications',
+} as const;
+export type CitationSection = keyof typeof citationSections;
+
+export function getCitation(id: string, section: CitationSection = 'research') {
   const source = metadata[id];
   if (!source) throw new Error(`Missing citation source for ${id}`);
   const formats = [
@@ -50,7 +56,7 @@ export function getCitation(id: string) {
       text: value.replace(/\r\n?/g, '\n').trim() + '\n',
       filename: `${id}.${format.extension}`,
       href: assetPath(
-        `research/citations/${encodeURIComponent(id)}.${format.extension}`,
+        `${section}/citations/${encodeURIComponent(id)}.${format.extension}`,
       ),
     };
   });

@@ -1,0 +1,15 @@
+TY  - CONF
+TI  - CurvingLoRa to Boost LoRa Network Throughput via Concurrent Transmission
+T2  - 19th USENIX Symposium on Networked Systems Design and Implementation (NSDI 22)
+AU  - Li, Chenning
+AU  - Guo, Xiuzhen
+AU  - Shangguan, Longfei
+AU  - Cao, Zhichao
+AU  - Jamieson, Kyle
+PY  - 2022
+DA  - 2022/04
+SP  - 879
+EP  - 895
+PB  - USENIX Association
+UR  - https://www.usenix.org/conference/nsdi22/presentation/li-chenning
+ER  -

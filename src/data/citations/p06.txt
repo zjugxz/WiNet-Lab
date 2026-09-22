@@ -1,0 +1,1 @@
+X. Guo, Y. He, X. Zheng, L. Yu, and O. Gnawali, “ZigFi: Harnessing Channel State Information for Cross-Technology Communication,” IEEE/ACM Transactions on Networking, vol. 28, no. 1, pp. 301–311, Feb. 2020, doi: 10.1109/tnet.2019.2962707.

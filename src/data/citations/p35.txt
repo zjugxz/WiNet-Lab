@@ -1,0 +1,1 @@
+X. Guo, Y. He, Y. Liu, and L. Shangguan, “A New Design Paradigm for Polymorphic Backscatter Radios,” GetMobile: Mobile Computing and Communications, vol. 27, no. 3, pp. 18–22, Oct. 2023, doi: 10.1145/3631588.3631594.

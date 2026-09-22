@@ -1,0 +1,1 @@
+Z. Yu et al., “BiCord: Bidirectional Coordination among Coexisting Wireless Devices,” 2021 IEEE 41st International Conference on Distributed Computing Systems (ICDCS), pp. 304–314, Jul. 2021, doi: 10.1109/icdcs51616.2021.00037.

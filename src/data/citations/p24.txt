@@ -1,0 +1,1 @@
+X. Guo, Y. He, Z. Yu, J. Zhang, Y. Liu, and L. Shangguan, “RF-transformer: a unified backscatter radio hardware abstraction,” Proceedings of the 28th Annual International Conference on Mobile Computing And Networking, pp. 446–458, Oct. 2022, doi: 10.1145/3495243.3560549.

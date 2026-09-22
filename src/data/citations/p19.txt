@@ -1,0 +1,1 @@
+Z. Tang, X. Guo, S. He, Y. Shu, G. Li, and C. Gu, “Robot-Assisted Cross-Modal Synthetic Augmentation of mmWave Datasets for Sign Language Recognition,” IEEE Transactions on Mobile Computing, vol. 25, no. 9, pp. 15000–15013, Sep. 2026, doi: 10.1109/tmc.2026.3689215.

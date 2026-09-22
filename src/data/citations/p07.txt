@@ -1,0 +1,1 @@
+Y. He, X. Guo, J. Zhang, and H. Jiang, “WIDE: Physical-Level CTC via Digital Emulation,” IEEE/ACM Transactions on Networking, vol. 29, no. 4, pp. 1567–1579, Aug. 2021, doi: 10.1109/tnet.2021.3071782.

@@ -1,0 +1,1 @@
+X. Guo, L. Tan, C. Gu, Y. Shu, S. He, and J. Chen, “MagWear: Vital Sign Monitoring Based on Biomagnetism Sensing,” IEEE Transactions on Mobile Computing, vol. 23, no. 12, pp. 14918–14933, Dec. 2024, doi: 10.1109/tmc.2024.3452499.

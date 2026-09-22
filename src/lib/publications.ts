@@ -1,4 +1,5 @@
 import records from '../data/publications.json';
+import citationSources from '../data/citations/sources.json';
 
 export const publicationTypes = {
   journal: 'Journal article',
@@ -57,6 +58,12 @@ for (const item of records) {
 export const publications = (records as Publication[]).toSorted(
   (a, b) => b.year - a.year || a.sourceNumber - b.sourceNumber,
 );
+// Citations live in the shared registry; an entry appears once its real
+// Text/BibTeX/RIS sources have been collected (p03 is not yet published).
+const registeredCitations = new Set(Object.keys(citationSources));
+export function citationIdFor(item: Publication): string | undefined {
+  return registeredCitations.has(item.id) ? item.id : undefined;
+}
 export const publicationYears = [
   ...new Set(publications.map((item) => item.year)),
 ];

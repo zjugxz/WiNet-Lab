@@ -1,0 +1,1 @@
+J. Zheng et al., “SoftNB: Design and Implementation of an NB-IoT PHY Software-Defined Radio,” IEEE Transactions on Networking, vol. 34, pp. 3792–3807, 2026, doi: 10.1109/ton.2026.3665549.

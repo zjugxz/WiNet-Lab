@@ -1,0 +1,1 @@
+D. Gao et al., “Federated Learning Based on CTC for Heterogeneous Internet of Things,” IEEE Internet of Things Journal, vol. 10, no. 24, pp. 22673–22685, Dec. 2023, doi: 10.1109/jiot.2023.3305189.

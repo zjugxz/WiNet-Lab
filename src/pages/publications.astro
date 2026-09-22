@@ -148,12 +148,20 @@ import {
       value.normalize('NFKC').toLocaleLowerCase().trim();
     const items = [
       ...root.querySelectorAll<HTMLElement>('[data-publication]'),
-    ].map((element) => ({
-      element,
-      text: normalize(element.textContent || ''),
-      year: element.dataset.year!,
-      type: element.dataset.type!,
-    }));
+    ].map((element) => {
+      // Citation dialogs carry full reference text; keep search limited to the
+      // visible card content so filters behave as before.
+      const searchable = element.cloneNode(true) as HTMLElement;
+      searchable
+        .querySelectorAll('citation-dialog')
+        .forEach((node) => node.remove());
+      return {
+        element,
+        text: normalize(searchable.textContent || ''),
+        year: element.dataset.year!,
+        type: element.dataset.type!,
+      };
+    });
     const groups = [...root.querySelectorAll<HTMLElement>('[data-year-group]')];
     const count = root.querySelector<HTMLElement>('[data-result-count]')!;
     const empty = root.querySelector<HTMLElement>('.publication-empty')!;

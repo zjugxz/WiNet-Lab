@@ -1,5 +1,7 @@
 ---
+import CitationDialog from './CitationDialog.astro';
 import {
+  citationIdFor,
   publicationDetails,
   publicationTypes,
   type Publication,
@@ -8,6 +10,7 @@ interface Props {
   publication: Publication;
 }
 const { publication: item } = Astro.props;
+const citationId = citationIdFor(item);
 ---
 
 <li
@@ -49,18 +52,28 @@ const { publication: item } = Astro.props;
       <p class="publication-details" lang={item.language}>
         {publicationDetails(item)}
       </p>
-      {item.url && (
-        <a
-          class="publication-resource"
-          href={item.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${item.type === 'book' ? 'Book' : 'Paper'}: ${item.title} (opens in a new tab)`}
-        >
-          {item.type === 'book' ? 'Book' : 'Paper'}{' '}
-          <span aria-hidden="true">↗</span>
-        </a>
-      )}
+      <div class="publication-links">
+        {item.url && (
+          <a
+            class="publication-resource"
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${item.type === 'book' ? 'Book' : 'Paper'}: ${item.title} (opens in a new tab)`}
+          >
+            {item.type === 'book' ? 'Book' : 'Paper'}{' '}
+            <span aria-hidden="true">↗</span>
+          </a>
+        )}
+        {citationId && (
+          <CitationDialog
+            citationId={citationId}
+            title={item.title}
+            headingId={`${item.id}-citation`}
+            section="publications"
+          />
+        )}
+      </div>
     </div>
   </article>
 </li>
@@ -136,11 +149,17 @@ const { publication: item } = Astro.props;
     font-size: 12px;
     color: var(--muted);
   }
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 22px;
+    margin-top: 12px;
+  }
   .publication-resource {
     display: inline-flex;
     gap: 9px;
     align-items: center;
-    margin-top: 12px;
     min-height: 32px;
     color: var(--green);
     font-size: 12px;

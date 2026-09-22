@@ -1,0 +1,1 @@
+H. Shi, Y. Yang, X. Guo, W. Meng, C. Gu, and S. He, “Understanding and Optimizing Nonlinear Chirp Spread Spectrum Modulation in LoRa Networks,” 2024 IEEE International Conference on High Performance Computing and Communications (HPCC), pp. 876–884, Dec. 2024, doi: 10.1109/hpcc64274.2024.00120.

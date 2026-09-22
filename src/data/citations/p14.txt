@@ -1,0 +1,1 @@
+X. Guo, B. Liu, N. Jing, C. Gu, Y. Shu, and J. Chen, “Enabling Cross-Band Backscatter Communication With Twaltz,” IEEE Transactions on Mobile Computing, vol. 24, no. 11, pp. 11323–11336, Nov. 2025, doi: 10.1109/tmc.2025.3581900.

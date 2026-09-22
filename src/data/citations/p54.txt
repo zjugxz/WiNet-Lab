@@ -1,0 +1,1 @@
+X. Na, X. Guo, Z. Yu, J. Zhang, Y. He, and Y. Liu, “Leggiero: Analog WiFi Backscatter with Payload Transparency,” Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services, pp. 436–449, Jun. 2023, doi: 10.1145/3581791.3596835.

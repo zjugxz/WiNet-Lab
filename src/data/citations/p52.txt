@@ -1,0 +1,1 @@
+Y. Yang, T. Chen, Y. Huang, X. Guo, and L. Shangguan, “MAF: Exploring Mobile Acoustic Field for Hand-to-Face Gesture Interactions,” Proceedings of the CHI Conference on Human Factors in Computing Systems, pp. 1–20, May 2024, doi: 10.1145/3613904.3642437.

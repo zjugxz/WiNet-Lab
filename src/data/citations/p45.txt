@@ -1,0 +1,1 @@
+D. Gao et al., “LoBee: Bidirectional Communication Between LoRa and ZigBee Based on Physical-Layer CTC,” IEEE Transactions on Wireless Communications, vol. 24, no. 8, pp. 6857–6868, Aug. 2025, doi: 10.1109/twc.2025.3556552.

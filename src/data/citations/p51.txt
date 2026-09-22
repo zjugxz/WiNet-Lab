@@ -1,0 +1,1 @@
+W. Wang, J. Li, Y. He, X. Guo, and Y. Liu, “MotorBeat: Acoustic Communication for Home Appliances via Variable Pulse Width Modulation,” Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, vol. 6, no. 1, pp. 1–24, Mar. 2022, doi: 10.1145/3517255.

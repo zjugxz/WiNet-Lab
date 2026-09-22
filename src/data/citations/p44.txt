@@ -1,0 +1,1 @@
+X. Na et al., “QuinID: Enabling FDMA-Based Fully Parallel RFID with Frequency-Selective Antenna,” Proceedings of the 31st Annual International Conference on Mobile Computing and Networking, pp. 93–107, Nov. 2025, doi: 10.1145/3680207.3723462.

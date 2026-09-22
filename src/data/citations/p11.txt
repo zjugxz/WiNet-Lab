@@ -1,0 +1,1 @@
+X. Guo, L. Tan, Y. He, Y. Shu, and J. Chen, “Lotus: Rethinking Polarization Mismatch for Carrier Cancellation in Backscatter Systems,” IEEE Transactions on Networking, vol. 34, pp. 2762–2774, 2026, doi: 10.1109/ton.2026.3652168.

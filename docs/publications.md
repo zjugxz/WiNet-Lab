@@ -1,6 +1,10 @@
 # Publications 页面资料与实现准备
 
-更新日期：2026-09-18（Asia/Shanghai）。当前74条、73个出版入口，P71已删除、P34/P37已更新；无Details pending，载体字体/配色及年份分隔已调整。已纳入用户明确授权的本次上传，实际部署见[发布记录](verification/release-2026-09-18.md)；原资料与内部核验记录可追溯。以下是各轮历史状态，技术发布不代表整页验收。
+更新日期：2026-09-22（Asia/Shanghai）。当前74条、73个出版入口；73条（除p03）提供与Research页一致的Cite入口（Text/BibTeX/RIS，2026-09-22本地实现待查看，见[验证记录](verification/publications-cite-2026-09-22.md)）。P71已删除、P34/P37已更新；无Details pending，载体字体/配色及年份分隔已调整。已纳入用户明确授权的本次上传，实际部署见[发布记录](verification/release-2026-09-18.md)；原资料与内部核验记录可追溯。以下是各轮历史状态，技术发布不代表整页验收。
+
+## 2026-09-22 全条目Cite完成（本地待查看）
+
+用户要求所有已发表论文提供Cite且逐篇取得真实引用。73条×三格式的资料来源、数据甄别与验证见[publications-cite-2026-09-22.md](verification/publications-cite-2026-09-22.md)。要点：p03因无DOI/出版入口且审计unconfirmed不提供Cite；p23/p43用USENIX官方BibTeX，p34经CRAD官网，p37经CCF页面，p70经EWSN官方PDF；中文两条Text为GB/T 7714样式；引用文件按条目id存放于`src/data/citations/p*.*`并在sources.json登记，静态导出到`/publications/citations/`；筛选搜索索引已剔除弹窗文本，搜索行为不变。本地提交未push。
 
 ## 2026-09-18 第71条删除完成
 

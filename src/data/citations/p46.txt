@@ -1,0 +1,1 @@
+T. Chen, Y. Yang, X. Fan, X. Guo, J. Xiong, and L. Shangguan, “Exploring the Feasibility of Remote Cardiac Auscultation Using Earphones,” Proceedings of the 30th Annual International Conference on Mobile Computing and Networking, pp. 357–372, May 2024, doi: 10.1145/3636534.3649366.

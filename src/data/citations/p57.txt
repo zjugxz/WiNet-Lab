@@ -1,0 +1,1 @@
+Y. Sun et al., “Exploiting Dispersion Effect of Signals for Accurate Indoor WiFi Localization,” ACM Transactions on Sensor Networks, vol. 21, no. 3, pp. 1–21, May 2025, doi: 10.1145/3725850.

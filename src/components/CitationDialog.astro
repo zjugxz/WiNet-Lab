@@ -1,13 +1,14 @@
 ---
-import { getCitation } from '../lib/citations';
+import { getCitation, type CitationSection } from '../lib/citations';
 
 interface Props {
   citationId: string;
   title: string;
   headingId: string;
+  section?: CitationSection;
 }
-const { citationId, title, headingId } = Astro.props;
-const { source, formats } = getCitation(citationId);
+const { citationId, title, headingId, section } = Astro.props;
+const { source, formats } = getCitation(citationId, section);
 const defaultFormat = formats[0];
 ---
 

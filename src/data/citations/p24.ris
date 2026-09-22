@@ -1,0 +1,17 @@
+TY  - CONF
+TI  - RF-transformer: a unified backscatter radio hardware abstraction
+T2  - Proceedings of the 28th Annual International Conference on Mobile Computing And Networking
+AU  - Guo, Xiuzhen
+AU  - He, Yuan
+AU  - Yu, Zihao
+AU  - Zhang, Jiacheng
+AU  - Liu, Yunhao
+AU  - Shangguan, Longfei
+PY  - 2022
+DA  - 2022/10
+SP  - 446
+EP  - 458
+PB  - ACM
+DO  - 10.1145/3495243.3560549
+UR  - https://doi.org/10.1145/3495243.3560549
+ER  -
