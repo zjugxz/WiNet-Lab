@@ -66,6 +66,41 @@ const people = peopleSchema.parse(peopleData);
         )}
       </section>
     ))}
+    <section
+      class="people-section people-section-alumni"
+      aria-labelledby="alumni-title"
+    >
+      <h2 id="alumni-title">Alumni</h2>
+      {
+        people.alumni.length ? (
+          <ul class="alumni-list">
+            {people.alumni.map((alumnus) => (
+              <li>
+                {alumnus.website ? (
+                  <a class="alumni-name" href={alumnus.website} target="_blank" rel="noopener noreferrer">
+                    {alumnus.name}
+                  </a>
+                ) : (
+                  <span class="alumni-name">{alumnus.name}</span>
+                )}
+                {alumnus.degree && (
+                  <span class="alumni-degree">{alumnus.degree}</span>
+                )}
+                {alumnus.current && (
+                  <span class="alumni-current"> ({alumnus.current})</span>
+                )}
+                {alumnus.note && <span> — {alumnus.note}</span>}
+                {alumnus.period && (
+                  <span class="alumni-period"> ({alumnus.period})</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="alumni-placeholder">Alumni information is coming soon.</p>
+        )
+      }
+    </section>
     <PersonDialog />
   </div>
 </SiteLayout>
@@ -152,6 +187,47 @@ const people = peopleSchema.parse(peopleData);
   }
   .people-grid li > :global(.people-cell) {
     width: 100%;
+  }
+
+  .alumni-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+    max-width: 920px;
+  }
+  .alumni-list li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+  .alumni-name {
+    font: 600 17px/1.4 var(--serif);
+    color: var(--ink);
+    margin-right: 7px;
+  }
+  a.alumni-name {
+    text-decoration: none;
+  }
+  a.alumni-name:hover,
+  a.alumni-name:focus-visible {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .alumni-degree {
+    margin-right: 7px;
+  }
+  .alumni-placeholder {
+    padding: 34px 28px;
+    border: 1px dashed #b8c7bb;
+    border-radius: 6px;
+    background: #f5f7f4;
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 920px;
   }
 
   @media (max-width: 760px) {

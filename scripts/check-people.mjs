@@ -76,6 +76,22 @@ try {
       .getByRole('heading', { name: heading, exact: true })
       .isVisible();
   }
+  // Alumni interface: section renders with an explicit placeholder until the
+  // graduated-member records are supplied.
+  await page.getByRole('heading', { name: 'Alumni', exact: true }).isVisible();
+  assert.equal(
+    await page.locator('.people-section-alumni .alumni-list').count(),
+    0,
+    'No alumni rows without supplied records',
+  );
+  await expect(page.locator('.alumni-placeholder')).toHaveText(
+    'Alumni information is coming soon.',
+  );
+  assert.equal(
+    await page.locator('.people-section-alumni a').count(),
+    0,
+    'Placeholder must not invent links',
+  );
   const cards = page.locator('.people-grid a.people-card');
   assert.equal(await cards.count(), 15);
   assert.equal(
@@ -465,7 +481,7 @@ try {
     fullPage: true,
   });
   console.log(
-    `People checks passed (${allMembers.length} cards + ${allMembers.length} detail pages, base ${base || '/'})`,
+    `People checks passed (${allMembers.length} cards + ${allMembers.length} detail pages + alumni interface, base ${base || '/'})`,
   );
 } finally {
   await context.close();

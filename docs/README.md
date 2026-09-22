@@ -8,7 +8,9 @@
 
 历史发布：用户授权后于2026-09-22将16个本地提交推送main（196230f..60ca9cb），Actions 35697405893 success；线上页面/优化媒体/受限404均已核验，证据见[发布记录](verification/release-2026-09-22.md)。上线内容含媒体优化、People全功能、Research第三方向与mmExpert Cite等；技术发布不等于整站验收。16人（PI 1、PhD 8、Master 7）；PI简介默认展示，点击卡片弹出变暗背景的悬浮窗显示简介，无JS时回退静态详情页；中文简介已译英文、PI简介原文保留；照片压缩为WebP并验证两种base；未发布。待决项见[People验证记录](verification/people-2026-09-22.md)。用户查看后反馈加载缓慢，诊断为跨境链路带宽限制叠加预览码率超预算，见[性能诊断](verification/performance-diagnosis-2026-09-22.md)。
 
-最新本地实现：[Publications全条目Cite](verification/publications-cite-2026-09-22.md)（2026-09-22）。73条（除出版状态未核实的p03）提供与Research页完全一致的Cite入口；引用资料经Crossref DOI内容协商及USENIX/CRAD/CCF/EWSN官方网站逐篇取得（18条存档差异逐条甄别，中文两条为GB/T 7714样式），静态导出219个引用文件；新检查脚本、既有17项测试与Research/子路径回归全部通过，4321预览实测正常。等待用户查看，尚未发布。
+最新本地实现：[People页Alumni接口](verification/people-alumni-2026-09-22.md)（2026-09-22）。people.json新增alumni数组（name必填，学位/区间/去向/课题/链接可选），页面新增Alumni分区；空状态显示占位框，资料到达后填数据即自动渲染，无需改代码。两种base与17项测试通过，等待用户资料。
+
+本地待查看批次：[Gallery接口](verification/gallery-2026-09-22.md)、[Publications全条目Cite](verification/publications-cite-2026-09-22.md)（2026-09-22）。73条（除出版状态未核实的p03）提供与Research页完全一致的Cite入口；引用资料经Crossref DOI内容协商及USENIX/CRAD/CCF/EWSN官方网站逐篇取得（18条存档差异逐条甄别，中文两条为GB/T 7714样式），静态导出219个引用文件；新检查脚本、既有17项测试与Research/子路径回归全部通过，4321预览实测正常。等待用户查看，尚未发布。
 
 历史本地批次：[Home图片与Research视频优化](verification/media-optimization-2026-09-18.md)及其[P0带宽实施](verification/research-video-p0-2026-09-22.md)（后者已随2026-09-22晚发布上线）。首页使用多尺寸无损WebP；预览视频压缩并按视口加载/播放，保留手动暂停和完整Demo原质量。[前期诊断](verification/media-performance-2026-09-18.md)保留为历史依据。
 

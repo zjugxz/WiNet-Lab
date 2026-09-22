@@ -2,7 +2,11 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：Gallery栏目接口实现（2026-09-22 晚，本地完成，未发布，待用户查看）
+## 当前任务：People页Alumni接口（2026-09-22，本地完成，等待用户提供资料）
+
+用户要求为People页实现已毕业学生（Alumni）分区，资料后续提供、先实现接口；此指示更新早前"不需要Alumni"的分组范围。已完成：people.json顶层`alumni`数组与zod校验（id/name必填，degree/period/current/note/website可选，id跨全页唯一）；页面新增Alumni分区，空数据显示虚线占位框"Alumni information is coming soon."，有数据时渲染MARS式紧凑文字列表行（**姓名** 学位 （去向）— 课题 （区间）），无照片/弹窗/详情页/年龄邮箱（属在读成员功能）。验证：astro check零错误、两种base 22页构建、check-people两种base（新增空状态断言）、17项测试（People h2断言更新为四组）、4321预览截图目视通过。详见[验证记录](verification/people-alumni-2026-09-22.md)。本地Git提交未push；下一步等待用户提供校友资料填充。
+
+## 历史：Gallery栏目接口实现（2026-09-22 晚，本地完成，未发布，待用户查看）
 
 用户要求新增同级Gallery栏目放置团建图片（参考清华TNS站分组照片墙+点击放大），图片后补、先实现接口。已完成gallery.json数据源（组id/标题/日期/描述/照片id/src/alt，zod校验）、gallery.astro分组4:3缩略图网格、共享native dialog灯箱（大图不裁切、左右/方向键切换、Esc/背景/×关闭、焦点归还）、空状态占位；导航新增Gallery，home.spec导航计数6并断言空状态，check-base路由加Gallery并将链接断言放宽为允许显式外链（首页新闻已引入PI主页外链）。验证：零错误、两种base 22页、17项测试、check-base/check-people通过、截图目视通过。提交bd9fb26，未推送；图片到位后按[Gallery记录](verification/gallery-2026-09-22.md)填充即可。
 

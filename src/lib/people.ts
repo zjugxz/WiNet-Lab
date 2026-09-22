@@ -22,6 +22,17 @@ const memberSchema = z.object({
   googleScholar: externalUrl.optional(),
   bio: z.array(text).min(1),
 });
+// Graduated members are listed without photos, dialogs or detail pages; only
+// the fields needed for a compact alumni row are accepted.
+const alumniSchema = z.object({
+  id,
+  name: text,
+  degree: text.optional(),
+  period: text.optional(),
+  current: text.optional(),
+  note: text.optional(),
+  website: externalUrl.optional(),
+});
 const uniqueIds = (items: { id: string }[]) =>
   new Set(items.map((item) => item.id)).size === items.length;
 const sectionSchema = z.object({
@@ -36,16 +47,22 @@ export const peopleSchema = z
   .object({
     sections: z
       .array(sectionSchema)
-      .refine(uniqueIds, 'Section IDs must be unique')
-      .refine(
-        (sections) =>
-          new Set(sections.flatMap((s) => s.members.map((m) => m.id)))
-            .size === sections.reduce((n, s) => n + s.members.length, 0),
-        'Member IDs must be unique across sections',
-      ),
-  });
+      .refine(uniqueIds, 'Section IDs must be unique'),
+    alumni: z.array(alumniSchema).default([]),
+  })
+  .refine(
+    (people) =>
+      new Set([
+        ...people.sections.flatMap((s) => s.members.map((m) => m.id)),
+        ...people.alumni.map((m) => m.id),
+      ]).size ===
+      people.sections.reduce((n, s) => n + s.members.length, 0) +
+        people.alumni.length,
+    'Member and alumni IDs must be unique across the whole page',
+  );
 export type PeopleMember = z.infer<typeof memberSchema>;
 export type PeopleSection = z.infer<typeof sectionSchema>;
+export type PeopleAlumnus = z.infer<typeof alumniSchema>;
 
 /** Same-origin photos keep working under the Pages base path. */
 export function peoplePhotoPath(src: string): string {

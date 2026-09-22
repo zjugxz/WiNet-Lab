@@ -141,6 +141,7 @@ test('all navigation destinations share the layout and implemented pages show th
         'Principal Investigator',
         'Ph.D. Students',
         'Master Students',
+        'Alumni',
       ]);
       await expect(page.locator('.people-photo img')).toHaveCount(16);
     } else {
