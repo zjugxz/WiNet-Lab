@@ -42,8 +42,8 @@ try {
       page.on('request', (request) => requests.push(request.url()));
       await page.goto(`http://127.0.0.1:4323${base}__text-links-check/`);
 
-      const links = page.locator('a.text-link');
-      await expect(links).toHaveCount(3);
+      const links = page.locator('a.inline-link');
+      await expect(links).toHaveCount(5);
       const first = links.nth(0);
       await expect(first).toHaveAttribute(
         'href',
@@ -62,6 +62,23 @@ try {
         'href',
         'https://doi.org/10.1145/3704413.3764420',
       );
+
+      // Combined bold+link keeps the label bold under the underline.
+      const boldOutside = page.getByRole('link', { name: 'Professor' });
+      const boldInside = page.getByRole('link', { name: 'Doctor' });
+      for (const [locator, expected] of [
+        [boldOutside, 'https://example.com/prof'],
+        [boldInside, 'https://example.com/doc'],
+      ]) {
+        await expect(locator).toHaveAttribute('href', expected);
+        await expect(locator).toHaveCSS('text-decoration-line', 'underline');
+        await expect(
+          locator.locator('strong').evaluate((el) => ({
+            weight: getComputedStyle(el).fontWeight,
+            text: el.textContent,
+          })),
+        ).resolves.toEqual({ weight: '700', text: await locator.textContent() });
+      }
 
       // Bold markers still work next to links.
       await expect(page.locator('strong').filter({ hasText: 'bold phrase' })).toHaveCSS(

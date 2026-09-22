@@ -4,7 +4,7 @@
 
 ## 当前任务：正文下划线链接标记（2026-09-22 晚，本地完成，待用户使用反馈）
 
-用户要求"特定文字加下划线、点击跳转其他网址"，确认采用通用标记语法。`EmphasisText.astro` 在 `**加粗**` 基础上新增 `[文字](https://网址)` 链接标记：绿色下划线、悬停下划线加粗、外链新标签打开（rel=noopener noreferrer）、仅 http(s) 白名单（javascript/ftp/相对路径等一律按字面文字，防注入）、标记不嵌套。生效面：首页 about.paragraphs、news.items[].text 与 Contact 的 introduction/recruitment（contact.astro 改用该组件）。验证：新增 `scripts/check-text-links.mjs`（夹具注入，两种 base：渲染/href/target/rel/下划线 CSS/协议白名单/axe/无外联请求全过）；home 测试增加链接标记不泄漏断言；astro check 零错误、两种 base 各 21 页、17 项测试通过、4321 Contact 200。写法说明已更新 content-maintenance.md。本地 Git 提交未 push；发布另需明确请求。其后应用户要求加入首个实例：About 首段 "Dr. Xiuzhen Guo" 由加粗改为链接指向 https://zjugxz.github.io（用户指定原文，未加路径），实测渲染为绿色下划线新标签链接，首页既有 "Meet the lab" 同名类链接样式不受影响，17 项测试复跑通过。
+用户要求"特定文字加下划线、点击跳转其他网址"，确认采用通用标记语法。`EmphasisText.astro` 在 `**加粗**` 基础上新增 `[文字](https://网址)` 链接标记：绿色下划线、悬停下划线加粗、外链新标签打开（rel=noopener noreferrer）、仅 http(s) 白名单（javascript/ftp/相对路径等一律按字面文字，防注入）。链接不改变文字粗细字号；加粗链接用组合语法 `**[文字](网址)**` 或 `[**文字**](网址)`（等效）。生效面：首页 about.paragraphs、news.items[].text 与 Contact 的 introduction/recruitment（contact.astro 改用该组件）。**样式教训**：组件链接类名最初用 `.text-link`，与 global.css 中首页 "Meet the lab" 按钮式链接的既有同名规则冲突（12px/inline-flex/border-bottom 全被继承，用户截图发现字号变小、粗体丢失——原文字在 `**` 内改链接标记后粗体也丢了）；已改为独立 `.inline-link` 类并把数据改用组合语法。夹具检查 `scripts/check-text-links.mjs` 扩展两种组合语法断言（strong 嵌 anchor、700/16px）；验证全过：astro check 零错误、两种 base 21 页、17 项测试、4321 实测 Dr. Xiuzhen Guo = 下划线+绿色+700/16px、"Meet the lab" 12px 按钮样式不变（其间 dev 服务器 HMR 出现模板新类名/样式旧规则的半更新不一致，重启后恢复）。首个实例：About 首段 "Dr. Xiuzhen Guo" 链接 https://zjugxz.github.io（用户指定原文）。写法说明已更新 content-maintenance.md。本地 Git 提交未 push；发布另需明确请求。
 
 ## 历史（并行会话）：Publications全条目Cite（2026-09-22，本地完成，待用户查看）
 

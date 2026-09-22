@@ -102,7 +102,7 @@ Contact 页的 introduction 各段与 recruitment 段（[contact.json](../src/da
 "text": "Our work was accepted by [Nature Portfolio Flexible Electronics](https://www.nature.com/natelectron/)!"
 ```
 
-链接规则：网址必须以 `http://` 或 `https://` 开头，其他形式（含站内相对路径、ftp、javascript 等）一律按普通文字显示，不会变成可点击链接；链接在新标签页打开；显示文字内不能再嵌套加粗或链接标记（`**[a](https://x)**` 会整体按字面显示）。链接样式为绿色下划线，悬停时下划线加粗。
+链接规则：网址必须以 `http://` 或 `https://` 开头，其他形式（含站内相对路径、ftp、javascript 等）一律按普通文字显示，不会变成可点击链接；链接在新标签页打开。链接本身不改变文字粗细和字号；如该文字原本加粗（或希望加粗显示），把两种标记组合使用，`**[文字](网址)**` 与 `[**文字**](网址)` 等效，渲染为绿色下划线粗体。悬停时下划线加粗。
 
 粗体显示由 [global.css](../src/styles/global.css) 中的 strong 规则统一控制，目前为 font-weight: 700。日常选哪些文字加粗、哪些文字挂链接只改内容文件。
 

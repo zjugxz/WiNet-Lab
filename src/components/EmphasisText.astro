@@ -3,17 +3,29 @@ interface Props {
   text: string;
 }
 const { text } = Astro.props;
-// Paired **bold** markers and [label](https://url) links; all other text
-// stays escaped. Only http(s) URLs become anchors, so malformed or
-// executable URLs never reach the href attribute. Markers do not nest.
+// Paired **bold** markers and [label](https://url) links, in any combination
+// (**[text](url)** or [**text**](url)); all other text stays escaped. Only
+// http(s) URLs become anchors, so malformed or executable URLs never reach
+// the href attribute. Markers do not nest beyond one bold+link pair.
 const parts = text.split(
-  /(\*\*[^*\n]+\*\*|\[[^\]\n]+\]\(https?:\/\/[^)\s]+\))/g,
+  /(\*\*\[[^\]\n]+\]\(https?:\/\/[^)\s]+\)\*\*|\[\*\*[^*\n]+\*\*\]\(https?:\/\/[^)\s]+\)|\*\*[^*\n]+\*\*|\[[^\]\n]+\]\(https?:\/\/[^)\s]+\))/g,
 );
+const BOLD_LINK_OUT = /^\*\*\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)\*\*$/;
+const BOLD_LINK_IN = /^\[(\*\*[^*\n]+\*\*)\]\((https?:\/\/[^)\s]+)\)$/;
 const BOLD = /^\*\*([^*\n]+)\*\*$/;
 const LINK = /^\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)$/;
 ---
 {
   parts.map((part) => {
+    const boldLink = part.match(BOLD_LINK_OUT) ?? part.match(BOLD_LINK_IN);
+    if (boldLink) {
+      const label = boldLink[1].replace(/^\*\*|\*\*$/g, '');
+      return (
+        <a class="inline-link" href={boldLink[2]} target="_blank" rel="noopener noreferrer">
+          <strong>{label}</strong>
+        </a>
+      );
+    }
     const bold = part.match(BOLD);
     if (bold) {
       return <strong>{bold[1]}</strong>;
@@ -21,7 +33,7 @@ const LINK = /^\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)$/;
     const link = part.match(LINK);
     if (link) {
       return (
-        <a class="text-link" href={link[2]} target="_blank" rel="noopener noreferrer">
+        <a class="inline-link" href={link[2]} target="_blank" rel="noopener noreferrer">
           {link[1]}
         </a>
       );
@@ -30,17 +42,20 @@ const LINK = /^\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)$/;
   })
 }
 <style>
-  a.text-link {
+  a.inline-link {
     color: var(--green);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
-  a.text-link:hover {
+  a.inline-link:hover {
     text-decoration-thickness: 2px;
   }
-  a.text-link:focus-visible {
+  a.inline-link:focus-visible {
     outline: 3px solid var(--green);
     outline-offset: 3px;
+  }
+  a.inline-link strong {
+    font-weight: 700;
   }
 </style>
