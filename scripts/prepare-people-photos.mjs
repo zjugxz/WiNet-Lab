@@ -14,7 +14,7 @@ const people = [
   ['Xiangguang Wang_PhD', 'pepsi_2026-09-20 15.38.21_微信图片_20260920150055_82_114.jpg', 'xiangguang-wang'],
   ['Yifan Yan_PhD', '趁玖_2026-09-20 15.28.31_66d42f1e-eb01-49ae-9f15-0cee5fa4dee1.png', 'yifan-yan'],
   ['Yu Cao_PhD', '曹煜_2026-09-20 15.16.00_caoyu.jpg', 'yu-cao'],
-  ['Zikang Zhang_PhD', 'abc_2026-09-20 23.18.32_WechatIMG1013.jpg', 'zikang-zhang'],
+  ['Zikang Zhang_PhD', '1.jpg', 'zikang-zhang'],
   ['Binghe Li_Master', 'LEE_2026-09-20 15.04.49_mmexport1778916642700.jpg', 'binghe-li'],
   ['Gaoming Yang_Master', '闲云野鹤_2026-09-20 23.28.52_IMG.jpg', 'gaoming-yang'],
   ['Tianyou Li_Master', '风起云归畔_2026-09-20 16.53.27_微信图片_20260920163519_211_2.jpg', 'tianyou-li'],
