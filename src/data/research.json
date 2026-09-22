@@ -179,7 +179,7 @@
           },
           "pdf": null,
           "demo": {
-            "src": "research/mmprism-sign-language/preview.mp4",
+            "src": "research/mmprism-sign-language/demo.mp4",
             "filename": "mmprism-sign-language-demo.mp4"
           }
         }

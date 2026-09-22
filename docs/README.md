@@ -2,7 +2,9 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
-最新发布：用户授权后于2026-09-22将16个本地提交推送main（196230f..60ca9cb），Actions 35697405893 success；线上页面/优化媒体/受限404均已核验，证据见[发布记录](verification/release-2026-09-22.md)。上线内容含媒体优化、People全功能、Research第三方向与mmExpert Cite等；技术发布不等于整站验收。16人（PI 1、PhD 8、Master 7）；PI简介默认展示，点击卡片弹出变暗背景的悬浮窗显示简介，无JS时回退静态详情页；中文简介已译英文、PI简介原文保留；照片压缩为WebP并验证两种base；未发布。待决项见[People验证记录](verification/people-2026-09-22.md)。用户查看后反馈加载缓慢，诊断为跨境链路带宽限制叠加预览码率超预算，见[性能诊断](verification/performance-diagnosis-2026-09-22.md)，优化待用户确认范围。
+最新本地实现：[P0媒体带宽优化](verification/research-video-p0-2026-09-22.md)。针对[性能诊断](verification/performance-diagnosis-2026-09-22.md)确认的跨境链路瓶颈（约1.1–1.4 Mbps），4段超预算预览重编码至540p/≤731 kb/s（七段合计51.3→33.3 MiB），research-video.ts 改为单一活跃缓冲队列（一段播稳再放行下一段，手动播放豁免），mmprism Demo 分离独立原字节文件。全部检查与17项测试通过，仅本地完成未发布，等待用户查看 http://127.0.0.1:4321/research/。
+
+最新发布：用户授权后于2026-09-22将16个本地提交推送main（196230f..60ca9cb），Actions 35697405893 success；线上页面/优化媒体/受限404均已核验，证据见[发布记录](verification/release-2026-09-22.md)。上线内容含媒体优化、People全功能、Research第三方向与mmExpert Cite等；技术发布不等于整站验收。16人（PI 1、PhD 8、Master 7）；PI简介默认展示，点击卡片弹出变暗背景的悬浮窗显示简介，无JS时回退静态详情页；中文简介已译英文、PI简介原文保留；照片压缩为WebP并验证两种base；未发布。待决项见[People验证记录](verification/people-2026-09-22.md)。用户查看后反馈加载缓慢，诊断为跨境链路带宽限制叠加预览码率超预算，见[性能诊断](verification/performance-diagnosis-2026-09-22.md)。
 
 最新本地实现：[Home图片与Research视频优化](verification/media-optimization-2026-09-18.md)。首页使用多尺寸无损WebP；预览视频总量减少70%，按视口加载/播放并保留手动暂停和完整Demo原质量。两种base及实际本地预览验证通过，等待用户查看，尚未发布。[前期诊断](verification/media-performance-2026-09-18.md)保留为历史依据。
 

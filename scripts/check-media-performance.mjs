@@ -105,7 +105,12 @@ try {
       const playing = (clip) =>
         clip.evaluate((video) => !video.paused && video.currentTime > 0);
       await expect.poll(() => playing(clips.nth(0))).toBe(true);
-      await expect.poll(() => playing(clips.nth(1))).toBe(true);
+      // The queue grants the connection to one clip until it is fully
+      // buffered; Chromium also suspends the tail of a download briefly, so
+      // the side-by-side clip may take well past the default poll timeout.
+      await expect
+        .poll(() => playing(clips.nth(1)), { timeout: 30000 })
+        .toBe(true);
       for (let i = 2; i < 7; i++)
         await expect(clips.nth(i)).not.toHaveAttribute('src');
       assert.equal(

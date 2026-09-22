@@ -3,16 +3,16 @@
     {
       "id": "magnetic-rf-computing",
       "source": "research/magnetic-rf-computing/preview.mp4",
-      "beforeBytes": 20445464,
-      "afterBytes": 12227137,
-      "sha256": "6bbbc110f9f1bc3683ca64e22e18b293abe0eef0f93993d2f0fcb73a254321be"
+      "beforeBytes": 12227137,
+      "afterBytes": 3637987,
+      "sha256": "be71a7fbabdb7e12014d2d61490da198fa6302a61cce8e232b237ffed74eb5b5"
     },
     {
       "id": "mechanical-metasurface",
       "source": "research/mechanical-metasurface/preview.mp4",
-      "beforeBytes": 77433649,
-      "afterBytes": 12534002,
-      "sha256": "309923a9dd0e3192a901e6c1460a169d7a317f70624195339b1acb187991d92d"
+      "beforeBytes": 12534002,
+      "afterBytes": 7190950,
+      "sha256": "3f5279250b2d125e7d70c09b7b08eae56ceee779a66f2b2bfc5c123cea589305"
     },
     {
       "id": "eeg-fatigue-interaction",
@@ -25,8 +25,8 @@
       "id": "cardiac-monitoring",
       "source": "research/cardiac-monitoring/preview.mp4",
       "beforeBytes": 6526168,
-      "afterBytes": 6526168,
-      "sha256": "855a9599d293f5f94e402c7e31bbb6d5163d6b1791bf93c9daaa736a51a02b54"
+      "afterBytes": 2848671,
+      "sha256": "0f0363c0afa22f00ae8949837a8582839630d312f201a9f09bdc849e54952fd3"
     },
     {
       "id": "mighty-drone-backscatter",
@@ -46,8 +46,8 @@
       "id": "mmprism-sign-language",
       "source": "research/mmprism-sign-language/preview.mp4",
       "beforeBytes": 6273403,
-      "afterBytes": 6273403,
-      "sha256": "6cce8476977a820f58446f84fea760fcdd8e10f083ffe8259758c732e4e0b0af"
+      "afterBytes": 3402685,
+      "sha256": "ef313d03071d38928ec909b42dfe60e39c0663b840cd37d3fbff62f0088ecf5a"
     }
   ],
   "downloads": [
@@ -114,7 +114,7 @@
     {
       "id": "mmprism-sign-language",
       "type": "mp4",
-      "source": "research/mmprism-sign-language/preview.mp4",
+      "source": "research/mmprism-sign-language/demo.mp4",
       "sha256": "6cce8476977a820f58446f84fea760fcdd8e10f083ffe8259758c732e4e0b0af"
     }
   ]
