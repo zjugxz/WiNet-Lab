@@ -2,7 +2,11 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：People 个人链接按钮（2026-09-22 晚，本地完成，含用户两处修正，待用户查看）
+## 当前任务：正文链接 + People 链接按钮已发布（2026-09-22 晚，待用户线上查看）
+
+用户要求提交全部本地改动，推送 `8250e20..8e259c1`（5 提交：正文链接标记三提交、People 链接按钮、邮箱复制反馈），Actions `8e259c1` success。线上已核验：首页 Dr. Xiuzhen Guo 绿色下划线粗体链接（16px/700）新标签打开；People 16 邮箱按钮 + PI 网站/Scholar；真实浏览器实测剪贴板复制 `guoxz@zju.edu.cn` 与 copied 状态、无跳转、零错误；受限 PDF 仍 404。详见[发布记录](verification/release-text-links-people-2026-09-22.md)。技术发布不等于验收；待用户线上反馈，学生 website/scholar 信息到货即加字段。
+
+## 历史：People 个人链接按钮（2026-09-22 晚，本地完成，含用户两处修正，已随本次发布上线）
 
 用户参照 MARS Lab（卡片底部纯图标按钮）要求每人网站/邮箱/Google Scholar 三个跳转按钮，暂只提供 PI 信息，两个小决策按推荐执行（无数据不显示该按钮；悬浮窗不加按钮保持尺寸人人一致）。实现：`people.json` 新增可选 `website`/`googleScholar`（http(s) 校验，弃用的 zod .url() 改 regex）；新组件 `PersonLinks.astro`（icons 变体=卡片下方 34px 方形图标按钮，labeled 变体=详情页图标+文字按钮，地球/信封/学士帽 SVG，外链 _blank+noopener，aria-label）；学生卡按钮行在卡片锚点外（嵌套链接非法），PeopleCard 包裹为 people-cell；PI 特色卡简介下方一行；详情页 meta 下方 labeled 行。email 全员必有→16 人人手邮箱按钮，PI 另有网站+Scholar（用户提供的原文网址，Scholar 含 hl=zh-CN 参数原样保留）。
 
