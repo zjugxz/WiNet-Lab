@@ -1,8 +1,10 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import PeopleCard from '../components/PeopleCard.astro';
+import PersonDialog from '../components/PersonDialog.astro';
 import peopleData from '../data/people.json';
-import { peopleSchema } from '../lib/people';
+import { peopleSchema, peoplePhotoPath } from '../lib/people';
+import { sitePath } from '../lib/paths';
 
 const people = peopleSchema.parse(peopleData);
 ---
@@ -16,15 +18,53 @@ const people = peopleSchema.parse(peopleData);
         aria-labelledby={`${section.id}-title`}
       >
         <h2 id={`${section.id}-title`}>{section.title}</h2>
-        <ul class="people-grid">
-          {section.members.map((member) => (
-            <li>
-              <PeopleCard member={member} />
-            </li>
-          ))}
-        </ul>
+        {section.id === 'pi' ? (
+          section.members.map((member) => (
+            <div class="people-featured">
+              <a
+                class="people-featured-photo"
+                href={sitePath(`people/${member.id}`)}
+                data-person-open={member.id}
+                aria-label={`Open the profile of ${member.name}`}
+              >
+                <div class="people-photo">
+                  <img
+                    src={peoplePhotoPath(member.photo)}
+                    alt={`Photo of ${member.name}`}
+                    loading="eager"
+                    decoding="async"
+                    width="960"
+                    height="1200"
+                  />
+                </div>
+              </a>
+              <div class="people-featured-info">
+                <a
+                  class="people-featured-name"
+                  href={sitePath(`people/${member.id}`)}
+                  data-person-open={member.id}
+                >
+                  <h3 class="people-name">{member.name}</h3>
+                  {member.role && <p class="people-role">{member.role}</p>}
+                </a>
+                <div class="people-bio">
+                  {member.bio.map((paragraph) => <p>{paragraph}</p>)}
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <ul class="people-grid">
+            {section.members.map((member) => (
+              <li>
+                <PeopleCard member={member} />
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
     ))}
+    <PersonDialog />
   </div>
 </SiteLayout>
 
@@ -47,6 +87,55 @@ const people = peopleSchema.parse(peopleData);
     color: var(--green);
     margin-bottom: 24px;
   }
+
+  .people-featured {
+    display: grid;
+    grid-template-columns: minmax(220px, 300px) 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .people-featured-photo .people-photo {
+    aspect-ratio: 4 / 5;
+    background: #f3f5f0;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease;
+  }
+  .people-featured-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+  }
+  .people-featured-photo:hover img,
+  .people-featured-photo:focus-visible img {
+    transform: scale(1.03);
+  }
+  .people-featured-name {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .people-featured-name .people-name {
+    font: 30px/1.2 var(--serif);
+    letter-spacing: -0.4px;
+  }
+  .people-featured-name:hover .people-name,
+  .people-featured-name:focus-visible .people-name {
+    color: var(--green);
+  }
+  .people-bio {
+    margin-top: 14px;
+  }
+  .people-bio p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--muted);
+  }
+  .people-bio p + p {
+    margin-top: 10px;
+  }
+
   .people-grid {
     list-style: none;
     margin: 0;
@@ -55,10 +144,6 @@ const people = peopleSchema.parse(peopleData);
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 36px 28px;
     align-items: stretch;
-  }
-  /* The PI section has a single card; keep it at a normal card width. */
-  .people-section-pi .people-grid {
-    grid-template-columns: minmax(250px, 340px);
   }
   .people-grid li {
     display: flex;
@@ -81,6 +166,21 @@ const people = peopleSchema.parse(peopleData);
     .people-grid {
       grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
       gap: 28px 18px;
+    }
+    .people-featured {
+      grid-template-columns: minmax(160px, 220px) 1fr;
+      gap: 20px;
+    }
+    .people-featured-name .people-name {
+      font-size: 24px;
+    }
+    .people-bio p {
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 560px) {
+    .people-featured {
+      grid-template-columns: 1fr;
     }
   }
 </style>

@@ -1,0 +1,245 @@
+---
+---
+
+<person-dialog>
+  <dialog aria-labelledby="person-dialog-title">
+    <div class="dialog-header">
+      <button
+        class="close-button"
+        type="button"
+        data-person-close
+        aria-label="Close profile"
+      >
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="m5 5 10 10M15 5 5 15"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="dialog-body">
+      <img
+        data-person-photo
+        alt=""
+        width="960"
+        height="1200"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="dialog-info">
+        <p class="dialog-section" data-person-section></p>
+        <h2 id="person-dialog-title" data-person-name></h2>
+        <p class="dialog-role" data-person-role hidden></p>
+        <div class="dialog-bio" data-person-bio></div>
+      </div>
+    </div>
+  </dialog>
+</person-dialog>
+
+<script>
+  import peopleData from '../data/people.json';
+  import type { PeopleMember, PeopleSection } from '../lib/people';
+
+  class PersonDialog extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.ready) return;
+      this.dataset.ready = 'true';
+      const dialog = this.querySelector('dialog')!;
+      // Without JavaScript, cards navigate to the static profile pages.
+      if (typeof dialog.showModal !== 'function') return;
+      const photo = this.querySelector<HTMLImageElement>(
+        '[data-person-photo]',
+      )!;
+      const section = this.querySelector('[data-person-section]')!;
+      const name = this.querySelector('[data-person-name]')!;
+      const role = this.querySelector<HTMLElement>('[data-person-role]')!;
+      const bio = this.querySelector('[data-person-bio]')!;
+      const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+      const members = new Map<string, { member: PeopleMember; section: PeopleSection }>();
+      for (const group of peopleData.sections as PeopleSection[])
+        for (const member of group.members)
+          members.set(member.id, { member, section: group });
+      let opener: HTMLElement | null = null;
+
+      const open = (id: string, link: HTMLElement) => {
+        const entry = members.get(id);
+        if (!entry) return;
+        const url = `${base}/${entry.member.photo}`;
+        if (photo.getAttribute('src') !== url) {
+          photo.src = url;
+          photo.width = 960;
+          photo.height = 1200;
+        }
+        section.textContent = entry.section.title;
+        name.textContent = entry.member.name;
+        if (entry.member.role) {
+          role.hidden = false;
+          role.textContent = entry.member.role;
+        } else {
+          role.hidden = true;
+          role.textContent = '';
+        }
+        bio.replaceChildren(
+          ...entry.member.bio.map((paragraph) => {
+            const element = document.createElement('p');
+            element.textContent = paragraph;
+            return element;
+          }),
+        );
+        opener = link;
+        link.setAttribute('aria-haspopup', 'dialog');
+        dialog.showModal();
+      };
+
+      document.addEventListener('click', (event) => {
+        if (!(event.target instanceof Element)) return;
+        if (event.button !== 0) return;
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)
+          return;
+        const link = event.target.closest<HTMLElement>('a[data-person-open]');
+        if (!link) return;
+        event.preventDefault();
+        open(link.dataset.personOpen!, link);
+      });
+
+      this.querySelector('[data-person-close]')!.addEventListener(
+        'click',
+        () => dialog.close(),
+      );
+      dialog.addEventListener('close', () => {
+        photo.removeAttribute('src');
+        name.textContent = '';
+        bio.replaceChildren();
+        opener?.focus({ preventScroll: true });
+        opener = null;
+      });
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key !== 'Tab') return;
+        const controls = [
+          ...dialog.querySelectorAll<HTMLElement>('button, a[href]'),
+        ];
+        if (controls.length === 0) return;
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
+      dialog.addEventListener('click', (event) => {
+        if (event.target !== dialog) return;
+        const bounds = dialog.getBoundingClientRect();
+        if (
+          event.clientX < bounds.left ||
+          event.clientX > bounds.right ||
+          event.clientY < bounds.top ||
+          event.clientY > bounds.bottom
+        )
+          dialog.close();
+      });
+    }
+  }
+  if (!customElements.get('person-dialog'))
+    customElements.define('person-dialog', PersonDialog);
+</script>
+
+<style>
+  person-dialog {
+    display: contents;
+  }
+  dialog {
+    width: min(760px, calc(100% - 32px));
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 24px;
+    overflow: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--ink);
+    background: white;
+    box-shadow: 0 20px 70px #18221c33;
+  }
+  dialog::backdrop {
+    background: #18221c99;
+  }
+  .dialog-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .close-button {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+  .close-button svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+  .dialog-body {
+    display: grid;
+    grid-template-columns: minmax(140px, 200px) 1fr;
+    gap: 26px;
+    align-items: start;
+  }
+  .dialog-body img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #f3f5f0;
+  }
+  .dialog-section {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  h2 {
+    font: 30px/1.15 var(--serif);
+    letter-spacing: -0.4px;
+    margin-top: 6px;
+  }
+  .dialog-role {
+    margin-top: 6px;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  .dialog-bio {
+    margin-top: 14px;
+  }
+  .dialog-bio p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .dialog-bio p + p {
+    margin-top: 12px;
+  }
+  @media (max-width: 560px) {
+    dialog {
+      padding: 18px;
+    }
+    .dialog-body {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .dialog-body img {
+      max-width: 200px;
+    }
+    h2 {
+      font-size: 26px;
+    }
+  }
+</style>

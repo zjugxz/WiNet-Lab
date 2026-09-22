@@ -48,7 +48,7 @@ try {
   });
   page.on('requestfailed', (request) => failed.push(request.url()));
 
-  // Index page: clickable cards, no inline bios.
+  // Index page: clickable cards, PI bio inline, no student bios.
   await page.goto(`${baseUrl}people/`, { waitUntil: 'networkidle' });
   assert.equal(await page.title(), 'People | WiNet Lab');
   for (const heading of Object.keys(sections)) {
@@ -57,15 +57,35 @@ try {
       .isVisible();
   }
   const cards = page.locator('.people-grid a.people-card');
-  assert.equal(await cards.count(), allMembers.length);
-  assert.equal(await page.locator('.people-bio').count(), 0);
-  assert.equal(await page.locator('.person-bio').count(), 0);
+  assert.equal(await cards.count(), 15);
+  assert.equal(
+    await page.locator('a[data-person-open]').count(),
+    allMembers.length + 1,
+    '15 student cards + PI photo link + PI name link',
+  );
+  const piBioParas = await page
+    .locator('.people-bio p')
+    .evaluateAll((elements) =>
+      elements.map((element) => element.textContent.trim()),
+    );
+  assert.equal(piBioParas.length, 1, 'Only the PI bio is inline');
+  assert(piBioParas[0].includes('国家自然科学基金青B项目'));
+  assert.equal(
+    await page.locator('.people-featured-name .people-name').textContent(),
+    'Xiuzhen Guo',
+  );
+  assert.equal(
+    await page.locator('.people-role').first().textContent(),
+    'Tenure-track Assistant Professor',
+  );
   const hrefs = await cards.evaluateAll((elements) =>
     elements.map((element) => element.getAttribute('href')),
   );
   assert.deepEqual(
     hrefs,
-    allMembers.map(([id]) => `${base}people/${id}/`),
+    allMembers
+      .filter(([id]) => id !== 'xiuzhen-guo')
+      .map(([id]) => `${base}people/${id}/`),
   );
   for (const [, name] of allMembers) {
     const photo = page.getByRole('img', { name: `Photo of ${name}` });
@@ -82,14 +102,6 @@ try {
       `Photo of ${name} must load as WebP under the site base`,
     );
   }
-  assert.equal(
-    await page.locator('.people-card h3').first().textContent(),
-    'Xiuzhen Guo',
-  );
-  assert.equal(
-    await page.locator('.people-role').textContent(),
-    'Tenure-track Assistant Professor',
-  );
 
   let scan = await new AxeBuilder({ page })
     .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
@@ -109,6 +121,59 @@ try {
       `No horizontal overflow at ${width}px (index)`,
     );
   }
+
+  // Dialog interaction: clicking a card opens the profile overlay without
+  // navigating; Escape and backdrop clicks close it.
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const dialog = page.locator('person-dialog dialog');
+  assert.equal(await dialog.count(), 1);
+  const [, firstStudent] = allMembers.find(([id]) => id === 'haobo-zhang');
+  await page.locator('a[data-person-open="haobo-zhang"]').click();
+  assert(await dialog.evaluate((node) => node.open));
+  assert.equal(page.url(), `${baseUrl}people/`, 'No navigation');
+  await dialog
+    .getByRole('heading', { name: firstStudent, exact: true })
+    .isVisible();
+  const dialogBio = await dialog
+    .locator('[data-person-bio] p')
+    .evaluateAll((elements) =>
+      elements.map((element) => element.textContent.trim()),
+    );
+  assert(dialogBio.length >= 1 && dialogBio.join(' ').length > 50);
+  assert(
+    await dialog.locator('[data-person-photo]').evaluate(
+      (img) => img.complete && img.naturalWidth > 0,
+    ),
+    'Dialog photo must load',
+  );
+  await page.screenshot({
+    path: `.tools/person-dialog-${base === '/' ? 'root' : 'base'}-1440.png`,
+  });
+  scan = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+    .analyze();
+  assert.deepEqual(
+    scan.violations,
+    [],
+    `Open dialog a11y: ${JSON.stringify(scan.violations.map((v) => v.id))}`,
+  );
+  await page.keyboard.press('Escape');
+  assert(!(await dialog.evaluate((node) => node.open)));
+  await page.locator('a[data-person-open="xiuzhen-guo"]').first().click();
+  assert(await dialog.evaluate((node) => node.open));
+  assert.equal(
+    await dialog.locator('[data-person-name]').textContent(),
+    'Xiuzhen Guo',
+  );
+  assert.equal(
+    await dialog.locator('[data-person-role]').textContent(),
+    'Tenure-track Assistant Professor',
+  );
+  await page.mouse.click(4, 4);
+  await page.waitForFunction(
+    () => document.querySelector('person-dialog dialog')?.open === false,
+  );
+  assert.equal(page.url(), `${baseUrl}people/`, 'Still no navigation');
 
   // Detail pages: photo, name, and the bio live here.
   for (const [index, [id, name]] of allMembers.entries()) {

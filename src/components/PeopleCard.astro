@@ -9,7 +9,11 @@ interface Props {
 const { member } = Astro.props;
 ---
 
-<a class="people-card" href={sitePath(`people/${member.id}`)}>
+<a
+  class="people-card"
+  href={sitePath(`people/${member.id}`)}
+  data-person-open={member.id}
+>
   <div class="people-photo">
     <img
       src={peoplePhotoPath(member.photo)}
