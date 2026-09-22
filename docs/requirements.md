@@ -17,6 +17,7 @@
 - 名称：WiNet Lab，已由用户明确指定；替换网站原有 Winet Group 名称。完整名称为 Wireless Intelligence for Networked and Embodied Things (WiNet) Lab，单位为 Zhejiang University。
 - 参考网站：https://marslab.tech/ 。已读取五个栏目的网页内容；实际桌面、手机视觉与交互尚未逐项验证。
 - 页面：Home、Research、Publications、People、Contact。
+- 2026-09-22用户要求新增同级栏目Gallery放置团建活动图片，参考 tns.thss.tsinghua.edu.cn/sun/publication.html 的分组照片墙+点击放大做法；图片后续提供，先实现数据接口、页面、灯箱与空状态。本地实现，不自动发布。
 - 2026-09-22用户提供信息收集表（xlsx），要求People页每个成员的悬浮窗展示年龄和邮箱；PI无年龄不填（仅邮箱guoxz@zju.edu.cn）。邮箱按用户指示公开为mailto链接，静态详情页同步展示。本地实现，不自动发布。
 - 2026-09-22用户要求Research页所有研究简介改为MARS式一句话概括；8篇summary压缩为单句，仅压缩表述、不改变事实，原多句版本可从Git找回。本地修改，不自动发布。
 - 2026-09-22用户进一步要求mmExpert提供与既有已发表论文一致的Cite按钮。书目以PDF页脚DOI经内容协商核对、与Publications已核验记录p38一致后录入Text/BibTeX/RIS；本地实现，不自动发布。

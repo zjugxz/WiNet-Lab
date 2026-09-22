@@ -1,0 +1,160 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import GalleryLightbox from '../components/GalleryLightbox.astro';
+import galleryData from '../data/gallery.json';
+import { gallerySchema, galleryPhotoPath } from '../lib/gallery';
+
+const gallery = gallerySchema.parse(galleryData);
+const photosOf = (groupIndex: number) =>
+  gallery.groups[groupIndex].photos.map((photo) => ({
+    ...photo,
+    url: galleryPhotoPath(photo.src),
+  }));
+---
+
+<SiteLayout title="Gallery" current="gallery">
+  <div class="container gallery-page">
+    <h1>Gallery</h1>
+    <p class="gallery-intro">{gallery.intro}</p>
+    {gallery.groups.length === 0 ? (
+      <div class="gallery-empty">
+        <p>Lab photos are coming soon.</p>
+        <p class="gallery-empty-detail">
+          Group activities and trip photos will appear here once collected.
+        </p>
+      </div>
+    ) : (
+      gallery.groups.map((group, groupIndex) => (
+        <section
+          class="gallery-group"
+          aria-labelledby={`gallery-${group.id}`}
+        >
+          <div class="gallery-group-heading">
+            <h2 id={`gallery-${group.id}`}>{group.title}</h2>
+            <span class="gallery-group-date">{group.date}</span>
+          </div>
+          {group.description && <p class="gallery-group-desc">{group.description}</p>}
+          <ul class="gallery-grid">
+            {photosOf(groupIndex).map((photo) => (
+              <li>
+                <button
+                  class="gallery-thumb"
+                  type="button"
+                  data-gallery-open={photo.id}
+                  aria-label={`Enlarge photo: ${photo.alt}`}
+                >
+                  <img
+                    src={photo.url}
+                    alt={photo.alt}
+                    loading="lazy"
+                    decoding="async"
+                    width="960"
+                    height="720"
+                  />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    )}
+    <GalleryLightbox />
+  </div>
+</SiteLayout>
+
+<style>
+  .gallery-page {
+    padding-block: 64px 88px;
+    max-width: 1080px;
+  }
+  h1 {
+    font: 56px/1.12 var(--serif);
+    letter-spacing: -1.6px;
+  }
+  .gallery-intro {
+    margin-top: 16px;
+    max-width: 640px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .gallery-empty {
+    margin-top: 48px;
+    padding: 56px 24px;
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    text-align: center;
+  }
+  .gallery-empty p {
+    font: 20px/1.4 var(--serif);
+  }
+  .gallery-empty-detail {
+    margin-top: 8px;
+    font: 14px/1.6 Arial, Helvetica, sans-serif !important;
+    color: var(--muted);
+  }
+  .gallery-group {
+    margin-top: 48px;
+  }
+  .gallery-group-heading {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  h2 {
+    font: 26px/1.2 var(--serif);
+    color: var(--green);
+  }
+  .gallery-group-date {
+    font: italic 700 14px/1.4 var(--serif);
+    color: #a45122;
+  }
+  .gallery-group-desc {
+    margin-top: 6px;
+    max-width: 640px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .gallery-grid {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+  }
+  .gallery-thumb {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: #f3f5f0;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .gallery-thumb img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+  }
+  .gallery-thumb:hover img,
+  .gallery-thumb:focus-visible img {
+    transform: scale(1.03);
+  }
+  @media (max-width: 760px) {
+    .gallery-page {
+      padding-block: 40px 48px;
+    }
+    h1 {
+      font-size: 44px;
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+  }
+</style>

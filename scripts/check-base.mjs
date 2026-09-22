@@ -35,7 +35,15 @@ try {
     .evaluateAll((elements) =>
       elements.map((element) => element.getAttribute('href')),
     );
-  assert(links.every((link) => link.startsWith('#') || link.startsWith(base)));
+  // External http(s) links are deliberate (e.g. news links to the PI page).
+  assert(
+    links.every(
+      (link) =>
+        link.startsWith('#') ||
+        link.startsWith(base) ||
+        /^https?:\/\//.test(link),
+    ),
+  );
   const background = await page
     .locator('body')
     .evaluate((element) => getComputedStyle(element).backgroundColor);
@@ -65,6 +73,7 @@ try {
     'Research',
     'Publications',
     'People',
+    'Gallery',
     'Contact',
     'Home',
   ]) {

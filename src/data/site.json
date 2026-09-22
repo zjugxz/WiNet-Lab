@@ -6,6 +6,7 @@
     { "label": "Research", "path": "research" },
     { "label": "Publications", "path": "publications" },
     { "label": "People", "path": "people" },
+    { "label": "Gallery", "path": "gallery" },
     { "label": "Contact", "path": "contact" }
   ]
 }

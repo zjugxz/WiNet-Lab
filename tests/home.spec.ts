@@ -113,7 +113,7 @@ test('all navigation destinations share the layout and implemented pages show th
   page,
 }) => {
   await page.goto('/');
-  for (const name of ['Research', 'Publications', 'People', 'Contact']) {
+  for (const name of ['Research', 'Publications', 'People', 'Gallery', 'Contact']) {
     await page
       .getByRole('navigation')
       .getByRole('link', { name, exact: true })
@@ -136,19 +136,23 @@ test('all navigation destinations share the layout and implemented pages show th
       await expect(
         page.getByRole('link', { name: 'guoxz@zju.edu.cn', exact: true }),
       ).toHaveAttribute('href', 'mailto:guoxz@zju.edu.cn');
-    } else {
+    } else if (name === 'People') {
       await expect(page.getByRole('heading', { level: 2 })).toHaveText([
         'Principal Investigator',
         'Ph.D. Students',
         'Master Students',
       ]);
       await expect(page.locator('.people-photo img')).toHaveCount(16);
+    } else {
+      await expect(
+        page.getByText('Lab photos are coming soon.', { exact: true }),
+      ).toBeVisible();
     }
     await expect(
       page.getByRole('navigation').getByRole('link', { name, exact: true }),
     ).toHaveAttribute('aria-current', 'page');
     await expect(page.getByRole('contentinfo')).toBeVisible();
-    await expect(page.getByRole('navigation').getByRole('link')).toHaveCount(5);
+    await expect(page.getByRole('navigation').getByRole('link')).toHaveCount(6);
   }
   await page
     .getByRole('navigation')
