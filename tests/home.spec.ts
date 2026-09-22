@@ -106,7 +106,7 @@ test('homepage content, links, local assets and accessibility', async ({
   await expect(page.locator('main')).toBeFocused();
 });
 
-test('all navigation destinations share the layout and unfinished pages identify draft content', async ({
+test('all navigation destinations share the layout and implemented pages show their content', async ({
   page,
 }) => {
   await page.goto('/');
@@ -134,9 +134,12 @@ test('all navigation destinations share the layout and unfinished pages identify
         page.getByRole('link', { name: 'guoxz@zju.edu.cn', exact: true }),
       ).toHaveAttribute('href', 'mailto:guoxz@zju.edu.cn');
     } else {
-      await expect(
-        page.getByText('This page is in preparation.', { exact: true }),
-      ).toBeVisible();
+      await expect(page.getByRole('heading', { level: 2 })).toHaveText([
+        'Principal Investigator',
+        'Ph.D. Students',
+        'Master Students',
+      ]);
+      await expect(page.locator('.people-photo img')).toHaveCount(16);
     }
     await expect(
       page.getByRole('navigation').getByRole('link', { name, exact: true }),

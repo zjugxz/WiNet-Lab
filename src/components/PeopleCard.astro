@@ -1,0 +1,108 @@
+---
+import type { PeopleMember } from '../lib/people';
+import { peoplePhotoPath } from '../lib/people';
+
+interface Props {
+  member: PeopleMember;
+  variant: 'featured' | 'grid';
+}
+const { member, variant } = Astro.props;
+---
+
+<figure class:list={['people-card', `people-card-${variant}`]}>
+  <div class="people-photo">
+    <img
+      src={peoplePhotoPath(member.photo)}
+      alt={`Photo of ${member.name}`}
+      loading="lazy"
+      decoding="async"
+      width="960"
+      height="1200"
+    />
+  </div>
+  <figcaption class="people-info">
+    <h3 class="people-name">{member.name}</h3>
+    {member.role && <p class="people-role">{member.role}</p>}
+    <div class="people-bio">
+      {member.bio.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </figcaption>
+</figure>
+
+<style>
+  .people-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .people-photo {
+    aspect-ratio: 4 / 5;
+    background: #f3f5f0;
+    overflow: hidden;
+  }
+  .people-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .people-name {
+    font: 22px/1.25 var(--serif);
+    letter-spacing: -0.2px;
+  }
+  .people-role {
+    margin-top: 4px;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  .people-bio p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+  .people-bio p + p {
+    margin-top: 10px;
+  }
+
+  .people-card-grid .people-info {
+    padding-top: 14px;
+  }
+  .people-card-grid .people-name {
+    font-size: 19px;
+  }
+  .people-card-grid .people-bio {
+    margin-top: 10px;
+  }
+
+  .people-card-featured {
+    display: grid;
+    grid-template-columns: minmax(220px, 300px) 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .people-card-featured .people-name {
+    font-size: 30px;
+  }
+  .people-card-featured .people-bio {
+    margin-top: 16px;
+  }
+  .people-card-featured .people-bio p {
+    font-size: 16px;
+  }
+
+  @media (max-width: 760px) {
+    .people-card-featured {
+      grid-template-columns: minmax(160px, 220px) 1fr;
+      gap: 20px;
+    }
+    .people-card-featured .people-name {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 560px) {
+    .people-card-featured {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

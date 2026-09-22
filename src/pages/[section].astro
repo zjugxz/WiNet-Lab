@@ -7,7 +7,9 @@ export function getStaticPaths() {
     .filter(
       (item) =>
         item.path &&
-        !['research', 'publications', 'contact'].includes(item.path),
+        !['research', 'publications', 'contact', 'people'].includes(
+          item.path,
+        ),
     )
     .map((item) => ({
       params: { section: item.path },

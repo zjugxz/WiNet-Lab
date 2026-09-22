@@ -2,7 +2,7 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
-当前进行中：People页面资料准备。2026-09-22确认功能参考MARS Lab People，分组仅PI、PhD Students、Master Students三类；等待用户提供成员姓名、照片、年份、课题及PI简介，未提供前不编造成员。
+当前进行中：People页面本地实现完成（2026-09-22），待用户查看。16人（PI 1、PhD 8、Master 7）已按 resources/people 资料录入；中文简介已译英文、PI简介原文保留；照片压缩为WebP并验证两种base；未发布。待决项见[People验证记录](verification/people-2026-09-22.md)。
 
 最新本地实现：[Home图片与Research视频优化](verification/media-optimization-2026-09-18.md)。首页使用多尺寸无损WebP；预览视频总量减少70%，按视口加载/播放并保留手动暂停和完整Demo原质量。两种base及实际本地预览验证通过，等待用户查看，尚未发布。[前期诊断](verification/media-performance-2026-09-18.md)保留为历史依据。
 

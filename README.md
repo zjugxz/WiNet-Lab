@@ -6,7 +6,8 @@ An academic lab website with an English interface, a static Astro frontend, and 
 - Research: three directions and six paper cards, five looping video previews, one image, three open papers, and five full-demo downloads. Cards with a Demo appear first. Unavailable papers show `Paper coming soon`; unpublished PDFs are excluded from the site. Published venue/year labels use a warm brown serif style; submission venue/year fields remain unfilled.
 - Publications: 74 records (original item 71 removed), year/type filters, keyword search, and 73 publication links. Original Chinese titles are retained.
 - Contact: collaboration and PhD/Master recruitment information, with the supplied public email.
-- People and the third Research direction: explicit placeholders. The online content-management backend is not implemented.
+- People: 16 members (1 PI, 8 Ph.D., 7 Master) with optimized WebP photos and English bios; the PI bio keeps the supplied mixed Chinese/English text verbatim. Local only, not yet published.
+- The third Research direction: explicit placeholder. The online content-management backend is not implemented.
 
 ## Local preview on this computer
 
@@ -34,7 +35,7 @@ npm test
 
 The browser tests create an isolated production preview on port 4322. With a preview running on port 4321, `node scripts/capture.mjs` updates the desktop and mobile review screenshots. On this computer, set `PLAYWRIGHT_BROWSERS_PATH` to the project's `.tools/browsers` directory to use the prepared browser; otherwise Playwright uses its standard cache.
 
-`node scripts/capture-publications.mjs` captures Publications desktop/mobile views and a filtered book result using its own temporary preview on port 4324. Publication data lives in `src/data/publications.json`; see [content maintenance](docs/content-maintenance.md) for all data fields. Internal bibliography-audit flags are not rendered as pending labels.
+`node scripts/capture-publications.mjs` captures Publications desktop/mobile views and a filtered book result using its own temporary preview on port 4324. Publication data lives in `src/data/publications.json`; see [content maintenance](docs/content-maintenance.md) for all data fields. Internal bibliography-audit flags are not rendered as pending labels. `node scripts/check-people.mjs` verifies the People page for both bases (16 members, WebP photos, accessibility, overflow); regenerate photos with `node scripts/prepare-people-photos.mjs` after adding sources. In Git Bash, prefix base-path commands with `MSYS2_ENV_CONV_EXCL=SITE_BASE` so `/WiNet-Lab/` is not path-converted.
 
 For deployment checks, build a second output with `SITE_BASE=/WiNet-Lab/` into `.tools/base-dist`, then run `node scripts/check-base.mjs` and `node scripts/check-research-downloads.mjs`. The latter checks both builds, including withheld PDF URLs returning 404, Demo-first ordering, venue styles, and exact download bytes. `node scripts/check-research-card.mjs` separately checks media playback, accessibility, and responsive cards using isolated fixtures.
 

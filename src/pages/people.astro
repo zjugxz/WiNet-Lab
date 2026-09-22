@@ -1,0 +1,83 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PeopleCard from '../components/PeopleCard.astro';
+import peopleData from '../data/people.json';
+import { peopleSchema } from '../lib/people';
+
+const people = peopleSchema.parse(peopleData);
+---
+
+<SiteLayout title="People" current="people">
+  <div class="container people-page">
+    <h1>People</h1>
+    {people.sections.map((section) => (
+      <section class="people-section" aria-labelledby={`${section.id}-title`}>
+        <h2 id={`${section.id}-title`}>{section.title}</h2>
+        {section.layout === 'featured' ? (
+          <PeopleCard member={section.members[0]} variant="featured" />
+        ) : (
+          <ul class="people-grid">
+            {section.members.map((member) => (
+              <li>
+                <PeopleCard member={member} variant="grid" />
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    ))}
+  </div>
+</SiteLayout>
+
+<style>
+  .people-page {
+    padding-block: 64px 88px;
+  }
+  h1 {
+    font: 56px/1.12 var(--serif);
+    letter-spacing: -1.6px;
+    margin-bottom: 40px;
+  }
+  .people-section + .people-section {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+  h2 {
+    font: 34px/1.2 var(--serif);
+    color: var(--green);
+    margin-bottom: 24px;
+  }
+  .people-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 36px 28px;
+    align-items: stretch;
+  }
+  .people-grid li {
+    display: flex;
+  }
+  .people-grid li > :global(.people-card) {
+    width: 100%;
+  }
+
+  @media (max-width: 760px) {
+    .people-page {
+      padding-block: 40px 48px;
+    }
+    h1 {
+      font-size: 44px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 30px;
+    }
+    .people-grid {
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 28px 18px;
+    }
+  }
+</style>

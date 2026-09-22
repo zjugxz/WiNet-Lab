@@ -2,11 +2,19 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：People页面资料准备（等待用户提供名单）
+## 当前任务：People页面本地实现完成，待用户查看
 
-用户于2026-09-22明确开展People页面，功能参考MARS Lab People；分组确认为PI、PhD Students、Master Students三类，不需要Alumni及其他分组。已重新读取参考页并核对结构：PI为带一段英文简介的大卡片，学生为照片卡片网格，参考站对缺照片成员另有文字列表形式。本地people当前仍为占位路由。
+用户提供 `resources/people/` 资料（16人：PI 1、PhD 8、Master 7，每人一图一自我介绍），要求功能参考MARS Lab People，中文简介译成英文，PI简介原文保留。本轮已本地实现：`src/data/people.json` 数据源、`lib/people.ts` zod校验、`PeopleCard.astro`（PI featured大卡+学生网格卡）、`pages/people.astro` 替换占位路由；16张照片经 `scripts/prepare-people-photos.mjs`（sharp：EXIF矫正、长边≤960、有损WebP q82）由约36MB压至约1.25MB，卡片4:5裁切经目视核对无切脸。
 
-待用户提供：各成员英文姓名、照片（可后补）、入学年份、可选研究课题一句话，以及PI职称英文名和英文简介（可提供中文事实由agent整理英文后交用户过目）。默认约定：缺照片成员用文字列表；组内按提供顺序；不显示个人主页/邮箱等链接；无Alumni致谢语。本轮仅记录范围与资料清单到requirements.md，未修改网站代码。下一步收到资料后本地实现people.json、成员组件与people.astro并按既有流程验证，本地Git提交，不push。
+文本处理：Xu Chen/Yifan Yan/Zhou Yang 三份中文简介直译为英文（未补造研究内容）；Binghe Li/Xiangguang Wang 取文档英文版；"Winet/WiNet Group"两处按已确认站名改为"WiNet Lab"，Zikang Zhang结尾缺字母补全；PI简介逐字保留含中文括注。Binghe Li文档中的邮箱/GitHub未展示（默认不放个人链接）。
+
+验证：astro check 47文件零错误；根路径与/WiNet-Lab/两种base构建5页成功；新增 `scripts/check-people.mjs` 两种base全部通过（16姓名/16照片WebP加载、PI featured首位、axe零违规、320–1440px无溢出、无失败请求）；既有17项Playwright测试在更新People占位断言后全部通过（该断言针对旧占位状态，按Research等实装先例改为三分组+16照片）；桌面/手机截图目视通过。4321开发预览已启动，/people/与照片均200。详见[People验证记录](verification/people-2026-09-22.md)。
+
+代码、照片、脚本、测试与文档一并本地Git提交，未push。下一步等待用户查看 http://127.0.0.1:4321/people/ 并反馈（含Yifan Yan/Zhou Yang简介内容单薄、Binghe Li背影照及邮箱/GitHub展示、PI原文表达等待决项），不记为用户验收，不自动发布。
+
+## 历史：People页面范围与资料准备（2026-09-22早前）
+
+用户明确开展People，分组仅PI、PhD Students、Master Students。范围决定提交1ceeba2；随后用户交付resources/people资料并进入实现。
 
 ## 历史：Home与Research媒体优化（本地完成，待用户查看，未发布）
 
