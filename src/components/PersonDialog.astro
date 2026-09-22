@@ -3,30 +3,30 @@
 
 <person-dialog>
   <dialog aria-labelledby="person-dialog-title">
-    <div class="dialog-header">
-      <button
-        class="close-button"
-        type="button"
-        data-person-close
-        aria-label="Close profile"
-      >
-        <svg viewBox="0 0 20 20" aria-hidden="true">
-          <path d="m5 5 10 10M15 5 5 15"></path>
-        </svg>
-      </button>
-    </div>
     <div class="dialog-body">
       <img
         data-person-photo
         alt=""
-        width="960"
-        height="1200"
         loading="lazy"
         decoding="async"
       />
       <div class="dialog-info">
-        <p class="dialog-section" data-person-section></p>
-        <h2 id="person-dialog-title" data-person-name></h2>
+        <div class="dialog-top">
+          <div class="dialog-heading">
+            <p class="dialog-section" data-person-section></p>
+            <h2 id="person-dialog-title" data-person-name></h2>
+          </div>
+          <button
+            class="close-button"
+            type="button"
+            data-person-close
+            aria-label="Close profile"
+          >
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="m5 5 10 10M15 5 5 15"></path>
+            </svg>
+          </button>
+        </div>
         <p class="dialog-role" data-person-role hidden></p>
         <div class="dialog-bio" data-person-bio></div>
       </div>
@@ -64,9 +64,8 @@
         if (!entry) return;
         const url = `${base}/${entry.member.photo}`;
         if (photo.getAttribute('src') !== url) {
+          // No width/height attributes: the photo keeps its natural ratio.
           photo.src = url;
-          photo.width = 960;
-          photo.height = 1200;
         }
         section.textContent = entry.section.title;
         name.textContent = entry.member.name;
@@ -149,7 +148,7 @@
     display: contents;
   }
   dialog {
-    width: min(760px, calc(100% - 32px));
+    width: min(620px, calc(100% - 32px));
     max-height: calc(100dvh - 32px);
     margin: auto;
     padding: 24px;
@@ -163,40 +162,44 @@
   dialog::backdrop {
     background: #18221c99;
   }
-  .dialog-header {
+  .dialog-body {
+    display: grid;
+    grid-template-columns: minmax(150px, 190px) 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .dialog-body img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: min(420px, 60dvh);
+    object-fit: contain;
+    border-radius: 4px;
+    background: #f3f5f0;
+  }
+  .dialog-top {
     display: flex;
-    justify-content: flex-end;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
   }
   .close-button {
     display: grid;
     place-items: center;
     flex-shrink: 0;
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
+    margin: -4px -6px 0 0;
     border: 1px solid var(--line);
     border-radius: 50%;
     background: white;
     cursor: pointer;
   }
   .close-button svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     stroke: currentColor;
     stroke-width: 1.5;
-  }
-  .dialog-body {
-    display: grid;
-    grid-template-columns: minmax(140px, 200px) 1fr;
-    gap: 26px;
-    align-items: start;
-  }
-  .dialog-body img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    border-radius: 4px;
-    background: #f3f5f0;
   }
   .dialog-section {
     font-size: 12px;
@@ -205,9 +208,9 @@
     color: var(--green);
   }
   h2 {
-    font: 30px/1.15 var(--serif);
+    font: 28px/1.15 var(--serif);
     letter-spacing: -0.4px;
-    margin-top: 6px;
+    margin-top: 4px;
   }
   .dialog-role {
     margin-top: 6px;
@@ -217,15 +220,15 @@
     color: var(--green);
   }
   .dialog-bio {
-    margin-top: 14px;
+    margin-top: 12px;
   }
   .dialog-bio p {
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.75;
     color: var(--muted);
   }
   .dialog-bio p + p {
-    margin-top: 12px;
+    margin-top: 10px;
   }
   @media (max-width: 560px) {
     dialog {
@@ -233,13 +236,14 @@
     }
     .dialog-body {
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 14px;
     }
     .dialog-body img {
-      max-width: 200px;
+      max-width: 190px;
+      max-height: 300px;
     }
     h2 {
-      font-size: 26px;
+      font-size: 24px;
     }
   }
 </style>
