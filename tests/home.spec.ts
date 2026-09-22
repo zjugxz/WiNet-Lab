@@ -146,8 +146,9 @@ test('all navigation destinations share the layout and implemented pages show th
       await expect(page.locator('.people-photo img')).toHaveCount(16);
     } else {
       await expect(
-        page.getByText('Lab photos are coming soon.', { exact: true }),
-      ).toBeVisible();
+        page.getByRole('heading', { level: 2 }),
+      ).toHaveText(['Lab dinner', 'Team outing', 'Group photo']);
+      await expect(page.locator('.gallery-thumb img')).toHaveCount(3);
     }
     await expect(
       page.getByRole('navigation').getByRole('link', { name, exact: true }),
