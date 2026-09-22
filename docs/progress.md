@@ -2,7 +2,11 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：People页Alumni接口（2026-09-22，本地完成，等待用户提供资料）
+## 当前任务：Gallery首批照片填充（2026-09-22 晚，本地完成，未发布，待用户查看与发布指示）
+
+用户在 resources/gallery/{2024,2025,2026} 各放1张团建照片并要求按年份填充。已完成：sharp压缩输出三张WebP（118–185KB，1280×960）、按图像内容写英文标题与alt（Lab dinner 2024 / Team outing 2025 / Group photo 2026）、新增check-gallery.mjs灯箱全交互检查（两种base通过）、home.spec的Gallery断言更新。全套验证通过（零错误、22页两种base、17项测试、check-base）；页面/灯箱截图目视通过。提交7d6cc77，未推送。等待用户查看 http://127.0.0.1:4321/gallery/ 及发布指示。详见[Gallery记录](verification/gallery-2026-09-22.md)。
+
+## 并行任务：People页Alumni接口（2026-09-22，本地完成，等待用户提供资料）
 
 用户要求为People页实现已毕业学生（Alumni）分区，资料后续提供、先实现接口；此指示更新早前"不需要Alumni"的分组范围。已完成：people.json顶层`alumni`数组与zod校验（id/name必填，degree/period/current/note/website可选，id跨全页唯一）；页面新增Alumni分区，空数据显示虚线占位框"Alumni information is coming soon."，有数据时渲染MARS式紧凑文字列表行（**姓名** 学位 （去向）— 课题 （区间）），无照片/弹窗/详情页/年龄邮箱（属在读成员功能）。验证：astro check零错误、两种base 22页构建、check-people两种base（新增空状态断言）、17项测试（People h2断言更新为四组）、4321预览截图目视通过。详见[验证记录](verification/people-alumni-2026-09-22.md)。本地Git提交未push；下一步等待用户提供校友资料填充。
 
