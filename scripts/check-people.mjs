@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { preview } from 'astro';
-import { chromium } from '@playwright/test';
+import { chromium, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 const base = (process.env.SITE_BASE || '/').replace(/\/?$/, '/');
@@ -56,7 +56,9 @@ const server = await preview({
   server: { host: '127.0.0.1', port },
 });
 const browser = await chromium.launch();
-const context = await browser.newContext();
+const context = await browser.newContext({
+  permissions: ['clipboard-read', 'clipboard-write'],
+});
 try {
   const page = await context.newPage();
   const failed = [];
@@ -122,7 +124,7 @@ try {
       await link.getAttribute('aria-label'),
       {
         website: 'Personal website of Xiuzhen Guo',
-        email: 'Email Xiuzhen Guo',
+        email: 'Email of Xiuzhen Guo',
         scholar: 'Xiuzhen Guo on Google Scholar',
       }[key],
     );
@@ -151,6 +153,30 @@ try {
       .filter(([id]) => id !== 'xiuzhen-guo')
       .map(([id]) => `mailto:${emails[id]}`),
     'Each student row has exactly their email button',
+  );
+
+  // Clicking an email button copies the address and confirms in place
+  // instead of navigating to the mailto link.
+  const piEmailButton = page.locator(
+    '.people-featured-info a[data-person-link="email"]',
+  );
+  await piEmailButton.click();
+  assert.equal(
+    await page.evaluate(() => navigator.clipboard.readText()),
+    'guoxz@zju.edu.cn',
+    'PI email must land in the clipboard',
+  );
+  assert.equal(page.url(), `${baseUrl}people/`, 'No mailto navigation');
+  await expect(piEmailButton).toHaveClass(/copied/);
+  await expect(piEmailButton).not.toHaveClass(/copied/, { timeout: 5000 });
+  await page
+    .locator('.people-grid a[data-person-link="email"]')
+    .first()
+    .click();
+  assert.equal(
+    await page.evaluate(() => navigator.clipboard.readText()),
+    '12532092@zju.edu.cn',
+    'Student email button copies too',
   );
   const hrefs = await cards.evaluateAll((elements) =>
     elements.map((element) => element.getAttribute('href')),
@@ -367,6 +393,20 @@ try {
           .getAttribute('href'),
         'https://zjugxz.github.io',
       );
+      const piEmail = page.locator(
+        '.person-links a[data-person-link="email"]',
+      );
+      await piEmail.click();
+      assert.equal(
+        await page.evaluate(() => navigator.clipboard.readText()),
+        'guoxz@zju.edu.cn',
+      );
+      assert.equal(
+        await piEmail.locator('.link-text').textContent(),
+        'Copied',
+        'Labeled button swaps its text while confirming',
+      );
+      assert.equal(await piEmail.getAttribute('title'), 'Copied: guoxz@zju.edu.cn');
     } else {
       const labeled = page.locator('.person-links .person-link');
       assert.equal(await labeled.count(), 1, 'Student detail shows email only');

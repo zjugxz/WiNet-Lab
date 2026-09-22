@@ -2,9 +2,11 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：People 个人链接按钮（2026-09-22 晚，本地完成，待用户查看）
+## 当前任务：People 个人链接按钮（2026-09-22 晚，本地完成，含用户两处修正，待用户查看）
 
-用户参照 MARS Lab（卡片底部纯图标按钮）要求每人网站/邮箱/Google Scholar 三个跳转按钮，暂只提供 PI 信息，两个小决策按推荐执行（无数据不显示该按钮；悬浮窗不加按钮保持尺寸人人一致）。实现：`people.json` 新增可选 `website`/`googleScholar`（http(s) 校验，弃用的 zod .url() 改 regex）；新组件 `PersonLinks.astro`（icons 变体=卡片下方 34px 方形图标按钮，labeled 变体=详情页图标+文字按钮，地球/信封/学士帽 SVG，外链 _blank+noopener，邮箱 mailto，aria-label）；学生卡按钮行在卡片锚点外（嵌套链接非法），PeopleCard 包裹为 people-cell；PI 特色卡简介下方一行；详情页 meta 下方 labeled 行。email 全员必有→16 人人手邮箱按钮，PI 另有网站+Scholar（用户提供的原文网址，Scholar 含 hl=zh-CN 参数原样保留）。验证：check-people.mjs 两种 base 扩展断言全过（PI 3 按钮 href/target/rel/aria、学生 15 行邮箱 mailto 逐一、详情页 labeled、axe、无溢出）；astro check 零 hint；17 项测试；1440/390 截图目视通过；4321 实测 16 email+1 website+1 scholar。people.json 一并携带并行会话的 PI 简介措辞更新（获奖表述改第三人称中文括注）。本地提交未 push，发布另需明确请求；后续学生 website/scholar 信息到了直接加字段即可。
+用户参照 MARS Lab（卡片底部纯图标按钮）要求每人网站/邮箱/Google Scholar 三个跳转按钮，暂只提供 PI 信息，两个小决策按推荐执行（无数据不显示该按钮；悬浮窗不加按钮保持尺寸人人一致）。实现：`people.json` 新增可选 `website`/`googleScholar`（http(s) 校验，弃用的 zod .url() 改 regex）；新组件 `PersonLinks.astro`（icons 变体=卡片下方 34px 方形图标按钮，labeled 变体=详情页图标+文字按钮，地球/信封/学士帽 SVG，外链 _blank+noopener，aria-label）；学生卡按钮行在卡片锚点外（嵌套链接非法），PeopleCard 包裹为 people-cell；PI 特色卡简介下方一行；详情页 meta 下方 labeled 行。email 全员必有→16 人人手邮箱按钮，PI 另有网站+Scholar（用户提供的原文网址，Scholar 含 hl=zh-CN 参数原样保留）。
+
+**用户两处修正（同日）**：① 邮箱按钮描述改为 "Email of {name}"；② 点击邮箱按钮改为复制地址并在按钮上反馈（2 秒绿底对勾+Copied 文案，clipboard API 失败时退 execCommand，再失败回退 mailto；mailto href 保留为无 JS 回退）。验证：check-people.mjs 两种 base 授予 clipboard 权限实测复制内容/copied 状态出现与复原/无 mailto 导航/详情页文字换 Copied；astro check 零错误零警告零提示（execCommand 弃用提示经新类型断言消除）；17 项测试；复制态截图目视通过。4321 实测 16 email+1 website+1 scholar。people.json 一并携带并行会话的 PI 简介措辞更新。本地提交未 push，发布另需明确请求；后续学生 website/scholar 信息到了直接加字段即可。
 
 ## 历史：正文下划线链接标记（2026-09-22 晚，本地完成，待用户使用反馈）
 
