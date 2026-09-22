@@ -14,7 +14,7 @@
             "year": 2026,
             "status": "published"
           },
-          "summary": "A passive physical computing system transforms local magnetic signals directly into RF backscatter. Analog encoding and receiver-side neural reconstruction enable wireless magnetic information retrieval without on-device digital signal processing.",
+          "summary": "A passive physical computing system that transforms local magnetic signals directly into RF backscatter, retrieving magnetic information wirelessly without on-device digital signal processing.",
           "preview": {
             "type": "video",
             "src": "research/magnetic-rf-computing/preview.mp4",
@@ -35,7 +35,7 @@
           "publication": {
             "status": "submitted"
           },
-          "summary": "An underwater communication system combines liquid-crystal polarization modulation with an event camera to recover reflected light signals. Event-driven decoding supports low-power data links for underwater Internet of Things devices.",
+          "summary": "An underwater communication system that combines liquid-crystal polarization modulation with event-camera decoding for low-power data links in underwater IoT.",
           "preview": {
             "type": "image",
             "src": "research/underwater-visible-light-backscatter/preview.png",
@@ -52,7 +52,7 @@
             "year": 2026,
             "status": "published"
           },
-          "summary": "A mechanically programmable metasurface steers subterahertz beams by adjusting its surface geometry. Mechanical latching retains beam states without holding power, supporting continuous steering, multiple beams, and beam tracking for directional wireless links.",
+          "summary": "A mechanically programmable metasurface that steers sub-terahertz beams through its surface geometry, holding beam states without power for continuous steering and tracking.",
           "preview": {
             "type": "video",
             "src": "research/mechanical-metasurface/preview.mp4",
@@ -80,7 +80,7 @@
           "publication": {
             "status": "submitted"
           },
-          "summary": "A lightweight single-channel EEG sensor combines conformal dry electrodes, low-power backscatter communication, and neural signal reconstruction to support fatigue monitoring and hands-free command interaction.",
+          "summary": "A lightweight single-channel EEG sensor that combines dry electrodes, low-power backscatter, and neural reconstruction for fatigue monitoring and hands-free command interaction.",
           "preview": {
             "type": "video",
             "src": "research/eeg-fatigue-interaction/preview.mp4",
@@ -98,7 +98,7 @@
           "publication": {
             "status": "submitted"
           },
-          "summary": "A wearable bio-interface converts heart-induced skin micro-vibrations into magnetic signals and transmits them through analog backscatter. The low-power design supports cardiac monitoring across diverse users without on-tag digitization or active radio transmission.",
+          "summary": "A wearable bio-interface that converts heart-induced skin micro-vibrations into magnetic signals and transmits them via analog backscatter for low-power cardiac monitoring.",
           "preview": {
             "type": "video",
             "src": "research/cardiac-monitoring/preview.mp4",
@@ -119,7 +119,7 @@
             "year": 2025,
             "status": "published"
           },
-          "summary": "Mighty combines a low-power backscatter radio with a lightweight video pipeline to reduce the energy cost of drone video streaming. It shifts demanding processing and communication work to the ground controller while supporting long-range, high-throughput wireless links.",
+          "summary": "Mighty pairs a low-power backscatter radio with a lightweight video pipeline that shifts heavy processing to the ground controller, cutting the energy cost of long-range drone video streaming.",
           "preview": {
             "type": "video",
             "src": "research/mighty-drone-backscatter/preview.mp4",
@@ -150,7 +150,7 @@
             "year": 2025,
             "status": "published"
           },
-          "summary": "mmExpert is a scalable framework that generates diverse mmWave-language data from the world knowledge of large language models, replacing costly real-world data collection with electromagnetic simulation and domain randomization. Hierarchical action-description prompts and contrastive language-aligned pre-training connect mmWave signals with free-form text, and a versatile interpreter supports open-vocabulary understanding across diverse contexts, evaluated with curated question-answering and captioning benchmarks.",
+          "summary": "mmExpert is a scalable framework that generates diverse mmWave-language data from the world knowledge of large language models and enables open-vocabulary mmWave understanding through language-aligned pre-training and a versatile interpreter.",
           "preview": {
             "type": "video",
             "src": "research/mmexpert/preview.mp4",
@@ -171,7 +171,7 @@
           "publication": {
             "status": "submitted"
           },
-          "summary": "mmPRISM is a two-stage framework for privacy-preserving sign language understanding. It reconstructs a robust two-hand skeletal pose from raw 4D millimeter-wave radar data, then fuses the pose representation with the original features as input to a large language model for open-vocabulary, continuous sign language understanding, approaching vision-based benchmark performance without cameras.",
+          "summary": "mmPRISM reconstructs two-hand skeletal poses from raw 4D millimeter-wave radar and feeds them to a large language model for privacy-preserving, open-vocabulary sign language understanding.",
           "preview": {
             "type": "video",
             "src": "research/mmprism-sign-language/preview.mp4",

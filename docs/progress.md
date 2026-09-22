@@ -4,7 +4,7 @@
 
 ## 当前任务：Research第三方向首批论文（2026-09-22，本地完成，待用户查看）
 
-用户提供 resources 下两篇新论文（mmExpert·MobiHoc 2025 已发表；mmPRISM 未录用），录入 Embodied Intelligence of Things 方向。mmExpert 提供压缩预览（37→3.9MB）、原字节 Paper/Demo 下载与 ACM MobiHoc 2025 刊会行；mmPRISM display 与 demo 为同一文件、按 Mighty 先例共享原字节，pdf:null 屏蔽下载且 URL 404，无刊会/年份。随后用户要求mmExpert提供与其他已发表论文一致的Cite入口：以PDF页脚DOI经内容协商核对（与已核验p38记录一致）后新建 mmexpert 的Text/BibTeX/RIS及sources.json，research.json加citationId；引用检查脚本适配4篇与会议CONF类型。复验通过（4×3格式全套、下载回归、17项测试、4321预览确认按钮）。详见[验证记录](verification/research-eiot-2026-09-22.md)。本地Git提交，未push。下一步等待用户查看 http://127.0.0.1:4321/research/ 第三方向。
+用户提供 resources 下两篇新论文（mmExpert·MobiHoc 2025 已发表；mmPRISM 未录用），录入 Embodied Intelligence of Things 方向。mmExpert 提供压缩预览（37→3.9MB）、原字节 Paper/Demo 下载与 ACM MobiHoc 2025 刊会行；mmPRISM display 与 demo 为同一文件、按 Mighty 先例共享原字节，pdf:null 屏蔽下载且 URL 404，无刊会/年份。随后用户要求mmExpert提供与其他已发表论文一致的Cite入口：以PDF页脚DOI经内容协商核对（与已核验p38记录一致）后新建 mmexpert 的Text/BibTeX/RIS及sources.json，research.json加citationId；引用检查脚本适配4篇与会议CONF类型。复验通过（4×3格式全套、下载回归、17项测试、4321预览确认按钮）。详见[验证记录](verification/research-eiot-2026-09-22.md)。其后应用户要求将8篇研究简介全部改为MARS式一句话概括并复验（详见验证记录末节）。本地Git提交，未push。下一步等待用户查看 http://127.0.0.1:4321/research/ 。
 
 ## 历史：Home文案更新与中文解禁（2026-09-22，本地完成，待用户查看）
 

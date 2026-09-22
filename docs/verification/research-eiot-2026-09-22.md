@@ -28,6 +28,10 @@
 
 用户要求 mmExpert 与既有已发表论文一样提供 Cite 按钮。书目来源：PDF 页脚 DOI `10.1145/3704413.3764420`（与页眉 MobiHoc '25 一致）→ DOI 内容协商取得权威 BibTeX，与 publications.json 已核验记录 p38 逐项一致（7位作者顺序、会议全称、2025、页1–10、在线2025-10-23）。据此新建 `src/data/citations/mmexpert.{txt,bib,ris}`（Text 为 IEEE 会议样式含会议全名、BibTeX 保护 mmExpert/mmWave 缩写、RIS 为 TY CONF 无卷期）及 sources.json（doi.org 链接、IEEE 样式标注）；research.json 加 `citationId: "mmexpert"`。check-research-citations.mjs 适配：4 篇计数、TY 按记录类型 JOUR/CONF 断言、no-JS 链接计数、动态消息。两种 base 全过：4×3 格式查看/复制/下载与 HTTP 内容一致、p38 字段交叉核对、键盘/无JS/回退/四宽度/axe；下载回归、17 项测试不受影响；4321 预览确认 Cite: mmExpert 按钮。
 
+## 补充：全部研究简介改为一句话（同日）
+
+用户要求Research页所有研究简介改为MARS式一句话概括。8篇summary均压缩为单句（忠实原摘要要点：做什么+关键机制/收益，不新增事实；eeg原本即为一句仅微调）。下载/引用/排序等检查不依赖summary，复验通过（零错误、21页两种base、下载回归、17项测试）；整页截图目视确认每卡一句、卡片高度更均匀（[截图](research-eiot-2026-09-22-oneliner.png)）。本地Git提交，未push。
+
 ## 边界
 
 - 未 push；mmPRISM PDF 恢复须用户录用后另行授权；resources 原件不入库。mmExpert Cite 已按上节补充完成。
