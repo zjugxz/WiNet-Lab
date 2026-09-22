@@ -28,6 +28,10 @@
           </button>
         </div>
         <p class="dialog-role" data-person-role hidden></p>
+        <div class="dialog-meta">
+          <span data-person-age hidden></span>
+          <a data-person-email hidden></a>
+        </div>
         <div
           class="dialog-bio"
           data-person-bio
@@ -57,6 +61,10 @@
       const section = this.querySelector('[data-person-section]')!;
       const name = this.querySelector('[data-person-name]')!;
       const role = this.querySelector<HTMLElement>('[data-person-role]')!;
+      const age = this.querySelector<HTMLElement>('[data-person-age]')!;
+      const email = this.querySelector<HTMLAnchorElement>(
+        '[data-person-email]',
+      )!;
       const bio = this.querySelector('[data-person-bio]')!;
       const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       const members = new Map<string, { member: PeopleMember; section: PeopleSection }>();
@@ -82,6 +90,16 @@
           role.hidden = true;
           role.textContent = '';
         }
+        if (entry.member.age) {
+          age.hidden = false;
+          age.textContent = `Age ${entry.member.age}`;
+        } else {
+          age.hidden = true;
+          age.textContent = '';
+        }
+        email.hidden = false;
+        email.textContent = entry.member.email;
+        email.href = `mailto:${entry.member.email}`;
         bio.replaceChildren(
           ...entry.member.bio.map((paragraph) => {
             const element = document.createElement('p');
@@ -113,6 +131,9 @@
       dialog.addEventListener('close', () => {
         photo.removeAttribute('src');
         name.textContent = '';
+        age.hidden = true;
+        email.hidden = true;
+        email.removeAttribute('href');
         bio.replaceChildren();
         opener?.focus({ preventScroll: true });
         opener = null;
@@ -231,6 +252,25 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--green);
+  }
+  .dialog-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 14px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .dialog-meta a {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    overflow-wrap: anywhere;
+  }
+  .dialog-meta a:hover {
+    text-decoration-thickness: 2px;
   }
   .dialog-bio {
     flex: 1 1 auto;

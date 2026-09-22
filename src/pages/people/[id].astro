@@ -36,6 +36,10 @@ const { member, sectionTitle } = Astro.props;
         <p class="eyebrow">{sectionTitle}</p>
         <h1>{member.name}</h1>
         {member.role && <p class="person-role">{member.role}</p>}
+        <div class="person-meta">
+          {member.age && <span>Age {member.age}</span>}
+          <a href={`mailto:${member.email}`}>{member.email}</a>
+        </div>
         <div class="person-bio">
           {member.bio.map((paragraph) => <p>{paragraph}</p>)}
         </div>
@@ -92,6 +96,25 @@ const { member, sectionTitle } = Astro.props;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--green);
+  }
+  .person-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 14px;
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .person-meta a {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    overflow-wrap: anywhere;
+  }
+  .person-meta a:hover {
+    text-decoration-thickness: 2px;
   }
   .person-bio {
     margin-top: 20px;

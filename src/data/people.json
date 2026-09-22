@@ -11,7 +11,8 @@
           "photo": "people/xiuzhen-guo.webp",
           "bio": [
             "Xiuzhen Guo is a tenure-track Assistant Professor in College of Control Science and Engineering, Zhejiang University (ZJU). She received my Ph.D. degree from School of Software, Tsinghua University in 2021. She won the Excellent Young Scientists Fund of NSFC ! (国家自然科学基金青B项目) and National Science Fund for Distinguished Young Scholars of Zhejiang Province (浙江省杰出青年科学基金). Her long-term goal is to build intelligent wireless systems that connect, sense, and interact with the physical world smarter and more energy-efficient."
-          ]
+          ],
+          "email": "guoxz@zju.edu.cn"
         }
       ]
     },
@@ -25,7 +26,9 @@
           "photo": "people/haobo-zhang.webp",
           "bio": [
             "Haobo Zhang is a Ph.D. student in the WiNet Lab. He received his bachelor’s degree in Aircraft Quality and Reliability from Beihang University. His current research focuses on human and humanoid motion generation, with particular interests in vision-language-action (VLA) models and vision-language models (VLMs). He aims to advance embodied intelligence by enabling machines to better understand, generate, and interact through human-like motion."
-          ]
+          ],
+          "age": 22,
+          "email": "12532092@zju.edu.cn"
         },
         {
           "id": "hongyu-wang",
@@ -34,7 +37,9 @@
           "bio": [
             "Hongyu Wang is a Ph.D. student at the WiNet Lab, Zhejiang University, advised by Prof. Xiuzhen Guo. He received his B.E. degree from Beijing University of Posts and Telecommunications.",
             "His research focuses on low-power IoT and wireless networks, with particular interests in backscatter systems and tunnel-diode-enabled wireless communication."
-          ]
+          ],
+          "age": 22,
+          "email": "12632049@zju.edu.cn"
         },
         {
           "id": "junying-huang",
@@ -42,7 +47,9 @@
           "photo": "people/junying-huang.webp",
           "bio": [
             "Junying Huang is a Ph.D. student in the WiNet Lab at Zhejiang University, advised by Prof. Xiuzhen Guo and Prof. Chaojie Gu. He received his Bachelor's degree from Wuhan University of Technology in 2023. His research interests include wearable computing, wireless sensing, and battery-free IoT systems."
-          ]
+          ],
+          "age": 25,
+          "email": "hjy23@zju.edu.cn"
         },
         {
           "id": "long-tan",
@@ -50,7 +57,9 @@
           "photo": "people/long-tan.webp",
           "bio": [
             "Long Tan is a Ph.D. student at the College of Control Science and Engineering, Zhejiang University. His research focuses on wireless sensing and radio-frequency physical computing, where he explores how physical processes can support low-power information sensing, processing, and interaction."
-          ]
+          ],
+          "age": 27,
+          "email": "long.tan@zju.edu.cn"
         },
         {
           "id": "xiangguang-wang",
@@ -60,7 +69,9 @@
             "Xiangguang Wang is a Ph.D. student in Control Science and Engineering at Zhejiang University (Class of 2025), advised by Prof. Xiuzhen Guo. He received his B.E. in Automation from the College of Control Science and Engineering, Zhejiang University.",
             "His research interest lies in wireless sensing and mobile computing, including acoustic sensing and wearable devices, as well as RF-based perception on commodity devices. He is also exploring multimodal sensing and active perception for embodied intelligence.",
             "His current research focuses on acoustic sensing and wearable devices, with one first-author submission currently under major revision at a premier ubiquitous computing venue. Through this project, he gained hands-on experience across the research cycle — designing data collection protocols, conducting mechanism-validation experiments, and training deep learning models on GPU clusters. He previously worked on millimeter-wave radar imaging algorithms."
-          ]
+          ],
+          "age": 23,
+          "email": "xgwwwang@zju.edu.cn"
         },
         {
           "id": "yifan-yan",
@@ -68,7 +79,9 @@
           "photo": "people/yifan-yan.webp",
           "bio": [
             "Yifan Yan is a Ph.D. student at the College of Control Science and Engineering, Zhejiang University. He completed his undergraduate study and is currently pursuing his doctoral degree at Zhejiang University. His research focuses on embodied intelligence and AI for wireless computing, where he explores the integration of embodied agents and wireless communication to enable intelligent perception, decision-making and interaction in physical environments."
-          ]
+          ],
+          "age": 24,
+          "email": "yyf020517@outlook.com"
         },
         {
           "id": "yu-cao",
@@ -77,7 +90,9 @@
           "bio": [
             "Yu Cao is a Ph.D. student with the WiNet Lab at Zhejiang University. He received his B.Eng. degree in Communication Engineering from Ningbo University and his M.Eng. degree in Electronic Information from the University of Electronic Science and Technology of China.",
             "His research interests focus on 6G integrated sensing and communication and embodied intelligence, with particular interests in wireless world models and wireless spatial intelligence."
-          ]
+          ],
+          "age": 25,
+          "email": "yu.cao@zju.edu.cn"
         },
         {
           "id": "zikang-zhang",
@@ -85,7 +100,9 @@
           "photo": "people/zikang-zhang.webp",
           "bio": [
             "Zikang Zhang is a Ph.D. student in the Class of 2026. His research focuses on millimeter-wave sensing, with interests in its applications in environmental perception, target detection, and intelligent sensing systems. Outside of research, he enjoys fitness, reading, and gaming. Feel free to reach out to him for research discussions, collaboration, or just to hang out and play games together."
-          ]
+          ],
+          "age": 22,
+          "email": "zzk040912@gmail.com"
         }
       ]
     },
@@ -99,7 +116,9 @@
           "photo": "people/binghe-li.webp",
           "bio": [
             "Binghe Li is an M.S. student at the College of Control Science and Engineering, Zhejiang University, enrolled in 2025. He studied at Xidian University from 2020 to 2024. Research interests include tabular foundation models and in-context learning, with a focus on few-shot regression for industrial processes, context optimization, and adaptation to distribution shift."
-          ]
+          ],
+          "age": 24,
+          "email": "22532178@zju.edu.cn"
         },
         {
           "id": "gaoming-yang",
@@ -107,7 +126,9 @@
           "photo": "people/gaoming-yang.webp",
           "bio": [
             "Gaoming Yang is pursuing his M.S. degree in College of Control Science and Engineering, Zhejiang University, Hangzhou, China. His major research interest is time series analysis."
-          ]
+          ],
+          "age": 23,
+          "email": "22532053@zju.edu.cn"
         },
         {
           "id": "tianyou-li",
@@ -115,7 +136,9 @@
           "photo": "people/tianyou-li.webp",
           "bio": [
             "Tianyou Li is a Master's student at the College of Control Science and Engineering, Zhejiang University. He received his bachelor's degree from Shandong University. His research interests include embodied intelligence, the Internet of Things, mobile computing, and intelligent sensing."
-          ]
+          ],
+          "age": 22,
+          "email": "tianyouli@zju.edu.cn"
         },
         {
           "id": "xu-chen",
@@ -123,7 +146,9 @@
           "photo": "people/xu-chen.webp",
           "bio": [
             "Xu Chen received his bachelor's degree from Nanjing University of Science and Technology. During the master's program, his research focuses on intelligent detection and sensing, with an emphasis on low-power, lightweight wearable sensing and monitoring systems."
-          ]
+          ],
+          "age": 23,
+          "email": "chenxu_03@zju.edu.cn"
         },
         {
           "id": "yaobin-zhu",
@@ -132,7 +157,9 @@
           "bio": [
             "Yaobin Zhu is currently pursuing the M.S. degree in Control Science and Engineering at Zhejiang University, where he is with the WiNet Lab.",
             "His research lies at the intersection of wireless sensing and robotics. By integrating wireless sensing with robotic perception and manipulation, he works toward enabling robots to better perceive and interact with the physical world, especially in visually challenging environments."
-          ]
+          ],
+          "age": 23,
+          "email": "1973206857@qq.com"
         },
         {
           "id": "zeyang-yang",
@@ -140,7 +167,9 @@
           "photo": "people/zeyang-yang.webp",
           "bio": [
             "Zeyang Yang is a master's student in the College of Control Science and Engineering at Zhejiang University. He received his bachelor's degree in Automation from National University of Defense Technology. His current research focuses on low-power new-paradigm underwater communication Internet of Things, with particular interests in the application of event cameras in underwater communication tasks. He aims to advance underwater communication by enabling low-power and efficient sensing and interaction in complex underwater environments."
-          ]
+          ],
+          "age": 24,
+          "email": "22432047@zju.edu.cn"
         },
         {
           "id": "zhou-yang",
@@ -148,7 +177,9 @@
           "photo": "people/zhou-yang.webp",
           "bio": [
             "Zhou Yang is a Master's student at the College of Control Science and Engineering, Zhejiang University. His research focuses on wireless sensing and radio-frequency computing, where he explores how physical processes can support low-power information transmission."
-          ]
+          ],
+          "age": 25,
+          "email": "yangzhouzju@gmail.com"
         }
       ]
     }

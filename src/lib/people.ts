@@ -15,6 +15,8 @@ const memberSchema = z.object({
   name: text,
   role: text.optional(),
   photo,
+  age: z.number().int().min(15).max(100).optional(),
+  email: text.regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Use a plain email address'),
   bio: z.array(text).min(1),
 });
 const uniqueIds = (items: { id: string }[]) =>

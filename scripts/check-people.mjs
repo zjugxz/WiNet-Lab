@@ -31,6 +31,24 @@ const sections = {
   ],
 };
 const allMembers = Object.values(sections).flat();
+const emails = {
+  'xiuzhen-guo': 'guoxz@zju.edu.cn',
+  'haobo-zhang': '12532092@zju.edu.cn',
+  'hongyu-wang': '12632049@zju.edu.cn',
+  'junying-huang': 'hjy23@zju.edu.cn',
+  'long-tan': 'long.tan@zju.edu.cn',
+  'xiangguang-wang': 'xgwwwang@zju.edu.cn',
+  'yifan-yan': 'yyf020517@outlook.com',
+  'yu-cao': 'yu.cao@zju.edu.cn',
+  'zikang-zhang': 'zzk040912@gmail.com',
+  'binghe-li': '22532178@zju.edu.cn',
+  'gaoming-yang': '22532053@zju.edu.cn',
+  'tianyou-li': 'tianyouli@zju.edu.cn',
+  'xu-chen': 'chenxu_03@zju.edu.cn',
+  'yaobin-zhu': '1973206857@qq.com',
+  'zeyang-yang': '22432047@zju.edu.cn',
+  'zhou-yang': 'yangzhouzju@gmail.com',
+};
 
 const server = await preview({
   base,
@@ -169,6 +187,27 @@ try {
     await dialog.locator('[data-person-role]').textContent(),
     'Tenure-track Assistant Professor',
   );
+  // PI shows the email but no age.
+  assert.equal(
+    await dialog.locator('[data-person-age]').isVisible(),
+    false,
+  );
+  assert.equal(
+    await dialog.locator('[data-person-email]').textContent(),
+    'guoxz@zju.edu.cn',
+  );
+  assert.equal(
+    await dialog.locator('[data-person-email]').getAttribute('href'),
+    'mailto:guoxz@zju.edu.cn',
+  );
+  // Students show both age and email.
+  await page.keyboard.press('Escape');
+  await page.locator('a[data-person-open="haobo-zhang"]').click();
+  assert.equal(await dialog.locator('[data-person-age]').textContent(), 'Age 22');
+  assert.equal(
+    await dialog.locator('[data-person-email]').textContent(),
+    '12532092@zju.edu.cn',
+  );
   await page.mouse.click(4, 4);
   await page.waitForFunction(
     () => document.querySelector('person-dialog dialog')?.open === false,
@@ -253,6 +292,17 @@ try {
     );
     const back = page.locator('a.back-link');
     assert.equal(await back.getAttribute('href'), `${base}people/`);
+    const metaMail = page.locator('.person-meta a');
+    assert.equal(await metaMail.getAttribute('href'), `mailto:${emails[id]}`);
+    assert.equal(await metaMail.textContent(), emails[id]);
+    if (id === 'xiuzhen-guo') {
+      assert.equal(await page.locator('.person-meta span').count(), 0);
+    } else {
+      assert.match(
+        await page.locator('.person-meta span').textContent(),
+        /^Age \d+$/,
+      );
+    }
     if (index === 0 || index === 5) {
       scan = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
