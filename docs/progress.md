@@ -2,7 +2,11 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：Home文案更新与中文解禁（2026-09-22，本地完成，待用户查看）
+## 当前任务：Research第三方向首批论文（2026-09-22，本地完成，待用户查看）
+
+用户提供 resources 下两篇新论文（mmExpert·MobiHoc 2025 已发表；mmPRISM 未录用），录入 Embodied Intelligence of Things 方向。mmExpert 提供压缩预览（37→3.9MB）、原字节 Paper/Demo 下载与 ACM MobiHoc 2025 刊会行；mmPRISM display 与 demo 为同一文件、按 Mighty 先例共享原字节，pdf:null 屏蔽下载且 URL 404，无刊会/年份。全套验证通过（零错误、21页两种base、11项下载字节核对、媒体懒加载与manifest更新、Cite仍3篇、17项测试、桌面/手机截图目视）。详见[验证记录](verification/research-eiot-2026-09-22.md)。本地Git提交，未push。下一步等待用户查看 http://127.0.0.1:4321/research/ 第三方向。
+
+## 历史：Home文案更新与中文解禁（2026-09-22，本地完成，待用户查看）
 
 用户自行修改home.json（About第一段加"led by Dr. Xiuzhen Guo"、NSFC新闻改第三人称并含中文括注（原优青）），要求重建；因中文与全英文校验冲突，用户明确允许网站出现中文。已完成：移除home测试中正文不得含中文的断言（唯一强制点，已核实无其他）、更新过期新闻文案断言、requirements/content-maintenance记录政策变更与用户修改。复验：astro check零错误、两种base构建21页、17项测试通过、4321预览确认两处新文案生效。home.json用户修改与测试/文档更新一并本地Git提交，未push。下方为People各批次记录。
 

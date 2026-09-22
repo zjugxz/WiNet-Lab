@@ -9,6 +9,7 @@ const withheldIds = [
   'underwater-visible-light-backscatter',
   'eeg-fatigue-interaction',
   'cardiac-monitoring',
+  'mmprism-sign-language',
 ];
 const papers = data.directions.flatMap((direction) => direction.papers);
 for (const id of withheldIds) {
@@ -29,12 +30,12 @@ try {
       const page = await context.newPage();
       const origin = 'http://127.0.0.1:4324';
       await page.goto(`${origin}${base}research/`);
-      await expect(page.locator('video')).toHaveCount(5);
+      await expect(page.locator('video')).toHaveCount(7);
       await expect(page.getByRole('button', { name: /Demo/ })).toHaveCount(0);
       await expect(
         page.getByText('Demo coming soon', { exact: true }),
       ).toHaveCount(0);
-      await expect(page.locator('.paper-publication')).toHaveCount(3);
+      await expect(page.locator('.paper-publication')).toHaveCount(4);
       let downloads = 0;
       for (const direction of data.directions) {
         if (direction.papers.length) {
@@ -117,7 +118,7 @@ try {
           }
         }
       }
-      assert.equal(downloads, 8);
+      assert.equal(downloads, 11);
       for (const width of [320, 390, 768, 1440]) {
         await page.setViewportSize({ width, height: 900 });
         assert(
@@ -127,7 +128,7 @@ try {
         );
       }
       console.log(
-        `${base}: Demo-first stable order, no missing Demo buttons, 3 styled venue/year labels, 3 Paper coming soon labels, withheld URLs 404; 8 exact downloads and four widths passed.`,
+        `${base}: Demo-first stable order, no missing Demo buttons, 4 styled venue/year labels, 4 Paper coming soon labels, withheld URLs 404; 11 exact downloads and four widths passed.`,
       );
     } finally {
       await context.close();

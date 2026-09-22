@@ -140,7 +140,49 @@
       "id": "embodied-intelligence-of-things",
       "title": "Embodied Intelligence of Things",
       "subtitle": "Robots, Human Motion, and Physical-World Sensing",
-      "papers": []
+      "papers": [
+        {
+          "id": "mmexpert",
+          "title": "mmExpert: Integrating Large Language Models for Comprehensive mmWave Data Synthesis and Understanding",
+          "publication": {
+            "venue": "ACM MobiHoc",
+            "year": 2025,
+            "status": "published"
+          },
+          "summary": "mmExpert is a scalable framework that generates diverse mmWave-language data from the world knowledge of large language models, replacing costly real-world data collection with electromagnetic simulation and domain randomization. Hierarchical action-description prompts and contrastive language-aligned pre-training connect mmWave signals with free-form text, and a versatile interpreter supports open-vocabulary understanding across diverse contexts, evaluated with curated question-answering and captioning benchmarks.",
+          "preview": {
+            "type": "video",
+            "src": "research/mmexpert/preview.mp4",
+            "poster": "research/mmexpert/poster.jpg"
+          },
+          "pdf": {
+            "src": "research/mmexpert/paper.pdf",
+            "filename": "mmexpert-paper.pdf"
+          },
+          "demo": {
+            "src": "research/mmexpert/demo.mp4",
+            "filename": "mmexpert-demo.mp4"
+          }
+        },
+        {
+          "id": "mmprism-sign-language",
+          "title": "Privacy Preserving Two Hand Reconstruction Using Millimeter Wave Radar for Sign Language Understanding",
+          "publication": {
+            "status": "submitted"
+          },
+          "summary": "mmPRISM is a two-stage framework for privacy-preserving sign language understanding. It reconstructs a robust two-hand skeletal pose from raw 4D millimeter-wave radar data, then fuses the pose representation with the original features as input to a large language model for open-vocabulary, continuous sign language understanding, approaching vision-based benchmark performance without cameras.",
+          "preview": {
+            "type": "video",
+            "src": "research/mmprism-sign-language/preview.mp4",
+            "poster": "research/mmprism-sign-language/poster.jpg"
+          },
+          "pdf": null,
+          "demo": {
+            "src": "research/mmprism-sign-language/preview.mp4",
+            "filename": "mmprism-sign-language-demo.mp4"
+          }
+        }
+      ]
     }
   ]
 }

@@ -101,12 +101,12 @@ try {
       });
       await page.goto(`${url}research/`);
       const clips = page.locator('video[data-preview-video]');
-      await expect(clips).toHaveCount(5);
+      await expect(clips).toHaveCount(7);
       const playing = (clip) =>
         clip.evaluate((video) => !video.paused && video.currentTime > 0);
       await expect.poll(() => playing(clips.nth(0))).toBe(true);
       await expect.poll(() => playing(clips.nth(1))).toBe(true);
-      for (let i = 2; i < 5; i++)
+      for (let i = 2; i < 7; i++)
         await expect(clips.nth(i)).not.toHaveAttribute('src');
       assert.equal(
         mediaRequests.size,
@@ -180,7 +180,7 @@ try {
       const nojs = await browser.newContext({ javaScriptEnabled: false });
       const fallback = await nojs.newPage();
       await fallback.goto(`${url}research/`);
-      await expect(fallback.locator('video:visible')).toHaveCount(5);
+      await expect(fallback.locator('video:visible')).toHaveCount(7);
       const manual = fallback.locator('noscript video').first();
       await manual.scrollIntoViewIfNeeded();
       await manual.press('Space');

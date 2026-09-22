@@ -34,6 +34,20 @@
       "beforeBytes": 9258937,
       "afterBytes": 9258937,
       "sha256": "34acb42e8cde37c791ab94a26c2486dc593344a8b967f53f37ae3dba0e050b12"
+    },
+    {
+      "id": "mmexpert",
+      "source": "research/mmexpert/preview.mp4",
+      "beforeBytes": 37014852,
+      "afterBytes": 3936390,
+      "sha256": "f16fb465a2d4296bc09acd7f94386aac23f561ee07c7635899aac1ef4654ec52"
+    },
+    {
+      "id": "mmprism-sign-language",
+      "source": "research/mmprism-sign-language/preview.mp4",
+      "beforeBytes": 6273403,
+      "afterBytes": 6273403,
+      "sha256": "6cce8476977a820f58446f84fea760fcdd8e10f083ffe8259758c732e4e0b0af"
     }
   ],
   "downloads": [
@@ -84,6 +98,24 @@
       "type": "demo",
       "source": "research/mighty-drone-backscatter/preview.mp4",
       "sha256": "34acb42e8cde37c791ab94a26c2486dc593344a8b967f53f37ae3dba0e050b12"
+    },
+    {
+      "id": "mmexpert",
+      "type": "pdf",
+      "source": "research/mmexpert/paper.pdf",
+      "sha256": "10eac6c03efd0c964d77453c37ea86aa9b2d95280be8d55f4dd0b9521d0de82f"
+    },
+    {
+      "id": "mmexpert",
+      "type": "mp4",
+      "source": "research/mmexpert/demo.mp4",
+      "sha256": "41424215320c997b6dfc3bd29da9b14ad90abaefef4a38ce1c23368a24021786"
+    },
+    {
+      "id": "mmprism-sign-language",
+      "type": "mp4",
+      "source": "research/mmprism-sign-language/preview.mp4",
+      "sha256": "6cce8476977a820f58446f84fea760fcdd8e10f083ffe8259758c732e4e0b0af"
     }
   ]
 }
