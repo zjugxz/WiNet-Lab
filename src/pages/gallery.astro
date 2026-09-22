@@ -1,22 +1,21 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import GalleryLightbox from '../components/GalleryLightbox.astro';
 import galleryData from '../data/gallery.json';
 import { gallerySchema, galleryPhotoPath } from '../lib/gallery';
 
 const gallery = gallerySchema.parse(galleryData);
-const photosOf = (groupIndex: number) =>
-  gallery.groups[groupIndex].photos.map((photo) => ({
-    ...photo,
-    url: galleryPhotoPath(photo.src),
-  }));
+// Newest activities first; stable within the same date.
+const groups = [...gallery.groups].sort((a, b) =>
+  b.date.localeCompare(a.date),
+);
+const photoUrl = (src: string) => galleryPhotoPath(src);
 ---
 
 <SiteLayout title="Gallery" current="gallery">
   <div class="container gallery-page">
     <h1>Gallery</h1>
     <p class="gallery-intro">{gallery.intro}</p>
-    {gallery.groups.length === 0 ? (
+    {groups.length === 0 ? (
       <div class="gallery-empty">
         <p>Lab photos are coming soon.</p>
         <p class="gallery-empty-detail">
@@ -24,41 +23,33 @@ const photosOf = (groupIndex: number) =>
         </p>
       </div>
     ) : (
-      gallery.groups.map((group, groupIndex) => (
-        <section
-          class="gallery-group"
-          aria-labelledby={`gallery-${group.id}`}
-        >
+      groups.map((group) => (
+        <section class="gallery-group" aria-labelledby={`gallery-${group.id}`}>
           <div class="gallery-group-heading">
             <h2 id={`gallery-${group.id}`}>{group.title}</h2>
             <span class="gallery-group-date">{group.date}</span>
           </div>
-          {group.description && <p class="gallery-group-desc">{group.description}</p>}
+          {group.description && (
+            <p class="gallery-group-desc">{group.description}</p>
+          )}
           <ul class="gallery-grid">
-            {photosOf(groupIndex).map((photo) => (
+            {group.photos.map((photo) => (
               <li>
-                <button
-                  class="gallery-thumb"
-                  type="button"
-                  data-gallery-open={photo.id}
-                  aria-label={`Enlarge photo: ${photo.alt}`}
-                >
-                  <img
-                    src={photo.url}
-                    alt={photo.alt}
-                    loading="lazy"
-                    decoding="async"
-                    width="960"
-                    height="720"
-                  />
-                </button>
+                <img
+                  class="gallery-photo"
+                  src={photoUrl(photo.src)}
+                  alt={photo.alt}
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="960"
+                />
               </li>
             ))}
           </ul>
         </section>
       ))
     )}
-    <GalleryLightbox />
   </div>
 </SiteLayout>
 
@@ -124,26 +115,13 @@ const photosOf = (groupIndex: number) =>
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 16px;
   }
-  .gallery-thumb {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    background: #f3f5f0;
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  .gallery-thumb img {
+  .gallery-photo {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    transition: transform 0.25s ease;
-  }
-  .gallery-thumb:hover img,
-  .gallery-thumb:focus-visible img {
-    transform: scale(1.03);
+    border-radius: 6px;
+    background: #f3f5f0;
   }
   @media (max-width: 760px) {
     .gallery-page {

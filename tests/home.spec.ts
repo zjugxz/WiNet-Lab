@@ -145,10 +145,12 @@ test('all navigation destinations share the layout and implemented pages show th
       ]);
       await expect(page.locator('.people-photo img')).toHaveCount(16);
     } else {
-      await expect(
-        page.getByRole('heading', { level: 2 }),
-      ).toHaveText(['Lab dinner', 'Team outing', 'Group photo']);
-      await expect(page.locator('.gallery-thumb img')).toHaveCount(3);
+      await expect(page.getByRole('heading', { level: 2 })).toHaveText([
+        'Group photo',
+        'Team outing',
+        'Lab dinner',
+      ]);
+      await expect(page.locator('.gallery-photo')).toHaveCount(3);
     }
     await expect(
       page.getByRole('navigation').getByRole('link', { name, exact: true }),

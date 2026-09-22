@@ -2,14 +2,14 @@
   "intro": "Moments from our lab life: group meetings, team building, and the places we work and travel together.",
   "groups": [
     {
-      "id": "2024",
-      "title": "Lab dinner",
-      "date": "2024",
+      "id": "2026",
+      "title": "Group photo",
+      "date": "2026",
       "photos": [
         {
-          "id": "dinner-2024",
-          "src": "gallery/2024/photo-1.webp",
-          "alt": "Lab members gathered around a long dinner table in a restaurant, smiling together in a group photo"
+          "id": "group-2026",
+          "src": "gallery/2026/photo-1.webp",
+          "alt": "Lab members posing together outdoors with trees and campus buildings in the background"
         }
       ]
     },
@@ -26,14 +26,14 @@
       ]
     },
     {
-      "id": "2026",
-      "title": "Group photo",
-      "date": "2026",
+      "id": "2024",
+      "title": "Lab dinner",
+      "date": "2024",
       "photos": [
         {
-          "id": "group-2026",
-          "src": "gallery/2026/photo-1.webp",
-          "alt": "Lab members posing together outdoors with trees and campus buildings in the background"
+          "id": "dinner-2024",
+          "src": "gallery/2024/photo-1.webp",
+          "alt": "Lab members gathered around a long dinner table in a restaurant, smiling together in a group photo"
         }
       ]
     }

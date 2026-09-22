@@ -2,7 +2,9 @@
 
 更新时间：2026-09-22（Asia/Shanghai）。
 
-## 当前任务：Gallery首批照片填充（2026-09-22 晚，本地完成，未发布，待用户查看与发布指示）
+## 当前任务：Gallery静态展示改版（2026-09-22 晚，本地完成，未发布，待用户查看与发布指示）
+
+应用户指示移除灯箱悬浮窗（照片统一4:3尺寸静态展示、无可点击元素），分组改为年份倒序（页面渲染时按date降序稳定排序，数据同步2026→2024）。check-gallery重写为静态断言（倒序/统一尺寸/无控件/axe/溢出），home.spec同步。验证全过（零错误、22页两种base、17项测试、截图目视）。本地提交未推送；照片填充与本改版一并等待发布指示。前一轮首批填充记录见[Gallery记录](verification/gallery-2026-09-22.md)。
 
 用户在 resources/gallery/{2024,2025,2026} 各放1张团建照片并要求按年份填充。已完成：sharp压缩输出三张WebP（118–185KB，1280×960）、按图像内容写英文标题与alt（Lab dinner 2024 / Team outing 2025 / Group photo 2026）、新增check-gallery.mjs灯箱全交互检查（两种base通过）、home.spec的Gallery断言更新。全套验证通过（零错误、22页两种base、17项测试、check-base）；页面/灯箱截图目视通过。提交7d6cc77，未推送。等待用户查看 http://127.0.0.1:4321/gallery/ 及发布指示。详见[Gallery记录](verification/gallery-2026-09-22.md)。
 
