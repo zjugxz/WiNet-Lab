@@ -30,6 +30,11 @@ try {
   await page.goto(baseUrl, {
     waitUntil: 'networkidle',
   });
+  assert.equal(
+    await page.locator('link[rel="icon"]').getAttribute('href'),
+    `${base}favicon.svg`,
+    'Favicon must resolve under the repository base path',
+  );
   const links = await page
     .locator('a')
     .evaluateAll((elements) =>

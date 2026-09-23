@@ -2,6 +2,10 @@
 
 更新时间：2026-09-23（Asia/Shanghai）。
 
+## 当前任务：浏览器标签图标已本地补齐（2026-09-23，待用户确认）
+
+用户反馈浏览器标签栏仍显示默认地球图标。已将现有WiNet绿色W波形与橙色信号点原样提取为`public/favicon.svg`，通过共享`SiteLayout.astro`接入全部页面，并使用`assetPath()`兼容本地根路径和GitHub Pages的`/WiNet-Lab/`子路径。验证：Astro检查59文件零错误/警告/提示；两种base各构建24页；17项Playwright回归全部通过；子路径浏览器检查确认favicon URL正确且无失败请求；256×256栅格化结果目视正常。详见[验证记录](verification/favicon-2026-09-23.md)。本轮仅本地提交，等待用户查看确认，未推送GitHub。
+
 ## 当前任务：首批Alumni已发布（2026-09-23，用户已确认）
 
 用户确认Alumni继续使用People页既有悬浮窗，并提供首批两位毕业生的共同信息：Chuchuan Ceng与Kaixuan Xie均于2026年3月毕业，研究生期间从事强化学习和边缘计算研究，现任Shopee Algorithm Engineer。两份差异化英文简介已分别保存到原资料目录并录入`people.json`。本地People页现以两张照片卡片展示毕业生；点击后复用固定尺寸悬浮窗，显示`Algorithm Engineer at Shopee`、`Graduated March 2026`与简介，不显示未提供的邮箱、年龄或链接；两条静态详情路由作为无JavaScript回退。原图转换为300×400 WebP（约7KB/5KB），不放大且原资料未改动。
