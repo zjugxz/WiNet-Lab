@@ -4,7 +4,7 @@
 
 ## 当前任务：老师个人主页链接更新（2026-09-23，待用户确认）
 
-用户指定即将上线的新主页`https://zjugxz.github.io/xiuzhen-guo-homepage/`，要求替换网站内三个老师主页入口。已更新首页About段落中的`Dr. Xiuzhen Guo`文字链接，以及People数据中的PI `website`字段；后者由People页PI卡片图标和`/people/xiuzhen-guo/`详情页Website按钮共同使用。旧主页根地址不再作为老师主页链接；Google Scholar、邮箱和其他链接不变。验证：Astro检查59文件零错误/警告/提示；根路径与`/WiNet-Lab/`各构建24页；17项回归全部通过；People专项两种base均通过18卡片/18详情页；子路径检查确认首页新链接且无失败请求。详见[验证记录](verification/pi-homepage-link-2026-09-23.md)。等待用户查看确认，本轮不自动推送GitHub。
+用户指定即将上线的新主页`https://zjugxz.github.io/xiuzhen-guo-homepage/`，要求替换网站内三个老师主页入口。已更新首页About段落中的`Dr. Xiuzhen Guo`文字链接，以及People数据中的PI `website`字段；后者由People页PI卡片图标和`/people/xiuzhen-guo/`详情页Website按钮共同使用。旧主页根地址不再作为老师主页链接；Google Scholar、邮箱和其他链接不变。验证：Astro检查59文件零错误/警告/提示；根路径与`/WiNet-Lab/`各构建24页；17项回归全部通过；People专项两种base均通过18卡片/18详情页；子路径检查确认首页新链接且无失败请求。用户随后授权推送；提交`2fbdc16`已推送main，Actions #23成功，线上首页、People页与PI详情页各有一个新主页链接且旧根主页链接均为零。详见[验证记录](verification/pi-homepage-link-2026-09-23.md)。等待用户查看确认。
 
 ## 当前任务：浏览器标签图标已发布（2026-09-23，待用户确认）
 

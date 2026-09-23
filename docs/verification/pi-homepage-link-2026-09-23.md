@@ -21,4 +21,11 @@
 - Repository base-path browser check passed with the new Home link and no failed requests.
 - Source and generated-output scans found no exact teacher-homepage link remaining at `https://zjugxz.github.io` or `https://zjugxz.github.io/`.
 
-User acceptance and remote publication remain pending.
+## Release verification
+
+- The user authorized publishing on 2026-09-23.
+- Commit `2fbdc16` was pushed to `origin/main`.
+- GitHub Actions run [#23](https://github.com/zjugxz/WiNet-Lab/actions/runs/35838183305) completed successfully.
+- Live checks found exactly one new homepage link on Home, People, and the PI detail page; no exact links to the old root homepage remained on those pages.
+
+User acceptance remains pending.
