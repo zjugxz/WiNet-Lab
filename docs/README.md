@@ -2,7 +2,9 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
-老师个人主页独立项目：新仓库 `zjugxz/xiuzhen-guo-homepage` 已核验为空且公开；参考站 `marsyang.site` 的 15 个公开页面、桌面/手机导航、招生说明交互与已知缺陷已完成[全量审计](verification/personal-homepage-reference-audit-2026-09-23.md)（2026-09-23）。尚未创建个人主页工程、上传代码或启用 Pages，等待用户确认复刻边界并提供老师真实资料。
+最新发布：[旧个人主页根地址跳转](verification/personal-homepage-root-redirect-2026-09-23.md)（2026-09-23）。用户授权后，`zjugxz/zjugxz.github.io` 已由旧Jekyll主页切换为指向 `https://zjugxz.github.io/xiuzhen-guo-homepage/` 的客户端跳转站；根页和旧子路径、桌面与手机均验证通过。功能提交`1b0bebc`、部署提交`cc53edb`，Deploy site #185与Pages build #148均success；旧源码和Git历史保留，等待用户实际访问确认。
+
+老师个人主页独立项目：`zjugxz/xiuzhen-guo-homepage` 现已发布到项目站点；此前对参考站 `marsyang.site` 的 15 个公开页面、桌面/手机导航、招生说明交互与已知缺陷完成的[全量审计](verification/personal-homepage-reference-audit-2026-09-23.md)（2026-09-23）保留为早期实施依据，其中“空仓库、未启用Pages”等状态已不再代表当前线上状态。
 
 最新发布：[首批Alumni资料集成](verification/people-alumni-populated-2026-09-23.md)（2026-09-23）。People页新增Chuchuan Ceng与Kaixuan Xie两张毕业生照片卡片，复用现有固定尺寸悬浮窗及静态详情页；显示差异化英文简介、Shopee算法工程师去向和2026年3月毕业时间，不显示未提供的邮箱/年龄/链接。功能提交`8176c37`已推送main，Actions #18 success；线上People、两条详情路由和照片哈希核验通过。
 
