@@ -35,6 +35,13 @@ try {
     `${base}favicon.svg?v=20260923`,
     'Favicon must resolve under the repository base path',
   );
+  assert.equal(
+    await page
+      .getByRole('link', { name: 'Dr. Xiuzhen Guo', exact: true })
+      .getAttribute('href'),
+    'https://zjugxz.github.io/xiuzhen-guo-homepage/',
+    'The Home About link must use the current PI homepage',
+  );
   const links = await page
     .locator('a')
     .evaluateAll((elements) =>

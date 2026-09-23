@@ -119,7 +119,7 @@ try {
   // PI link buttons: website/email/scholar with correct targets; students
   // have no link rows until their data is supplied.
   const expectedLinks = {
-    website: 'https://zjugxz.github.io',
+    website: 'https://zjugxz.github.io/xiuzhen-guo-homepage/',
     email: 'mailto:guoxz@zju.edu.cn',
     scholar:
       'https://scholar.google.com/citations?user=JMmLdgsAAAAJ&hl=zh-CN',
@@ -465,7 +465,7 @@ try {
         await page
           .locator('.person-links a[data-person-link="website"]')
           .getAttribute('href'),
-        'https://zjugxz.github.io',
+        'https://zjugxz.github.io/xiuzhen-guo-homepage/',
       );
       const piEmail = page.locator(
         '.person-links a[data-person-link="email"]',

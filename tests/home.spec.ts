@@ -22,6 +22,12 @@ test('homepage content, links, local assets and accessibility', async ({
   await expect(page.locator('.about-copy')).toContainText(
     'Wireless Intelligence for Networked and Embodied Things (WiNet) Lab at Zhejiang University',
   );
+  await expect(
+    page.getByRole('link', { name: 'Dr. Xiuzhen Guo', exact: true }),
+  ).toHaveAttribute(
+    'href',
+    'https://zjugxz.github.io/xiuzhen-guo-homepage/',
+  );
   const visual = page.getByRole('img', {
     name: /WiNet Lab research word cloud/,
   });
