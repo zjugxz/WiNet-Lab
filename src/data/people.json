@@ -186,5 +186,28 @@
       ]
     }
   ],
-  "alumni": []
+  "alumni": [
+    {
+      "id": "chuchuan-ceng",
+      "name": "Chuchuan Ceng",
+      "photo": "people/chuchuan-ceng.webp",
+      "graduation": "March 2026",
+      "organization": "Shopee",
+      "position": "Algorithm Engineer",
+      "bio": [
+        "Chuchuan Ceng completed his graduate studies with the WiNet Lab in March 2026. His research centered on reinforcement learning and edge computing, with a particular interest in how learning-based methods can support adaptive decision-making in edge environments. He is currently an Algorithm Engineer at Shopee, where he continues to work on practical algorithmic problems."
+      ]
+    },
+    {
+      "id": "kaixuan-xie",
+      "name": "Kaixuan Xie",
+      "photo": "people/kaixuan-xie.webp",
+      "graduation": "March 2026",
+      "organization": "Shopee",
+      "position": "Algorithm Engineer",
+      "bio": [
+        "Kaixuan Xie completed his graduate studies as a member of the WiNet Lab in March 2026. During this period, he worked at the intersection of reinforcement learning and edge computing, exploring algorithmic approaches to computation and intelligent decision-making in distributed edge settings. He now works as an Algorithm Engineer at Shopee, applying his research and engineering experience to real-world systems."
+      ]
+    }
+  ]
 }

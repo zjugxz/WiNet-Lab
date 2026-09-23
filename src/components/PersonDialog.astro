@@ -30,6 +30,7 @@
         <p class="dialog-role" data-person-role hidden></p>
         <div class="dialog-meta">
           <span data-person-age hidden></span>
+          <span data-person-graduation hidden></span>
           <a data-person-email hidden></a>
         </div>
         <div
@@ -46,7 +47,7 @@
 
 <script>
   import peopleData from '../data/people.json';
-  import type { PeopleMember, PeopleSection } from '../lib/people';
+  import type { PeopleAlumnus, PeopleMember, PeopleSection } from '../lib/people';
 
   class PersonDialog extends HTMLElement {
     connectedCallback() {
@@ -62,15 +63,23 @@
       const name = this.querySelector('[data-person-name]')!;
       const role = this.querySelector<HTMLElement>('[data-person-role]')!;
       const age = this.querySelector<HTMLElement>('[data-person-age]')!;
+      const graduation = this.querySelector<HTMLElement>(
+        '[data-person-graduation]',
+      )!;
       const email = this.querySelector<HTMLAnchorElement>(
         '[data-person-email]',
       )!;
       const bio = this.querySelector('[data-person-bio]')!;
       const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-      const members = new Map<string, { member: PeopleMember; section: PeopleSection }>();
+      const members = new Map<
+        string,
+        { member: PeopleMember | PeopleAlumnus; sectionTitle: string }
+      >();
       for (const group of peopleData.sections as PeopleSection[])
         for (const member of group.members)
-          members.set(member.id, { member, section: group });
+          members.set(member.id, { member, sectionTitle: group.title });
+      for (const member of peopleData.alumni as PeopleAlumnus[])
+        members.set(member.id, { member, sectionTitle: 'Alumni' });
       let opener: HTMLElement | null = null;
 
       const open = (id: string, link: HTMLElement) => {
@@ -81,25 +90,42 @@
           // No width/height attributes: the photo keeps its natural ratio.
           photo.src = url;
         }
-        section.textContent = entry.section.title;
+        section.textContent = entry.sectionTitle;
         name.textContent = entry.member.name;
-        if (entry.member.role) {
+        const roleText = 'organization' in entry.member
+          ? `${entry.member.position} at ${entry.member.organization}`
+          : entry.member.role;
+        if (roleText) {
           role.hidden = false;
-          role.textContent = entry.member.role;
+          role.textContent = roleText;
         } else {
-          role.hidden = true;
+          // Reserve the role row so every profile keeps the same bio area.
+          role.hidden = false;
           role.textContent = '';
         }
-        if (entry.member.age) {
+        if ('age' in entry.member && entry.member.age) {
           age.hidden = false;
           age.textContent = `Age ${entry.member.age}`;
         } else {
           age.hidden = true;
           age.textContent = '';
         }
-        email.hidden = false;
-        email.textContent = entry.member.email;
-        email.href = `mailto:${entry.member.email}`;
+        if ('graduation' in entry.member) {
+          graduation.hidden = false;
+          graduation.textContent = `Graduated ${entry.member.graduation}`;
+        } else {
+          graduation.hidden = true;
+          graduation.textContent = '';
+        }
+        if ('email' in entry.member && entry.member.email) {
+          email.hidden = false;
+          email.textContent = entry.member.email;
+          email.href = `mailto:${entry.member.email}`;
+        } else {
+          email.hidden = true;
+          email.textContent = '';
+          email.removeAttribute('href');
+        }
         bio.replaceChildren(
           ...entry.member.bio.map((paragraph) => {
             const element = document.createElement('p');
@@ -132,6 +158,7 @@
         photo.removeAttribute('src');
         name.textContent = '';
         age.hidden = true;
+        graduation.hidden = true;
         email.hidden = true;
         email.removeAttribute('href');
         bio.replaceChildren();
@@ -247,8 +274,11 @@
     margin-top: 4px;
   }
   .dialog-role {
+    flex: 0 0 32px;
+    height: 32px;
     margin-top: 6px;
     font-size: 13px;
+    line-height: 16px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--green);
@@ -273,7 +303,7 @@
     text-decoration-thickness: 2px;
   }
   .dialog-bio {
-    flex: 1 1 auto;
+    flex: 1 1 0;
     min-height: 0;
     margin-top: 12px;
     padding-right: 8px;

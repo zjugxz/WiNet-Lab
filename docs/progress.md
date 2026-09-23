@@ -1,6 +1,12 @@
 # 当前进度
 
-更新时间：2026-09-22（Asia/Shanghai）。
+更新时间：2026-09-23（Asia/Shanghai）。
+
+## 当前任务：首批Alumni已集成本地People页面（2026-09-23，用户已确认）
+
+用户确认Alumni继续使用People页既有悬浮窗，并提供首批两位毕业生的共同信息：Chuchuan Ceng与Kaixuan Xie均于2026年3月毕业，研究生期间从事强化学习和边缘计算研究，现任Shopee Algorithm Engineer。两份差异化英文简介已分别保存到原资料目录并录入`people.json`。本地People页现以两张照片卡片展示毕业生；点击后复用固定尺寸悬浮窗，显示`Algorithm Engineer at Shopee`、`Graduated March 2026`与简介，不显示未提供的邮箱、年龄或链接；两条静态详情路由作为无JavaScript回退。原图转换为300×400 WebP（约7KB/5KB），不放大且原资料未改动。
+
+验证：Astro检查59文件零错误/警告/提示；根路径与`/WiNet-Lab/`各构建24页；People专项检查两种base均通过18人物/18详情页、Alumni弹窗、差异简介、无邮箱状态、固定区域、320–1440px溢出与axe；既有17项Playwright回归全部通过。桌面/手机整页及Alumni弹窗截图已目视核对。详见[验证记录](verification/people-alumni-populated-2026-09-23.md)。用户于2026-09-23查看后回复“很好”并要求提交，本批本地效果已确认；尚未发布远程。
 
 ## 当前任务：Gallery全量发布完成（2026-09-22 晚，待用户线上查看）
 

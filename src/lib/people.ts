@@ -22,16 +22,17 @@ const memberSchema = z.object({
   googleScholar: externalUrl.optional(),
   bio: z.array(text).min(1),
 });
-// Graduated members are listed without photos, dialogs or detail pages; only
-// the fields needed for a compact alumni row are accepted.
 const alumniSchema = z.object({
   id,
   name: text,
-  degree: text.optional(),
-  period: text.optional(),
-  current: text.optional(),
-  note: text.optional(),
-  website: externalUrl.optional(),
+  photo,
+  graduation: text.regex(
+    /^(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$/,
+    'Use Month YYYY',
+  ),
+  organization: text,
+  position: text,
+  bio: z.array(text).min(1),
 });
 const uniqueIds = (items: { id: string }[]) =>
   new Set(items.map((item) => item.id)).size === items.length;
@@ -63,6 +64,17 @@ export const peopleSchema = z
 export type PeopleMember = z.infer<typeof memberSchema>;
 export type PeopleSection = z.infer<typeof sectionSchema>;
 export type PeopleAlumnus = z.infer<typeof alumniSchema>;
+export type PeopleProfile = PeopleMember | PeopleAlumnus;
+
+export function isAlumnus(profile: PeopleProfile): profile is PeopleAlumnus {
+  return 'organization' in profile;
+}
+
+export function peopleRole(profile: PeopleProfile): string | undefined {
+  return isAlumnus(profile)
+    ? `${profile.position} at ${profile.organization}`
+    : profile.role;
+}
 
 /** Same-origin photos keep working under the Pages base path. */
 export function peoplePhotoPath(src: string): string {

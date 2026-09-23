@@ -143,7 +143,7 @@ test('all navigation destinations share the layout and implemented pages show th
         'Master Students',
         'Alumni',
       ]);
-      await expect(page.locator('.people-photo img')).toHaveCount(16);
+      await expect(page.locator('.people-photo img')).toHaveCount(18);
     } else {
       await expect(page.getByRole('heading', { level: 2 })).toHaveText([
         'Group photo',

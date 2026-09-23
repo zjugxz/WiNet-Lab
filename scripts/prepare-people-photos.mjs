@@ -1,7 +1,7 @@
 // Offline utility: copies people photos from Git-ignored resources/ into
 // optimized public/people/{id}.webp website copies. Originals stay untouched.
 // Run from the project root: node scripts/prepare-people-photos.mjs
-import { mkdir } from 'node:fs/promises';
+import { mkdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
 
@@ -22,6 +22,8 @@ const people = [
   ['Yaobin Zhu_Master', '慢两拍_2026-09-18 13.05.54_微信图片_20260918130517_322_195.jpg', 'yaobin-zhu'],
   ['Zeyang Yang_Master', 'Zeyang yang.jpg', 'zeyang-yang'],
   ['Zhou Yang_Master', '憨祎的奶油_2026-09-20 14.57.38_IMG_2528_compressed.jpg', 'zhou-yang'],
+  ['Chuchuan Ceng_Alumni', 'Chuchuan Ceng.jpg', 'chuchuan-ceng'],
+  ['Kaixuan Xie_Alumni', 'Kaixuan Xie.jpg', 'kaixuan-xie'],
 ];
 
 const maxEdge = 960;
@@ -41,6 +43,6 @@ for (const [folder, file, id] of people) {
     })
     .webp({ quality: 82 })
     .toFile(output);
-  const kb = (await sharp(output).metadata()).size / 1024;
+  const kb = (await stat(output)).size / 1024;
   console.log(`${id}: ${width}x${height}, ${kb.toFixed(0)} KB <- ${folder}`);
 }

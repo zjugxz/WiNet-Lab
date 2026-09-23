@@ -1,13 +1,14 @@
 ---
-import type { PeopleMember } from '../lib/people';
-import { peoplePhotoPath } from '../lib/people';
+import type { PeopleProfile } from '../lib/people';
+import { isAlumnus, peoplePhotoPath, peopleRole } from '../lib/people';
 import { sitePath } from '../lib/paths';
 import PersonLinks from './PersonLinks.astro';
 
 interface Props {
-  member: PeopleMember;
+  member: PeopleProfile;
 }
 const { member } = Astro.props;
+const role = peopleRole(member);
 ---
 
 <div class="people-cell">
@@ -28,11 +29,11 @@ const { member } = Astro.props;
     </div>
     <div class="people-info">
       <h3 class="people-name">{member.name}</h3>
-      {member.role && <p class="people-role">{member.role}</p>}
+      {role && <p class="people-role">{role}</p>}
     </div>
   </a>
   <!-- Outside the card anchor: nested links would be invalid HTML. -->
-  <PersonLinks member={member} />
+  {!isAlumnus(member) && <PersonLinks member={member} />}
 </div>
 
 <style>

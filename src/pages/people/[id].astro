@@ -2,19 +2,32 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import PersonLinks from '../../components/PersonLinks.astro';
 import peopleData from '../../data/people.json';
-import { peopleSchema, peoplePhotoPath } from '../../lib/people';
+import {
+  isAlumnus,
+  peopleRole,
+  peopleSchema,
+  peoplePhotoPath,
+} from '../../lib/people';
 import { sitePath } from '../../lib/paths';
 
 export function getStaticPaths() {
   const people = peopleSchema.parse(peopleData);
-  return people.sections.flatMap((section) =>
-    section.members.map((member) => ({
+  return [
+    ...people.sections.flatMap((section) =>
+      section.members.map((member) => ({
+        params: { id: member.id },
+        props: { member, sectionTitle: section.title },
+      })),
+    ),
+    ...people.alumni.map((member) => ({
       params: { id: member.id },
-      props: { member, sectionTitle: section.title },
+      props: { member, sectionTitle: 'Alumni' },
     })),
-  );
+  ];
 }
 const { member, sectionTitle } = Astro.props;
+const alumnus = isAlumnus(member);
+const role = peopleRole(member);
 ---
 
 <SiteLayout title={member.name} current="people">
@@ -36,12 +49,18 @@ const { member, sectionTitle } = Astro.props;
       <div class="person-info">
         <p class="eyebrow">{sectionTitle}</p>
         <h1>{member.name}</h1>
-        {member.role && <p class="person-role">{member.role}</p>}
+        {role && <p class="person-role">{role}</p>}
         <div class="person-meta">
-          {member.age && <span>Age {member.age}</span>}
-          <a href={`mailto:${member.email}`}>{member.email}</a>
+          {alumnus ? (
+            <span>Graduated {member.graduation}</span>
+          ) : (
+            <>
+              {member.age && <span>Age {member.age}</span>}
+              <a href={`mailto:${member.email}`}>{member.email}</a>
+            </>
+          )}
         </div>
-        <PersonLinks member={member} variant="labeled" />
+        {!alumnus && <PersonLinks member={member} variant="labeled" />}
         <div class="person-bio">
           {member.bio.map((paragraph) => <p>{paragraph}</p>)}
         </div>

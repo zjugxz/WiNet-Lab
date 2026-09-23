@@ -1,6 +1,10 @@
 # 已确认需求
 
-更新日期：2026-09-22（Asia/Shanghai）。
+更新日期：2026-09-23（Asia/Shanghai）。
+
+最新Alumni本地集成指示（2026-09-23）：用户要求将首批两位毕业生更新到本地People页面，并确认毕业生继续使用现有悬浮窗功能。Chuchuan Ceng与Kaixuan Xie采用与在读学生一致的照片卡片和固定尺寸悬浮窗，显示差异化英文简介、`Algorithm Engineer at Shopee`与`Graduated March 2026`；不显示未提供的邮箱、年龄或个人链接。保留静态详情页作为无JavaScript回退。本轮仅本地实现，不自动发布，不记为用户验收。
+
+最新Alumni资料与展示指示（2026-09-23）：用户确认毕业生继续使用People页既有悬浮窗功能，并将后续提供毕业生信息和介绍。首批两位毕业生为Chuchuan Ceng与Kaixuan Xie，均于2026年3月毕业，研究生期间从事强化学习和边缘计算研究，现任Shopee Algorithm Engineer；用户提供的两张照片继续作为成员资料使用。本轮仅撰写并保存英文简介，不实施页面集成或发布。
 
 最新Alumni指示（2026-09-22）：用户要求在People页实现已毕业学生（Alumni）分区，资料后续提供，先实现接口。此指示更新2026-09-22早前"分组仅PI、PhD Students、Master Students三类，不需要Alumni"的范围；接口已本地实现（空状态占位+数据驱动列表），等待资料填充，不自动发布，见[验证记录](verification/people-alumni-2026-09-22.md)。
 

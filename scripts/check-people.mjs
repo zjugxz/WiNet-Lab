@@ -31,6 +31,11 @@ const sections = {
   ],
 };
 const allMembers = Object.values(sections).flat();
+const alumni = [
+  ['chuchuan-ceng', 'Chuchuan Ceng'],
+  ['kaixuan-xie', 'Kaixuan Xie'],
+];
+const allProfiles = [...allMembers, ...alumni];
 const emails = {
   'xiuzhen-guo': 'guoxz@zju.edu.cn',
   'haobo-zhang': '12532092@zju.edu.cn',
@@ -76,28 +81,20 @@ try {
       .getByRole('heading', { name: heading, exact: true })
       .isVisible();
   }
-  // Alumni interface: section renders with an explicit placeholder until the
-  // graduated-member records are supplied.
+  // Alumni use the same photo cards and dialog as current members, without
+  // email/link controls.
   await page.getByRole('heading', { name: 'Alumni', exact: true }).isVisible();
   assert.equal(
-    await page.locator('.people-section-alumni .alumni-list').count(),
-    0,
-    'No alumni rows without supplied records',
-  );
-  await expect(page.locator('.alumni-placeholder')).toHaveText(
-    'Alumni information is coming soon.',
-  );
-  assert.equal(
-    await page.locator('.people-section-alumni a').count(),
-    0,
-    'Placeholder must not invent links',
+    await page.locator('.people-section-alumni a.people-card').count(),
+    alumni.length,
+    'Every supplied alumnus has a profile card',
   );
   const cards = page.locator('.people-grid a.people-card');
-  assert.equal(await cards.count(), 15);
+  assert.equal(await cards.count(), allProfiles.length - 1);
   assert.equal(
     await page.locator('a[data-person-open]').count(),
-    allMembers.length + 1,
-    '15 student cards + PI photo link + PI name link',
+    allProfiles.length + 1,
+    '17 student/alumni cards + PI photo link + PI name link',
   );
   const piBioParas = await page
     .locator('.people-bio p')
@@ -158,7 +155,7 @@ try {
   assert.equal(
     await studentRows.count(),
     15,
-    'Every student card has a link row',
+    'Every current student card has a link row; alumni do not',
   );
   const rowLinks = await studentRows
     .locator('a.person-link')
@@ -169,6 +166,11 @@ try {
       .filter(([id]) => id !== 'xiuzhen-guo')
       .map(([id]) => `mailto:${emails[id]}`),
     'Each student row has exactly their email button',
+  );
+  assert.equal(
+    await page.locator('.people-section-alumni .person-links').count(),
+    0,
+    'Alumni cards must not invent email or personal links',
   );
 
   // Clicking an email button copies the address and confirms in place
@@ -199,11 +201,11 @@ try {
   );
   assert.deepEqual(
     hrefs,
-    allMembers
+    allProfiles
       .filter(([id]) => id !== 'xiuzhen-guo')
       .map(([id]) => `${base}people/${id}/`),
   );
-  for (const [, name] of allMembers) {
+  for (const [, name] of allProfiles) {
     const photo = page.getByRole('img', { name: `Photo of ${name}` });
     assert(
       await photo.evaluate(
@@ -306,6 +308,44 @@ try {
     await dialog.locator('[data-person-email]').textContent(),
     '12532092@zju.edu.cn',
   );
+  await page.keyboard.press('Escape');
+  await page.locator('a[data-person-open="chuchuan-ceng"]').click();
+  assert.equal(
+    await dialog.locator('[data-person-section]').textContent(),
+    'Alumni',
+  );
+  assert.equal(
+    await dialog.locator('[data-person-role]').textContent(),
+    'Algorithm Engineer at Shopee',
+  );
+  assert.equal(
+    await dialog.locator('[data-person-graduation]').textContent(),
+    'Graduated March 2026',
+  );
+  assert.equal(await dialog.locator('[data-person-age]').isVisible(), false);
+  assert.equal(await dialog.locator('[data-person-email]').isVisible(), false);
+  assert.match(
+    await dialog.locator('[data-person-bio]').textContent(),
+    /adaptive decision-making in edge environments/,
+  );
+  await page.screenshot({
+    path: `.tools/person-dialog-alumni-${base === '/' ? 'root' : 'base'}-1440.png`,
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  assert(
+    await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+    'Alumni dialog must not overflow the mobile viewport',
+  );
+  await page.screenshot({
+    path: `.tools/person-dialog-alumni-${base === '/' ? 'root' : 'base'}-390.png`,
+  });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.keyboard.press('Escape');
+  await page.locator('a[data-person-open="kaixuan-xie"]').click();
+  assert.match(
+    await dialog.locator('[data-person-bio]').textContent(),
+    /distributed edge settings/,
+  );
   await page.mouse.click(4, 4);
   await page.waitForFunction(
     () => document.querySelector('person-dialog dialog')?.open === false,
@@ -328,7 +368,7 @@ try {
     });
   };
   const sizes = [];
-  for (const id of ['zhou-yang', 'xiangguang-wang', 'yu-cao']) {
+  for (const id of ['zhou-yang', 'xiangguang-wang', 'yu-cao', 'kaixuan-xie']) {
     sizes.push(await sizeOf(id));
     await page.keyboard.press('Escape');
   }
@@ -337,7 +377,7 @@ try {
       assert.ok(
         Math.abs(sizes[0][kind].width - later[kind].width) < 1 &&
           Math.abs(sizes[0][kind].height - later[kind].height) < 1,
-        `${kind} area must be identical for every member`,
+        `${kind} area must be identical for every member: ${JSON.stringify(sizes)}`,
       );
     }
   }
@@ -365,7 +405,7 @@ try {
   await page.keyboard.press('Escape');
 
   // Detail pages: photo, name, and the bio live here.
-  for (const [index, [id, name]] of allMembers.entries()) {
+  for (const [index, [id, name]] of allProfiles.entries()) {
     await page.goto(`${baseUrl}people/${id}/`, { waitUntil: 'networkidle' });
     assert.equal(await page.title(), `${name} | WiNet Lab`);
     await page
@@ -391,8 +431,26 @@ try {
     const back = page.locator('a.back-link');
     assert.equal(await back.getAttribute('href'), `${base}people/`);
     const metaMail = page.locator('.person-meta a');
-    assert.equal(await metaMail.getAttribute('href'), `mailto:${emails[id]}`);
-    assert.equal(await metaMail.textContent(), emails[id]);
+    const isAlumni = alumni.some(([alumnusId]) => alumnusId === id);
+    if (isAlumni) {
+      assert.equal(await metaMail.count(), 0, 'Alumni detail has no email');
+      assert.equal(
+        await page.locator('.person-meta span').textContent(),
+        'Graduated March 2026',
+      );
+      assert.equal(
+        await page.locator('.person-links').count(),
+        0,
+        'Alumni detail has no empty link controls',
+      );
+      assert.equal(
+        await page.locator('.person-role').textContent(),
+        'Algorithm Engineer at Shopee',
+      );
+    } else {
+      assert.equal(await metaMail.getAttribute('href'), `mailto:${emails[id]}`);
+      assert.equal(await metaMail.textContent(), emails[id]);
+    }
     if (id === 'xiuzhen-guo') {
       assert.equal(await page.locator('.person-meta span').count(), 0);
       const labeled = page.locator('.person-links .person-link');
@@ -423,7 +481,7 @@ try {
         'Labeled button swaps its text while confirming',
       );
       assert.equal(await piEmail.getAttribute('title'), 'Copied: guoxz@zju.edu.cn');
-    } else {
+    } else if (!isAlumni) {
       const labeled = page.locator('.person-links .person-link');
       assert.equal(await labeled.count(), 1, 'Student detail shows email only');
       assert.equal(
@@ -431,7 +489,7 @@ try {
         `mailto:${emails[id]}`,
       );
     }
-    if (id !== 'xiuzhen-guo') {
+    if (id !== 'xiuzhen-guo' && !isAlumni) {
       assert.match(
         await page.locator('.person-meta span').textContent(),
         /^Age \d+$/,
@@ -481,7 +539,7 @@ try {
     fullPage: true,
   });
   console.log(
-    `People checks passed (${allMembers.length} cards + ${allMembers.length} detail pages + alumni interface, base ${base || '/'})`,
+    `People checks passed (${allProfiles.length} profiles + ${allProfiles.length} detail pages, base ${base || '/'})`,
   );
 } finally {
   await context.close();

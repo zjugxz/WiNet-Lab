@@ -2,6 +2,8 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
+最新本地实现：[首批Alumni资料集成](verification/people-alumni-populated-2026-09-23.md)（2026-09-23）。People页新增Chuchuan Ceng与Kaixuan Xie两张毕业生照片卡片，复用现有固定尺寸悬浮窗及静态详情页；显示差异化英文简介、Shopee算法工程师去向和2026年3月毕业时间，不显示未提供的邮箱/年龄/链接。两种base、People专项检查与17项回归测试通过；用户已确认本地效果，尚未发布。
+
 最新发布：[正文链接与People链接按钮发布](verification/release-text-links-people-2026-09-22.md)（2026-09-22晚）。正文 `[文字](网址)` 下划线链接标记（可组合加粗、http(s) 白名单）上线，首页 "Dr. Xiuzhen Guo" 链到 zjugxz.github.io；People 每人卡片/详情页链接按钮（邮箱点击复制+就地反馈、PI 网站与 Google Scholar 新标签打开），推送 8250e20..8e259c1，Actions success，线上真实浏览器核验通过（剪贴板内容、copied 状态、无跳转、零错误）。
 
 历史发布：[P0媒体优化发布](verification/release-p0-2026-09-22.md)（2026-09-22晚）。诊断确认跨境链路瓶颈（1.1–1.4 Mbps）后，4段超预算预览重编码至540p/≤731 kb/s（七段合计51.3→33.3 MiB），research-video.ts 改为单一活跃缓冲队列，mmprism Demo 分离原字节文件；随并行会话的照片更新一并推送 main（dcbce97..129c0bd，Actions success）。线上已核验：媒体字节数逐一致、受限PDF 404、真实浏览器首段立即起播/同排12s放行/下方未预取。技术发布不等于整站验收；GIF降级后备与P1待用户确认。
