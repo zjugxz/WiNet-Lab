@@ -32,7 +32,7 @@ try {
   });
   assert.equal(
     await page.locator('link[rel="icon"]').getAttribute('href'),
-    `${base}favicon.svg`,
+    `${base}favicon.svg?v=20260923`,
     'Favicon must resolve under the repository base path',
   );
   const links = await page

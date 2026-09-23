@@ -13,7 +13,7 @@ test('homepage content, links, local assets and accessibility', async ({
   await expect(page).toHaveTitle('Home | WiNet Lab');
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute(
     'href',
-    '/favicon.svg',
+    '/favicon.svg?v=20260923',
   );
   await expect(
     page.getByRole('heading', { name: 'About WiNet Lab', exact: true }),
