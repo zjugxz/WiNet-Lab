@@ -26,4 +26,8 @@
 
 ## 状态
 
-本地实现完成，未推送GitHub。用户于2026-09-23查看后回复“很好”并要求提交，本批本地效果已确认；该确认不构成远程发布授权。
+用户于2026-09-23查看后回复“很好”并要求提交，随后明确要求发送GitHub。功能提交`8176c37`已普通推送到`zjugxz/WiNet-Lab`的`main`（`ddc8554..8176c37`），未使用强制推送，未包含`resources/`、PDF、本地备份历史或未提交的个人主页资料。
+
+GitHub Actions运行[#18](https://github.com/zjugxz/WiNet-Lab/actions/runs/35821831504)状态为Success，总时长1分23秒，build 42秒、deploy 33秒；部署产物摘要为`sha256:993149d9b843847c5c1bc9047f76f3b8fc687411837608d1b135f8e94e79a78d`。
+
+线上核验：`/WiNet-Lab/people/`返回HTTP 200，包含两位姓名、Shopee职位和两条详情链接，旧Alumni占位文案消失；`/people/chuchuan-ceng/`与`/people/kaixuan-xie/`均包含`Graduated March 2026`和`Algorithm Engineer at Shopee`且无`mailto:`；两张线上WebP分别为6750与5498字节，SHA-256与本地公开副本逐一一致。发布与技术验证完成，不改变未录用PDF和原始`resources/`的公开边界。

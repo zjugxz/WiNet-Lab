@@ -2,7 +2,9 @@
 
 本目录供用户及后续 agent 了解已确认需求、当前进度和证据。文档随任务进展更新。
 
-最新本地实现：[首批Alumni资料集成](verification/people-alumni-populated-2026-09-23.md)（2026-09-23）。People页新增Chuchuan Ceng与Kaixuan Xie两张毕业生照片卡片，复用现有固定尺寸悬浮窗及静态详情页；显示差异化英文简介、Shopee算法工程师去向和2026年3月毕业时间，不显示未提供的邮箱/年龄/链接。两种base、People专项检查与17项回归测试通过；用户已确认本地效果，尚未发布。
+老师个人主页独立项目：新仓库 `zjugxz/xiuzhen-guo-homepage` 已核验为空且公开；参考站 `marsyang.site` 的 15 个公开页面、桌面/手机导航、招生说明交互与已知缺陷已完成[全量审计](verification/personal-homepage-reference-audit-2026-09-23.md)（2026-09-23）。尚未创建个人主页工程、上传代码或启用 Pages，等待用户确认复刻边界并提供老师真实资料。
+
+最新发布：[首批Alumni资料集成](verification/people-alumni-populated-2026-09-23.md)（2026-09-23）。People页新增Chuchuan Ceng与Kaixuan Xie两张毕业生照片卡片，复用现有固定尺寸悬浮窗及静态详情页；显示差异化英文简介、Shopee算法工程师去向和2026年3月毕业时间，不显示未提供的邮箱/年龄/链接。功能提交`8176c37`已推送main，Actions #18 success；线上People、两条详情路由和照片哈希核验通过。
 
 最新发布：[正文链接与People链接按钮发布](verification/release-text-links-people-2026-09-22.md)（2026-09-22晚）。正文 `[文字](网址)` 下划线链接标记（可组合加粗、http(s) 白名单）上线，首页 "Dr. Xiuzhen Guo" 链到 zjugxz.github.io；People 每人卡片/详情页链接按钮（邮箱点击复制+就地反馈、PI 网站与 Google Scholar 新标签打开），推送 8250e20..8e259c1，Actions success，线上真实浏览器核验通过（剪贴板内容、copied 状态、无跳转、零错误）。
 
