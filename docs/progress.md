@@ -4,7 +4,7 @@
 
 ## 当前任务：浏览器标签图标已发布（2026-09-23，待用户确认）
 
-用户反馈浏览器标签栏仍显示默认地球图标。已将现有WiNet绿色W波形与橙色信号点原样提取为`public/favicon.svg`，通过共享`SiteLayout.astro`接入全部页面，并使用`assetPath()`兼容本地根路径和GitHub Pages的`/WiNet-Lab/`子路径。验证：Astro检查59文件零错误/警告/提示；两种base各构建24页；17项Playwright回归全部通过；子路径浏览器检查确认favicon URL正确且无失败请求；256×256栅格化结果目视正常。用户随后授权推送；功能提交`95431d7`已推送main，Actions #20成功，线上People页已引用`/WiNet-Lab/favicon.svg`且图标返回HTTP 200与`image/svg+xml`。用户进一步澄清只有People路由仍显示默认图标；核查确认六个路由共享同一head、People无覆盖逻辑且线上资源正常，原因是该页面在发布前留下的路由级favicon空缓存。现已给图标URL增加版本参数以强制浏览器重新获取，待复验并发布。详见[验证记录](verification/favicon-2026-09-23.md)。
+用户反馈浏览器标签栏仍显示默认地球图标。已将现有WiNet绿色W波形与橙色信号点原样提取为`public/favicon.svg`，通过共享`SiteLayout.astro`接入全部页面，并使用`assetPath()`兼容本地根路径和GitHub Pages的`/WiNet-Lab/`子路径。验证：Astro检查59文件零错误/警告/提示；两种base各构建24页；17项Playwright回归全部通过；子路径浏览器检查确认favicon URL正确且无失败请求；256×256栅格化结果目视正常。用户随后授权推送；功能提交`95431d7`已推送main，Actions #20成功，线上People页已引用`/WiNet-Lab/favicon.svg`且图标返回HTTP 200与`image/svg+xml`。用户进一步澄清只有People路由仍显示默认图标；核查确认六个路由共享同一head、People无覆盖逻辑且线上资源正常，原因是该页面在发布前留下的路由级favicon空缓存。修复提交`f7866b4`为图标URL增加版本参数并已推送main，Actions #21成功；线上People页现引用`/WiNet-Lab/favicon.svg?v=20260923`，页面与版本化图标均返回HTTP 200，可强制浏览器重新获取。详见[验证记录](verification/favicon-2026-09-23.md)。等待用户查看确认。
 
 ## 当前任务：首批Alumni已发布（2026-09-23，用户已确认）
 
