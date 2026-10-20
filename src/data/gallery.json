@@ -9,7 +9,23 @@
         {
           "id": "group-2026",
           "src": "gallery/2026/photo-1.webp",
-          "alt": "Lab members posing together outdoors with trees and campus buildings in the background"
+          "alt": "Lab members posing together outdoors with trees and campus buildings in the background",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "id": "outing-path-2026",
+          "src": "gallery/2026/photo-2.webp",
+          "alt": "Lab members posing along a stone path between tea fields and trees",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "id": "outing-group-2026",
+          "src": "gallery/2026/photo-3.webp",
+          "alt": "Lab members posing together outdoors at dusk beneath a cloudy sky",
+          "width": 1280,
+          "height": 960
         }
       ]
     },
@@ -21,7 +37,9 @@
         {
           "id": "outing-2025",
           "src": "gallery/2025/photo-1.webp",
-          "alt": "Lab members taking a group photo at a scenic outdoor spot with greenery and a pavilion"
+          "alt": "Lab members taking a group photo at a scenic outdoor spot with greenery and a pavilion",
+          "width": 1280,
+          "height": 960
         }
       ]
     },
@@ -33,7 +51,9 @@
         {
           "id": "dinner-2024",
           "src": "gallery/2024/photo-1.webp",
-          "alt": "Lab members gathered around a long dinner table in a restaurant, smiling together in a group photo"
+          "alt": "Lab members gathered around a long dinner table in a restaurant, smiling together in a group photo",
+          "width": 1280,
+          "height": 960
         }
       ]
     }

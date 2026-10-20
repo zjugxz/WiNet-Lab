@@ -43,7 +43,7 @@ try {
   assert.deepEqual(dates, groups.map((group) => group.date));
 
   const photos = page.locator('.gallery-photo');
-  assert.equal(await photos.count(), 3);
+  assert.equal(await photos.count(), 5);
   for (const img of await photos.all()) {
     assert(
       await img.evaluate(
@@ -52,6 +52,8 @@ try {
           return (
             image.complete &&
             image.naturalWidth > 0 &&
+            image.naturalWidth === Number(image.getAttribute('width')) &&
+            image.naturalHeight === Number(image.getAttribute('height')) &&
             new URL(image.currentSrc, location.href)
               .pathname.startsWith(`${siteBase}gallery/`) &&
             image.currentSrc.endsWith('.webp')
@@ -62,6 +64,13 @@ try {
       'Every gallery photo must load as WebP under the site base',
     );
   }
+  assert.deepEqual(
+    await page.locator('.gallery-group').first().locator('.gallery-photo').evaluateAll((nodes) =>
+      nodes.map((node) => new URL(node.currentSrc).pathname.split('/').pop()),
+    ),
+    ['photo-1.webp', 'photo-2.webp', 'photo-3.webp'],
+    'The 2026 group should include both new photos',
+  );
   // No lightbox or clickable photo controls anywhere.
   assert.equal(await page.locator('dialog').count(), 0);
   assert.equal(

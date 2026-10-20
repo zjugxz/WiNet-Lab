@@ -160,7 +160,7 @@ test('all navigation destinations share the layout and implemented pages show th
         'Team outing',
         'Lab dinner',
       ]);
-      await expect(page.locator('.gallery-photo')).toHaveCount(3);
+      await expect(page.locator('.gallery-photo')).toHaveCount(5);
     }
     await expect(
       page.getByRole('navigation').getByRole('link', { name, exact: true }),

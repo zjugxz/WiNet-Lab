@@ -136,3 +136,7 @@ Before automatic publication, obtain full-project acceptance and verify the repo
 ## Handoff
 
 Read AGENTS.md, requirements, and progress first. Preserve unrelated edits; keep implementation, verification, publication and user acceptance distinct. The current website upload was explicitly authorized on 2026-09-18. Later tasks still require their own publication scope; local commits alone are not continuing permission to push. Update the current release record when publishing rather than treating historical task restrictions as the current state.
+
+## Gallery photos
+
+Keep original photos under the Git-ignored `resources/Gallery/<year>/`. Publish optimized WebP copies in `public/gallery/<year>/`, then add each photo to `src/data/gallery.json` with a unique `id`, `src`, descriptive `alt`, and its actual pixel `width` and `height`. The Gallery page shows photos at their natural proportions in three desktop columns; it does not crop or open a lightbox. Keep the dimensions in JSON aligned with the generated file so the browser reserves the right amount of space before loading. The year groups render newest first. Verify both the local root path and the GitHub Pages `/WiNet-Lab/` base path after changing photos.

@@ -41,8 +41,8 @@ const photoUrl = (src: string) => galleryPhotoPath(src);
                   alt={photo.alt}
                   loading="lazy"
                   decoding="async"
-                  width="1280"
-                  height="960"
+                  width={photo.width}
+                  height={photo.height}
                 />
               </li>
             ))}

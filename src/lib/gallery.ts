@@ -21,6 +21,8 @@ const groupSchema = z.object({
         id,
         src: photo,
         alt: text,
+        width: z.number().int().positive(),
+        height: z.number().int().positive(),
       }),
     )
     .min(1),
