@@ -3,11 +3,11 @@ import AxeBuilder from '@axe-core/playwright';
 import audit from '../docs/verification/publications-audit-2026-09-18.json' with { type: 'json' };
 import publications from '../src/data/publications.json' with { type: 'json' };
 
-test('74 retained records preserve source citations and the requested deletion is absent', async ({
+test('75 retained records preserve source citations and the requested deletion is absent', async ({
   page,
 }) => {
-  expect(publications).toHaveLength(74);
-  expect(new Set(publications.map((p) => p.id)).size).toBe(74);
+  expect(publications).toHaveLength(75);
+  expect(new Set(publications.map((p) => p.id)).size).toBe(75);
   for (const entry of audit.records) {
     if (entry.id === 71) {
       expect(
@@ -36,9 +36,9 @@ test('74 retained records preserve source citations and the requested deletion i
   });
   await page.goto('/publications/');
   await expect(page).toHaveTitle('Publications | WiNet Lab');
-  await expect(page.locator('[data-publication]:visible')).toHaveCount(74);
+  await expect(page.locator('[data-publication]:visible')).toHaveCount(75);
   await expect(page.locator('#p71')).toHaveCount(0);
-  await expect(page.locator('.publication-resource')).toHaveCount(73);
+  await expect(page.locator('.publication-resource')).toHaveCount(74);
   await expect(page.getByText('Details pending', { exact: true })).toHaveCount(
     0,
   );
@@ -48,6 +48,11 @@ test('74 retained records preserve source citations and the requested deletion i
   await expect(page.locator('#p60')).toContainText('Poster');
   await expect(page.locator('#p60')).toContainText('Xiaoran Fan');
   await expect(page.locator('#p73')).toContainText('2052–2087');
+  await expect(page.locator('#p76')).toContainText('An LLM-based Multi-modal Framework');
+  await expect(page.locator('#p76 .publication-resource')).toHaveAttribute(
+    'href',
+    'https://doi.org/10.1109/TMC.2026.3739401',
+  );
   await expect(page.locator('#p16')).toHaveAttribute('data-year', '2025');
   const expectedOrder = [...publications]
     .sort((a, b) => b.year - a.year || a.sourceNumber - b.sourceNumber)
@@ -84,10 +89,10 @@ test('year and type filters use OR within each group and AND across groups and s
   await expect(page.locator('#p27')).toBeVisible();
   await page.locator('input[name="type"][value="journal"]').check();
   await expect(page.locator('[data-publication]:visible')).toHaveCount(2);
-  await expect(page.getByRole('status')).toHaveText('2 of 74 publications');
+  await expect(page.getByRole('status')).toHaveText('2 of 75 publications');
   await expect(page.locator('[data-year-group]:visible')).toHaveCount(2);
   await page.getByRole('button', { name: 'Clear all', exact: true }).click();
-  await expect(page.locator('[data-publication]:visible')).toHaveCount(74);
+  await expect(page.locator('[data-publication]:visible')).toHaveCount(75);
   await page.getByRole('searchbox').fill('Guan Gui');
   await expect(page.locator('[data-publication]:visible')).toHaveCount(1);
   await expect(page.locator('#p72')).toBeVisible();
@@ -109,12 +114,12 @@ test('empty state, reset and keyboard interaction recover the entire list', asyn
     page.getByRole('heading', { name: 'No matching publications' }),
   ).toBeVisible();
   await expect(page.locator('[data-year-group]:visible')).toHaveCount(0);
-  await expect(page.getByRole('status')).toHaveText('0 of 74 publications');
+  await expect(page.getByRole('status')).toHaveText('0 of 75 publications');
   await page
     .getByRole('button', { name: 'Clear filters', exact: true })
     .click();
   await expect(page.getByRole('searchbox')).toBeFocused();
-  await expect(page.locator('[data-publication]:visible')).toHaveCount(74);
+  await expect(page.locator('[data-publication]:visible')).toHaveCount(75);
   await page.getByRole('searchbox').fill('  SOFTNB  ');
   await page.getByRole('searchbox').press('Enter');
   await expect(page).toHaveURL('/publications/');
@@ -128,7 +133,7 @@ test('without JavaScript the full bibliography and paper links remain accessible
   try {
     const page = await context.newPage();
     await page.goto('http://127.0.0.1:4322/publications/');
-    await expect(page.locator('[data-publication]:visible')).toHaveCount(74);
+    await expect(page.locator('[data-publication]:visible')).toHaveCount(75);
     await expect(page.locator('.publication-filters')).not.toBeVisible();
     await expect(page.locator('#p75 .publication-resource')).toHaveAttribute(
       'href',

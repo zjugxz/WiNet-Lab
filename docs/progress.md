@@ -6,6 +6,12 @@
 
 用户将两张照片放入 `resources/Gallery/2026/`，要求更新网站。已加入现有 2026 Gallery 分组，保留静态三列和等比例展示；原始 JPG 未公开。五张照片正常加载，竖图完整显示；Astro检查、两种 base 构建、Gallery 专项及子路径全站检查通过，桌面/手机截图已目视核对。导航回归9项断言均通过，但Playwright测试服务器未自行退出，已手动结束。用户于2026-10-20授权上传；`b3d466c` 已推送 main，Actions #39396711238 success，线上 Gallery 200且两张新图哈希与本地一致。详见[Gallery 新照片](verification/gallery-photos-2026-10-20.md)。等待用户访问确认，不记为用户验收。
 
+## 当前任务：旧个人主页根地址跳转已发布（2026-09-23，待用户确认）
+
+用户授权停用 `https://zjugxz.github.io/` 的旧个人主页，并让访问者自动跳转到已上线的新主页 `https://zjugxz.github.io/xiuzhen-guo-homepage/`。已在独立仓库 `zjugxz/zjugxz.github.io` 保留旧源码与完整历史，仅将 Pages 发布目录改为极简静态跳转站；根页及自定义404均包含 canonical、meta refresh、JavaScript `location.replace` 和可点击后备链接，查询参数与锚点会保留。功能提交 `1b0bebc` 已从旧提交 `9f6644a` 普通快进推送到 `master`；Deploy site #185 与 GitHub Pages build #148 均 success，`gh-pages` 部署提交为 `cc53edb`且仅含 `.nojekyll`、`index.html`、`404.html`。
+
+线上真实 Chromium 已验证桌面/手机根地址均落到新主页且标题为 Xiuzhen Guo、无失败资源或错误响应；不存在的旧子路径也经自定义404跳转，并保留测试查询参数和锚点。测试期间 GitHub 链路偶发 `ERR_CONNECTION_RESET`，重试后通过，属于已知网络波动而非跳转逻辑错误。GitHub Pages 仍是客户端跳转，不是服务器端 301/302。详见[发布与验证记录](verification/personal-homepage-root-redirect-2026-09-23.md)。技术发布完成，等待用户实际访问确认。
+
 ## 当前任务：老师个人主页链接更新（2026-09-23，待用户确认）
 
 用户指定即将上线的新主页`https://zjugxz.github.io/xiuzhen-guo-homepage/`，要求替换网站内三个老师主页入口。已更新首页About段落中的`Dr. Xiuzhen Guo`文字链接，以及People数据中的PI `website`字段；后者由People页PI卡片图标和`/people/xiuzhen-guo/`详情页Website按钮共同使用。旧主页根地址不再作为老师主页链接；Google Scholar、邮箱和其他链接不变。验证：Astro检查59文件零错误/警告/提示；根路径与`/WiNet-Lab/`各构建24页；17项回归全部通过；People专项两种base均通过18卡片/18详情页；子路径检查确认首页新链接且无失败请求。用户随后授权推送；提交`2fbdc16`已推送main，Actions #23成功，线上首页、People页与PI详情页各有一个新主页链接且旧根主页链接均为零。详见[验证记录](verification/pi-homepage-link-2026-09-23.md)。等待用户查看确认。
@@ -13,6 +19,10 @@
 ## 当前任务：浏览器标签图标已发布（2026-09-23，待用户确认）
 
 用户反馈浏览器标签栏仍显示默认地球图标。已将现有WiNet绿色W波形与橙色信号点原样提取为`public/favicon.svg`，通过共享`SiteLayout.astro`接入全部页面，并使用`assetPath()`兼容本地根路径和GitHub Pages的`/WiNet-Lab/`子路径。验证：Astro检查59文件零错误/警告/提示；两种base各构建24页；17项Playwright回归全部通过；子路径浏览器检查确认favicon URL正确且无失败请求；256×256栅格化结果目视正常。用户随后授权推送；功能提交`95431d7`已推送main，Actions #20成功，线上People页已引用`/WiNet-Lab/favicon.svg`且图标返回HTTP 200与`image/svg+xml`。用户进一步澄清只有People路由仍显示默认图标；核查确认六个路由共享同一head、People无覆盖逻辑且线上资源正常，原因是该页面在发布前留下的路由级favicon空缓存。修复提交`f7866b4`为图标URL增加版本参数并已推送main，Actions #21成功；线上People页现引用`/WiNet-Lab/favicon.svg?v=20260923`，页面与版本化图标均返回HTTP 200，可强制浏览器重新获取。详见[验证记录](verification/favicon-2026-09-23.md)。等待用户查看确认。
+
+## 当前任务：老师个人主页参考站全量审计完成（2026-09-23，待用户确认）
+
+用户要求仿照 `https://marsyang.site/` 一比一复刻老师个人主页，并先读取所有内容、验证全部功能和按钮。已完成参考站审计：读取 `sitemap.xml` 的 15 个公开页面（含导航外的 Publications、Patents、Recruit、Portrait、Template、Categories、Tags），统计主要内容（首页 30 条 News、Publications 61 项），盘点 287 个链接实例/127 个唯一第三方目标；实测桌面六项导航、390/320 px 手机菜单点击与键盘开合、手机站内跳转、首页招生说明展开/收起，以及桌面/手机无横向溢出。发现参考站 portrait 子路径图片 404、ClustrMaps 图片失败、8 个正文自链接、空 H1/标题、隐藏页面无导航高亮等缺陷；不会默认复制这些问题。完整证据见[参考站审计](verification/personal-homepage-reference-audit-2026-09-23.md)。本轮未创建个人主页工程、绑定远程、上传代码或启用 Pages；等待用户确认审计与“视觉/有效交互一致、缺陷不复刻”的边界后，再收集老师真实资料并确定页面范围。
 
 ## 当前任务：首批Alumni已发布（2026-09-23，用户已确认）
 
@@ -455,6 +465,14 @@ API key 排查及图片生成已停止，不再要求用户更新密钥，不发
 开始时 src/data/home.json 与 src/pages/index.astro 已有用户修改（介绍加粗与移除 hero 小字），完整保留，不纳入本次提交；本轮构建和截图基于包含这些修改的当前工作区。当前数据中 introduction 字段仍存在，但首页已不渲染该小字。
 
 本批代码、文档和截图保存为本地 Git 提交 `feat: refresh lab branding and center footer`，哈希以 git log 为准。未上传 GitHub。状态：技术验证完成，等待用户确认本版 logo 和页脚后再开始下一子任务；不视作整个首页或网站已验收。
+
+## 2026-10-28：新增已录用 IEEE TMC 论文（本地完成，待用户确认）
+
+用户提供 `An LLM-based Multi-modal Framework for Comprehensive mmWave Data Synthesis, Understanding, and Reasoning` 的 IEEE BibTeX，说明该工作刚被录用。论文与现有 p38 `mmExpert` 会议论文不是同一条记录，因此新增 Publications `p76`，不覆盖旧条目。新增数据包含7位作者、IEEE Transactions on Mobile Computing、2026、页码1–14、DOI `10.1109/TMC.2026.3739401`；未填缺失的卷号/期号，也未新增 Research 卡片或未提供的PDF/预览/Demo。
+
+Crossref API 于 2026-10-28 查询成功（HTTP 200），题名、作者顺序、刊名、年份、页码和 DOI 与用户资料一致，并返回 IEEE 文档 `11718031`。p76 同步加入 Text/BibTeX/RIS Cite 文件和 `sources.json`，因此网站当前为75条记录、74个出版入口、74个 Cite 入口（p03仍无正式出版入口）。
+
+待完成验证：astro check、根路径及 `/WiNet-Lab/` 构建、Publications/首页回归、Publications Cite 专项检查和新记录浏览器核对。完成技术验证后交用户查看；本轮不自动推送 GitHub，技术验证不等于用户验收。详见[本轮验证记录](verification/publication-p76-2026-10-28.md)。
 
 ## 当前优先任务 F02：真实资料整合与网站初版
 

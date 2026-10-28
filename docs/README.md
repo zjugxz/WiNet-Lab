@@ -4,6 +4,8 @@
 
 最新发布：[旧个人主页根地址跳转](verification/personal-homepage-root-redirect-2026-09-23.md)（2026-09-23）。用户授权后，`zjugxz/zjugxz.github.io` 已由旧Jekyll主页切换为指向 `https://zjugxz.github.io/xiuzhen-guo-homepage/` 的客户端跳转站；根页和旧子路径、桌面与手机均验证通过。功能提交`1b0bebc`、部署提交`cc53edb`，Deploy site #185与Pages build #148均success；旧源码和Git历史保留，等待用户实际访问确认。
 
+最新本地内容批次：[新增已录用 IEEE TMC 论文](verification/publication-p76-2026-10-28.md)（2026-10-28）。Publications 新增 p76 及 Text/BibTeX/RIS Cite，当前75条记录、74个出版入口；Crossref 与用户 BibTeX 元数据一致，根路径和 `/WiNet-Lab/` 构建、17项 Home/Publications 回归与 Cite 专项检查通过。仅本地实现，未推送，等待用户查看确认。
+
 老师个人主页独立项目：`zjugxz/xiuzhen-guo-homepage` 现已发布到项目站点；此前对参考站 `marsyang.site` 的 15 个公开页面、桌面/手机导航、招生说明交互与已知缺陷完成的[全量审计](verification/personal-homepage-reference-audit-2026-09-23.md)（2026-09-23）保留为早期实施依据，其中“空仓库、未启用Pages”等状态已不再代表当前线上状态。
 
 最新发布：[首批Alumni资料集成](verification/people-alumni-populated-2026-09-23.md)（2026-09-23）。People页新增Chuchuan Ceng与Kaixuan Xie两张毕业生照片卡片，复用现有固定尺寸悬浮窗及静态详情页；显示差异化英文简介、Shopee算法工程师去向和2026年3月毕业时间，不显示未提供的邮箱/年龄/链接。功能提交`8176c37`已推送main，Actions #18 success；线上People、两条详情路由和照片哈希核验通过。
@@ -16,13 +18,13 @@
 
 最新本地实现：[People页Alumni接口](verification/people-alumni-2026-09-22.md)（2026-09-22）。people.json新增alumni数组（name必填，学位/区间/去向/课题/链接可选），页面新增Alumni分区；空状态显示占位框，资料到达后填数据即自动渲染，无需改代码。两种base与17项测试通过，等待用户资料。
 
-本地待查看批次：[Gallery接口](verification/gallery-2026-09-22.md)、[Publications全条目Cite](verification/publications-cite-2026-09-22.md)（2026-09-22）。73条（除出版状态未核实的p03）提供与Research页完全一致的Cite入口；引用资料经Crossref DOI内容协商及USENIX/CRAD/CCF/EWSN官方网站逐篇取得（18条存档差异逐条甄别，中文两条为GB/T 7714样式），静态导出219个引用文件；新检查脚本、既有17项测试与Research/子路径回归全部通过，4321预览实测正常。等待用户查看，尚未发布。
+本地待查看批次：[Gallery接口](verification/gallery-2026-09-22.md)、[Publications全条目Cite](verification/publications-cite-2026-09-22.md)（2026-09-22）。历史批次73条（除出版状态未核实的p03）提供与Research页完全一致的Cite入口；本轮 p76 加入后当前为74条 Cite。引用资料经Crossref DOI内容协商及USENIX/CRAD/CCF/EWSN官方网站逐篇取得（18条存档差异逐条甄别，中文两条为GB/T 7714样式），静态导出219个历史引用文件及本轮新增3个；新检查脚本、既有17项测试与Research/子路径回归全部通过，4321预览实测正常。等待用户查看，尚未发布。
 
 历史本地批次：[Home图片与Research视频优化](verification/media-optimization-2026-09-18.md)及其[P0带宽实施](verification/research-video-p0-2026-09-22.md)（后者已随2026-09-22晚发布上线）。首页使用多尺寸无损WebP；预览视频压缩并按视口加载/播放，保留手动暂停和完整Demo原质量。[前期诊断](verification/media-performance-2026-09-18.md)保留为历史依据。
 
 网站地址：[WiNet Lab](https://zjugxz.github.io/WiNet-Lab/)。用户于2026-09-18明确要求更新文档后上传当前本地网站，已上传发布提交918672b，Actions构建/部署及线上关键页面检查通过，具体证据见[发布记录](verification/release-2026-09-18.md)。此前线上版本为f943625；技术验证或发布均不等于用户完成整站验收。
 
-当前内容：Home正式介绍、词云及7条News；Research三方向及6篇研究；Publications 74条记录、73个出版入口；Contact合作/招生文字和邮箱。People与Research第三方向仍为占位，在线后台未实现。
+当前内容：Home正式介绍、词云及7条News；Research三方向及8篇研究；Publications 75条记录、74个出版入口；People、Gallery、Contact合作/招生文字和邮箱。在线后台未实现。
 
 最新功能：[Research Cite多格式引用](verification/research-cite-2026-09-18.md)已随1b225ec发布，Actions成功；线上三篇×三格式的查看、复制、下载均验证通过，投稿论文无入口。具体部署及验证结果见[Cite发布记录](verification/release-cite-2026-09-18.md)。此前仅Bib和本地阶段记录保留作为历史。
 
@@ -30,7 +32,7 @@ Research每方向有Demo优先，无Demo不显示按钮；受限论文显示不�
 
 [Contact实现与验证](verification/contact-2026-09-18.md)已完成合作介绍、Join Us招生说明和guoxz@zju.edu.cn邮箱入口，已纳入本次发布范围，尚未记为用户验收。
 
-[Publications](publications.md)当前展示74条、73个出版入口；P71已删除，编号不重排；P34替换为《跨技术通信研究》，P37题名/CCF入口已更新。页面无Details pending，刊会彩色衬线、年份分隔加强。已纳入本次发布范围，尚未记为整页验收。
+[Publications](publications.md)当前展示75条、74个出版入口；P71已删除，编号不重排；P34替换为《跨技术通信研究》，P37题名/CCF入口已更新，p76为2026年新录用 IEEE TMC 论文。页面无Details pending，刊会彩色衬线、年份分隔加强。历史版本已发布，本轮 p76 仅本地实现，尚未记为整页验收。
 
 历史修复：[Home手机菜单修复（2026-09-15）](verification/Home-review-2026-09-15.md)解决展开后按钮上移；当前发布前17项Home/导航/Publications测试通过，Research另有下载和组件检查。历史验证页中的占位状态不代表当前页面状态。
 

@@ -1,6 +1,6 @@
 # Publications 页面资料与实现准备
 
-更新日期：2026-09-22（Asia/Shanghai）。当前74条、73个出版入口；73条（除p03）提供与Research页一致的Cite入口（Text/BibTeX/RIS，2026-09-22本地实现待查看，见[验证记录](verification/publications-cite-2026-09-22.md)）。P71已删除、P34/P37已更新；无Details pending，载体字体/配色及年份分隔已调整。已纳入用户明确授权的本次上传，实际部署见[发布记录](verification/release-2026-09-18.md)；原资料与内部核验记录可追溯。以下是各轮历史状态，技术发布不代表整页验收。
+更新日期：2026-10-28（Asia/Shanghai）。当前75条、74个出版入口；74条（除p03）提供与Research页一致的Cite入口（Text/BibTeX/RIS，p76于本轮新增）。P71已删除、P34/P37已更新；无Details pending，载体字体/配色及年份分隔已调整。此前版本已纳入用户明确授权的上传，实际部署见[发布记录](verification/release-2026-09-18.md)；本轮仅本地实现，未取得新的推送授权。原资料与内部核验记录可追溯。以下是各轮历史状态，技术发布不代表整页验收。
 
 ## 2026-09-22 全条目Cite完成（本地待查看）
 

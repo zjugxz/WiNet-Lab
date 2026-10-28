@@ -2,6 +2,10 @@
 
 更新日期：2026-09-23（Asia/Shanghai）。
 
+最新根地址跳转需求（2026-09-23）：用户不再需要旧个人主页 `https://zjugxz.github.io/`，要求访问该根地址时自动跳转到新个人主页 `https://zjugxz.github.io/xiuzhen-guo-homepage/`，并已明确授权修改旧站仓库和部署。已在独立仓库 `zjugxz/zjugxz.github.io` 实施，不修改 WiNet Lab 项目路由；旧源码及 Git 历史保留，可通过回退功能提交恢复。GitHub Pages 采用页面级客户端跳转而非服务器端 301/302；根地址、旧子路径、桌面和手机跳转均已通过技术验证，等待用户实际访问确认。
+
+最新老师个人主页指示（2026-09-23）：用户要求以 `https://marsyang.site/` 为参考一比一复刻老师个人主页，并要求先读取该站全部内容、验证所有功能和按钮。本轮仅完成参考站审计，不开始实现：站点地图 15 个公开页面已读取，桌面/手机导航和首页招生说明交互已实测；参考站自身破图、无效自链接、空标题及隐藏维护页不自动视为必须复制的功能。新站默认解释为复现视觉布局、响应式行为和有效交互，同时替换为老师真实资料并修复已知缺陷；该边界与最终页面范围仍待用户确认，不授权复制参考人物内容、上传新仓库或启用 Pages。
+
 最新Alumni本地集成指示（2026-09-23）：用户要求将首批两位毕业生更新到本地People页面，并确认毕业生继续使用现有悬浮窗功能。Chuchuan Ceng与Kaixuan Xie采用与在读学生一致的照片卡片和固定尺寸悬浮窗，显示差异化英文简介、`Algorithm Engineer at Shopee`与`Graduated March 2026`；不显示未提供的邮箱、年龄或个人链接。保留静态详情页作为无JavaScript回退。本轮仅本地实现，不自动发布，不记为用户验收。
 
 最新Alumni资料与展示指示（2026-09-23）：用户确认毕业生继续使用People页既有悬浮窗功能，并将后续提供毕业生信息和介绍。首批两位毕业生为Chuchuan Ceng与Kaixuan Xie，均于2026年3月毕业，研究生期间从事强化学习和边缘计算研究，现任Shopee Algorithm Engineer；用户提供的两张照片继续作为成员资料使用。本轮仅撰写并保存英文简介，不实施页面集成或发布。
@@ -13,6 +17,8 @@
 最新媒体优化指示：用户在Home/Research性能诊断后明确要求“直接执行修改，更新本地网站的home和Research页的功能”，授权两页作为同一批次实施。现本地已实现响应式WebP、三段压缩预览、faststart和视口加载/播放；保留原图、完整Demo原质量与可见时无需点击的静音循环，并尊重手动暂停。两页之间不再另等确认，本批完成后交用户查看；不自动发布、不视为整站验收。
 
 ## 网站
+
+- 2026-10-28用户提供一篇刚被录用的 IEEE Transactions on Mobile Computing 论文 BibTeX：`An LLM-based Multi-modal Framework for Comprehensive mmWave Data Synthesis, Understanding, and Reasoning`，DOI `10.1109/TMC.2026.3739401`。本轮授权将其作为 Publications 新增记录并补齐 Cite 三种格式；不据此新增 Research 卡片、公开 PDF 或媒体资源。Crossref 于 2026-10-28 返回匹配元数据。仅本地实现与验证，未授权新的 GitHub 推送。
 
 - 2026-09-22用户明确开展People页面，功能参考MARS Lab的People实现。分组仅保留PI、PhD Students、Master Students三类，不需要Alumni、Postdoc及其他分组；PI为大卡片带英文简介，学生为照片卡片，缺照片成员可按参考站形式用文字列表。此指示授权本地实现，不自动发布、不代表其他页面验收。
 - 2026-09-22用户自行修改home.json两处文字：About第一段补充"led by Dr. Xiuzhen Guo"并调整加粗；NSFC新闻改为第三人称"Xiuzhen Guo received the Young Scientists Fund (Type B) from National Natural Science Foundation China （原优青）"。修改由用户完成，agent仅重建、更新过期测试断言并记录；相关旧文案断言已同步为新表述。

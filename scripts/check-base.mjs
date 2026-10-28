@@ -98,7 +98,7 @@ try {
     if (name === 'Publications') {
       assert.equal(
         await page.locator('[data-publication]:visible').count(),
-        74,
+        75,
       );
       await page.getByRole('searchbox').fill('wizig');
       assert.equal(await page.locator('[data-publication]:visible').count(), 2);
@@ -118,7 +118,7 @@ try {
   );
   assert.deepEqual(failed, []);
   console.log(
-    `Repository base path ${base} verified: five pages, links, CSS, hero image, 74 publications, filters, and mobile menu; no failed requests.`,
+    `Repository base path ${base} verified: five pages, links, CSS, hero image, 75 publications, filters, and mobile menu; no failed requests.`,
   );
 } finally {
   await browser.close();

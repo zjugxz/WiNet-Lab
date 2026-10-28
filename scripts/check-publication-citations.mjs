@@ -21,7 +21,7 @@ const sourceText = async (id, ext) =>
     .trim() + '\n';
 
 const citable = publications.filter((p) => p.id !== 'p03');
-assert.equal(citable.length, 73);
+assert.equal(citable.length, 74);
 assert.equal(sources.p03, undefined);
 
 // Every citable publication ships all three formats from real sources.
@@ -124,15 +124,15 @@ for (const pub of citable) {
 }
 assert.equal(
   Object.keys(sources).filter((id) => /^p\d+$/.test(id)).length,
-  73,
-  'exactly 73 publication registrations',
+  74,
+  'exactly 74 publication registrations',
 );
 
 const browser = await chromium.launch();
 try {
   // Deep interaction sample: Cell text, IEEE journal, USENIX conference
   // without DOI, GB/T Chinese article, and the Springer book.
-  const sample = ['p01', 'p16', 'p23', 'p34', 'p75'];
+  const sample = ['p01', 'p16', 'p23', 'p34', 'p75', 'p76'];
   for (const base of ['/', '/WiNet-Lab/']) {
     const server = await preview({
       base,
@@ -148,10 +148,10 @@ try {
       const errors = [];
       page.on('pageerror', (error) => errors.push(error.message));
       await page.goto(`${origin}${base}publications/`);
-      await expect(page.locator('[data-publication]')).toHaveCount(74);
+      await expect(page.locator('[data-publication]')).toHaveCount(75);
       await expect(
         page.getByRole('button', { name: /^Cite: / }),
-      ).toHaveCount(73);
+      ).toHaveCount(74);
       assert.equal(
         await page.locator('#p03 citation-dialog').count(),
         0,
@@ -283,7 +283,7 @@ try {
             name: format.ext === 'txt' ? /^Cite: / : format.label,
             exact: true,
           });
-          await expect(links).toHaveCount(73);
+          await expect(links).toHaveCount(74);
         }
         const ready = plain.waitForEvent('download');
         await plain
@@ -300,7 +300,7 @@ try {
         await noJS.close();
       }
       console.log(
-        `${base}: 73 citations x 3 formats static+HTTP verified; sample dialogs, search, widths, axe and no-JS passed`,
+        `${base}: 74 citations x 3 formats static+HTTP verified; sample dialogs, search, widths, axe and no-JS passed`,
       );
     } finally {
       await context.close();

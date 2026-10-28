@@ -130,7 +130,7 @@ test('all navigation destinations share the layout and implemented pages show th
       .click();
     await expect(page.getByRole('heading', { level: 1, name })).toBeVisible();
     if (name === 'Publications') {
-      await expect(page.locator('[data-publication]')).toHaveCount(74);
+      await expect(page.locator('[data-publication]')).toHaveCount(75);
     } else if (name === 'Research') {
       await expect(page.getByRole('heading', { level: 2 })).toHaveText([
         'Bits Meet Physics',

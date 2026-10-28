@@ -1,0 +1,1 @@
+Y. Yan, X. Guo, Z. Zhang, Y. Zhu, X. Wang, Y. Shu, and J. Chen, “An LLM-based Multi-modal Framework for Comprehensive mmWave Data Synthesis, Understanding, and Reasoning,” IEEE Transactions on Mobile Computing, pp. 1–14, 2026, doi: 10.1109/TMC.2026.3739401.
