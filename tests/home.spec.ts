@@ -59,8 +59,9 @@ test('homepage content, links, local assets and accessibility', async ({
     page.getByRole('heading', { name: 'News', exact: true }),
   ).toBeVisible();
   const news = page.getByRole('list', { name: 'Lab news' });
-  await expect(news.getByRole('listitem')).toHaveCount(7);
+  await expect(news.getByRole('listitem')).toHaveCount(8);
   await expect(news.locator('time')).toHaveText([
+    'Oct 2026',
     'Sep 2026',
     'Aug 2026',
     'Aug 2026',
@@ -69,6 +70,14 @@ test('homepage content, links, local assets and accessibility', async ({
     'Apr 2026',
     'Apr 2026',
   ]);
+  await expect(
+    news
+      .locator('strong')
+      .filter({
+        hasText:
+          /^An LLM-based Multi-modal Framework for Comprehensive mmWave Data Synthesis, Understanding, and Reasoning$/,
+      }),
+  ).toHaveCSS('font-weight', '700');
   await expect(
     news.locator('strong').filter({ hasText: /^BCGscatter$/ }),
   ).toHaveCSS('font-weight', '700');
@@ -80,6 +89,7 @@ test('homepage content, links, local assets and accessibility', async ({
     'Young Scientists Fund (Type B) from National Natural Science Foundation China',
   );
   await expect(news).toContainText('Cover Paper');
+  await expect(news).toContainText('IEEE Transactions on Mobile Computing');
   await expect(news).toContainText('SoftNB');
   await expect(
     page.getByText('Updates coming soon', { exact: true }),

@@ -11,6 +11,7 @@ export const publicationTypes = {
 export interface Publication {
   id: string;
   sourceNumber: number;
+  displayPriority?: number;
   title: string;
   authors: string[];
   year: number;
@@ -31,8 +32,9 @@ export interface Publication {
 }
 
 // Validate at build time so future content edits fail before producing a bad page.
+const publicationRecords = records as Publication[];
 const ids = new Set<string>();
-for (const item of records) {
+for (const item of publicationRecords) {
   if (
     !/^p\d+$/.test(item.id) ||
     ids.has(item.id) ||
@@ -44,6 +46,8 @@ for (const item of records) {
     !Number.isInteger(item.year) ||
     item.year < 1900 ||
     item.year > 2100 ||
+    (item.displayPriority !== undefined &&
+      !Number.isInteger(item.displayPriority)) ||
     !Object.hasOwn(publicationTypes, item.type) ||
     !['verified', 'pending'].includes(item.verification)
   ) {
@@ -55,8 +59,11 @@ for (const item of records) {
   ids.add(item.id);
 }
 
-export const publications = (records as Publication[]).toSorted(
-  (a, b) => b.year - a.year || a.sourceNumber - b.sourceNumber,
+export const publications = publicationRecords.toSorted(
+  (a, b) =>
+    b.year - a.year ||
+    (b.displayPriority ?? 0) - (a.displayPriority ?? 0) ||
+    a.sourceNumber - b.sourceNumber,
 );
 // Citations live in the shared registry; an entry appears once its real
 // Text/BibTeX/RIS sources have been collected (p03 is not yet published).

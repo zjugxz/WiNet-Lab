@@ -291,10 +291,10 @@ try {
           .first()
           .click();
         const download = await ready;
-        assert.equal(download.suggestedFilename(), 'p01.txt');
+        assert.equal(download.suggestedFilename(), 'p76.txt');
         assert.equal(
           await readFile(await download.path(), 'utf8'),
-          await sourceText('p01', 'txt'),
+          await sourceText('p76', 'txt'),
         );
       } finally {
         await noJS.close();

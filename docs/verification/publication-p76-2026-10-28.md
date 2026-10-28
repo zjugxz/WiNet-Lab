@@ -21,3 +21,9 @@ The user supplied the IEEE BibTeX record for a newly accepted article and reques
 - Local preview `http://127.0.0.1:4321/publications/`: HTTP 200; p76 title and IEEE TMC venue present.
 
 This technical verification is not user acceptance and does not authorize a GitHub push. The local checkpoint is `ce0055b`; the remote branch was not changed.
+
+## Visibility follow-up
+
+The user reported that the paper was not visible on Publications or Home. Direct HTTP inspection showed p76 was present in Publications but appeared last among the fourteen 2026 records because the established same-year order used ascending `sourceNumber`; Home had no corresponding News item. The follow-up adds an October 2026 Home announcement with the complete title and IEEE TMC venue, and introduces optional `displayPriority` sorting so p76 appears first in the 2026 Publications group while retaining `id: p76` and `sourceNumber: 76`.
+
+Follow-up verification passed: `astro check` reported zero diagnostics; root and `/WiNet-Lab/` builds each generated 24 pages; the 17 Home/Publications Playwright tests passed; citation checks passed for both bases; and the `/WiNet-Lab/` integration check confirmed 75 publications with no failed requests. The citation check's no-JavaScript first-download assertion was updated from the former first record p01 to the intentionally promoted p76. Direct browser review at `http://127.0.0.1:4321/` confirmed the October 2026 announcement is first in News, and `/publications/` confirmed p76 is first in the 2026 group with its paper link and Cite control visible. This remains technical verification pending user acceptance; no GitHub push was made.

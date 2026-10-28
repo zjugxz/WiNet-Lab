@@ -474,6 +474,8 @@ Crossref API 于 2026-10-28 查询成功（HTTP 200），题名、作者顺序�
 
 验证完成：astro check 59文件零错误；根路径与 `/WiNet-Lab/` 各构建24页；Publications/Home回归17项通过；Publications Cite专项检查在两种base均通过（74条×3格式、静态/HTTP内容一致、p76弹窗复制下载、无JS回退、390/1440px、axe）；子路径全站检查确认75条、74个出版入口、无失败请求。本地4321预览返回200并包含p76题名和IEEE TMC。技术验证不等于用户验收，本轮不自动推送 GitHub。详见[本轮验证记录](verification/publication-p76-2026-10-28.md)。
 
+用户随后反馈在 Publications 和 Home 均未看到论文信息。核查确认本地 Publications HTML 已包含 p76，但同年按 `sourceNumber` 升序使其位于2026分组最后，Home也确实尚未加入录用消息。本轮补充2026-10 News完整题名和 IEEE TMC 录用信息，并为 Publications 增加通用 `displayPriority`，让 p76 在不改变稳定编号的前提下置于2026分组第一条。修正后 astro check、两种 base 构建、Home/Publications 17项回归、两种 base 引用专项和 `/WiNet-Lab/` 子路径全站检查均通过；本地界面确认 Home 首条 News 与 Publications 2026分组首篇均为该论文。等待用户查看确认，未推送 GitHub。
+
 ## 当前优先任务 F02：真实资料整合与网站初版
 
 当前批次：用户提供7条2026年4月至9月的News，要求填充首页并说明如何加粗。已完成News结构化列表与介绍/新闻共用的 **加粗** 标记支持，等待用户验收。本轮未进入其他页面或后台。

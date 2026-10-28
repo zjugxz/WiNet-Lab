@@ -20,6 +20,11 @@
     "caption": "Updates from the lab",
     "items": [
       {
+        "id": "llm-mmwave-tmc-2026",
+        "date": "2026-10",
+        "text": "Our work “**An LLM-based Multi-modal Framework for Comprehensive mmWave Data Synthesis, Understanding, and Reasoning**” was accepted by **IEEE Transactions on Mobile Computing**!"
+      },
+      {
         "id": "bcgscatter-2026",
         "date": "2026-09",
         "text": "Our work “**BCGscatter**” on low-power bio-interface was accepted by **Nature Portfolio Flexible Electronics**!"

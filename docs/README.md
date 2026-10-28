@@ -24,7 +24,7 @@
 
 网站地址：[WiNet Lab](https://zjugxz.github.io/WiNet-Lab/)。用户于2026-09-18明确要求更新文档后上传当前本地网站，已上传发布提交918672b，Actions构建/部署及线上关键页面检查通过，具体证据见[发布记录](verification/release-2026-09-18.md)。此前线上版本为f943625；技术验证或发布均不等于用户完成整站验收。
 
-当前内容：Home正式介绍、词云及7条News；Research三方向及8篇研究；Publications 75条记录、74个出版入口；People、Gallery、Contact合作/招生文字和邮箱。在线后台未实现。
+当前内容：Home正式介绍、词云及8条News；Research三方向及8篇研究；Publications 75条记录、74个出版入口；People、Gallery、Contact合作/招生文字和邮箱。在线后台未实现。
 
 最新功能：[Research Cite多格式引用](verification/research-cite-2026-09-18.md)已随1b225ec发布，Actions成功；线上三篇×三格式的查看、复制、下载均验证通过，投稿论文无入口。具体部署及验证结果见[Cite发布记录](verification/release-cite-2026-09-18.md)。此前仅Bib和本地阶段记录保留作为历史。
 

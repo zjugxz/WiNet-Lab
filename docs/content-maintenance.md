@@ -10,6 +10,8 @@ Home media optimization (2026-09-18, local only): keep the original under public
 
 src/data/home.json contains hero copy, heroImage metadata, about.paragraphs (three user-supplied paragraphs rendered individually), and news.items. Each news record contains a unique id, date in YYYY-MM format, and text. Records display in descending month order, retaining input order within the same month. The headline accepts a newline for intentional line breaks. heroImage.src is relative to public/; width/height record original image dimensions and alt describes it in English. The current source is public/images/winet-lab-wordcloud.png. Events and Collaborators were removed at the user's request; do not restore those fields or sections without a new request. src/data/site.json contains the canonical name WiNet Lab, description, and navigation.
 
+The 2026-10 News item announces p76's acceptance by IEEE Transactions on Mobile Computing and uses the complete paper title. Publications normally sort by year and then `sourceNumber`; an optional integer `displayPriority` moves a newly added item ahead of other records in the same year without changing its stable ID or source number. p76 uses `displayPriority: 1` so the new acceptance is the first publication shown under 2026.
+
 After a developer edits data, the development preview normally updates automatically; confirm the actual preview and restart it if stale (see the note below). Production output must be regenerated with npm run build. News, Research, Publications, and Contact render separate structured data sources; People remains a placeholder route. JSON files are not a user-facing form tool and do not replace the planned online editor.
 
 ## Research maintenance

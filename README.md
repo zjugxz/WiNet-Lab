@@ -2,7 +2,7 @@
 
 An academic lab website with an English interface, a static Astro frontend, and shared page components. Website: [zjugxz.github.io/WiNet-Lab](https://zjugxz.github.io/WiNet-Lab/).
 
-- Home: supplied lab introduction, word-cloud image, and seven News records; body text supports paired **bold** markers.
+- Home: supplied lab introduction, word-cloud image, and eight News records; body text supports paired **bold** markers.
 - Research: three directions and six paper cards, five looping video previews, one image, three open papers, and five full-demo downloads. Cards with a Demo appear first. Unavailable papers show `Paper coming soon`; unpublished PDFs are excluded from the site. Published venue/year labels use a warm brown serif style; submission venue/year fields remain unfilled.
 - Publications: 75 records (original item 71 removed), year/type filters, keyword search, and 74 publication links. Original Chinese titles are retained.
 - Contact: collaboration and PhD/Master recruitment information, with the supplied public email.

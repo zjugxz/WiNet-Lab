@@ -18,7 +18,7 @@
 
 ## 网站
 
-- 2026-10-28用户提供一篇刚被录用的 IEEE Transactions on Mobile Computing 论文 BibTeX：`An LLM-based Multi-modal Framework for Comprehensive mmWave Data Synthesis, Understanding, and Reasoning`，DOI `10.1109/TMC.2026.3739401`。本轮授权将其作为 Publications 新增记录并补齐 Cite 三种格式；不据此新增 Research 卡片、公开 PDF 或媒体资源。Crossref 于 2026-10-28 返回匹配元数据。仅本地实现与验证，未授权新的 GitHub 推送。
+- 2026-10-28用户提供一篇刚被录用的 IEEE Transactions on Mobile Computing 论文 BibTeX：`An LLM-based Multi-modal Framework for Comprehensive mmWave Data Synthesis, Understanding, and Reasoning`，DOI `10.1109/TMC.2026.3739401`。本轮将其作为 Publications 新增记录并补齐 Cite 三种格式；用户查看后指出 Publications 首屏和 Home 均未看到相关信息，因此进一步要求 Home 增加录用消息，并将该论文置于 Publications 的2026分组首位。不据此新增 Research 卡片、公开 PDF 或媒体资源。Crossref 于 2026-10-28 返回匹配元数据。仅本地实现与验证，未授权新的 GitHub 推送。
 
 - 2026-09-22用户明确开展People页面，功能参考MARS Lab的People实现。分组仅保留PI、PhD Students、Master Students三类，不需要Alumni、Postdoc及其他分组；PI为大卡片带英文简介，学生为照片卡片，缺照片成员可按参考站形式用文字列表。此指示授权本地实现，不自动发布、不代表其他页面验收。
 - 2026-09-22用户自行修改home.json两处文字：About第一段补充"led by Dr. Xiuzhen Guo"并调整加粗；NSFC新闻改为第三人称"Xiuzhen Guo received the Young Scientists Fund (Type B) from National Natural Science Foundation China （原优青）"。修改由用户完成，agent仅重建、更新过期测试断言并记录；相关旧文案断言已同步为新表述。

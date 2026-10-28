@@ -53,9 +53,18 @@ test('75 retained records preserve source citations and the requested deletion i
     'href',
     'https://doi.org/10.1109/TMC.2026.3739401',
   );
+  await expect(page.locator('[data-publication]').first()).toHaveAttribute(
+    'id',
+    'p76',
+  );
   await expect(page.locator('#p16')).toHaveAttribute('data-year', '2025');
   const expectedOrder = [...publications]
-    .sort((a, b) => b.year - a.year || a.sourceNumber - b.sourceNumber)
+    .sort(
+      (a, b) =>
+        b.year - a.year ||
+        (b.displayPriority ?? 0) - (a.displayPriority ?? 0) ||
+        a.sourceNumber - b.sourceNumber,
+    )
     .map((p) => p.id);
   expect(
     await page
