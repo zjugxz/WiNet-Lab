@@ -13,4 +13,11 @@ The user supplied the IEEE BibTeX record for a newly accepted article and reques
 
 ## Verification
 
-The source and build checks must confirm the new record, DOI link, author order, three citation formats, static citation routes and the updated 75/74 counts in both root and `/WiNet-Lab/` builds. This technical verification is not user acceptance and does not authorize a GitHub push.
+- `astro check`: 59 files, zero errors, warnings or hints.
+- Root and `/WiNet-Lab/` static builds: 24 pages each, including all three p76 citation routes.
+- Playwright Home/Publications regression: 17 tests passed. The tests cover 75 records, the p76 DOI link, author order, sorting, filters, no-JavaScript access, mobile widths and accessibility.
+- `scripts/check-publication-citations.mjs`: passed for both bases. It verified 74 publications × 3 formats, 222 static/HTTP citation files, p76's dialog copy/download behavior, the publication link, no-JavaScript fallback, 390/1440px dialog bounds and axe checks.
+- `scripts/check-base.mjs`: passed for `/WiNet-Lab/`, confirming 75 records, 74 publication links, navigation, CSS, filters, mobile menu and no failed requests.
+- Local preview `http://127.0.0.1:4321/publications/`: HTTP 200; p76 title and IEEE TMC venue present.
+
+This technical verification is not user acceptance and does not authorize a GitHub push. The local checkpoint is `ce0055b`; the remote branch was not changed.

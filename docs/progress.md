@@ -472,7 +472,7 @@ API key 排查及图片生成已停止，不再要求用户更新密钥，不发
 
 Crossref API 于 2026-10-28 查询成功（HTTP 200），题名、作者顺序、刊名、年份、页码和 DOI 与用户资料一致，并返回 IEEE 文档 `11718031`。p76 同步加入 Text/BibTeX/RIS Cite 文件和 `sources.json`，因此网站当前为75条记录、74个出版入口、74个 Cite 入口（p03仍无正式出版入口）。
 
-待完成验证：astro check、根路径及 `/WiNet-Lab/` 构建、Publications/首页回归、Publications Cite 专项检查和新记录浏览器核对。完成技术验证后交用户查看；本轮不自动推送 GitHub，技术验证不等于用户验收。详见[本轮验证记录](verification/publication-p76-2026-10-28.md)。
+验证完成：astro check 59文件零错误；根路径与 `/WiNet-Lab/` 各构建24页；Publications/Home回归17项通过；Publications Cite专项检查在两种base均通过（74条×3格式、静态/HTTP内容一致、p76弹窗复制下载、无JS回退、390/1440px、axe）；子路径全站检查确认75条、74个出版入口、无失败请求。本地4321预览返回200并包含p76题名和IEEE TMC。技术验证不等于用户验收，本轮不自动推送 GitHub。详见[本轮验证记录](verification/publication-p76-2026-10-28.md)。
 
 ## 当前优先任务 F02：真实资料整合与网站初版
 
