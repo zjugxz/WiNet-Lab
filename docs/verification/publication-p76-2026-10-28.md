@@ -31,3 +31,5 @@ Follow-up verification passed: `astro check` reported zero diagnostics; root and
 ## Release authorization
 
 On 2026-10-28, after reviewing the local result, the user explicitly requested that this update be pushed to the GitHub remote repository. The authorized target is `https://github.com/zjugxz/WiNet-Lab.git`, branch `main`. Unrelated existing workspace changes are excluded from this release.
+
+The four authorized commits were pushed from remote head `b26110a` through `4085f26`. GitHub Actions run [40644112049](https://github.com/zjugxz/WiNet-Lab/actions/runs/40644112049), `Publish WiNet Lab preview` run 27, completed successfully for head `4085f26093f83751a637ff60413f6b7623b550dd`. Post-deployment HTTP checks confirmed that both the public Home page and Publications page contain the complete paper title and that p76 precedes p01 in the rendered publication order. Existing unrelated edits to `docs/github-hosting.md`, `.zcodeignore`, and the personal-homepage audit were not committed or pushed. Deployment verification is not user acceptance of the rendered result.
