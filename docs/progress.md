@@ -2,9 +2,9 @@
 
 更新时间：2026-11-05（Asia/Shanghai）。
 
-## 当前任务：张子康照片更新（2026-11-05，本地验证通过，准备发布）
+## 当前任务：张子康照片更新（2026-11-05，已发布，待用户确认）
 
-用户提供 `resources/people/Zikang Zhang_PhD/1.jpg`，要求更新 People 照片并推送远程。已生成 642×960 WebP 并更新脚本映射；Astro 检查、根路径和 Pages 子路径构建与 People 专项检查通过，桌面/手机卡片、弹窗和详情页验证通过。原始照片保留在 Git 忽略目录；验证和发布情况见[专项记录](verification/zikang-photo-2026-11-05.md)。
+用户提供 `resources/people/Zikang Zhang_PhD/1.jpg`，要求更新 People 照片并推送远程。已生成 642×960 WebP 并更新脚本映射；Astro 检查、根路径和 Pages 子路径构建与 People 专项检查通过，桌面/手机卡片、弹窗和详情页验证通过。照片提交 `2816a12` 已推送 main，Actions #41970253465 success，线上照片 SHA-256 与本地一致。原始照片保留在 Git 忽略目录；详情见[专项记录](verification/zikang-photo-2026-11-05.md)。等待用户查看确认，技术验证不等于用户验收。
 
 ## 当前任务：Gallery 新增两张 2026 年照片（2026-10-20，已发布，待用户验收）
 
